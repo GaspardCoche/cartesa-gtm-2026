@@ -10,10 +10,10 @@
   --teal-400: #4ccad8;
   --teal-100: #e4f1f6;
   --teal-50: #f0f8fb;
-  --gold-600: #b89520;
-  --gold-500: #d8b62e;
-  --gold-400: #e2c44e;
-  --gold-100: #fbf4e0;
+  --gold-600: #d8b62e;
+  --gold-500: #ecd034;
+  --gold-400: #f0cc3a;
+  --gold-100: #fdf8e8;
   --neutral-900: #092933;
   --neutral-700: #374151;
   --neutral-500: #6b7280;
@@ -1008,12 +1008,12 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   bottom: 40px;
   right: -10px;
-  background: var(--gold-500);
+  background: #f0cc3a;
   color: var(--neutral-900);
   padding: 16px 20px;
   border-radius: var(--radius-md);
   text-align: center;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
   line-height: 1.2;
 }
 
