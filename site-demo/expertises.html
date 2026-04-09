@@ -72,11 +72,17 @@
   </header>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
     <div class="container">
       <span class="section-label" style="color:rgba(255,255,255,0.5);">Nos expertises</span>
-      <h1>7 domaines d'expertise au service de votre performance</h1>
-      <p>Du diagnostic a l'accompagnement, une approche globale et sur mesure pour chaque entreprise.</p>
+      <h1>7 domaines d'expertise au service de votre performance RH</h1>
+      <p>Du diagnostic a l'accompagnement, une approche globale et sur mesure pour chaque entreprise. Plus de 500 dirigeants nous font confiance.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>7</strong><span>expertises</span></div>
+        <div class="page-hero-stat"><strong>20+</strong><span>ans de terrain</span></div>
+        <div class="page-hero-stat"><strong>100%</strong><span>sur mesure</span></div>
+      </div>
     </div>
   </section>
 
@@ -85,7 +91,7 @@
     <div class="container">
       <div class="grid-2" style="gap:24px;">
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/pourquoicartesa.png" alt="Diagnostic" class="illustration-img">
           </div>
@@ -103,7 +109,7 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0.1s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Formation" class="illustration-img">
           </div>
@@ -121,7 +127,7 @@
           <a href="formations.html" class="btn btn--ghost btn--sm">Voir les formations</a>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0.2s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Janus.png" alt="Coaching" class="illustration-img">
           </div>
@@ -138,7 +144,7 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0.3s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Anticiper-4.jpeg" alt="Transformation" class="illustration-img">
           </div>
@@ -155,7 +161,7 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0.4s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/codev.png" alt="Co-developpement" class="illustration-img">
           </div>
@@ -172,7 +178,7 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card reveal" style="--delay: 0.5s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Enrichir-6.jpeg" alt="Ingenierie pedagogique" class="illustration-img">
           </div>
@@ -189,7 +195,7 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card" style="grid-column: 1 / -1; max-width: 560px;">
+        <div class="card expertise-card reveal" style="grid-column: 1 / -1; max-width: 560px; --delay: 0.6s;">
           <div class="expertise-illustration">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Cultiver-2.jpeg" alt="Entrepreneuriat" class="illustration-img">
           </div>
@@ -216,9 +222,9 @@
   <!-- CTA BAND -->
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
-      <h2 style="margin-bottom:12px;">Un besoin specifique ? Parlons-en.</h2>
-      <p style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 28px; font-size:1rem;">Chaque intervention est concue sur mesure. Contactez-nous pour un premier echange sans engagement.</p>
-      <a href="contact.html" class="btn btn--accent btn--lg">Nous contacter</a>
+      <h2 class="reveal" style="margin-bottom:12px;">Un besoin specifique ? Parlons-en.</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 28px; font-size:1rem; --delay: 0.1s;">Chaque intervention est concue sur mesure. Contactez-nous pour un premier echange sans engagement.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal" style="--delay: 0.2s;">Nous contacter</a>
     </div>
   </section>
 
@@ -280,6 +286,19 @@
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
+    // Scroll-reveal
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { revealObs.observe(el); });
+    }
   </script>
 
 </body>
