@@ -22,7 +22,7 @@
   <meta name="ICBM" content="45.5628, 5.4437">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -140,7 +140,7 @@
     <div class="hero-bg-pattern"></div>
     <div class="container">
       <div class="hero-split">
-        <div class="hero-text">
+        <div class="hero-text hero-text-reveal">
           <p class="section-label" style="color: rgba(255,255,255,0.5);">Competences, Entreprises & Territoires</p>
           <h1>Vous recrutez, formez, fidelisez ? Nous structurons votre RH pour que ca tienne.</h1>
           <p class="hero-sub">Depuis 2003, CARTESA accompagne les dirigeants de PME qui veulent professionnaliser leurs pratiques RH sans y perdre leur energie. Formations certifiees Qualiopi, financement OPCO a 100%, resultats mesurables sur le terrain.</p>
@@ -270,7 +270,7 @@
         <h2 class="section-title">Comment pouvons-nous vous accompagner ?</h2>
         <p class="section-subtitle">Cinq axes d'intervention pour reveler, cultiver et enrichir le potentiel de votre organisation.</p>
       </div>
-      <div class="enjeux-grid">
+      <div class="enjeux-grid reveal-stagger">
 
         <div class="enjeux-card">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Janus.png" alt="Reveler" class="enjeux-illustration">
@@ -306,7 +306,7 @@
         </div>
 
       </div>
-      <div class="enjeux-grid--row2">
+      <div class="enjeux-grid--row2 reveal-stagger">
 
         <div class="enjeux-card">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Anticiper-4.jpeg" alt="Anticiper" class="enjeux-illustration">
@@ -383,7 +383,7 @@
         <h2 class="section-title">Des garanties concretes de qualite</h2>
         <p class="section-subtitle">Ces certifications ne sont pas des logos decoratifs. Elles conditionnent l'acces au financement OPCO et attestent du serieux de nos interventions.</p>
       </div>
-      <div class="cert-grid">
+      <div class="cert-grid reveal-stagger">
         <div class="cert-card reveal" style="--delay: 0s;">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Certification Qualiopi organisme de formation">
           <h4>Qualiopi</h4>
@@ -416,7 +416,7 @@
         <h2 class="section-title">Ce qui se passe chez CARTESA</h2>
         <p class="section-subtitle">Nos dernieres actualites, partenariats et dispositifs pour les PME.</p>
       </div>
-      <div class="news-grid reveal">
+      <div class="news-grid reveal reveal-stagger">
         <article class="news-item news-item--highlight">
           <span class="news-date">Avril 2026</span>
           <span class="badge">Nouveau partenariat</span>
@@ -660,18 +660,16 @@
     }
 
     // Scroll-reveal animations with staggered delays
-    var reveals = document.querySelectorAll('.reveal');
-    if (reveals.length) {
-      var revealObs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-      reveals.forEach(function(el) { revealObs.observe(el); });
-    }
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal-stagger').forEach(function(el) { revealObs.observe(el); });
 
     // Counter animation with easeOutExpo for smoother feel
     function animateCounters(container) {
@@ -712,19 +710,7 @@
       obs.observe(container);
     });
 
-    // Animate enjeux cards on scroll with stagger
-    var enjeuxCards = document.querySelectorAll('.enjeux-card');
-    if (enjeuxCards.length) {
-      var enjeuxObs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            enjeuxObs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      enjeuxCards.forEach(function(card) { enjeuxObs.observe(card); });
-    }
+    // Enjeux cards now handled by reveal-stagger
 
     // Smooth FAQ accordion with animated height
     document.querySelectorAll('.faq-item').forEach(function(item) {
@@ -764,17 +750,6 @@
       });
     });
 
-    // Subtle parallax on hero background pattern
-    (function() {
-      var pattern = document.querySelector('.hero .hero-bg-pattern');
-      if (!pattern || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      window.addEventListener('scroll', function() {
-        var scroll = window.scrollY;
-        if (scroll < 800) {
-          pattern.style.transform = 'translateY(' + (scroll * 0.15) + 'px)';
-        }
-      }, { passive: true });
-    })();
   </script>
 
 </body>

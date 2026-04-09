@@ -20,7 +20,7 @@
   <meta name="ICBM" content="45.5628, 5.4437">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -105,9 +105,9 @@
       <!-- Timeline calendrier -->
       <div class="cal-timeline reveal" id="calTimeline">
 
-        <div class="cal-month">
+        <div class="cal-month reveal">
           <div class="cal-month-label">Mai 2026</div>
-          <div class="cal-sessions">
+          <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="management">
               <div class="cal-date">
                 <span class="cal-day">12</span>
@@ -164,9 +164,9 @@
           </div>
         </div>
 
-        <div class="cal-month">
+        <div class="cal-month reveal">
           <div class="cal-month-label">Juin 2026</div>
-          <div class="cal-sessions">
+          <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="recrutement">
               <div class="cal-date">
                 <span class="cal-day">02</span>
@@ -241,9 +241,9 @@
           </div>
         </div>
 
-        <div class="cal-month">
+        <div class="cal-month reveal">
           <div class="cal-month-label">Septembre 2026</div>
-          <div class="cal-sessions">
+          <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="management">
               <div class="cal-date">
                 <span class="cal-day">07</span>
@@ -602,15 +602,13 @@
     })();
 
     // Scroll reveal
-    var reveals = document.querySelectorAll('.reveal');
-    if (reveals.length) {
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-      reveals.forEach(function(el) { obs.observe(el); });
-    }
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+    document.querySelectorAll('.reveal-stagger').forEach(function(el) { obs.observe(el); });
   </script>
 
 </body>
