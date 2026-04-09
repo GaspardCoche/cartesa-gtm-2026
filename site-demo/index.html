@@ -43,21 +43,21 @@
         <a href="formations.html" class="btn btn--accent btn--lg">Decouvrir nos formations 2026</a>
         <a href="contact.html" class="btn btn--outline btn--lg">Verifier mon eligibilite OPCO</a>
       </div>
-      <div class="stat-row mt-48">
+      <div class="stat-row mt-48" id="heroStats">
         <div class="stat-item">
-          <div class="stat-number">20+</div>
+          <div class="stat-number" data-count="20" data-suffix="+">0</div>
           <div class="stat-label">Annees d'experience</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">500+</div>
+          <div class="stat-number" data-count="500" data-suffix="+">0</div>
           <div class="stat-label">Entreprises accompagnees</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">14</div>
+          <div class="stat-number" data-count="14">0</div>
           <div class="stat-label">OPCO partenaires</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">4</div>
+          <div class="stat-number" data-count="4">0</div>
           <div class="stat-label">Certifications</div>
         </div>
       </div>
@@ -67,7 +67,7 @@
   <!-- VOS ENJEUX -->
   <section class="section section--alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Vos enjeux</span>
         <h2 class="section-title">Comment pouvons-nous vous accompagner ?</h2>
         <p class="section-subtitle">Cinq axes d'intervention pour reveler, cultiver et enrichir le potentiel de votre organisation.</p>
@@ -139,39 +139,39 @@
   <!-- VALUES -->
   <section class="section section--white">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Nos valeurs</span>
         <h2 class="section-title">Ce qui nous definit</h2>
         <p class="section-subtitle">Quatre valeurs qui guident chacune de nos interventions, depuis plus de 20 ans.</p>
       </div>
-      <div class="grid-4">
-        <div class="card value-card">
-          <div class="value-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div class="values-mosaic">
+        <div class="values-item reveal" style="--delay: 0s;">
+          <span class="values-num">01</span>
+          <div class="values-content">
+            <h3>Authentique</h3>
+            <p>Des relations fondees sur la reciprocite et la confiance. Nous privilegions la transparence dans tous nos echanges -- pas de jargon, pas de faux-semblants.</p>
           </div>
-          <h3>Authentique</h3>
-          <p>Des relations fondees sur la reciprocite et la confiance. Nous privilegions la transparence dans tous nos echanges.</p>
         </div>
-        <div class="card value-card">
-          <div class="value-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="values-item reveal" style="--delay: 0.1s;">
+          <span class="values-num">02</span>
+          <div class="values-content">
+            <h3>Engage</h3>
+            <p>Accompagner nos clients dans les situations complexes. Nous allons au-dela de la prestation pour un engagement reel, en restant disponibles dans la duree.</p>
           </div>
-          <h3>Engage</h3>
-          <p>Accompagner nos clients dans les situations complexes. Nous allons au-dela de la prestation pour un engagement reel.</p>
         </div>
-        <div class="card value-card">
-          <div class="value-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="values-item reveal" style="--delay: 0.2s;">
+          <span class="values-num">03</span>
+          <div class="values-content">
+            <h3>Responsable</h3>
+            <p>Developper les talents et les initiatives nouvelles. Nous croyons en une approche durable du capital humain, respectueuse des personnes et des organisations.</p>
           </div>
-          <h3>Responsable</h3>
-          <p>Developper les talents et les initiatives nouvelles. Nous croyons en une approche durable du capital humain.</p>
         </div>
-        <div class="card value-card">
-          <div class="value-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="values-item reveal" style="--delay: 0.3s;">
+          <span class="values-num">04</span>
+          <div class="values-content">
+            <h3>Ingenieux</h3>
+            <p>Combiner creativite et pragmatisme. Chaque solution est concue sur mesure, parce qu'aucune entreprise ne ressemble a une autre.</p>
           </div>
-          <h3>Ingenieux</h3>
-          <p>Combiner creativite et pragmatisme. Chaque solution est concue sur mesure pour repondre a vos enjeux specifiques.</p>
         </div>
       </div>
     </div>
@@ -180,7 +180,7 @@
   <!-- CERTIFICATIONS -->
   <section class="section section--teal">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Nos certifications</span>
         <h2 class="section-title">Des garanties concretes de qualite</h2>
       </div>
@@ -212,7 +212,7 @@
   <!-- ACTUALITES -->
   <section class="section section--white">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Actualites</span>
         <h2 class="section-title">Ce qui se passe chez CARTESA</h2>
       </div>
@@ -248,7 +248,7 @@
   <!-- TEMOIGNAGES ET CONFIANCE -->
   <section class="section section--alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Temoignages et confiance</span>
         <h2 class="section-title">Ils nous font confiance depuis plus de 20 ans</h2>
       </div>
@@ -298,7 +298,7 @@
   <!-- PARTNER LOGOS -->
   <section class="section section--alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Nos partenaires</span>
         <h2 class="section-title">Ils nous font confiance</h2>
       </div>
@@ -384,24 +384,107 @@
   </div>
 
   <script>
+    // Header scroll shadow
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Show sticky CTA after scrolling past 60% marker
+    // Sticky CTA after scrolling past marker
     var marker = document.getElementById('scrollMarker');
     var stickyCta = document.getElementById('stickyCta');
     if (marker && stickyCta) {
-      var observer = new IntersectionObserver(function(entries) {
+      new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-            stickyCta.classList.add('visible');
-          } else {
-            stickyCta.classList.remove('visible');
+          stickyCta.classList.toggle('visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+        });
+      }, { threshold: 0 }).observe(marker);
+    }
+
+    // Scroll-reveal animations
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0 });
-      observer.observe(marker);
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { revealObs.observe(el); });
+    }
+
+    // Counter animation for stat numbers
+    function animateCounters(container) {
+      var counters = container.querySelectorAll('[data-count]');
+      counters.forEach(function(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1800;
+        var start = 0;
+        var startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    var heroStats = document.getElementById('heroStats');
+    if (heroStats) {
+      var statsObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters(heroStats);
+            statsObs.unobserve(heroStats);
+          }
+        });
+      }, { threshold: 0.3 });
+      statsObs.observe(heroStats);
+    }
+
+    // Animate enjeux cards on scroll
+    var enjeuxCards = document.querySelectorAll('.enjeux-card');
+    if (enjeuxCards.length) {
+      var enjeuxObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            enjeuxObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      enjeuxCards.forEach(function(card) { enjeuxObs.observe(card); });
+    }
+
+    // Also animate trust stats
+    var trustStats = document.querySelector('.trust-stats');
+    if (trustStats) {
+      // Add data attributes to trust stat numbers
+      trustStats.querySelectorAll('.stat-number').forEach(function(el) {
+        var text = el.textContent.trim();
+        var num = parseInt(text, 10);
+        if (!isNaN(num)) {
+          var suffix = text.replace(String(num), '');
+          el.setAttribute('data-count', num);
+          if (suffix) el.setAttribute('data-suffix', suffix);
+          el.textContent = '0';
+        }
+      });
+      var trustObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters(trustStats);
+            trustObs.unobserve(trustStats);
+          }
+        });
+      }, { threshold: 0.3 });
+      trustObs.observe(trustStats);
     }
   </script>
 

@@ -948,32 +948,69 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 4px;
 }
 
-/* ===== VALUE CARD ===== */
-.value-card {
-  text-align: center;
+/* ===== VALUES MOSAIC ===== */
+.values-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
 }
 
-.value-card .value-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--teal-600);
+.values-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 14px;
-  color: var(--white);
+  align-items: flex-start;
+  gap: 20px;
+  padding: 36px 32px;
+  position: relative;
+  transition: background 0.25s ease;
 }
 
-.value-card h3 {
-  font-size: 1.05rem;
+.values-item:nth-child(1) { border-bottom: 1px solid var(--neutral-200); border-right: 1px solid var(--neutral-200); }
+.values-item:nth-child(2) { border-bottom: 1px solid var(--neutral-200); }
+.values-item:nth-child(3) { border-right: 1px solid var(--neutral-200); }
+
+.values-item:hover {
+  background: var(--teal-50);
+}
+
+.values-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--teal-100);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.25s ease;
+  user-select: none;
+}
+
+.values-item:hover .values-num {
+  color: var(--teal-600);
+}
+
+.values-content h3 {
+  font-size: 1.15rem;
   margin-bottom: 8px;
+  color: var(--teal-900);
 }
 
-.value-card p {
-  font-size: 0.875rem;
+.values-content p {
+  font-size: 0.9rem;
   color: var(--neutral-500);
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .values-mosaic { grid-template-columns: 1fr; }
+  .values-item:nth-child(odd) { border-right: none; }
+  .values-item:nth-child(1),
+  .values-item:nth-child(2),
+  .values-item:nth-child(3) { border-right: none; border-bottom: 1px solid var(--neutral-200); }
+  .values-item:nth-child(4) { border-bottom: none; }
+}
+
+@media (max-width: 480px) {
+  .values-item { padding: 28px 20px; }
+  .values-num { font-size: 2.2rem; }
 }
 
 /* ===== FINANCING CARD (on teal bg) ===== */
@@ -1489,4 +1526,103 @@ img { max-width: 100%; height: auto; display: block; }
   height: 8px;
   border-radius: 50%;
   background: var(--teal-600);
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance */
+.hero .container {
+  animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stat number pulse on hover */
+.stat-number {
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.08);
+}
+
+/* Enjeux cards stagger */
+.enjeux-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-play-state: paused;
+}
+
+.enjeux-card.animated {
+  animation-play-state: running;
+}
+
+.enjeux-grid .enjeux-card:nth-child(1) { animation-delay: 0s; }
+.enjeux-grid .enjeux-card:nth-child(2) { animation-delay: 0.1s; }
+.enjeux-grid .enjeux-card:nth-child(3) { animation-delay: 0.2s; }
+.enjeux-grid--row2 .enjeux-card:nth-child(1) { animation-delay: 0.25s; }
+.enjeux-grid--row2 .enjeux-card:nth-child(2) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* News card hover lift */
+.news-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Trust testimonial subtle entrance */
+.trust-testimonial {
+  transition: box-shadow 0.3s ease;
+}
+
+.trust-testimonial:hover {
+  box-shadow: 0 4px 16px rgba(13, 122, 158, 0.1);
+}
+
+/* Partner logo marquee-like subtle float */
+.partner-grid img {
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.25s ease;
+}
+
+.partner-grid img:hover {
+  transform: translateY(-2px);
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero .container { animation: none; }
+  .enjeux-card { opacity: 1; transform: none; animation: none; }
+  .stat-number { transition: none; }
 }
