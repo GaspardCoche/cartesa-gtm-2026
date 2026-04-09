@@ -83,12 +83,239 @@
     </div>
   </section>
 
-  <!-- FORMATIONS GRID -->
-  <section class="section section--white">
+  <!-- CALENDRIER DES FORMATIONS -->
+  <section class="section section--white" id="calendrier">
     <div class="container">
-      <div style="text-align:center; margin-bottom:48px;">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/pourquoicartesa.png" alt="Pourquoi CARTESA" class="illustration-img" style="max-width:200px; margin:0 auto;">
-        <p style="font-size:0.9rem; color:var(--neutral-500); margin-top:12px; max-width:560px; margin-left:auto; margin-right:auto;">Chaque formation est concue sur mesure, ancree dans vos situations professionnelles reelles. Nos consultants combinent expertise terrain et pedagogie active pour des resultats concrets et durables.</p>
+      <div class="section-header reveal">
+        <span class="section-label">Calendrier 2026</span>
+        <h2 class="section-title">Prochaines sessions</h2>
+        <p class="section-subtitle">Retrouvez toutes les dates de nos formations inter-entreprises. Inscrivez-vous directement ou contactez-nous pour une session intra sur mesure.</p>
+      </div>
+
+      <!-- Filtres par thematique -->
+      <div class="cal-filters reveal" id="calFilters">
+        <button class="cal-filter active" data-filter="all">Toutes</button>
+        <button class="cal-filter" data-filter="management">Management</button>
+        <button class="cal-filter" data-filter="droit">Droit social</button>
+        <button class="cal-filter" data-filter="rh">RH</button>
+        <button class="cal-filter" data-filter="rse">RSE</button>
+        <button class="cal-filter" data-filter="recrutement">Recrutement</button>
+      </div>
+
+      <!-- Timeline calendrier -->
+      <div class="cal-timeline reveal" id="calTimeline">
+
+        <div class="cal-month">
+          <div class="cal-month-label">Mai 2026</div>
+          <div class="cal-sessions">
+            <div class="cal-session" data-cat="management">
+              <div class="cal-date">
+                <span class="cal-day">12</span>
+                <span class="cal-weekday">Lun</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--management">Management</span>
+                <h4>Management d'equipe -- Niveau 1</h4>
+                <p>Developper sa posture manageriale, animer son equipe, conduire les entretiens</p>
+                <div class="cal-meta">
+                  <span>3 jours (12-14 mai)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>6 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="droit">
+              <div class="cal-date">
+                <span class="cal-day">19</span>
+                <span class="cal-weekday">Lun</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--droit">Droit social</span>
+                <h4>Droit social pour managers -- Les fondamentaux</h4>
+                <p>Contrat de travail, temps de travail, pouvoir disciplinaire, dialogue social</p>
+                <div class="cal-meta">
+                  <span>2 jours (19-20 mai)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="rh">
+              <div class="cal-date">
+                <span class="cal-day">26</span>
+                <span class="cal-weekday">Lun</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--rh">RH</span>
+                <h4>Entretien professionnel -- Bilan des 6 ans</h4>
+                <p>Mener des entretiens professionnels structurants et conformes a l'obligation 2027</p>
+                <div class="cal-meta">
+                  <span>1 jour</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>10 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-month">
+          <div class="cal-month-label">Juin 2026</div>
+          <div class="cal-sessions">
+            <div class="cal-session" data-cat="recrutement">
+              <div class="cal-date">
+                <span class="cal-day">02</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--recrutement">Recrutement</span>
+                <h4>Recrutement & integration en marche tendu</h4>
+                <p>Offres attractives, entretiens structures, parcours d'onboarding</p>
+                <div class="cal-meta">
+                  <span>2 jours (2-3 juin)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="management">
+              <div class="cal-date">
+                <span class="cal-day">09</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--management">Management</span>
+                <h4>Management a distance & mode hybride</h4>
+                <p>Animer et federer une equipe en teletravail, rituels et outils</p>
+                <div class="cal-meta">
+                  <span>2 jours (9-10 juin)</span>
+                  <span>Distanciel</span>
+                  <span>12 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="rse">
+              <div class="cal-date">
+                <span class="cal-day">16</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--rse">RSE</span>
+                <h4>RSE & Qualite de vie au travail pour PME</h4>
+                <p>Initier et structurer une demarche RSE accessible, diagnostic QVCT</p>
+                <div class="cal-meta">
+                  <span>2 jours (16-17 juin)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="rh">
+              <div class="cal-date">
+                <span class="cal-day">23</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--rh">RH</span>
+                <h4>Les fondamentaux RH pour non-RH</h4>
+                <p>L'essentiel du droit social et de la gestion RH pour dirigeants et managers</p>
+                <div class="cal-meta">
+                  <span>2 jours (23-24 juin)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>6 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-month">
+          <div class="cal-month-label">Septembre 2026</div>
+          <div class="cal-sessions">
+            <div class="cal-session" data-cat="management">
+              <div class="cal-date">
+                <span class="cal-day">07</span>
+                <span class="cal-weekday">Lun</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--management">Management</span>
+                <h4>Management d'equipe -- Niveau 2 (Perfectionnement)</h4>
+                <p>Gestion de conflits, delegation, feedback constructif, methodologie CleA</p>
+                <div class="cal-meta">
+                  <span>3 jours (7-9 sept)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="droit">
+              <div class="cal-date">
+                <span class="cal-day">15</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--droit">Droit social</span>
+                <h4>Droit social -- Actualites legislatives 2026</h4>
+                <p>Les dernieres evolutions du code du travail, impacts pratiques pour le manager</p>
+                <div class="cal-meta">
+                  <span>1 jour</span>
+                  <span>Distanciel</span>
+                  <span>15 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+
+            <div class="cal-session" data-cat="recrutement">
+              <div class="cal-date">
+                <span class="cal-day">22</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--recrutement">Recrutement</span>
+                <h4>Marque employeur & attractivite</h4>
+                <p>Construire et deployer une marque employeur authentique pour attirer les talents</p>
+                <div class="cal-meta">
+                  <span>2 jours (22-23 sept)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cal-cta reveal" style="text-align:center; margin-top:48px;">
+        <p style="font-size:0.95rem; color:var(--neutral-500); margin-bottom:16px;">Vous ne trouvez pas la date qui vous convient ? Nous organisons aussi des sessions intra-entreprise sur mesure.</p>
+        <a href="contact.html" class="btn btn--primary btn--lg">Demander une session sur mesure</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATIONS DETAIL -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Catalogue complet</span>
+        <h2 class="section-title">Nos formations en detail</h2>
+        <p class="section-subtitle">Chaque formation est concue sur mesure, ancree dans vos situations professionnelles reelles.</p>
       </div>
       <div class="grid-3">
 
@@ -338,9 +565,52 @@
   </footer>
 
   <script>
+    // Header scroll
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    // Calendar filter
+    (function() {
+      var filters = document.querySelectorAll('.cal-filter');
+      var sessions = document.querySelectorAll('.cal-session');
+      var months = document.querySelectorAll('.cal-month');
+
+      filters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filters.forEach(function(f) { f.classList.remove('active'); });
+          btn.classList.add('active');
+          var cat = btn.getAttribute('data-filter');
+
+          sessions.forEach(function(s) {
+            if (cat === 'all' || s.getAttribute('data-cat') === cat) {
+              s.classList.remove('hidden');
+              s.style.animation = 'fadeUp 0.35s ease forwards';
+            } else {
+              s.classList.add('hidden');
+              s.style.animation = '';
+            }
+          });
+
+          // Hide empty months
+          months.forEach(function(m) {
+            var visible = m.querySelectorAll('.cal-session:not(.hidden)');
+            m.style.display = visible.length ? '' : 'none';
+          });
+        });
+      });
+    })();
+
+    // Scroll reveal
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      reveals.forEach(function(el) { obs.observe(el); });
+    }
   </script>
 
 </body>
