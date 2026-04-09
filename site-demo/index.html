@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARTESA -- Conseil & Formation RH | La Tour-du-Pin</title>
+  <meta name="description" content="Cabinet de conseil et formation RH en Isere. Management, droit social, entretiens professionnels. Certifie Qualiopi. Financement OPCO possible a 100%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --deep: #0A4F5C;
+      --primary: #157A8C;
+      --accent: #C8973E;
+      --dark: #1B2A33;
+      --warm-white: #FAF8F5;
+      --text: #2A3642;
+      --teal-tint: #EDF5F7;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 0;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    .nav.scrolled {
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0.75rem 0;
+      box-shadow: 0 1px 0 rgba(10, 79, 92, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--deep);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-tagline {
+      font-size: 0.6rem;
+      color: var(--primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      position: relative;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta-link {
+      background: var(--deep);
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-size: 0.82rem !important;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .nav-cta-link:hover { background: var(--primary); }
+    .nav-cta-link::after { display: none !important; }
+
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 6rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21, 122, 140, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10, 79, 92, 0.12), transparent);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.45fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.12;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      max-width: 640px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #5a6b78;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--deep);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--deep);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1.5px solid rgba(10, 79, 92, 0.25);
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      background: rgba(21, 122, 140, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      position: relative;
+    }
+
+    .hero-stat-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(10, 79, 92, 0.08), 0 1px 3px rgba(0,0,0,0.04);
+      position: relative;
+    }
+
+    .hero-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      border-radius: 0 0 2px 2px;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+    .stat-row + .stat-row { border-top: 1px solid var(--teal-tint); }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--deep);
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: #6b7a86;
+      line-height: 1.4;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust {
+      padding: 3.5rem 0;
+      background: var(--deep);
+      position: relative;
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-certs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cert-badge .cert-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .trust-stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .trust-stat {
+      text-align: center;
+      color: #fff;
+    }
+
+    .trust-stat-value {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+    }
+
+    .trust-stat-label {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+    }
+
+    /* ===== FORMATIONS ===== */
+    .formations {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      font-size: 1.05rem;
+      color: #5a6b78;
+      max-width: 560px;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+    }
+
+    .formations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .formation-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 2.5rem;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      overflow: hidden;
+    }
+
+    .formation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(10, 79, 92, 0.1);
+    }
+
+    .formation-card--featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .formation-card--featured .formation-number,
+    .formation-card--featured .formation-title,
+    .formation-card--featured .formation-desc {
+      color: #fff;
+    }
+
+    .formation-card--featured .formation-desc { opacity: 0.75; }
+
+    .formation-card--accent { border-top: 3px solid var(--accent); }
+    .formation-card--teal { border-top: 3px solid var(--primary); }
+
+    .formation-number {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--teal-tint);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .formation-card--featured .formation-number {
+      font-size: 4rem;
+      opacity: 0.15;
+    }
+
+    .formation-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .formation-desc {
+      font-size: 0.9rem;
+      color: #6b7a86;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .formation-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .finance-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+
+    .finance-badge svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .formation-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.3s;
+    }
+    .formation-card--featured .formation-link { color: var(--accent); }
+
+    .formation-link:hover { gap: 0.6rem; }
+
+    .formation-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.3s;
+    }
+
+    /* ===== FINANCEMENT ===== */
+    .financement {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      background: var(--teal-tint);
+      position: relative;
+    }
+
+    .financement::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10, 79, 92, 0.1), transparent);
+    }
+
+    .financement-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .financement-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .financement-content h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .financement-content p {
+      font-size: 1rem;
+      color: #5a6b78;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .financement-steps {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .financement-steps li {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      align-items: flex-start;
+    }
+
+    .financement-steps li + li {
+      border-top: 1px solid rgba(10, 79, 92, 0.08);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--deep);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .step-text { font-size: 0.92rem; line-height: 1.6; }
+    .step-text strong { color: var(--dark); font-weight: 600; }
+
+    .eligibility-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px rgba(10, 79, 92, 0.06);
+      position: sticky;
+      top: 6rem;
+    }
+
+    .eligibility-card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .eligibility-card .card-sub {
+      font-size: 0.85rem;
+      color: #6b7a86;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #dde3e7;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--warm-white);
+      transition: border-color 0.3s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' fill='none' stroke='%236b7a86' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: #b8872e;
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: 0.72rem;
+      color: #8a97a3;
+      margin-top: 1rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ===== BLOG ===== */
+    .blog {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+    }
+
+    .blog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .blog-articles {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .blog-article {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .blog-article:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(10, 79, 92, 0.08);
+    }
+
+    .blog-article--large {
+      grid-row: 1 / 3;
+    }
+
+    .blog-article-img {
+      height: 200px;
+      background: var(--deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-article--large .blog-article-img { height: 100%; min-height: 280px; }
+
+    .blog-article-img-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(255,255,255,0.3) 20px,
+        rgba(255,255,255,0.3) 22px
+      );
+    }
+
+    .blog-article-img .blog-cat {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(200, 151, 62, 0.9);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    .blog-article-body {
+      padding: 1.75rem;
+    }
+
+    .blog-article--large .blog-article-body { padding: 2rem; }
+
+    .blog-article-date {
+      font-size: 0.72rem;
+      color: #8a97a3;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-article h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-article--large h3 { font-size: 1.4rem; }
+
+    .blog-article p {
+      font-size: 0.88rem;
+      color: #6b7a86;
+      line-height: 1.7;
+    }
+
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-top: 1rem;
+      transition: gap 0.3s;
+    }
+
+    .blog-read-more:hover { gap: 0.6rem; }
+
+    /* ===== TEMOIGNAGES ===== */
+    .temoignages {
+      padding: clamp(5rem, 10vw, 7rem) 0;
+      background: var(--dark);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .temoignages::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21, 122, 140, 0.15) 0%, transparent 70%);
+    }
+
+    .temoignages .section-heading { color: #fff; }
+
+    .temoignages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .temoignage-card {
+      position: relative;
+      padding: 2rem;
+    }
+
+    .temoignage-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    .temoignage-card:hover::before {
+      border-color: rgba(200, 151, 62, 0.3);
+    }
+
+    .temoignage-quote-mark {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+
+    .temoignage-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .temoignage-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .temoignage-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      flex-shrink: 0;
+    }
+
+    .temoignage-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .temoignage-role {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== LEAD MAGNET ===== */
+    .lead-magnet {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      background: linear-gradient(135deg, var(--teal-tint) 0%, #fff 100%);
+    }
+
+    .lead-magnet-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      background: #fff;
+      border-radius: 8px;
+      padding: 3.5rem;
+      box-shadow: 0 20px 60px rgba(10, 79, 92, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-magnet-inner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: var(--teal-tint);
+      z-index: 0;
+    }
+
+    .lead-magnet-content { position: relative; z-index: 1; }
+
+    .lead-magnet-content .section-label { margin-bottom: 0.75rem; }
+
+    .lead-magnet-content h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .lead-magnet-content p {
+      font-size: 0.95rem;
+      color: #5a6b78;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .lead-magnet-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .lead-magnet-list li {
+      padding: 0.4rem 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lead-magnet-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .lead-magnet-form {
+      position: relative;
+      z-index: 1;
+      background: var(--warm-white);
+      padding: 2rem;
+      border-radius: 6px;
+      border: 1px solid rgba(10, 79, 92, 0.06);
+    }
+
+    .lead-magnet-form h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ===== EQUIPE ===== */
+    .equipe {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+    }
+
+    .equipe-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .equipe-member {
+      text-align: center;
+    }
+
+    .equipe-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .equipe-photo-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .equipe-photo::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .equipe-member:hover .equipe-photo::after { opacity: 1; }
+
+    .equipe-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .equipe-role {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .equipe-bio {
+      font-size: 0.88rem;
+      color: #6b7a86;
+      line-height: 1.7;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      color: #fff;
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .nav-logo { color: #fff; margin-bottom: 0.5rem; }
+    .footer-brand .nav-tagline { color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    .footer h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li { margin-bottom: 0.6rem; }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-contact-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-legal a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-aside { display: none; }
+      .formations-grid { grid-template-columns: 1fr; }
+      .formation-card--featured { grid-template-columns: 1fr; }
+      .financement-grid { grid-template-columns: 1fr; }
+      .eligibility-card { position: static; }
+      .blog-articles { grid-template-columns: 1fr; }
+      .blog-article--large { grid-row: auto; }
+      .temoignages-grid { grid-template-columns: 1fr; }
+      .lead-magnet-inner {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      .lead-magnet-inner::after { display: none; }
+      .equipe-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--warm-white);
+        padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+        gap: 1rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+
+      .trust-inner { flex-direction: column; text-align: center; }
+      .trust-stats { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+      .trust-certs { justify-content: center; }
+      .hero-actions { flex-direction: column; }
+      .blog-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="nav-logo">CARTESA</span>
+        <span class="nav-tagline">Competences, Entreprises &amp; Territoires</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#formations">Nos formations</a></li>
+        <li><a href="#financement">Financement</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#guide">Ressources</a></li>
+        <li><a href="#contact" class="nav-cta-link">Contact</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">Cabinet conseil &amp; formation RH</p>
+        <h1 class="reveal reveal-delay-1">Vos equipes meritent mieux qu'une formation <em>standard.</em></h1>
+        <p class="hero-sub reveal reveal-delay-2">Depuis plus de 20 ans, nous concevons des parcours de formation sur mesure pour les PME et ETI. Certifie Qualiopi, finance par votre OPCO -- souvent a 100%.</p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#formations" class="btn-primary">
+            Decouvrir nos formations
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#financement" class="btn-secondary">
+            Financer ma formation (OPCO)
+          </a>
+        </div>
+      </div>
+      <div class="hero-aside reveal reveal-delay-2">
+        <div class="hero-stat-card">
+          <div class="stat-row">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">annees d'expertise terrain en RH et management</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">entreprises accompagnees en Nord-Isere et au-dela</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-number">6</span>
+            <span class="stat-label">OPCO partenaires pour financer vos formations</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-number">97%</span>
+            <span class="stat-label">de satisfaction sur nos accompagnements 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust">
+    <div class="container trust-inner">
+      <div class="trust-certs">
+        <span class="cert-badge"><span class="cert-dot"></span>Qualiopi</span>
+        <span class="cert-badge"><span class="cert-dot"></span>CleA Management</span>
+        <span class="cert-badge"><span class="cert-dot"></span>AFEST</span>
+        <span class="cert-badge"><span class="cert-dot"></span>ACTEE</span>
+      </div>
+      <div class="trust-stats">
+        <div class="trust-stat">
+          <div class="trust-stat-value">6</div>
+          <div class="trust-stat-label">OPCO partenaires</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-stat-value">+200</div>
+          <div class="trust-stat-label">Entreprises</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-stat-value">20 ans</div>
+          <div class="trust-stat-label">d'expertise</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMATIONS ===== -->
+  <section class="formations" id="formations">
+    <div class="container">
+      <p class="section-label reveal">Nos expertises</p>
+      <h2 class="section-heading reveal">Des formations pensees pour<br>le terrain, pas pour le catalogue.</h2>
+      <p class="section-intro reveal">Chaque programme est adapte a la realite de votre entreprise. Nos intervenants sont des praticiens RH, pas des theoriciens.</p>
+
+      <div class="formations-grid">
+        <!-- Featured -->
+        <div class="formation-card formation-card--featured reveal">
+          <div>
+            <span class="formation-number">01</span>
+            <h3 class="formation-title">Management d'equipe</h3>
+            <p class="formation-desc">Posture manageriale, delegation, gestion des conflits, entretiens de recadrage. Des outils immediatement applicables pour vos managers de proximite et vos cadres intermediaires.</p>
+            <div class="formation-meta">
+              <span class="finance-badge">
+                <svg viewBox="0 0 16 16"><path d="M8 1v14M4 4h5.5a2.5 2.5 0 010 5H4m0 0h6.5a2.5 2.5 0 010 5H4"/></svg>
+                Financement possible a 100%
+              </span>
+              <a href="#" class="formation-link">
+                En savoir plus
+                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <p class="formation-desc">Formats disponibles :</p>
+            <ul style="list-style:none; margin-top:1rem;">
+              <li style="padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.88rem; color:rgba(255,255,255,0.7);">Parcours individuel -- 3 a 6 mois</li>
+              <li style="padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.88rem; color:rgba(255,255,255,0.7);">Formation collective inter-entreprises</li>
+              <li style="padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.88rem; color:rgba(255,255,255,0.7);">AFEST en situation de travail</li>
+              <li style="padding:0.6rem 0; font-size:0.88rem; color:rgba(255,255,255,0.7);">Coaching managerial personnalise</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="formation-card formation-card--accent reveal">
+          <span class="formation-number">02</span>
+          <h3 class="formation-title">Droit social &amp; RH operationnel</h3>
+          <p class="formation-desc">Obligations legales aux seuils de 11, 20 et 50 salaries. Contrats, ruptures, CSE, elections professionnelles. Ce que tout dirigeant de PME doit savoir.</p>
+          <div class="formation-meta">
+            <span class="finance-badge">
+              <svg viewBox="0 0 16 16"><path d="M8 1v14M4 4h5.5a2.5 2.5 0 010 5H4m0 0h6.5a2.5 2.5 0 010 5H4"/></svg>
+              Financement possible a 100%
+            </span>
+            <a href="#" class="formation-link">
+              En savoir plus
+              <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="formation-card formation-card--teal reveal">
+          <span class="formation-number">03</span>
+          <h3 class="formation-title">Entretien professionnel &amp; recrutement</h3>
+          <p class="formation-desc">Structurer vos entretiens obligatoires, construire une grille d'evaluation, mener un processus de recrutement efficace et non-discriminant.</p>
+          <div class="formation-meta">
+            <span class="finance-badge">
+              <svg viewBox="0 0 16 16"><path d="M8 1v14M4 4h5.5a2.5 2.5 0 010 5H4m0 0h6.5a2.5 2.5 0 010 5H4"/></svg>
+              Financement possible a 100%
+            </span>
+            <a href="#" class="formation-link">
+              En savoir plus
+              <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 -- spans full -->
+        <div class="formation-card reveal" style="grid-column: 1 / -1; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:2rem; border-top: 3px solid var(--accent);">
+          <div>
+            <span class="formation-number">04</span>
+            <h3 class="formation-title">RSE &amp; Qualite de vie au travail</h3>
+          </div>
+          <div>
+            <p class="formation-desc">Integrer une demarche RSE pragmatique, prevenir les risques psychosociaux, ameliorer l'engagement de vos equipes. Un enjeu de performance autant que de responsabilite.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; justify-content:center; align-items:flex-end;">
+            <span class="finance-badge" style="margin-bottom:1rem;">
+              <svg viewBox="0 0 16 16"><path d="M8 1v14M4 4h5.5a2.5 2.5 0 010 5H4m0 0h6.5a2.5 2.5 0 010 5H4"/></svg>
+              Financement possible a 100%
+            </span>
+            <a href="#" class="formation-link">
+              En savoir plus
+              <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINANCEMENT ===== -->
+  <section class="financement" id="financement">
+    <div class="container financement-grid">
+      <div class="financement-content reveal">
+        <p class="section-label">Financement</p>
+        <h2>Votre formation financee, <em>vraiment</em> a 100%.</h2>
+        <p>Grace au dispositif PCRH (Prestation de Conseil en Ressources Humaines) et aux financements OPCO, les entreprises de moins de 250 salaries peuvent beneficier d'un accompagnement entierement pris en charge.</p>
+        <p>Nous travaillons avec 6 OPCO partenaires : OPCO2i, Opcommerce, EP, Uniformation, AKTO et Constructys. Nous montons votre dossier de A a Z.</p>
+
+        <ul class="financement-steps">
+          <li>
+            <span class="step-num">1</span>
+            <div class="step-text"><strong>Diagnostic gratuit</strong> -- Nous identifions vos besoins et le dispositif de financement adapte.</div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div class="step-text"><strong>Montage du dossier</strong> -- Nous preparons et deposons votre demande aupres de votre OPCO.</div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div class="step-text"><strong>Formation sur mesure</strong> -- Votre parcours demarre, entierement finance. Aucune avance de tresorerie.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="eligibility-card reveal reveal-delay-1">
+        <h3>Verifiez votre eligibilite</h3>
+        <p class="card-sub">En 30 secondes, decouvrez si votre entreprise peut beneficier d'une formation financee a 100%.</p>
+        <form onsubmit="event.preventDefault(); alert('Merci ! Nous vous recontactons sous 24h pour confirmer votre eligibilite.');">
+          <div class="form-group">
+            <label for="effectif">Effectif de votre entreprise</label>
+            <select id="effectif" required>
+              <option value="" disabled selected>Selectionnez...</option>
+              <option>Moins de 11 salaries</option>
+              <option>11 a 49 salaries</option>
+              <option>50 a 249 salaries</option>
+              <option>250 salaries et plus</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="secteur">Secteur d'activite</label>
+            <select id="secteur" required>
+              <option value="" disabled selected>Selectionnez...</option>
+              <option>Industrie / Production</option>
+              <option>Commerce / Distribution</option>
+              <option>BTP / Construction</option>
+              <option>Services aux entreprises</option>
+              <option>Sante / Social</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email-elig">Votre email professionnel</label>
+            <input type="email" id="email-elig" placeholder="nom@entreprise.fr" required>
+          </div>
+          <button type="submit" class="form-submit">Verifier mon eligibilite</button>
+          <p class="form-note">Gratuit et sans engagement. Reponse sous 24h.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="blog-header">
+        <div>
+          <p class="section-label reveal">Actualites RH</p>
+          <h2 class="section-heading reveal">Eclairages pour dirigeants<br>et responsables RH.</h2>
+        </div>
+        <a href="#" class="formation-link reveal" style="margin-bottom: 0.5rem;">
+          Tous les articles
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <div class="blog-articles">
+        <!-- Article 1 - Large -->
+        <article class="blog-article blog-article--large reveal">
+          <div class="blog-article-img" style="background: linear-gradient(135deg, var(--deep) 0%, #0d3d47 100%);">
+            <div class="blog-article-img-pattern"></div>
+            <span class="blog-cat">Droit social</span>
+          </div>
+          <div class="blog-article-body">
+            <p class="blog-article-date">28 mars 2026</p>
+            <h3>Obligations RH a 11, 20 et 50 salaries : le guide pratique du dirigeant</h3>
+            <p>Chaque seuil d'effectif declenche de nouvelles obligations legales. CSE, participation, bilan social... Voici ce que vous devez anticiper pour rester en conformite.</p>
+            <a href="#" class="blog-read-more">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-article reveal reveal-delay-1">
+          <div class="blog-article-img" style="background: linear-gradient(135deg, var(--accent) 0%, #a07830 100%);">
+            <div class="blog-article-img-pattern"></div>
+            <span class="blog-cat">Financement</span>
+          </div>
+          <div class="blog-article-body">
+            <p class="blog-article-date">15 mars 2026</p>
+            <h3>PCRH : l'accompagnement gratuit que vous ne connaissez pas</h3>
+            <p>La Prestation de Conseil en Ressources Humaines est financee par l'Etat pour les PME. Pourtant, 80% des dirigeants l'ignorent.</p>
+            <a href="#" class="blog-read-more">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-article reveal reveal-delay-2">
+          <div class="blog-article-img" style="background: linear-gradient(135deg, #2a4a54 0%, var(--dark) 100%);">
+            <div class="blog-article-img-pattern"></div>
+            <span class="blog-cat">Management</span>
+          </div>
+          <div class="blog-article-body">
+            <p class="blog-article-date">2 mars 2026</p>
+            <h3>Entretiens professionnels 2026 : le guide complet</h3>
+            <p>Nouveaux modeles, sanctions renforcees, bilan a 6 ans. Tout ce qui change et comment vous mettre en conformite avant la date limite.</p>
+            <a href="#" class="blog-read-more">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEMOIGNAGES ===== -->
+  <section class="temoignages" id="temoignages">
+    <div class="container">
+      <p class="section-label reveal" style="color: var(--accent);">Temoignages</p>
+      <h2 class="section-heading reveal">Ce qu'en disent nos clients.</h2>
+
+      <div class="temoignages-grid">
+        <div class="temoignage-card reveal">
+          <div class="temoignage-quote-mark">"</div>
+          <p class="temoignage-text">Catherine a su adapter la formation a notre realite de terrain. Nos chefs d'equipe ont completement change leur posture manageriale en 3 mois. Et le financement OPCO a couvert l'integralite des couts.</p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">SB</div>
+            <div>
+              <div class="temoignage-name">Stephane Bernier</div>
+              <div class="temoignage-role">DG, Metalor Industries -- Bourgoin-Jallieu</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="temoignage-card reveal reveal-delay-1">
+          <div class="temoignage-quote-mark">"</div>
+          <p class="temoignage-text">Nous avons passe le seuil des 50 salaries sans le voir venir. CARTESA nous a accompagnes sur toutes les obligations legales et la mise en place du CSE. Un vrai partenaire, pas un prestataire.</p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">VD</div>
+            <div>
+              <div class="temoignage-name">Veronique Dumas</div>
+              <div class="temoignage-role">DRH, Groupe Chabert -- La Tour-du-Pin</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="temoignage-card reveal reveal-delay-2">
+          <div class="temoignage-quote-mark">"</div>
+          <p class="temoignage-text">Le coaching de Philippe a transforme notre comite de direction. Plus de cohesion, des reunions productives, et surtout une culture du feedback qu'on n'avait jamais reussi a installer.</p>
+          <div class="temoignage-author">
+            <div class="temoignage-avatar">ML</div>
+            <div>
+              <div class="temoignage-name">Marc Lefebvre</div>
+              <div class="temoignage-role">President, Lefebvre BTP -- Pont-de-Beauvoisin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEAD MAGNET ===== -->
+  <section class="lead-magnet" id="guide">
+    <div class="container">
+      <div class="lead-magnet-inner reveal">
+        <div class="lead-magnet-content">
+          <p class="section-label">Ressource gratuite</p>
+          <h2>Le guide RH du dirigeant de PME</h2>
+          <p>25 pages de conseils pratiques pour structurer votre politique RH, meme sans service dedie.</p>
+          <ul class="lead-magnet-list">
+            <li>Les obligations legales par seuil d'effectif</li>
+            <li>Modeles d'entretiens professionnels prets a l'emploi</li>
+            <li>Checklist conformite RH 2026</li>
+            <li>Guide des financements OPCO et PCRH</li>
+            <li>10 indicateurs RH essentiels a suivre</li>
+          </ul>
+        </div>
+        <div class="lead-magnet-form">
+          <h3>Recevez le guide gratuitement</h3>
+          <form onsubmit="event.preventDefault(); alert('Merci ! Consultez votre boite email dans quelques minutes.');">
+            <div class="form-group">
+              <label for="lead-prenom">Prenom</label>
+              <input type="text" id="lead-prenom" placeholder="Votre prenom" required>
+            </div>
+            <div class="form-group">
+              <label for="lead-email">Email professionnel</label>
+              <input type="email" id="lead-email" placeholder="nom@entreprise.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="lead-company">Entreprise</label>
+              <input type="text" id="lead-company" placeholder="Nom de votre entreprise">
+            </div>
+            <button type="submit" class="form-submit">Telecharger le guide</button>
+            <p class="form-note">Gratuit. Pas de spam. Desabonnement en un clic.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EQUIPE ===== -->
+  <section class="equipe" id="equipe">
+    <div class="container">
+      <div class="equipe-header">
+        <p class="section-label reveal">L'equipe</p>
+        <h2 class="section-heading reveal">Des praticiens, pas des theoriciens.</h2>
+        <p class="section-intro reveal" style="margin: 1rem auto 0; text-align:center;">Trois profils complementaires reunis par une conviction commune : la formation ne vaut que si elle transforme le quotidien.</p>
+      </div>
+
+      <div class="equipe-grid">
+        <div class="equipe-member reveal">
+          <div class="equipe-photo"><div class="equipe-photo-inner">CL</div></div>
+          <h3 class="equipe-name">Catherine Lenoir</h3>
+          <p class="equipe-role">Experte RH &amp; Formatrice</p>
+          <p class="equipe-bio">+20 ans en conseil RH aupres des PME. Specialiste du droit social, des entretiens professionnels et du dispositif PCRH. Certifiee CleA Management et AFEST.</p>
+        </div>
+
+        <div class="equipe-member reveal reveal-delay-1">
+          <div class="equipe-photo"><div class="equipe-photo-inner">PL</div></div>
+          <h3 class="equipe-name">Philippe Lenoir</h3>
+          <p class="equipe-role">Coach &amp; Formateur Management</p>
+          <p class="equipe-bio">Coach certifie, specialise dans l'accompagnement des managers et des comites de direction. Approche systemique et orientee solutions. Certifie ACTEE.</p>
+        </div>
+
+        <div class="equipe-member reveal reveal-delay-2">
+          <div class="equipe-photo"><div class="equipe-photo-inner">MC</div></div>
+          <h3 class="equipe-name">Maryline Chifflet-Saby</h3>
+          <p class="equipe-role">Responsable Administrative</p>
+          <p class="equipe-bio">Votre interlocutrice pour l'organisation des formations, le montage des dossiers OPCO et le suivi administratif. La rigueur au service de la simplicite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo">CARTESA</span>
+          <span class="nav-tagline">Competences, Entreprises &amp; Territoires</span>
+          <p>Cabinet de conseil et formation RH implante en Nord-Isere depuis plus de 20 ans. Nous accompagnons les PME et ETI dans leur developpement humain.</p>
+        </div>
+
+        <div>
+          <h4>Formations</h4>
+          <ul class="footer-links">
+            <li><a href="#">Management d'equipe</a></li>
+            <li><a href="#">Droit social &amp; RH</a></li>
+            <li><a href="#">Entretiens professionnels</a></li>
+            <li><a href="#">Recrutement</a></li>
+            <li><a href="#">RSE &amp; QVT</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Ressources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog RH</a></li>
+            <li><a href="#">Guide du dirigeant</a></li>
+            <li><a href="#">Financement OPCO</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 16 16"><path d="M2 4l6 5 6-5"/><rect x="1" y="3" width="14" height="10" rx="1"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 16 16"><path d="M8 1C5 1 3 4 3 7c0 4.5 5 8 5 8s5-3.5 5-8c0-3-2-6-5-6z"/><circle cx="8" cy="7" r="2"/></svg>
+            <span>36 Avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CARTESA -- Cabinet Conseil &amp; Formation RH. Tous droits reserves.</p>
+        <ul class="footer-legal">
+          <li><a href="#">Mentions legales</a></li>
+          <li><a href="#">Politique de confidentialite</a></li>
+          <li><a href="#">CGV</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Scroll reveal =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ===== Nav scroll effect =====
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+
+    // ===== Mobile nav toggle =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

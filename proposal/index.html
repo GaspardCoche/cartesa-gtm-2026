@@ -1,0 +1,3067 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARTESA -- Strategie Go-to-Market Organique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --deep: #0A4F5C;
+  --primary: #157A8C;
+  --accent: #C8973E;
+  --accent-light: #E8D5B0;
+  --dark: #1B2A33;
+  --warm-white: #FAF8F5;
+  --off-white: #F0EDE8;
+  --text: #2A3642;
+  --grey: #8B9199;
+  --teal-tint: #EDF5F7;
+}
+
+html { font-size: 11px; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body { background: white; }
+  .page { box-shadow: none !important; margin: 0 !important; }
+}
+
+/* ===== A4 PAGE ===== */
+.page {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto 20px auto;
+  position: relative;
+  overflow: hidden;
+  background: var(--warm-white);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  page-break-after: always;
+}
+
+/* ===== FOOTER ===== */
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18mm;
+  font-size: 0.72rem;
+  color: var(--grey);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-top: 0.5px solid #DDD;
+}
+
+.page-footer .footer-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-footer .footer-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+.section-number {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--deep);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--grey);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+p { font-size: 0.88rem; line-height: 1.6; }
+
+/* ===== UTILITIES ===== */
+.accent-bar {
+  width: 40px;
+  height: 2.5px;
+  background: var(--accent);
+  margin: 10px 0;
+}
+
+.pull-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--deep);
+  line-height: 1.45;
+  padding-left: 18px;
+  border-left: 2.5px solid var(--accent);
+  margin: 14px 0;
+  font-style: italic;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.tag--critique { background: #F3E0E0; color: #8B3A3A; }
+.tag--eleve { background: #FFF0D4; color: #7A5A1F; }
+.tag--moyen { background: #E0ECF0; color: #3A6B7A; }
+
+/* =========================================================
+   PAGE 1 -- COVER
+   ========================================================= */
+.cover {
+  background: var(--dark);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  position: relative;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: var(--deep);
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 80px;
+  right: 60px;
+  width: 180px;
+  height: 180px;
+  border: 1.5px solid rgba(200, 151, 62, 0.3);
+  border-radius: 50%;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  padding: 50mm 18mm 30mm 22mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cover-logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.cover-tagline {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.88rem;
+  color: var(--accent-light);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 45px;
+}
+
+.cover-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  color: #fff;
+  line-height: 1.15;
+  max-width: 380px;
+  margin-bottom: 16px;
+}
+
+.cover-subtitle {
+  font-size: 1.05rem;
+  color: var(--accent-light);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 350px;
+  margin-bottom: auto;
+}
+
+.cover-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cover-meta {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+}
+
+.cover-meta strong {
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+.cover-accent-line {
+  width: 50px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* geometric accent on cover */
+.cover-geo {
+  position: absolute;
+  z-index: 1;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  border: 1.5px solid rgba(200,151,62,0.25);
+}
+
+/* =========================================================
+   PAGE 2 -- TABLE DES MATIERES
+   ========================================================= */
+.toc {
+  padding: 28mm 22mm 18mm 22mm;
+}
+
+.toc-header {
+  margin-bottom: 30px;
+}
+
+.toc-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: var(--deep);
+}
+
+.toc-parts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+}
+
+.toc-part {
+  padding-top: 14px;
+  border-top: 1.5px solid var(--deep);
+}
+
+.toc-part-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.toc-part-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--deep);
+  margin-bottom: 14px;
+}
+
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 0.5px dotted #CCC;
+  font-size: 0.82rem;
+}
+
+.toc-item-num {
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 28px;
+}
+
+.toc-item-label {
+  flex: 1;
+  color: var(--text);
+}
+
+.toc-item-page {
+  font-weight: 500;
+  color: var(--grey);
+  min-width: 20px;
+  text-align: right;
+}
+
+/* =========================================================
+   PAGE 3 -- QUI VOUS ETES
+   ========================================================= */
+.p3-forces-strip {
+  background: var(--deep);
+  padding: 16px 22mm;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.p3-force-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #fff;
+  font-size: 0.78rem;
+}
+
+.p3-force-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.p3-force-label {
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.3;
+  max-width: 130px;
+}
+
+.p3-body {
+  padding: 18px 22mm 14mm 22mm;
+}
+
+.p3-header {
+  margin-bottom: 16px;
+}
+
+.p3-cols {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  margin-top: 14px;
+}
+
+.p3-col h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--deep);
+  margin-bottom: 10px;
+}
+
+.p3-col ul {
+  list-style: none;
+  font-size: 0.82rem;
+}
+
+.p3-col ul li {
+  padding: 4px 0;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.45;
+}
+
+.p3-col ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.p3-constat {
+  margin-top: 20px;
+  background: var(--off-white);
+  padding: 18px 20px;
+  position: relative;
+}
+
+.p3-constat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+
+.p3-constat h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.p3-constat p {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.p3-insight {
+  margin-top: 18px;
+  text-align: center;
+  padding: 14px 30px;
+}
+
+.p3-insight p {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--deep);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   PAGE 4 -- AUDIT
+   ========================================================= */
+.p4 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-size: 0.78rem;
+}
+
+.audit-table thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 8px 6px;
+  border-bottom: 1.5px solid var(--deep);
+}
+
+.audit-table tbody tr {
+  border-bottom: 0.5px solid #DDD;
+}
+
+.audit-table tbody tr:nth-child(even) {
+  background: rgba(237,245,247,0.4);
+}
+
+.audit-table td {
+  padding: 8px 6px;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.audit-table td:first-child {
+  font-weight: 600;
+  color: var(--deep);
+  width: 22%;
+}
+
+.audit-table td:nth-child(2) {
+  width: 55%;
+  color: var(--text);
+}
+
+.audit-table td:last-child {
+  width: 23%;
+  text-align: center;
+}
+
+/* =========================================================
+   PAGE 5 -- AVANT / APRES
+   ========================================================= */
+.p5 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.ba-section {
+  margin-bottom: 18px;
+}
+
+.ba-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 8px;
+}
+
+.ba-row {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.ba-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* Google search result mockup */
+.google-result {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: Arial, sans-serif;
+}
+
+.google-result .gr-url {
+  font-size: 0.72rem;
+  color: #202124;
+  margin-bottom: 2px;
+}
+
+.google-result .gr-url span {
+  color: #5F6368;
+  font-size: 0.68rem;
+}
+
+.google-result .gr-title {
+  font-size: 0.92rem;
+  color: #1A0DAB;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.google-result .gr-desc {
+  font-size: 0.75rem;
+  color: #4D5156;
+  line-height: 1.4;
+}
+
+.google-result .gr-stars {
+  color: #F4B400;
+  font-size: 0.78rem;
+  margin-top: 3px;
+}
+
+.google-result .gr-stars span {
+  color: #70757A;
+  font-size: 0.7rem;
+}
+
+.google-result.gr--before { opacity: 0.85; }
+
+.google-result.gr--after {
+  border-color: var(--primary);
+  box-shadow: 0 1px 6px rgba(21,122,140,0.12);
+}
+
+/* GBP mockup */
+.gbp-mock {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+}
+
+.gbp-mock .gbp-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #202124;
+  margin-bottom: 2px;
+}
+
+.gbp-mock .gbp-cat {
+  font-size: 0.72rem;
+  color: #70757A;
+}
+
+.gbp-mock .gbp-info {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: #3C4043;
+  line-height: 1.5;
+}
+
+.gbp-mock.gbp--before .gbp-info { color: #999; font-style: italic; }
+
+.gbp-mock.gbp--after {
+  border-color: var(--primary);
+}
+
+/* Blog mockup */
+.blog-mock {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.blog-mock .bm-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.blog-mock .bm-meta {
+  font-size: 0.68rem;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.blog-mock .bm-text {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.45;
+}
+
+.blog-mock.bm--before {
+  opacity: 0.75;
+}
+
+.blog-mock.bm--after {
+  border-color: var(--primary);
+  box-shadow: 0 1px 6px rgba(21,122,140,0.12);
+}
+
+/* =========================================================
+   PAGE 6 -- CONCURRENCE
+   ========================================================= */
+.p6 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-size: 0.78rem;
+}
+
+.comp-table thead th {
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 8px 8px;
+  border-bottom: 1.5px solid var(--deep);
+  text-align: left;
+}
+
+.comp-table thead th:nth-child(2),
+.comp-table thead th:nth-child(3) {
+  text-align: center;
+}
+
+.comp-table td {
+  padding: 8px 8px;
+  border-bottom: 0.5px solid #DDD;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.comp-table td:nth-child(2),
+.comp-table td:nth-child(3) {
+  text-align: center;
+}
+
+.comp-check { color: var(--primary); font-weight: 700; }
+.comp-cross { color: #C0392B; font-weight: 700; }
+
+.p6-advantages {
+  margin-top: 18px;
+  background: var(--teal-tint);
+  padding: 16px 18px;
+  border-radius: 4px;
+}
+
+.p6-advantages h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+
+.p6-advantages ul {
+  list-style: none;
+  font-size: 0.82rem;
+}
+
+.p6-advantages ul li {
+  padding: 3px 0 3px 14px;
+  position: relative;
+}
+
+.p6-advantages ul li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================================================
+   PAGE 7 -- CIBLES
+   ========================================================= */
+.p7 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.targets {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.target-card {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 16px;
+  background: #fff;
+  padding: 14px 16px;
+  border-radius: 3px;
+  border: 0.5px solid #DDD;
+  position: relative;
+}
+
+.target-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+}
+
+.target-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent-light);
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  opacity: 0.4;
+}
+
+.target-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+  margin-bottom: 4px;
+}
+
+.target-detail {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.target-kpi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.target-kpi-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--deep);
+  line-height: 1;
+}
+
+.target-kpi-label {
+  font-size: 0.65rem;
+  color: var(--grey);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.kpi-box {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--deep);
+  border-radius: 3px;
+}
+
+.kpi-box .kpi-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.kpi-box .kpi-desc {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   PAGE 8 -- STRATEGIE 3 PILIERS
+   ========================================================= */
+.p8 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.pillar-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.pillar {
+  padding: 16px;
+  background: #fff;
+  border: 0.5px solid #DDD;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.pillar:nth-child(1)::before { background: var(--deep); }
+.pillar:nth-child(2)::before { background: var(--primary); }
+.pillar:nth-child(3)::before { background: var(--accent); }
+
+.pillar-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem;
+  color: var(--off-white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pillar h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.pillar p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.journey-box {
+  margin-top: 20px;
+  background: var(--off-white);
+  padding: 18px 20px;
+  border-radius: 3px;
+}
+
+.journey-box h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+  margin-bottom: 10px;
+}
+
+.journey-box p {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.journey-steps {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: nowrap;
+}
+
+.journey-step {
+  flex: 1;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--deep);
+  padding: 6px 4px;
+  background: var(--teal-tint);
+  border-radius: 2px;
+  position: relative;
+}
+
+.journey-step + .journey-step::before {
+  content: '\2192';
+  position: absolute;
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   PAGES 9-10 -- PILIER 1 SITE WEB
+   ========================================================= */
+.p9, .p10 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.etape-block {
+  margin-bottom: 14px;
+}
+
+.etape-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.etape-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: var(--accent-light);
+  line-height: 1;
+}
+
+.etape-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+}
+
+.etape-list {
+  list-style: none;
+  font-size: 0.78rem;
+  margin-left: 30px;
+}
+
+.etape-list li {
+  padding: 2.5px 0;
+  position: relative;
+  padding-left: 12px;
+  line-height: 1.45;
+}
+
+.etape-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 1px;
+  background: var(--primary);
+}
+
+.funnel-visual {
+  margin-top: 14px;
+  background: var(--deep);
+  padding: 16px 20px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.funnel-visual h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.funnel-flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.funnel-step {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  color: rgba(255,255,255,0.9);
+}
+
+.funnel-arrow {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   PAGE 11 -- PILIER 2 LINKEDIN
+   ========================================================= */
+.p11 {
+  padding: 22mm 16mm 14mm 22mm;
+}
+
+.linkedin-strat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.linkedin-person {
+  padding: 12px 14px;
+  background: #fff;
+  border: 0.5px solid #DDD;
+  border-radius: 3px;
+}
+
+.linkedin-person h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.92rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.linkedin-person .lp-role {
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.linkedin-person ul {
+  list-style: none;
+  font-size: 0.75rem;
+}
+
+.linkedin-person ul li {
+  padding: 2px 0 2px 10px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.linkedin-person ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* LinkedIn post mockup */
+.li-post-mock {
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.li-post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.li-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.li-author-info .li-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #191919;
+}
+
+.li-author-info .li-title-info {
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.li-author-info .li-time {
+  font-size: 0.6rem;
+  color: #999;
+}
+
+.li-post-body {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #191919;
+  white-space: pre-line;
+  margin-bottom: 10px;
+}
+
+.li-post-body .li-hook {
+  font-weight: 700;
+}
+
+.li-engagement {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid #E8E8E8;
+  font-size: 0.68rem;
+  color: #666;
+}
+
+.li-engagement-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.li-rules {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--grey);
+}
+
+.li-rules ul {
+  list-style: none;
+}
+
+.li-rules ul li {
+  padding: 2px 0 2px 12px;
+  position: relative;
+}
+
+.li-rules ul li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.65rem;
+}
+
+/* =========================================================
+   PAGE 12 -- PILIER 3 RESEAU LOCAL
+   ========================================================= */
+.p12 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.event-card {
+  padding: 14px 16px;
+  border-radius: 3px;
+  background: #fff;
+  border: 0.5px solid #DDD;
+}
+
+.event-card h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.92rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.event-detail {
+  font-size: 0.75rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.event-detail strong {
+  color: var(--deep);
+}
+
+.matinale-themes {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--teal-tint);
+  border-radius: 3px;
+}
+
+.matinale-themes h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.92rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+
+.matinale-themes ol {
+  font-size: 0.78rem;
+  margin-left: 16px;
+  color: var(--text);
+}
+
+.matinale-themes ol li {
+  padding: 3px 0;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   PAGE 13 -- EXEMPLES CONTENUS
+   ========================================================= */
+.p13 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.content-col h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--accent-light);
+}
+
+.content-col h5 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.content-col ul {
+  list-style: none;
+  font-size: 0.78rem;
+}
+
+.content-col ul li {
+  padding: 3px 0 3px 12px;
+  position: relative;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.content-col ul li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  color: var(--grey);
+  font-size: 0.7rem;
+}
+
+/* =========================================================
+   PAGES 14-15 -- EBOOK, WEBINAIRES, NEWSLETTER
+   ========================================================= */
+.p14, .p15 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.ebook-preview {
+  background: var(--deep);
+  padding: 18px 20px;
+  border-radius: 3px;
+  margin-top: 14px;
+  color: #fff;
+}
+
+.ebook-preview h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.ebook-toc {
+  columns: 2;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.55;
+}
+
+.ebook-toc li {
+  padding: 2px 0;
+  break-inside: avoid;
+}
+
+.webinar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.webinar-card {
+  padding: 12px 14px;
+  border: 0.5px solid #DDD;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.webinar-card h5 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.88rem;
+  color: var(--deep);
+  margin-bottom: 4px;
+}
+
+.webinar-card p {
+  font-size: 0.72rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.newsletter-block {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--off-white);
+  border-radius: 3px;
+}
+
+.newsletter-block h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.95rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+
+.newsletter-block p, .newsletter-block ul {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.newsletter-block ul {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.newsletter-block ul li {
+  padding: 2px 0 2px 12px;
+  position: relative;
+}
+
+.newsletter-block ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* =========================================================
+   PAGE 16 -- CALENDRIER
+   ========================================================= */
+.p16 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.phase {
+  padding: 14px 14px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.phase:nth-child(1) { background: var(--teal-tint); }
+.phase:nth-child(1)::before { background: var(--deep); }
+.phase:nth-child(2) { background: #fff; border: 0.5px solid #DDD; }
+.phase:nth-child(2)::before { background: var(--primary); }
+.phase:nth-child(3) { background: var(--off-white); }
+.phase:nth-child(3)::before { background: var(--accent); }
+
+.phase h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.88rem;
+  color: var(--deep);
+  margin-bottom: 3px;
+}
+
+.phase .phase-period {
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.phase ul {
+  list-style: none;
+  font-size: 0.72rem;
+}
+
+.phase ul li {
+  padding: 2px 0 2px 10px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.phase ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.result-box {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--deep);
+  border-radius: 3px;
+}
+
+.result-box .rb-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.result-box .rb-label {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   PAGES 17-18 -- DEVIS
+   ========================================================= */
+.p17, .p18 {
+  padding: 22mm 18mm 14mm 22mm;
+}
+
+.devis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+.devis-table thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 6px 6px;
+  border-bottom: 1.5px solid var(--deep);
+}
+
+.devis-table thead th:nth-child(2),
+.devis-table thead th:nth-child(3) {
+  text-align: right;
+  width: 18%;
+}
+
+.devis-table td {
+  padding: 5px 6px;
+  border-bottom: 0.5px solid #E8E8E8;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.devis-table td:nth-child(2),
+.devis-table td:nth-child(3) {
+  text-align: right;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #AAA;
+}
+
+.price-new {
+  font-weight: 600;
+  color: var(--deep);
+}
+
+.devis-total {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-top: 10px;
+  padding: 10px 0;
+  border-top: 2px solid var(--deep);
+}
+
+.devis-total-item {
+  text-align: right;
+}
+
+.devis-total-label {
+  font-size: 0.7rem;
+  color: var(--grey);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.devis-total-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--deep);
+}
+
+.devis-total-val.crossed {
+  text-decoration: line-through;
+  color: #BBB;
+  font-size: 1.1rem;
+}
+
+.option-label {
+  display: inline-block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--deep);
+  margin-bottom: 4px;
+}
+
+.option-price-highlight {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin-top: 14px;
+}
+
+.comparison-table thead th {
+  padding: 8px 10px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  border-bottom: 1.5px solid var(--deep);
+  text-align: left;
+}
+
+.comparison-table thead th:nth-child(2),
+.comparison-table thead th:nth-child(3) {
+  text-align: center;
+}
+
+.comparison-table td {
+  padding: 6px 10px;
+  border-bottom: 0.5px solid #E8E8E8;
+}
+
+.comparison-table td:nth-child(2),
+.comparison-table td:nth-child(3) {
+  text-align: center;
+}
+
+.payment-terms {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--off-white);
+  border-radius: 3px;
+}
+
+.payment-terms h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.92rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.payment-terms p {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.site-demo-note {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--teal-tint);
+  border-radius: 3px;
+  border-left: 3px solid var(--primary);
+}
+
+.site-demo-note p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--deep);
+}
+
+/* =========================================================
+   PAGE 19 -- PROCHAINES ETAPES
+   ========================================================= */
+.p19 {
+  padding: 22mm 22mm 14mm 22mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.p19-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 20px;
+  flex: 0;
+}
+
+.p19-step {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.p19-step-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--accent-light);
+  text-align: center;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.p19-step-content h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--deep);
+  margin-bottom: 3px;
+}
+
+.p19-step-content p {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.p19-closing {
+  margin-top: auto;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.p19-closing .closing-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--deep);
+  font-style: italic;
+  line-height: 1.35;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.p19-closing .closing-accent {
+  width: 50px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 16px auto;
+}
+
+.p19-closing .closing-author {
+  font-size: 0.85rem;
+  color: var(--grey);
+  font-weight: 500;
+}
+
+.p19-closing .closing-date {
+  font-size: 0.75rem;
+  color: var(--grey);
+  margin-top: 3px;
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     PAGE 1 -- COVER
+     ========================================================= -->
+<div class="page cover">
+  <div class="cover-geo"></div>
+  <div class="cover-content">
+    <div>
+      <div class="cover-logo">Cartesa</div>
+      <div class="cover-tagline">Competences, Entreprises &amp; Territoires</div>
+      <div class="cover-accent-line"></div>
+      <h1 class="cover-title">Strategie Go-to-Market Organique</h1>
+      <p class="cover-subtitle">Vendre plus, mieux et plus facilement vos formations RH</p>
+    </div>
+    <div class="cover-bottom">
+      <p class="cover-meta">Proposition d'accompagnement <strong>|</strong> Avril 2026</p>
+      <p class="cover-meta">Document confidentiel</p>
+      <p class="cover-meta">Prepare par <strong>Gaspard Coche</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 2 -- TABLE DES MATIERES
+     ========================================================= -->
+<div class="page">
+  <div class="toc">
+    <div class="toc-header">
+      <span class="section-number">Sommaire</span>
+      <h2>Table des matieres</h2>
+      <div class="accent-bar"></div>
+    </div>
+
+    <div class="toc-parts">
+      <div class="toc-part">
+        <div class="toc-part-label">Partie I</div>
+        <div class="toc-part-title">Diagnostic</div>
+        <div class="toc-item"><span class="toc-item-num">01</span><span class="toc-item-label">Qui vous etes</span><span class="toc-item-page">3</span></div>
+        <div class="toc-item"><span class="toc-item-num">02</span><span class="toc-item-label">Audit presence en ligne</span><span class="toc-item-page">4</span></div>
+        <div class="toc-item"><span class="toc-item-num">02</span><span class="toc-item-label">Avant / Apres</span><span class="toc-item-page">5</span></div>
+        <div class="toc-item"><span class="toc-item-num">03</span><span class="toc-item-label">Analyse concurrentielle</span><span class="toc-item-page">6</span></div>
+        <div class="toc-item"><span class="toc-item-num">04</span><span class="toc-item-label">Cibles prioritaires</span><span class="toc-item-page">7</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-label">Partie II</div>
+        <div class="toc-part-title">Strategie</div>
+        <div class="toc-item"><span class="toc-item-num">05</span><span class="toc-item-label">La strategie 3 piliers</span><span class="toc-item-page">8</span></div>
+        <div class="toc-item"><span class="toc-item-num">06</span><span class="toc-item-label">Pilier 1 -- Site web &amp; SEO</span><span class="toc-item-page">9</span></div>
+        <div class="toc-item"><span class="toc-item-num">07</span><span class="toc-item-label">Pilier 2 -- LinkedIn</span><span class="toc-item-page">11</span></div>
+        <div class="toc-item"><span class="toc-item-num">08</span><span class="toc-item-label">Pilier 3 -- Reseau local</span><span class="toc-item-page">12</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-label">Partie III</div>
+        <div class="toc-part-title">Plan d'action</div>
+        <div class="toc-item"><span class="toc-item-num">09</span><span class="toc-item-label">Exemples de contenus</span><span class="toc-item-page">13</span></div>
+        <div class="toc-item"><span class="toc-item-num">10</span><span class="toc-item-label">E-book, webinaires, newsletter</span><span class="toc-item-page">14</span></div>
+        <div class="toc-item"><span class="toc-item-num">11</span><span class="toc-item-label">Calendrier &amp; resultats attendus</span><span class="toc-item-page">16</span></div>
+      </div>
+
+      <div class="toc-part">
+        <div class="toc-part-label">Partie IV</div>
+        <div class="toc-part-title">Proposition</div>
+        <div class="toc-item"><span class="toc-item-num">12</span><span class="toc-item-label">Devis detaille</span><span class="toc-item-page">17</span></div>
+        <div class="toc-item"><span class="toc-item-num">13</span><span class="toc-item-label">Prochaines etapes</span><span class="toc-item-page">19</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>2</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 3 -- SECTION 01 QUI VOUS ETES
+     ========================================================= -->
+<div class="page">
+  <div class="p3-forces-strip">
+    <div class="p3-force-item">
+      <span class="p3-force-num">20+</span>
+      <span class="p3-force-label">annees d'expertise formation RH</span>
+    </div>
+    <div class="p3-force-item">
+      <span class="p3-force-num">4</span>
+      <span class="p3-force-label">certifications (Qualiopi, CleA, AFEST, ACTEE)</span>
+    </div>
+    <div class="p3-force-item">
+      <span class="p3-force-num">6</span>
+      <span class="p3-force-label">OPCO partenaires</span>
+    </div>
+    <div class="p3-force-item">
+      <span class="p3-force-num">7</span>
+      <span class="p3-force-label">formations 2026 en 6 villes AURA</span>
+    </div>
+  </div>
+
+  <div class="p3-body">
+    <div class="p3-header">
+      <span class="section-number">Section 01</span>
+      <h2 class="section-title">Qui vous etes</h2>
+      <div class="accent-bar"></div>
+    </div>
+
+    <div class="p3-cols">
+      <div class="p3-col">
+        <h4>Vos forces</h4>
+        <ul>
+          <li>Plus de 20 ans d'expertise terrain en formation RH, avec une connaissance fine des obligations legales des employeurs</li>
+          <li>Quadruple certification : Qualiopi, CleA, AFEST et ACTEE -- un gage de serieux rare sur le marche</li>
+          <li>Six OPCO partenaires, dont OPCO2i et AKTO, assurant le financement des formations pour vos clients</li>
+          <li>Sept formations programmees en 2026 dans six villes de la region Auvergne-Rhone-Alpes</li>
+          <li>Co-traitance avec Solaris a Valence, elargissant votre couverture geographique</li>
+          <li>Une equipe complementaire de 3 personnes : Catherine (expertise RH), Philippe (coaching dirigeants), Maryline (gestion administrative)</li>
+        </ul>
+      </div>
+      <div class="p3-col">
+        <h4>Le constat</h4>
+        <ul>
+          <li>Le business repose quasi exclusivement sur la prescription OPCO et le bouche-a-oreille</li>
+          <li>Le site web ne genere aucun prospect entrant : zero formulaire rempli, zero appel via Google</li>
+          <li>LinkedIn est quasi inactif : environ un post par mois, sans strategie editoriale</li>
+          <li>Aucun CRM en place : pas de suivi structure des prospects et clients</li>
+          <li>Aucun contenu telechargeable (guide, checklist) pour capter des contacts</li>
+          <li>Les formations sont excellentes, mais totalement invisibles en ligne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p3-insight">
+      <div class="accent-bar" style="margin: 0 auto 10px auto;"></div>
+      <p>Vos formations sont excellentes. Le probleme n'est pas votre offre, c'est sa visibilite.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>3</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 4 -- SECTION 02 AUDIT
+     ========================================================= -->
+<div class="page">
+  <div class="p4">
+    <span class="section-number">Section 02</span>
+    <h2 class="section-title">Audit de votre presence en ligne</h2>
+    <p class="section-subtitle">Ce que Google et vos prospects voient aujourd'hui</p>
+    <div class="accent-bar"></div>
+
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Constat &amp; explication</th>
+          <th>Priorite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Meta descriptions</td>
+          <td>Aucune meta description redigee sur le site. Concretement, quand quelqu'un vous cherche sur Google, c'est Google qui choisit un bout de texte au hasard pour decrire votre page. Le resultat est souvent incomprehensible ou peu engageant.</td>
+          <td><span class="tag tag--critique">Critique</span></td>
+        </tr>
+        <tr>
+          <td>Blog</td>
+          <td>Six faux articles WordPress datant de 2016 sont encore en ligne ("Hello World", "Exemple d'article"...). Ils sont indexes par Google, ce qui donne une image d'abandon et nuit a votre credibilite professionnelle.</td>
+          <td><span class="tag tag--critique">Critique</span></td>
+        </tr>
+        <tr>
+          <td>Ressourcerie</td>
+          <td>La page "Ressourcerie" existe dans le menu, mais elle est completement vide. Un visiteur qui clique dessus trouve une page blanche, ce qui cree de la deception et du doute.</td>
+          <td><span class="tag tag--eleve">Eleve</span></td>
+        </tr>
+        <tr>
+          <td>Formation N106</td>
+          <td>Cette page de formation a une balise technique "noindex" activee par erreur. En termes simples : vous avez dit a Google de ne pas montrer cette page. Elle est donc completement invisible dans les resultats de recherche.</td>
+          <td><span class="tag tag--critique">Critique</span></td>
+        </tr>
+        <tr>
+          <td>Schema markup</td>
+          <td>Aucune donnee structuree de type "Course" n'est presente. C'est un code invisible qui dit a Google "ceci est une formation". Sans lui, vos formations n'apparaissent pas dans les resultats enrichis (avec prix, dates, avis).</td>
+          <td><span class="tag tag--eleve">Eleve</span></td>
+        </tr>
+        <tr>
+          <td>Google Business</td>
+          <td>Votre fiche Google Business Profile est soit inexistante, soit non optimisee. C'est pourtant la premiere chose que voit quelqu'un qui cherche "formation RH" + votre ville sur Google.</td>
+          <td><span class="tag tag--eleve">Eleve</span></td>
+        </tr>
+        <tr>
+          <td>LinkedIn</td>
+          <td>Environ un post par mois, sans regularity ni strategie. Pas de personal branding pour Catherine ou Philippe. Or, en B2B, les decideurs RH sont sur LinkedIn et consultent les profils avant de contacter un prestataire.</td>
+          <td><span class="tag tag--moyen">Moyen</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>4</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 5 -- SECTION 02 (suite) AVANT / APRES
+     ========================================================= -->
+<div class="page">
+  <div class="p5">
+    <span class="section-number">Section 02 (suite)</span>
+    <h2 class="section-title">Avant / Apres</h2>
+    <p class="section-subtitle">Ce que vos prospects verront une fois les corrections appliquees</p>
+    <div class="accent-bar"></div>
+
+    <!-- Google search result -->
+    <div class="ba-section">
+      <div class="ba-label">1. Resultat Google</div>
+      <div class="ba-row">
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Avant</div>
+          <div class="google-result gr--before">
+            <div class="gr-url">cartesa.fr <span>&#8250; formations</span></div>
+            <div class="gr-title">Formations - Cartesa</div>
+            <div class="gr-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</div>
+          </div>
+        </div>
+        <div class="ba-arrow">&rarr;</div>
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Apres</div>
+          <div class="google-result gr--after">
+            <div class="gr-url">cartesa.fr <span>&#8250; formations &#8250; gestion-rh-pme</span></div>
+            <div class="gr-title">Formation Gestion RH pour PME | Financement OPCO | CARTESA</div>
+            <div class="gr-desc">Formation certifiante Qualiopi pour dirigeants de PME. Maitrisez vos obligations RH a 11, 20 et 50 salaries. 7 sessions en region AURA. Financement 100% OPCO possible.</div>
+            <div class="gr-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.8 (23 avis) | Formation | 2 jours | Certifiante</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Business -->
+    <div class="ba-section">
+      <div class="ba-label">2. Fiche Google Business</div>
+      <div class="ba-row">
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Avant</div>
+          <div class="gbp-mock gbp--before">
+            <div class="gbp-name">Cartesa</div>
+            <div class="gbp-cat">Centre de formation</div>
+            <div class="gbp-info"><em>Aucune photo, aucun avis, horaires non renseignes, description vide.</em></div>
+          </div>
+        </div>
+        <div class="ba-arrow">&rarr;</div>
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Apres</div>
+          <div class="gbp-mock gbp--after">
+            <div class="gbp-name">CARTESA -- Formation RH &amp; Accompagnement PCRH</div>
+            <div class="gbp-cat">Organisme de formation certifie Qualiopi</div>
+            <div class="gbp-info">
+              &#9733;&#9733;&#9733;&#9733;&#9733; 4.8 (23 avis)<br>
+              Bourgoin-Jallieu, Isere<br>
+              Lun-Ven 9h-18h | 04 XX XX XX XX<br>
+              "Expert en formation RH pour PME et institutions. Certifie Qualiopi, CleA, AFEST."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog -->
+    <div class="ba-section">
+      <div class="ba-label">3. Article de blog</div>
+      <div class="ba-row">
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Avant</div>
+          <div class="blog-mock bm--before">
+            <div class="bm-title">Hello World!</div>
+            <div class="bm-meta">Publie le 15 mars 2016 par admin</div>
+            <div class="bm-text">Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</div>
+          </div>
+        </div>
+        <div class="ba-arrow">&rarr;</div>
+        <div>
+          <div style="font-size:0.65rem;color:var(--grey);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Apres</div>
+          <div class="blog-mock bm--after">
+            <div class="bm-title">Obligations RH a 11, 20 et 50 salaries : le guide complet 2026</div>
+            <div class="bm-meta">Par Catherine Cartesa | 12 avril 2026 | Temps de lecture : 8 min</div>
+            <div class="bm-text">Votre entreprise franchit un seuil d'effectif ? CSE, reglement interieur, accord de participation... Decouvrez toutes vos nouvelles obligations et comment vous y preparer sereinement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>5</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 6 -- SECTION 03 CONCURRENCE
+     ========================================================= -->
+<div class="page">
+  <div class="p6">
+    <span class="section-number">Section 03</span>
+    <h2 class="section-title">Analyse concurrentielle</h2>
+    <p class="section-subtitle">Ce que font vos concurrents que vous ne faites pas encore</p>
+    <div class="accent-bar"></div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Levier</th>
+          <th>Concurrents</th>
+          <th>Cartesa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Blog actif</strong><br><span style="font-size:0.7rem;color:var(--grey);">Articles de fond, guides pratiques</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">2-4 articles/mois</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">Aucun article reel</span></td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn regulier</strong><br><span style="font-size:0.7rem;color:var(--grey);">Posts, carrousels, temoignages</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">2-3x par semaine</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">~1 post/mois</span></td>
+        </tr>
+        <tr>
+          <td><strong>Lead magnets</strong><br><span style="font-size:0.7rem;color:var(--grey);">Guides, checklists telechargeables</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">Guides gratuits en echange d'email</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">Rien de telechargeable</span></td>
+        </tr>
+        <tr>
+          <td><strong>Newsletter</strong><br><span style="font-size:0.7rem;color:var(--grey);">Envoi mensuel, actualites RH</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">Newsletter mensuelle</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">Aucune newsletter</span></td>
+        </tr>
+        <tr>
+          <td><strong>Temoignages clients</strong><br><span style="font-size:0.7rem;color:var(--grey);">Avis, cas clients, videos</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">Mis en avant sur le site</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">Non exploites</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pages financement OPCO</strong><br><span style="font-size:0.7rem;color:var(--grey);">Explication des dispositifs</span></td>
+          <td><span class="comp-check">&#10003;</span><br><span style="font-size:0.68rem;color:var(--grey);">Pages dediees par OPCO</span></td>
+          <td><span class="comp-cross">&#10007;</span><br><span style="font-size:0.68rem;color:var(--grey);">Pas de page dediee</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="p6-advantages">
+      <h4>Vos avantages concurrentiels a exploiter</h4>
+      <ul>
+        <li><strong>Expertise AFEST de niche</strong> -- tres peu de concurrents maitrisent l'Action de Formation en Situation de Travail</li>
+        <li><strong>Reseau OGEC</strong> -- un acces privilegie a un marche captif de 2 400 etablissements catholiques</li>
+        <li><strong>Proximite geographique</strong> -- ancrage Nord-Isere fort, relations directes avec les decideurs locaux</li>
+        <li><strong>Quadruple certification</strong> -- une credibilite immediate face a des concurrents souvent mono-certifies</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>6</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 7 -- SECTION 04 CIBLES
+     ========================================================= -->
+<div class="page">
+  <div class="p7">
+    <span class="section-number">Section 04</span>
+    <h2 class="section-title">Cibles prioritaires</h2>
+    <p class="section-subtitle">Trois segments a fort potentiel, choisis pour leur accessibilite et leur valeur</p>
+    <div class="accent-bar"></div>
+
+    <div class="targets">
+      <div class="target-card">
+        <div>
+          <div class="target-name">1. Institutions catholiques (OGEC)</div>
+          <div class="target-detail">
+            <strong>Conventions collectives :</strong> IDCC 2691 &amp; 3218<br>
+            <strong>Financement :</strong> OPCO AKTO -- prise en charge quasi integrale via le plan de developpement des competences<br>
+            <strong>Point d'entree :</strong> Directions diocesaines, qui prescrivent aux etablissements de leur reseau<br>
+            <strong>Arguments :</strong> Formations specifiques aux obligations OGEC (CSE, entretiens professionnels, GEPP). Catherine connait deja ce reseau.
+          </div>
+        </div>
+        <div class="target-kpi">
+          <div class="target-kpi-num">~2 400</div>
+          <div class="target-kpi-label">OGEC en France</div>
+        </div>
+      </div>
+
+      <div class="target-card">
+        <div>
+          <div class="target-name">2. PME industrielles Nord-Isere</div>
+          <div class="target-detail">
+            <strong>Financement :</strong> OPCO2i -- Cartesa y est deja referencee<br>
+            <strong>Point d'entree :</strong> CCI Nord-Isere, clubs de dirigeants, matinales RH<br>
+            <strong>Arguments :</strong> Obligations RH aux seuils de 11/20/50 salaries, mise en conformite, PCRH. PME souvent sans RRH interne.
+          </div>
+        </div>
+        <div class="target-kpi">
+          <div class="target-kpi-num">~1 800</div>
+          <div class="target-kpi-label">PME industrielles<br>Nord-Isere</div>
+        </div>
+      </div>
+
+      <div class="target-card">
+        <div>
+          <div class="target-name">3. TPE-PME 10-50 salaries</div>
+          <div class="target-detail">
+            <strong>Financement :</strong> Multi-OPCO selon branche (OPCO EP, Constructys, Uniformation...)<br>
+            <strong>Point d'entree :</strong> Contenu SEO cible ("obligations RH 11 salaries"), lead magnets, newsletter<br>
+            <strong>Arguments :</strong> Passage de seuil, pas de service RH interne, besoin de structuration. PCRH finance a 100%.
+          </div>
+        </div>
+        <div class="target-kpi">
+          <div class="target-kpi-num">~12 000</div>
+          <div class="target-kpi-label">TPE-PME<br>Isere + Drome</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-box">
+        <div class="kpi-val">~2 400</div>
+        <div class="kpi-desc">OGEC France</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-val">~1 800</div>
+        <div class="kpi-desc">PME indus. Nord-Isere</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-val">~12 000</div>
+        <div class="kpi-desc">TPE-PME Isere+Drome</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-val">15 000 &euro;</div>
+        <div class="kpi-desc">Valeur moyenne client PCRH</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>7</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 8 -- SECTION 05 STRATEGIE 3 PILIERS
+     ========================================================= -->
+<div class="page">
+  <div class="p8">
+    <span class="section-number">Section 05</span>
+    <h2 class="section-title">La strategie en 3 piliers</h2>
+    <p class="section-subtitle">Un systeme organique qui genere des prospects sans publicite payante</p>
+    <div class="accent-bar"></div>
+
+    <div class="pillar-row">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h4>Site web &amp; SEO</h4>
+        <p>Votre meilleur commercial, disponible 24h/24. Un site optimise qui attire les decideurs RH via Google, les convainc avec du contenu expert, et capte leurs coordonnees grace a des ressources telechargeables.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h4>LinkedIn</h4>
+        <p>Votre vitrine quotidienne aupres des decideurs. Catherine et Philippe publient regulierement pour asseoir leur expertise, creer de la confiance et generer des conversations avec des prospects qualifies.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h4>Reseau local &amp; evenements</h4>
+        <p>Votre ancrage territorial. Matinales RH, sessions decouverte, partenariats CCI : des formats physiques qui creent la relation humaine et convertissent les contacts digitaux en clients reels.</p>
+      </div>
+    </div>
+
+    <div class="journey-box">
+      <h4>Le parcours d'un prospect type</h4>
+      <p>Sophie, DRH d'une PME de 45 salaries en Nord-Isere, cherche "obligations RH passage 50 salaries" sur Google. Elle tombe sur votre article de blog, le trouve pertinent. Elle telecharge votre checklist d'auto-diagnostic RH en laissant son email. Deux semaines plus tard, elle recoit votre newsletter avec l'invitation a une matinale RH. Elle y assiste, rencontre Catherine, echange avec d'autres dirigeants. Le lendemain, elle appelle pour lancer un PCRH. Valeur du contrat : 15 000 euros.</p>
+
+      <div class="journey-steps">
+        <div class="journey-step">Google</div>
+        <div class="journey-step">Article blog</div>
+        <div class="journey-step">Lead magnet</div>
+        <div class="journey-step">Email capture</div>
+        <div class="journey-step">Newsletter</div>
+        <div class="journey-step">Matinale</div>
+        <div class="journey-step">Vente</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>8</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 9 -- SECTION 06 PILIER 1 SITE WEB (1/2)
+     ========================================================= -->
+<div class="page">
+  <div class="p9">
+    <span class="section-number">Section 06</span>
+    <h2 class="section-title">Pilier 1 -- Site web &amp; SEO</h2>
+    <p class="section-subtitle">Transformer votre site en machine a generer des prospects</p>
+    <div class="accent-bar"></div>
+
+    <div class="etape-block">
+      <div class="etape-header">
+        <span class="etape-num">01</span>
+        <span class="etape-name">Corrections techniques urgentes</span>
+      </div>
+      <ul class="etape-list">
+        <li>Supprimer les 6 faux articles WordPress (Hello World, etc.) -- ils nuisent a votre image</li>
+        <li>Rediger des meta descriptions pour chaque page (titre + description que Google affiche)</li>
+        <li>Retirer la balise "noindex" de la formation N106 pour qu'elle reapparaisse sur Google</li>
+        <li>Ajouter le balisage Schema.org "Course" sur chaque page formation (permet les resultats enrichis)</li>
+        <li>Creer et optimiser votre fiche Google Business Profile avec photos, horaires, description et categories</li>
+      </ul>
+    </div>
+
+    <div class="etape-block">
+      <div class="etape-header">
+        <span class="etape-num">02</span>
+        <span class="etape-name">Pages de conversion</span>
+      </div>
+      <ul class="etape-list">
+        <li><strong>Page PCRH</strong> -- "Prestation de Conseil en Ressources Humaines : qu'est-ce que c'est, qui y a droit, comment en beneficier" avec formulaire de contact</li>
+        <li><strong>Page Financement</strong> -- "Comment financer votre formation a 100% avec votre OPCO" avec tableau par OPCO</li>
+        <li><strong>Page Temoignages</strong> -- Avis structures de clients avec nom, poste, entreprise et resultat obtenu</li>
+        <li><strong>Pages formations optimisees</strong> -- Chaque formation avec objectifs, programme, pre-requis, financement, prochaines dates, bouton d'inscription</li>
+      </ul>
+    </div>
+
+    <div class="etape-block">
+      <div class="etape-header">
+        <span class="etape-num">03</span>
+        <span class="etape-name">Blog -- 2 articles par mois</span>
+      </div>
+      <ul class="etape-list">
+        <li>"Obligations RH a 11, 20 et 50 salaries : le guide complet 2026"</li>
+        <li>"PCRH : comment obtenir un accompagnement RH gratuit pour votre PME"</li>
+        <li>"Entretiens professionnels : les 5 erreurs qui coutent cher"</li>
+        <li>"AFEST : former vos salaries en situation de travail, mode d'emploi"</li>
+        <li>"CSE : les 7 points que tout dirigeant de PME doit connaitre"</li>
+        <li>"Formation CleA : valoriser les competences de vos equipes sans diplome"</li>
+      </ul>
+    </div>
+
+    <div class="etape-block">
+      <div class="etape-header">
+        <span class="etape-num">04</span>
+        <span class="etape-name">Lead magnets (ressources telechargeables)</span>
+      </div>
+      <ul class="etape-list">
+        <li><strong>Checklist auto-diagnostic RH</strong> -- "20 points a verifier dans votre entreprise" (echange contre email)</li>
+        <li><strong>Guide financement formation</strong> -- "Comment faire financer vos formations a 100% par votre OPCO"</li>
+        <li><strong>Template entretien professionnel</strong> -- Trame prete a l'emploi avec guide d'utilisation</li>
+        <li><strong>Infographie obligations legales</strong> -- Resume visuel des seuils et obligations par taille d'entreprise</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>9</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 10 -- SECTION 06 PILIER 1 SITE WEB (2/2) - FUNNEL
+     ========================================================= -->
+<div class="page">
+  <div class="p10">
+    <span class="section-number">Section 06 (suite)</span>
+    <h2 class="section-title">Le tunnel de conversion</h2>
+    <p class="section-subtitle">Comment chaque element s'imbrique pour transformer un visiteur en client</p>
+    <div class="accent-bar"></div>
+
+    <div class="funnel-visual">
+      <h4>Le parcours complet : de Google a la vente</h4>
+      <div class="funnel-flow">
+        <div class="funnel-step">Recherche Google<br><span style="font-size:0.62rem;opacity:0.7;">"obligations RH 50 salaries"</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step">Article de blog<br><span style="font-size:0.62rem;opacity:0.7;">Contenu expert, credibilite</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step">Lead magnet<br><span style="font-size:0.62rem;opacity:0.7;">Checklist en echange d'email</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step">Email capture<br><span style="font-size:0.62rem;opacity:0.7;">Contact dans Brevo</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step">Newsletter<br><span style="font-size:0.62rem;opacity:0.7;">Nurturing mensuel</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step">Matinale RH<br><span style="font-size:0.62rem;opacity:0.7;">Rencontre physique</span></div>
+        <div class="funnel-arrow">&rarr;</div>
+        <div class="funnel-step" style="background:rgba(200,151,62,0.2);"><strong>Vente</strong><br><span style="font-size:0.62rem;opacity:0.7;">~15 000 EUR</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--deep);margin-bottom:12px;">Pourquoi ce systeme fonctionne</h3>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <p style="font-size:0.82rem;line-height:1.6;margin-bottom:10px;"><strong style="color:var(--deep);">Il travaille meme quand vous dormez.</strong> Un article de blog bien optimise continue d'attirer des visiteurs pendant des annees. Contrairement a la prescription OPCO qui depend d'un tiers, votre site vous appartient.</p>
+          <p style="font-size:0.82rem;line-height:1.6;margin-bottom:10px;"><strong style="color:var(--deep);">Il filtre les prospects pour vous.</strong> Quelqu'un qui telecharge votre checklist RH et s'inscrit a votre newsletter a un vrai besoin. Quand il vous contacte, la vente est deja a moitie faite.</p>
+        </div>
+        <div>
+          <p style="font-size:0.82rem;line-height:1.6;margin-bottom:10px;"><strong style="color:var(--deep);">Il construit votre autorite.</strong> Chaque article, chaque post LinkedIn, chaque matinale renforce votre positionnement d'expert. Au bout de 6 mois, vous etes LA reference RH locale.</p>
+          <p style="font-size:0.82rem;line-height:1.6;margin-bottom:10px;"><strong style="color:var(--deep);">Il se rentabilise rapidement.</strong> Un seul client PCRH (15 000 EUR) couvre l'integralite de l'investissement dans cette strategie. Tout le reste est du benefice net.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote" style="margin-top:16px;">
+      Un site qui ne genere aucun prospect, c'est un commercial paye a plein temps qui ne decroche jamais le telephone.
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>10</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 11 -- SECTION 07 PILIER 2 LINKEDIN
+     ========================================================= -->
+<div class="page">
+  <div class="p11">
+    <span class="section-number">Section 07</span>
+    <h2 class="section-title">Pilier 2 -- LinkedIn</h2>
+    <p class="section-subtitle">Transformer Catherine et Philippe en voix de reference sur LinkedIn</p>
+    <div class="accent-bar"></div>
+
+    <div class="linkedin-strat">
+      <div class="linkedin-person">
+        <div class="lp-role">Experte RH pragmatique</div>
+        <h4>Catherine</h4>
+        <ul>
+          <li><strong>Mardi :</strong> Actualite RH (nouvelle loi, decret, jurisprudence)</li>
+          <li><strong>Jeudi :</strong> Conseil pratique (erreur courante, astuce terrain)</li>
+          <li><strong>1x/mois :</strong> Carrousel pedagogique (guide visuel en 8-10 slides)</li>
+        </ul>
+      </div>
+      <div class="linkedin-person">
+        <div class="lp-role">Coach dirigeants PME</div>
+        <h4>Philippe</h4>
+        <ul>
+          <li><strong>Mardi :</strong> Retour terrain (anecdote anonymisee d'accompagnement)</li>
+          <li><strong>Jeudi :</strong> Point de vue (reflexion sur le management, le leadership)</li>
+          <li><strong>1x/mois :</strong> Temoignage anonymise (transformation d'un client)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LinkedIn post mockup -->
+    <div style="margin-top:12px;font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey);">Exemple de post -- Catherine</div>
+    <div class="li-post-mock">
+      <div class="li-post-header">
+        <div class="li-avatar">CC</div>
+        <div class="li-author-info">
+          <div class="li-name">Catherine Cartesa</div>
+          <div class="li-title-info">Formatrice RH | Dirigeante CARTESA | Qualiopi, AFEST, CleA</div>
+          <div class="li-time">Mardi a 8h32 -- 1 247 abonnes</div>
+        </div>
+      </div>
+      <div class="li-post-body"><span class="li-hook">3 erreurs que je vois dans 80% des entretiens annuels.</span>
+
+(Et la 3e peut vous couter une condamnation aux prud'hommes.)
+
+Apres 20 ans a accompagner des PME sur leurs pratiques RH, je peux vous dire que l'entretien annuel est LE sujet ou les dirigeants se plantent le plus.
+
+Erreur n&deg;1 : Confondre entretien annuel et entretien professionnel.
+Ce n'est pas la meme chose. L'un est facultatif, l'autre est une obligation legale tous les 2 ans. Melanger les deux, c'est risquer un redressement.
+
+Erreur n&deg;2 : Ne pas garder de trace ecrite.
+"On en a parle informellement." Cette phrase, je l'entends chaque semaine. Sauf qu'en cas de litige, sans document signe, c'est comme si l'entretien n'avait jamais eu lieu.
+
+Erreur n&deg;3 : Oublier le plan de developpement des competences.
+L'entretien professionnel doit aboutir a des actions concretes. Sans formation prevue, vous etes en non-conformite. Et l'amende peut aller jusqu'a 3 000 EUR par salarie.
+
+Vous n'etes pas sur de vos pratiques ?
+Telechargez notre checklist gratuite : 20 points a verifier dans votre gestion RH (lien en commentaire)
+
+--
+
+#RH #PME #EntretienProfessionnel #DroitDuTravail #Formation</div>
+      <div class="li-engagement">
+        <div class="li-engagement-stats">
+          <span>&#128077; 47</span>
+          <span>12 commentaires</span>
+          <span>8 partages</span>
+        </div>
+        <span>2 340 impressions</span>
+      </div>
+    </div>
+
+    <div class="li-rules">
+      <ul>
+        <li>Premiere ligne = accroche forte (stop scroll)</li>
+        <li>Terminer par une question ou un appel a l'action</li>
+        <li>Ne jamais mettre de lien dans le corps du post (en commentaire)</li>
+        <li>Publier entre 8h et 9h le matin</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>11</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 12 -- SECTION 08 PILIER 3 RESEAU LOCAL
+     ========================================================= -->
+<div class="page">
+  <div class="p12">
+    <span class="section-number">Section 08</span>
+    <h2 class="section-title">Pilier 3 -- Reseau local &amp; evenements</h2>
+    <p class="section-subtitle">Creer la relation humaine qui transforme un contact en client</p>
+    <div class="accent-bar"></div>
+
+    <div class="event-grid">
+      <div class="event-card">
+        <h4>Matinales RH</h4>
+        <div class="event-detail">
+          <strong>Frequence :</strong> Trimestrielle (4 par an)<br>
+          <strong>Format :</strong> 10-15 participants<br>
+          <strong>Duree :</strong> 1h30<br>
+          <span style="margin-top:4px;display:block;">30 min contenu expert + 30 min echange entre pairs + 30 min networking petit-dejeuner</span>
+          <br><strong>Lieu :</strong> Salle CCI Nord-Isere ou espace de coworking local<br>
+          <strong>Objectif :</strong> Positionner Cartesa comme l'organisateur de reference des evenements RH en Nord-Isere. Chaque matinale genere 2-3 rdv qualifies.
+        </div>
+      </div>
+      <div class="event-card">
+        <h4>Sessions decouverte co-developpement</h4>
+        <div class="event-detail">
+          <strong>Frequence :</strong> Trimestrielle (4 par an)<br>
+          <strong>Format :</strong> 6-8 participants, gratuit<br>
+          <strong>Duree :</strong> 2h<br>
+          <span style="margin-top:4px;display:block;">Un participant presente une problematique RH reelle, le groupe co-construit des solutions avec l'animation experte de Philippe.</span>
+          <br><strong>Objectif :</strong> Faire vivre la methode de coaching. Les participants deviennent naturellement clients du programme complet.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-grid" style="margin-top:14px;">
+      <div class="event-card">
+        <h4>Partenariats institutionnels</h4>
+        <div class="event-detail">
+          <strong>CCI Nord-Isere :</strong> Co-organisation de matinales, reference dans leur annuaire prestataires<br>
+          <strong>Directions diocesaines :</strong> Prescription directe aupres des OGEC du reseau<br>
+          <strong>Clubs de dirigeants :</strong> Interventions ponctuelles en tant qu'expert RH invite (CPME, CJD, etc.)
+        </div>
+      </div>
+      <div class="event-card" style="background:var(--teal-tint);">
+        <h4>Synergie digital / physique</h4>
+        <div class="event-detail">
+          Chaque matinale genere du contenu digital : article de blog recapitulatif, post LinkedIn avec photos, temoignage participant. Chaque post LinkedIn fait connaitre la prochaine matinale. Le site capte les inscriptions. Le tout forme une boucle vertueuse.
+        </div>
+      </div>
+    </div>
+
+    <div class="matinale-themes">
+      <h4>Themes proposes pour les 4 premieres matinales</h4>
+      <ol>
+        <li><strong>T3 2026 :</strong> "Obligations RH aux seuils de 11, 20 et 50 salaries -- ce que vous devez savoir"</li>
+        <li><strong>T4 2026 :</strong> "Entretiens professionnels : transformer une obligation legale en outil de management"</li>
+        <li><strong>T1 2027 :</strong> "AFEST : former vos collaborateurs en situation de travail, retour d'experience"</li>
+        <li><strong>T2 2027 :</strong> "PCRH : l'accompagnement RH gratuit pour les PME, temoignages de beneficiaires"</li>
+      </ol>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>12</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 13 -- SECTION 09 EXEMPLES CONTENUS
+     ========================================================= -->
+<div class="page">
+  <div class="p13">
+    <span class="section-number">Section 09</span>
+    <h2 class="section-title">Exemples de contenus</h2>
+    <p class="section-subtitle">Des idees concretes, pretes a etre produites</p>
+    <div class="accent-bar"></div>
+
+    <div class="content-grid">
+      <div class="content-col">
+        <h4>Articles de blog</h4>
+
+        <h5>Evergreen (valeur durable)</h5>
+        <ul>
+          <li>Obligations RH a 11, 20 et 50 salaries : le guide complet</li>
+          <li>PCRH : tout ce qu'un dirigeant de PME doit savoir</li>
+          <li>Entretien professionnel vs entretien annuel : quelle difference ?</li>
+          <li>Comment faire financer une formation a 100% par votre OPCO</li>
+          <li>AFEST : la formation en situation de travail expliquee simplement</li>
+        </ul>
+
+        <h5>Actualite (trafic court terme)</h5>
+        <ul>
+          <li>Reforme de la formation 2026 : ce qui change pour les PME</li>
+          <li>Nouvelles jurisprudences RH : 3 decisions a connaitre</li>
+          <li>Bilan social et Index egalite : calendrier des echeances 2026</li>
+        </ul>
+
+        <h5>Cas d'usage (preuve sociale)</h5>
+        <ul>
+          <li>Comment une PME de 35 salaries a structure ses RH en 6 mois</li>
+          <li>Temoignage : "Le PCRH a change notre facon de manager"</li>
+          <li>OGEC : pourquoi la formation CleA transforme les equipes</li>
+        </ul>
+      </div>
+
+      <div class="content-col">
+        <h4>Posts LinkedIn</h4>
+
+        <h5>Formats Catherine</h5>
+        <ul>
+          <li><strong>Decryptage loi :</strong> "Ce que la nouvelle reforme change pour votre PME (en 3 points)"</li>
+          <li><strong>Conseil pratique :</strong> "3 erreurs dans les entretiens annuels" (cf. exemple page 11)</li>
+          <li><strong>Carrousel :</strong> "Les 7 obligations RH que 90% des PME ignorent" (8 slides visuelles)</li>
+          <li><strong>Sondage :</strong> "Votre plus gros defi RH en 2026 ?" (4 choix, genere de l'engagement)</li>
+        </ul>
+
+        <h5>Formats Philippe</h5>
+        <ul>
+          <li><strong>Recit terrain :</strong> "Lundi, un dirigeant m'a dit : je ne sais plus manager."</li>
+          <li><strong>Point de vue :</strong> "Le management bienveillant, un concept creux ? Mon avis."</li>
+          <li><strong>Temoignage :</strong> "En 6 mois de co-developpement, voici ce qui a change pour Marc."</li>
+          <li><strong>Question ouverte :</strong> "Dirigeants : a qui parlez-vous quand ca ne va pas ?"</li>
+        </ul>
+
+        <h5>Formats partages</h5>
+        <ul>
+          <li>Annonce matinale RH avec lien d'inscription</li>
+          <li>Recap post-evenement avec photos et citations</li>
+          <li>Partage d'article blog avec extrait cle</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>13</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 14 -- SECTION 10 EBOOK & WEBINAIRES
+     ========================================================= -->
+<div class="page">
+  <div class="p14">
+    <span class="section-number">Section 10</span>
+    <h2 class="section-title">E-book, webinaires &amp; newsletter</h2>
+    <p class="section-subtitle">Les outils de nurturing qui transforment un visiteur anonyme en client</p>
+    <div class="accent-bar"></div>
+
+    <div class="ebook-preview">
+      <h4>"Le guide RH du dirigeant de PME" -- E-book 25 pages</h4>
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.8);margin-bottom:10px;">Le lead magnet premium de Cartesa. Offert en telechargement sur le site en echange d'un email. Positionne Cartesa comme LA reference RH pour les PME de la region.</p>
+      <ol class="ebook-toc">
+        <li>Introduction : pourquoi ce guide existe</li>
+        <li>Les obligations RH aux seuils cles (11, 20, 50)</li>
+        <li>L'entretien professionnel : mode d'emploi</li>
+        <li>Le CSE : mise en place et fonctionnement</li>
+        <li>Le reglement interieur : quand et comment</li>
+        <li>GEPP : anticiper les competences de demain</li>
+        <li>Le plan de developpement des competences</li>
+        <li>Les dispositifs de financement (OPCO, PCRH)</li>
+        <li>AFEST : former en situation de travail</li>
+        <li>Checklist : les 20 points a verifier dans votre entreprise</li>
+        <li>Ressources utiles et contacts</li>
+      </ol>
+    </div>
+
+    <div style="margin-top:16px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--deep);margin-bottom:10px;">4 webinaires proposes</h3>
+    </div>
+
+    <div class="webinar-grid">
+      <div class="webinar-card">
+        <h5>Obligations RH : le guide de survie du dirigeant</h5>
+        <p><strong>Cible :</strong> Dirigeants PME 10-50 salaries<br><strong>Format :</strong> 45 min + 15 min Q&amp;A<br><strong>Animatrice :</strong> Catherine<br>Objectif : generer des rdv PCRH</p>
+      </div>
+      <div class="webinar-card">
+        <h5>AFEST : former sans sortir vos equipes de la production</h5>
+        <p><strong>Cible :</strong> Responsables production PME industrielles<br><strong>Format :</strong> 45 min + 15 min Q&amp;A<br><strong>Animatrice :</strong> Catherine<br>Objectif : vendre des formations AFEST</p>
+      </div>
+      <div class="webinar-card">
+        <h5>Financer vos formations a 100% avec votre OPCO</h5>
+        <p><strong>Cible :</strong> Tous dirigeants et RRH<br><strong>Format :</strong> 30 min + 15 min Q&amp;A<br><strong>Animatrice :</strong> Maryline + Catherine<br>Objectif : lever le frein budgetaire</p>
+      </div>
+      <div class="webinar-card">
+        <h5>Dirigeant isole : comment sortir de la solitude du chef</h5>
+        <p><strong>Cible :</strong> Dirigeants PME<br><strong>Format :</strong> 45 min + 15 min Q&amp;A<br><strong>Animateur :</strong> Philippe<br>Objectif : vendre le co-developpement</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>14</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 15 -- SECTION 10 (suite) NEWSLETTER & CRM
+     ========================================================= -->
+<div class="page">
+  <div class="p15">
+    <span class="section-number">Section 10 (suite)</span>
+    <h2 class="section-title">Newsletter &amp; mini-CRM</h2>
+    <p class="section-subtitle">Garder le lien avec vos prospects jusqu'a ce qu'ils soient prets a acheter</p>
+    <div class="accent-bar"></div>
+
+    <div class="newsletter-block">
+      <h4>"RH Pratique by CARTESA" -- Newsletter mensuelle</h4>
+      <p>Envoyee le premier mardi de chaque mois via Brevo (ex-Sendinblue). Gratuit jusqu'a 300 contacts, largement suffisant pour demarrer.</p>
+      <ul>
+        <li><strong>Section 1 :</strong> L'actualite RH du mois en 3 bullet points (simple, factuel)</li>
+        <li><strong>Section 2 :</strong> Un conseil pratique (extrait d'article blog, avec lien pour lire la suite)</li>
+        <li><strong>Section 3 :</strong> Agenda -- prochaine matinale, prochaine formation, prochain webinaire</li>
+        <li><strong>Section 4 :</strong> Ressource a telecharger (nouveau lead magnet ou rappel d'un existant)</li>
+      </ul>
+      <p style="margin-top:8px;"><strong>Objectif :</strong> Rester present dans l'esprit de vos prospects. Un DRH qui recoit votre newsletter pendant 3 mois pensera a vous le jour ou il aura un besoin formation.</p>
+    </div>
+
+    <div style="margin-top:18px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--deep);margin-bottom:10px;">Configuration Brevo</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <p style="font-size:0.82rem;line-height:1.55;"><strong style="color:var(--deep);">Formulaires d'inscription</strong><br>Integres sur le site : pop-up apres 30 secondes, encart en fin d'article, page dediee pour les lead magnets. Chaque formulaire alimente automatiquement la bonne liste dans Brevo.</p>
+          <p style="font-size:0.82rem;line-height:1.55;margin-top:10px;"><strong style="color:var(--deep);">Sequences automatisees</strong><br>Email de bienvenue automatique avec lien vers le lead magnet demande. Relance J+3 avec un deuxieme contenu. Invitation a la prochaine matinale a J+7.</p>
+        </div>
+        <div>
+          <p style="font-size:0.82rem;line-height:1.55;"><strong style="color:var(--deep);">Segmentation</strong><br>3 listes : OGEC, PME industrielles, TPE-PME. Permet d'envoyer du contenu cible selon le profil du contact (ex : contenu AFEST uniquement aux industriels).</p>
+          <p style="font-size:0.82rem;line-height:1.55;margin-top:10px;"><strong style="color:var(--deep);">Fichier prospects data.gouv</strong><br>Constitution d'un fichier de prospection a partir des donnees publiques (SIRENE, annuaire-entreprises.data.gouv.fr). Extraction des PME 10-50 salaries d'Isere et Drome avec email et telephone. Premier envoi d'emailing cible avec invitation matinale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--deep);margin-bottom:10px;">Mini-CRM avec Brevo</h3>
+      <p style="font-size:0.82rem;line-height:1.6;">Brevo integre un CRM gratuit basique, largement suffisant pour Cartesa a ce stade. Chaque contact est associe a : son entreprise, sa source d'acquisition (blog, matinale, LinkedIn, prescription OPCO), les emails ouverts/cliques, les formulaires remplis. Catherine et Philippe peuvent voir d'un coup d'oeil qui a interagi recemment et prioriser leurs relances. Pas besoin d'investir dans un outil CRM separe a ce stade.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>15</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 16 -- SECTION 11 CALENDRIER
+     ========================================================= -->
+<div class="page">
+  <div class="p16">
+    <span class="section-number">Section 11</span>
+    <h2 class="section-title">Calendrier &amp; resultats attendus</h2>
+    <p class="section-subtitle">Un deploiement progressif en trois phases sur 12 mois</p>
+    <div class="accent-bar"></div>
+
+    <div class="phases">
+      <div class="phase">
+        <h4>Phase 1 -- Quick Wins</h4>
+        <div class="phase-period">Mois 1-2</div>
+        <ul>
+          <li>Audit complet + strategie editoriale</li>
+          <li>Suppression des faux articles</li>
+          <li>Redaction meta descriptions</li>
+          <li>Correction noindex N106</li>
+          <li>Optimisation Google Business</li>
+          <li>Constitution fichier prospects data.gouv</li>
+          <li>Creation compte Brevo + premier formulaire</li>
+          <li>Premiers posts LinkedIn (Catherine + Philippe)</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h4>Phase 2 -- Infrastructure</h4>
+        <div class="phase-period">Mois 2-4</div>
+        <ul>
+          <li>Pages de conversion (PCRH, financement, temoignages)</li>
+          <li>Schema markup sur les formations</li>
+          <li>Premier lead magnet (checklist auto-diag)</li>
+          <li>E-book "Guide RH du dirigeant"</li>
+          <li>Configuration Brevo complete (sequences, segmentation)</li>
+          <li>Premiere newsletter</li>
+          <li>Premiere matinale RH</li>
+          <li>4 premiers articles de blog</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h4>Phase 3 -- Croissance</h4>
+        <div class="phase-period">Mois 4-12</div>
+        <ul>
+          <li>2 articles de blog par mois</li>
+          <li>Posts LinkedIn reguliers (2x/sem par personne)</li>
+          <li>Newsletter mensuelle</li>
+          <li>Matinale trimestrielle</li>
+          <li>Sessions co-developpement trimestrielles</li>
+          <li>Nouveaux lead magnets (2 supplementaires)</li>
+          <li>Premier webinaire</li>
+          <li>Partenariats institutionnels actifs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--deep);margin-bottom:10px;">Resultats attendus a 12 mois</h3>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-box">
+        <div class="rb-val">x5-10</div>
+        <div class="rb-label">Trafic site web</div>
+      </div>
+      <div class="result-box">
+        <div class="rb-val">5-10</div>
+        <div class="rb-label">Leads entrants par mois</div>
+      </div>
+      <div class="result-box">
+        <div class="rb-val">200-500</div>
+        <div class="rb-label">Contacts email</div>
+      </div>
+      <div class="result-box">
+        <div class="rb-val">2-4</div>
+        <div class="rb-label">Nouveaux clients par trimestre</div>
+      </div>
+      <div class="result-box">
+        <div class="rb-val" style="font-size:1rem;">40-120k&euro;</div>
+        <div class="rb-label">CA additionnel annuel</div>
+      </div>
+    </div>
+
+    <div class="pull-quote" style="margin-top:18px;">
+      Un seul client PCRH a 15 000 EUR couvre l'investissement total de cette strategie. L'objectif est d'en generer 2 a 4 par trimestre.
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>16</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 17 -- SECTION 12 DEVIS OPTION A
+     ========================================================= -->
+<div class="page">
+  <div class="p17">
+    <span class="section-number">Section 12</span>
+    <h2 class="section-title">Devis detaille</h2>
+    <div class="accent-bar"></div>
+
+    <div style="margin-top:10px;">
+      <span class="option-label">Option A -- Accompagnement complet</span>
+      <span class="option-price-highlight">4 300 &euro; HT</span>
+    </div>
+    <p style="font-size:0.78rem;color:var(--grey);margin-top:4px;margin-bottom:10px;">Je produis l'ensemble des contenus et vous accompagne pendant 6 mois. Vous n'avez rien a faire sauf valider.</p>
+
+    <table class="devis-table">
+      <thead>
+        <tr>
+          <th>Prestation</th>
+          <th>Tarif normal</th>
+          <th>Tarif preferentiel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audit complet + strategie editoriale</td>
+          <td><span class="price-old">600 &euro;</span></td>
+          <td><span class="price-new">350 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Fichier prospects data.gouv (extraction + nettoyage)</td>
+          <td><span class="price-old">400 &euro;</span></td>
+          <td><span class="price-new">200 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Nettoyage SEO (faux articles, noindex, meta descriptions)</td>
+          <td><span class="price-old">400 &euro;</span></td>
+          <td><span class="price-new">250 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Google Business Profile (creation/optimisation)</td>
+          <td><span class="price-old">200 &euro;</span></td>
+          <td><span class="price-new">100 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>3 pages d'acquisition (PCRH, financement, temoignages)</td>
+          <td><span class="price-old">600 &euro;</span></td>
+          <td><span class="price-new">400 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>2 lead magnets (checklist + guide financement)</td>
+          <td><span class="price-old">500 &euro;</span></td>
+          <td><span class="price-new">300 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>E-book 25 pages "Guide RH du dirigeant de PME"</td>
+          <td><span class="price-old">800 &euro;</span></td>
+          <td><span class="price-new">400 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Configuration Brevo (formulaires, sequences, segmentation)</td>
+          <td><span class="price-old">300 &euro;</span></td>
+          <td><span class="price-new">150 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>12 articles de blog (6 mois, 2/mois)</td>
+          <td><span class="price-old">2 400 &euro;</span></td>
+          <td><span class="price-new">1 200 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Calendrier editorial LinkedIn (6 mois, briefs + exemples)</td>
+          <td><span class="price-old">1 200 &euro;</span></td>
+          <td><span class="price-new">500 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>6 newsletters (6 mois, 1/mois)</td>
+          <td><span class="price-old">600 &euro;</span></td>
+          <td><span class="price-new">250 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>2 lead magnets supplementaires</td>
+          <td><span class="price-old">400 &euro;</span></td>
+          <td><span class="price-new">200 &euro;</span></td>
+        </tr>
+        <tr>
+          <td>Suivi mensuel &amp; ajustements (6 mois)</td>
+          <td><span class="price-old">600 &euro;</span></td>
+          <td><span class="price-new" style="color:var(--accent);font-style:italic;">Offert</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="devis-total">
+      <div class="devis-total-item">
+        <div class="devis-total-label">Tarif normal</div>
+        <div class="devis-total-val crossed">~8 100 &euro;</div>
+      </div>
+      <div class="devis-total-item">
+        <div class="devis-total-label">Tarif preferentiel</div>
+        <div class="devis-total-val">4 300 &euro; <span style="font-size:0.8rem;font-family:'Inter',sans-serif;font-weight:400;color:var(--grey);">HT</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>17</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 18 -- SECTION 12 (suite) OPTION B + COMPARAISON
+     ========================================================= -->
+<div class="page">
+  <div class="p18">
+    <span class="section-number">Section 12 (suite)</span>
+    <h2 class="section-title" style="font-size:1.6rem;">Option B &amp; comparaison</h2>
+    <div class="accent-bar"></div>
+
+    <div style="margin-top:10px;">
+      <span class="option-label">Option B -- Setup + autonomie</span>
+      <span class="option-price-highlight">2 100 &euro; HT</span>
+    </div>
+    <p style="font-size:0.78rem;color:var(--grey);margin-top:4px;margin-bottom:10px;">Je mets en place les fondations techniques et vous forme a produire les contenus vous-memes.</p>
+
+    <table class="devis-table">
+      <thead>
+        <tr><th>Prestation</th><th>Tarif normal</th><th>Tarif preferentiel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Audit complet + strategie editoriale</td><td><span class="price-old">600 &euro;</span></td><td><span class="price-new">350 &euro;</span></td></tr>
+        <tr><td>Fichier prospects data.gouv</td><td><span class="price-old">400 &euro;</span></td><td><span class="price-new">200 &euro;</span></td></tr>
+        <tr><td>Nettoyage SEO</td><td><span class="price-old">400 &euro;</span></td><td><span class="price-new">250 &euro;</span></td></tr>
+        <tr><td>Google Business Profile</td><td><span class="price-old">200 &euro;</span></td><td><span class="price-new">100 &euro;</span></td></tr>
+        <tr><td>3 pages d'acquisition</td><td><span class="price-old">600 &euro;</span></td><td><span class="price-new">400 &euro;</span></td></tr>
+        <tr><td>2 lead magnets</td><td><span class="price-old">500 &euro;</span></td><td><span class="price-new">300 &euro;</span></td></tr>
+        <tr><td>Configuration Brevo</td><td><span class="price-old">300 &euro;</span></td><td><span class="price-new">150 &euro;</span></td></tr>
+        <tr><td>Session de formation (2h) : rediger pour le web &amp; LinkedIn</td><td>--</td><td><span class="price-new">150 &euro;</span></td></tr>
+        <tr><td>Kit editorial : 20 briefs d'articles + 30 idees LinkedIn</td><td>--</td><td><span class="price-new">200 &euro;</span></td></tr>
+        <tr><td>1 mois de support gratuit (questions par email/tel)</td><td>--</td><td><span class="price-new" style="color:var(--accent);font-style:italic;">Offert</span></td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:16px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--deep);margin-bottom:10px;">Comparaison des deux options</h3>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr><th></th><th>Option A</th><th>Option B</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Prix</td><td><strong>4 300 &euro; HT</strong></td><td><strong>2 100 &euro; HT</strong></td></tr>
+        <tr><td>Audit + corrections techniques</td><td><span class="comp-check">&#10003;</span></td><td><span class="comp-check">&#10003;</span></td></tr>
+        <tr><td>Pages de conversion + lead magnets</td><td><span class="comp-check">&#10003;</span></td><td><span class="comp-check">&#10003;</span></td></tr>
+        <tr><td>Configuration Brevo</td><td><span class="comp-check">&#10003;</span></td><td><span class="comp-check">&#10003;</span></td></tr>
+        <tr><td>Production de contenus (blog, newsletter)</td><td><span class="comp-check">&#10003;</span> 6 mois</td><td><span class="comp-cross">&#10007;</span> A votre charge</td></tr>
+        <tr><td>E-book 25 pages</td><td><span class="comp-check">&#10003;</span></td><td><span class="comp-cross">&#10007;</span></td></tr>
+        <tr><td>Formation + kit editorial</td><td><span class="comp-cross">&#10007;</span></td><td><span class="comp-check">&#10003;</span></td></tr>
+        <tr><td>Suivi mensuel</td><td><span class="comp-check">&#10003;</span> 6 mois</td><td>1 mois support</td></tr>
+        <tr><td>Temps requis de votre part</td><td>Minimal (validation)</td><td>2-3h par semaine</td></tr>
+      </tbody>
+    </table>
+
+    <div class="payment-terms">
+      <h4>Modalites de paiement</h4>
+      <p>30% a la signature (debut des travaux) | 30% a la fin de la Phase 1 (mois 2) | 40% a la fin de la Phase 2 (mois 4)</p>
+      <p style="margin-top:6px;">Facturation en auto-entrepreneur, TVA non applicable (article 293 B du CGI).</p>
+    </div>
+
+    <div class="site-demo-note">
+      <p><strong>Maquette interactive de votre futur site</strong><br>
+      Pour vous donner une idee concrete de ce que votre site pourrait devenir, nous avons cree une maquette interactive. Vous pouvez la consulter ici : <em>[lien sera ajoute apres creation du repo GitHub]</em></p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>18</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PAGE 19 -- PROCHAINES ETAPES
+     ========================================================= -->
+<div class="page">
+  <div class="p19">
+    <div>
+      <span class="section-number">Section 13</span>
+      <h2 class="section-title">Prochaines etapes</h2>
+      <div class="accent-bar"></div>
+    </div>
+
+    <div class="p19-steps">
+      <div class="p19-step">
+        <div class="p19-step-num">01</div>
+        <div class="p19-step-content">
+          <h4>Echange de validation</h4>
+          <p>On se retrouve pour discuter de cette proposition, repondre a vos questions et ajuster si necessaire. C'est aussi le moment de choisir entre l'Option A et l'Option B.</p>
+        </div>
+      </div>
+      <div class="p19-step">
+        <div class="p19-step-num">02</div>
+        <div class="p19-step-content">
+          <h4>Signature &amp; lancement</h4>
+          <p>Signature du devis, versement de l'acompte de 30%. Je commence immediatement par l'audit technique complet et la strategie editoriale detaillee.</p>
+        </div>
+      </div>
+      <div class="p19-step">
+        <div class="p19-step-num">03</div>
+        <div class="p19-step-content">
+          <h4>Phase 1 en 2 semaines</h4>
+          <p>Les Quick Wins sont deployes : faux articles supprimes, meta descriptions redigees, Google Business optimise, premiers posts LinkedIn en ligne. Des resultats visibles immediatement.</p>
+        </div>
+      </div>
+      <div class="p19-step">
+        <div class="p19-step-num">04</div>
+        <div class="p19-step-content">
+          <h4>Premiers resultats visibles des le mois 2</h4>
+          <p>Vos pages commencent a remonter sur Google. Les premiers contacts arrivent via le site et LinkedIn. La premiere matinale RH est programmee. Le systeme est en marche.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p19-closing">
+      <div class="closing-accent"></div>
+      <p class="closing-quote">Vos formations sont excellentes.<br>Il est temps que le monde le sache.</p>
+      <p class="closing-author">Gaspard Coche</p>
+      <p class="closing-date">Avril 2026</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line">CARTESA <span class="footer-dot"></span> Strategie GTM 2026</div>
+    <div>19</div>
+  </div>
+</div>
+
+</body>
+</html>
