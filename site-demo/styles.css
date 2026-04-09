@@ -593,6 +593,17 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--teal-600);
 }
 
+/* ===== EXPERTISE CARD WITH ILLUSTRATION ===== */
+.expertise-card .expertise-illustration {
+  float: right;
+  margin: 0 0 16px 20px;
+}
+
+.expertise-card .expertise-illustration .illustration-img {
+  width: 120px;
+  height: auto;
+}
+
 /* ===== TEAM CARD ===== */
 .team-card {
   text-align: center;
@@ -630,6 +641,26 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.875rem;
   color: var(--neutral-500);
   line-height: 1.6;
+}
+
+/* ===== TEAM PHOTO (replace avatar initials) ===== */
+.team-photo {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 3px solid var(--teal-100);
+}
+
+/* ===== TEAM GROUP PHOTO ===== */
+.team-group-photo {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 /* ===== CERT BAND ===== */
@@ -684,6 +715,14 @@ img { max-width: 100%; height: auto; display: block; }
 .news-card p {
   font-size: 0.875rem;
   color: var(--neutral-500);
+}
+
+.news-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 14px;
 }
 
 /* ===== CONTACT FORM ===== */
@@ -984,6 +1023,270 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: center;
   flex-shrink: 0;
   color: var(--teal-600);
+}
+
+/* ===== ILLUSTRATION IMG (hand-drawn artwork) ===== */
+.illustration-img {
+  border-radius: 8px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+/* ===== ENJEUX GRID (challenges section) ===== */
+.enjeux-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 0;
+}
+
+.enjeux-grid--row2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 740px;
+  margin: 28px auto 0;
+}
+
+.enjeux-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.enjeux-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.enjeux-card .enjeux-illustration {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto 16px;
+  background: var(--teal-50);
+  padding: 8px;
+}
+
+.enjeux-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--teal-900);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.enjeux-card ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.enjeux-card ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 5px;
+  font-size: 0.825rem;
+  color: var(--neutral-700);
+  line-height: 1.5;
+}
+
+.enjeux-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal-600);
+}
+
+@media (max-width: 960px) {
+  .enjeux-grid { grid-template-columns: repeat(2, 1fr); }
+  .enjeux-grid--row2 { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .enjeux-grid { grid-template-columns: 1fr; }
+  .enjeux-grid--row2 { grid-template-columns: 1fr; }
+}
+
+/* ===== TRUST / TEMOIGNAGES SECTION ===== */
+.trust-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.trust-block .trust-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.trust-stat {
+  background: var(--teal-50);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.trust-stat .stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--teal-700);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.trust-stat .stat-label {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+.trust-testimonial {
+  background: var(--neutral-50);
+  border-radius: 8px;
+  padding: 28px;
+  border-left: 4px solid var(--teal-600);
+}
+
+.trust-testimonial blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--neutral-700);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.trust-testimonial cite {
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .trust-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== NEWSLETTER SIGNUP ===== */
+.newsletter-signup {
+  background: var(--teal-50);
+  border: 2px solid var(--teal-100);
+  border-radius: 10px;
+  padding: 36px 40px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-signup h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--teal-900);
+}
+
+.newsletter-signup p {
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  margin-bottom: 20px;
+}
+
+.newsletter-signup .newsletter-form {
+  display: flex;
+  gap: 10px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.newsletter-signup .newsletter-form input {
+  flex: 1;
+  padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid var(--neutral-300);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--neutral-700);
+}
+
+.newsletter-signup .newsletter-form input:focus {
+  outline: none;
+  border-color: var(--teal-600);
+  box-shadow: 0 0 0 3px rgba(13, 122, 158, 0.08);
+}
+
+@media (max-width: 640px) {
+  .newsletter-signup .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* ===== QUALITE SECTION (formations) ===== */
+.qualite-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.qualite-content .competences-chart {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .qualite-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== REFERENCES SECTION ===== */
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.reference-item {
+  background: var(--neutral-50);
+  border-radius: 8px;
+  padding: 20px 24px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.reference-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: var(--teal-900);
+}
+
+.reference-item p {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+}
+
+@media (max-width: 768px) {
+  .references-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .references-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== MISC ===== */
