@@ -49,7 +49,7 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 800; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
 h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 700; }
 
@@ -382,7 +382,7 @@ a { color: var(--blue); text-decoration: none; }
 
 /* ========== CLOSING ========== */
 .closing {
-  background: var(--blue); color: white;
+  background: #3a9fd4; color: white;
   padding: clamp(5rem, 10vw, 8rem) 0;
   text-align: center;
 }
@@ -391,7 +391,15 @@ a { color: var(--blue); text-decoration: none; }
   font-weight: 800; line-height: 1.3; letter-spacing: -0.02em;
   max-width: 600px; margin: 0 auto 1.5rem;
 }
-.closing-sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+.closing-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+
+/* ========== RESULTS GRID ========== */
+@media(max-width:768px) {
+  .section [style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+}
+@media(max-width:480px) {
+  .section [style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -407,6 +415,7 @@ a { color: var(--blue); text-decoration: none; }
       <li><a href="#demo">Démo</a></li>
       <li><a href="#contenu">Contenu</a></li>
       <li><a href="#calendrier">Calendrier</a></li>
+      <li><a href="#resultats">Résultats</a></li>
       <li><a href="#fait">Déjà fait</a></li>
     </ul>
   </div>
@@ -602,8 +611,11 @@ a { color: var(--blue); text-decoration: none; }
         <h3>Site web et référencement</h3>
         <p>Un site qui travaille pour vous 24h/24. Les personnes qui cherchent "formation management Lyon" ou "PCRH Isère" sur Google tombent sur Cartesa. Pour un organisme de formation comme Cartesa, le site web est la vitrine permanente : il doit refléter la qualité de vos interventions et apparaître quand vos cibles cherchent des réponses à leurs problématiques RH.</p>
         <div class="explain-example">
-          <div class="explain-example-label">Exemple concret</div>
-          <p>Un article de blog "Comment préparer le bilan des entretiens professionnels 2027" attire des DRH de PME sur votre site. Ils découvrent vos formations, téléchargent votre checklist, deviennent un contact.</p>
+          <div class="explain-example-label">Ce que cela implique concrètement</div>
+          <p><strong>Refonte du site :</strong> 7 pages optimisées (accueil, formations avec calendrier interactif, expertises, équipe, blog, ressourcerie, contact). Chaque page est construite autour de mots-clés que vos cibles tapent sur Google.<br><br>
+          <strong>Blog SEO :</strong> 8 articles rédigés sur des sujets que les DRH et dirigeants recherchent activement ("entretiens professionnels 2027", "PCRH dispositif", "obligations RH PME").<br><br>
+          <strong>Ressourcerie :</strong> des guides et checklists téléchargeables en échange d'un email -- c'est ainsi que des visiteurs anonymes deviennent des contacts identifiés.<br><br>
+          <strong>SEO technique :</strong> méta descriptions sur chaque page, schéma markup (pour que Google comprenne que Cartesa est un organisme de formation certifié), sitemap XML, balises Open Graph pour les réseaux sociaux.</p>
         </div>
       </div>
 
@@ -612,8 +624,11 @@ a { color: var(--blue); text-decoration: none; }
         <h3>LinkedIn</h3>
         <p>Catherine et Philippe publient régulièrement : retours terrain, conseils pratiques, témoignages. Les décideurs d'Auvergne-Rhône-Alpes voient Cartesa chaque semaine dans leur fil. C'est le canal idéal pour Cartesa car les DRH et dirigeants de PME y sont déjà présents et actifs.</p>
         <div class="explain-example">
-          <div class="explain-example-label">Exemple concret</div>
-          <p>Philippe partage un décryptage de la dernière réforme du droit social. Un DRH de PME commente. Philippe lui répond, puis l'invite à une matinale. 3 mois plus tard : formation signée.</p>
+          <div class="explain-example-label">Ce que cela implique concrètement</div>
+          <p><strong>Fréquence :</strong> 2 à 3 publications par semaine (vs 1 par mois aujourd'hui). Un calendrier éditorial mensuel est fourni pour faciliter la régularité.<br><br>
+          <strong>Types de contenus :</strong> décryptages d'actualité sociale, retours d'expérience terrain (anonymisés), conseils pratiques en management, annonces de matinales et formations, partages d'articles du blog.<br><br>
+          <strong>Qui publie :</strong> Catherine et Philippe sur leurs profils personnels (les posts personnels ont 5 à 10x plus de portée qu'une page entreprise). La page Cartesa relaie et amplifie.<br><br>
+          <strong>Objectif :</strong> que Cartesa soit le premier nom qui vient à l'esprit quand un dirigeant en Auvergne-Rhône-Alpes pense "formation RH".</p>
         </div>
       </div>
 
@@ -622,8 +637,11 @@ a { color: var(--blue); text-decoration: none; }
         <h3>Réseau et événements locaux</h3>
         <p>Des matinales RH trimestrielles (petit-déjeuner, 15 personnes max) et des sessions découverte co-développement. Le contact humain reste la plus grande force de Cartesa, et ces événements permettent de le mettre en valeur auprès de décideurs locaux qui ne vous connaissent pas encore.</p>
         <div class="explain-example">
-          <div class="explain-example-label">Exemple concret</div>
-          <p>Une matinale "Primo-managers : les 5 réflexes des 90 premiers jours". 12 dirigeants présents, 3 demandent un devis formation dans les 2 semaines suivantes.</p>
+          <div class="explain-example-label">Ce que cela implique concrètement</div>
+          <p><strong>Matinales RH :</strong> 1 par trimestre, format petit-déjeuner 8h30-10h, 15 décideurs max. Thèmes prévus : "Primo-managers : les 5 réflexes des 90 premiers jours" (Q3), "Bilan entretiens pro : êtes-vous prêts pour 2027 ?" (Q4).<br><br>
+          <strong>Sessions co-développement :</strong> 4 sessions découverte par an, format 2h, gratuites. Les participants repartent avec une solution concrète à leur problématique -- et découvrent la méthode co-dév.<br><br>
+          <strong>Invitations :</strong> via la newsletter, LinkedIn, et les contacts directs. Chaque événement génère de nouveaux contacts qualifiés.<br><br>
+          <strong>Taux de conversion estimé :</strong> sur 12 participants à une matinale, 2 à 4 demandent un devis dans les semaines suivantes.</p>
         </div>
       </div>
     </div>
@@ -636,7 +654,7 @@ a { color: var(--blue); text-decoration: none; }
     <div class="reveal">
       <span class="label">Le nouveau site</span>
       <h2>7 pages construites, prêtes à déployer</h2>
-      <p class="subtitle">Chaque page a été conçue pour un objectif précis. Voici ce que contient la maquette.</p>
+      <p class="subtitle">Chaque page a été conçue pour un objectif précis : attirer un visiteur, le convaincre, et le transformer en contact. Toutes sont navigables en ligne.</p>
     </div>
 
     <div class="showcase-grid reveal">
@@ -644,7 +662,7 @@ a { color: var(--blue); text-decoration: none; }
         <div class="showcase-preview">Accueil</div>
         <div class="showcase-body">
           <h4>Page d'accueil</h4>
-          <p>Hero, preuves sociales, méthode en 4 étapes, enjeux, certifications, FAQ</p>
+          <p>Présentation de Cartesa, chiffres clés (23 ans, 500+ entreprises), méthode en 4 étapes, FAQ, certifications Qualiopi/CléA, formulaire de contact</p>
           <span>Voir la page &rarr;</span>
         </div>
       </a>
@@ -652,7 +670,7 @@ a { color: var(--blue); text-decoration: none; }
         <div class="showcase-preview">Formations</div>
         <div class="showcase-body">
           <h4>Formations 2026</h4>
-          <p>Calendrier interactif des sessions, fiches détaillées, financement OPCO</p>
+          <p>Calendrier visuel avec 12 sessions de mai à novembre, filtrage par thématique, fiches détaillées des 7 formations, section financement avec logos OPCO</p>
           <span>Voir la page &rarr;</span>
         </div>
       </a>
@@ -676,7 +694,7 @@ a { color: var(--blue); text-decoration: none; }
         <div class="showcase-preview">Blog</div>
         <div class="showcase-body">
           <h4>Blog (8 articles)</h4>
-          <p>Articles SEO sur les sujets RH recherchés par vos cibles</p>
+          <p>8 articles complets rédigés sur les sujets les plus recherchés par vos cibles (obligations RH, PCRH, management, RSE), avec filtrage par catégorie</p>
           <span>Voir la page &rarr;</span>
         </div>
       </a>
@@ -684,7 +702,7 @@ a { color: var(--blue); text-decoration: none; }
         <div class="showcase-preview">Ressourcerie</div>
         <div class="showcase-body">
           <h4>Ressourcerie</h4>
-          <p>Guides, checklists et templates à télécharger (capture email)</p>
+          <p>5 documents téléchargeables (e-book 25 pages, checklist auto-diagnostic, guide financement, templates) -- chaque téléchargement capture un email</p>
           <span>Voir la page &rarr;</span>
         </div>
       </a>
@@ -711,13 +729,13 @@ a { color: var(--blue); text-decoration: none; }
 
     <div class="content-examples reveal">
       <div class="content-block">
-        <h4>Guides et documents</h4>
+        <h4>Guides et documents (5 lead magnets)</h4>
         <ul>
-          <li>E-book "Le guide RH du dirigeant de PME" (25 pages)</li>
-          <li>Checklist "Auto-diagnostic RH pour PME"</li>
-          <li>Guide "5 dispositifs pour financer la formation"</li>
-          <li>Template "Modèle d'entretien professionnel"</li>
-          <li>Infographie "Calendrier des obligations sociales 2026"</li>
+          <li><strong>E-book "Le guide RH du dirigeant de PME"</strong> (25 pages) -- le document principal, couvre toutes les obligations légales, le financement, le recrutement, la QVT. Un dirigeant qui le télécharge est un prospect qualifié.</li>
+          <li><strong>Checklist "Auto-diagnostic RH"</strong> -- 40 items à cocher en 15 minutes. Permet au dirigeant de mesurer sa maturité RH. Crée le besoin de se faire accompagner.</li>
+          <li><strong>Guide "5 dispositifs de financement"</strong> -- PCRH, CPF, FNE, Pro-A, plan de développement. Montre que la formation peut être gratuite. Lève le frein budgétaire.</li>
+          <li><strong>Template "Entretien professionnel"</strong> -- modèle prêt à l'emploi, conforme à la loi de 2014. Un outil pratique qui positionne Cartesa comme référence.</li>
+          <li><strong>Calendrier des obligations sociales 2026</strong> -- mois par mois, toutes les échéances RH. Document que le dirigeant garde toute l'année sur son bureau.</li>
         </ul>
       </div>
       <div class="content-block">
@@ -773,14 +791,14 @@ a { color: var(--blue); text-decoration: none; }
     <div class="phases reveal">
       <div class="phase">
         <div class="phase-badge">Phase 1</div>
-        <h3>Quick wins</h3>
+        <h3>Fondations</h3>
         <div class="phase-time">Mois 1-2</div>
         <ul>
-          <li>Corrections techniques SEO</li>
-          <li>Google Business Profile</li>
-          <li>Lancement LinkedIn</li>
-          <li>Rédaction de l'e-book</li>
-          <li>Premiers formulaires actifs</li>
+          <li><strong>SEO technique :</strong> ajout des méta descriptions sur toutes les pages, correction du noindex sur la page N106, installation du schéma markup et du sitemap XML</li>
+          <li><strong>Google Business Profile :</strong> optimisation de la fiche (description, horaires, photos, catégories), première publication</li>
+          <li><strong>LinkedIn :</strong> calendrier éditorial établi, premiers posts de Catherine et Philippe (2-3x/semaine)</li>
+          <li><strong>E-book :</strong> mise en ligne du "Guide RH du dirigeant de PME" comme premier lead magnet</li>
+          <li><strong>Formulaires :</strong> intégration des formulaires de capture d'email sur les pages clés du site</li>
         </ul>
       </div>
       <div class="phase">
@@ -788,11 +806,11 @@ a { color: var(--blue); text-decoration: none; }
         <h3>Infrastructure</h3>
         <div class="phase-time">Mois 2-4</div>
         <ul>
-          <li>Blog opérationnel (2 articles)</li>
-          <li>Lead magnets en ligne</li>
-          <li>Première newsletter</li>
-          <li>Première matinale RH</li>
-          <li>Site complet déployé</li>
+          <li><strong>Blog :</strong> publication des 2 premiers articles SEO, programmation des suivants (1 à 2 par mois)</li>
+          <li><strong>Ressourcerie :</strong> mise en ligne de la checklist auto-diagnostic et du guide financement</li>
+          <li><strong>Newsletter :</strong> première édition envoyée aux contacts existants -- format : 1 conseil pratique + 1 actualité formation + invitation événement</li>
+          <li><strong>Matinale RH :</strong> organisation de la première matinale (thème, lieu, invitations via LinkedIn et contacts directs)</li>
+          <li><strong>Site :</strong> déploiement du nouveau site complet en remplacement de l'actuel</li>
         </ul>
       </div>
       <div class="phase">
@@ -800,13 +818,52 @@ a { color: var(--blue); text-decoration: none; }
         <h3>Croissance</h3>
         <div class="phase-time">Mois 4-12</div>
         <ul>
-          <li>Production continue (blog + LinkedIn)</li>
-          <li>Newsletters mensuelles</li>
-          <li>Matinales trimestrielles</li>
-          <li>Mesure et optimisation</li>
-          <li>Webinaires (option)</li>
+          <li><strong>Blog :</strong> publication continue (1-2 articles/mois), suivi du trafic et ajustement des sujets selon les requêtes Google</li>
+          <li><strong>LinkedIn :</strong> maintien du rythme 2-3 posts/semaine, interaction avec les commentaires, développement du réseau</li>
+          <li><strong>Newsletter :</strong> envoi mensuel, segmentation progressive des contacts (dirigeants, DRH, managers)</li>
+          <li><strong>Événements :</strong> matinales trimestrielles + sessions co-développement (4/an)</li>
+          <li><strong>Mesure :</strong> suivi mensuel des indicateurs (trafic site, positions Google, taux d'ouverture newsletter, contacts générés)</li>
+          <li><strong>Option :</strong> webinaires thématiques pour toucher au-delà de la zone géographique</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSULTATS ATTENDUS -->
+<section id="resultats" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Objectifs</span>
+      <h2>Résultats attendus à 12 mois</h2>
+      <p class="subtitle">Ces indicateurs sont basés sur les résultats observés chez des organismes de formation similaires ayant mis en place une stratégie digitale comparable.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:2.5rem;" class="reveal">
+      <div style="background:var(--blue-light);border-radius:16px;padding:28px 20px;text-align:center;">
+        <div style="font-family:Sora,sans-serif;font-size:2rem;font-weight:800;color:var(--blue);line-height:1;">300-500</div>
+        <div style="font-size:0.8rem;color:var(--neutral-700);margin-top:6px;font-weight:600;">visiteurs/mois sur le site</div>
+        <div style="font-size:0.75rem;color:var(--neutral-500);margin-top:4px;">(vs 0 contacts aujourd'hui)</div>
+      </div>
+      <div style="background:var(--blue-light);border-radius:16px;padding:28px 20px;text-align:center;">
+        <div style="font-family:Sora,sans-serif;font-size:2rem;font-weight:800;color:var(--blue);line-height:1;">5-15</div>
+        <div style="font-size:0.8rem;color:var(--neutral-700);margin-top:6px;font-weight:600;">contacts qualifiés/mois</div>
+        <div style="font-size:0.75rem;color:var(--neutral-500);margin-top:4px;">(téléchargements, formulaires, demandes)</div>
+      </div>
+      <div style="background:var(--blue-light);border-radius:16px;padding:28px 20px;text-align:center;">
+        <div style="font-family:Sora,sans-serif;font-size:2rem;font-weight:800;color:var(--blue);line-height:1;">Top 10</div>
+        <div style="font-size:0.8rem;color:var(--neutral-700);margin-top:6px;font-weight:600;">Google sur 3-5 mots-clés</div>
+        <div style="font-size:0.75rem;color:var(--neutral-500);margin-top:4px;">("formation management Lyon", "PCRH Isère"...)</div>
+      </div>
+      <div style="background:var(--blue-light);border-radius:16px;padding:28px 20px;text-align:center;">
+        <div style="font-family:Sora,sans-serif;font-size:2rem;font-weight:800;color:var(--blue);line-height:1;">200+</div>
+        <div style="font-size:0.8rem;color:var(--neutral-700);margin-top:6px;font-weight:600;">abonnés newsletter</div>
+        <div style="font-size:0.75rem;color:var(--neutral-500);margin-top:4px;">(base de contacts à recontacter)</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:2rem;padding:24px;background:var(--neutral-50);border-radius:14px;border:1px solid var(--neutral-200);">
+      <p style="font-size:0.875rem;color:var(--neutral-700);line-height:1.7;margin:0;"><strong>Comment mesurer :</strong> un tableau de bord simple (Google Analytics pour le trafic, Google Search Console pour les positions, suivi des formulaires pour les contacts). Un point mensuel de 30 minutes suffit pour suivre ces indicateurs et ajuster la stratégie si nécessaire.</p>
     </div>
   </div>
 </section>
