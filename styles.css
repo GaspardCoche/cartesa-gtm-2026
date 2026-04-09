@@ -793,9 +793,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .news-item--highlight h3 { color: var(--white); font-size: 1.2rem; }
-.news-item--highlight p { color: rgba(255,255,255,0.7); }
-.news-item--highlight .news-date { color: rgba(255,255,255,0.4); }
-.news-item--highlight .badge { background: rgba(255,255,255,0.12); color: var(--white); }
+.news-item--highlight p { color: rgba(255,255,255,0.92); }
+.news-item--highlight .news-date { color: rgba(255,255,255,0.7); }
+.news-item--highlight .badge { background: rgba(255,255,255,0.18); color: var(--white); }
 .news-item--highlight .news-link { color: var(--gold-500); }
 .news-item--highlight::before { background: var(--gold-500); }
 
