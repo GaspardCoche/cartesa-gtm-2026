@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartesa — Strategie Go-to-Market Organique 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & VARIABLES ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --teal-900: #064852;
+  --teal-700: #0a6e80;
+  --teal-600: #0d7a9e;
+  --teal-500: #1a90b0;
+  --teal-100: #e6f3f7;
+  --teal-50: #f2f9fb;
+  --gold-600: #b8891e;
+  --gold-500: #d4a62e;
+  --gold-400: #e0bb4a;
+  --gold-100: #faf3e0;
+  --neutral-900: #1a1f25;
+  --neutral-800: #262d36;
+  --neutral-700: #374151;
+  --neutral-500: #6b7280;
+  --neutral-400: #9ca3af;
+  --neutral-300: #d1d5db;
+  --neutral-200: #e5e7eb;
+  --neutral-100: #f3f4f6;
+  --neutral-50: #f9fafb;
+  --white: #ffffff;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --orange: #ea580c;
+  --orange-bg: #fff7ed;
+  --green: #16a34a;
+  --green-bg: #f0fdf4;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--neutral-700);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--neutral-900);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ===== NAV ===== */
+.pitch-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(6, 72, 82, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 2rem;
+  transition: transform 0.3s ease;
+}
+
+.pitch-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.pitch-nav-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.pitch-nav-links {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.pitch-nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.pitch-nav-links a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 6rem 2rem;
+}
+
+.section-dark {
+  background: var(--neutral-900);
+  color: var(--neutral-300);
+}
+
+.section-dark h2, .section-dark h3, .section-dark h4 {
+  color: var(--white);
+}
+
+.section-teal {
+  background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-700) 100%);
+  color: rgba(255,255,255,0.85);
+}
+
+.section-teal h2, .section-teal h3, .section-teal h4 {
+  color: var(--white);
+}
+
+.section-light {
+  background: var(--neutral-50);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-500);
+  margin-bottom: 1rem;
+}
+
+.section-dark .section-label,
+.section-teal .section-label {
+  color: var(--gold-400);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 700px;
+  opacity: 0.85;
+}
+
+/* ===== COVER ===== */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, #041e23 0%, var(--teal-900) 40%, var(--teal-700) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(212,166,46,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.cover-badge {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold-500);
+  border: 1px solid rgba(212,166,46,0.3);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  margin-bottom: 2.5rem;
+}
+
+.cover h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.cover h1 span {
+  display: block;
+  color: var(--gold-500);
+  font-size: 0.6em;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  letter-spacing: 0;
+}
+
+.cover-text {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.cover-meta {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+}
+
+.cover-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--gold-500);
+  color: var(--neutral-900);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.cover-cta:hover {
+  background: var(--gold-400);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(212,166,46,0.3);
+}
+
+/* ===== DIAGNOSTIC SCORECARD ===== */
+.scorecard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.score-item:hover {
+  transform: translateY(-2px);
+}
+
+.score-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.score-dot.red {
+  background: var(--red);
+  box-shadow: 0 0 8px rgba(220,38,38,0.4);
+}
+
+.score-dot.orange {
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(234,88,12,0.4);
+}
+
+.score-dot.green {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(22,163,74,0.4);
+}
+
+.score-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.score-detail {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.15rem;
+}
+
+/* ===== PROBLEM STATS ===== */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number.orange-num { color: var(--orange); }
+
+.stat-text {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ===== BEFORE/AFTER ===== */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comp-side {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--neutral-200);
+}
+
+.comp-side.before {
+  border-color: rgba(220,38,38,0.2);
+}
+
+.comp-side.after {
+  border-color: rgba(22,163,74,0.2);
+}
+
+.comp-header {
+  padding: 1rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comp-side.before .comp-header {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.comp-side.after .comp-header {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.comp-body {
+  padding: 1.5rem;
+}
+
+.comp-frame {
+  background: var(--neutral-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp-frame-url {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--neutral-200);
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--neutral-500);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.frame-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.frame-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neutral-300);
+}
+
+.comp-frame-content {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+}
+
+.comp-frame-content .site-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 0.3rem;
+}
+
+.comp-annotations {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.comp-annotations li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.comp-annotations li::before {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+
+.comp-side.before .comp-annotations li::before { content: '\2717'; color: var(--red); }
+.comp-side.after .comp-annotations li::before { content: '\2713'; color: var(--green); }
+
+/* Google search mock */
+.google-mock {
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.google-mock-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--neutral-400);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.google-result {
+  margin-bottom: 0.75rem;
+}
+
+.google-result:last-child { margin-bottom: 0; }
+
+.google-result-url {
+  font-size: 0.75rem;
+  color: var(--neutral-400);
+}
+
+.google-result-title {
+  font-size: 0.95rem;
+  color: #1a0dab;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.google-result-desc {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+  line-height: 1.5;
+}
+
+.google-result.faded {
+  opacity: 0.4;
+}
+
+.google-result.highlight {
+  background: var(--green-bg);
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+
+/* ===== PILLARS ===== */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillar {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--neutral-200);
+  transition: all 0.25s;
+}
+
+.pillar:hover {
+  border-color: var(--teal-600);
+  box-shadow: 0 12px 40px rgba(13,122,158,0.08);
+  transform: translateY(-3px);
+}
+
+.pillar-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--teal-100);
+  color: var(--teal-700);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pillar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.pillar-tagline {
+  font-size: 0.85rem;
+  color: var(--teal-600);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-actions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillar-actions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pillar-actions li::before {
+  content: '\2192';
+  color: var(--teal-600);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* ===== DELIVERABLES ===== */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.deliv-group {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--neutral-200);
+}
+
+.deliv-group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.deliv-group-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--teal-100);
+  color: var(--teal-700);
+  font-size: 0.9rem;
+}
+
+.deliv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.deliv-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.deliv-list li::before {
+  content: '\2713';
+  color: var(--teal-600);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.deliv-list.optional li::before {
+  content: '\25CB';
+  color: var(--gold-500);
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--neutral-200);
+}
+
+.timeline-phase {
+  position: relative;
+  padding-left: 64px;
+  padding-bottom: 3rem;
+}
+
+.timeline-phase:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal-600);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--teal-600);
+}
+
+.timeline-phase:nth-child(2) .timeline-dot { background: var(--gold-500); box-shadow: 0 0 0 2px var(--gold-500); }
+.timeline-phase:nth-child(3) .timeline-dot { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+
+.timeline-time {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal-600);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-phase:nth-child(2) .timeline-time { color: var(--gold-600); }
+.timeline-phase:nth-child(3) .timeline-time { color: var(--green); }
+
+.timeline-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-items {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-items li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--neutral-100);
+  border-radius: 6px;
+  color: var(--neutral-700);
+}
+
+/* ===== KPI ===== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.kpi-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+
+.kpi-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold-400);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.kpi-sublabel {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 0.25rem;
+}
+
+/* ===== PRICING ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pricing-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--neutral-200);
+  position: relative;
+  transition: all 0.25s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+.pricing-card.featured {
+  border-color: var(--teal-600);
+  box-shadow: 0 8px 32px rgba(13,122,158,0.12);
+}
+
+.pricing-card.featured::before {
+  content: 'Recommande';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--teal-600);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+}
+
+.pricing-option {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal-600);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--neutral-900);
+  line-height: 1;
+}
+
+.pricing-price small {
+  font-size: 0.4em;
+  font-weight: 500;
+  color: var(--neutral-500);
+}
+
+.pricing-normal {
+  font-size: 0.85rem;
+  color: var(--neutral-400);
+  text-decoration: line-through;
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-desc {
+  font-size: 0.95rem;
+  color: var(--neutral-500);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.pricing-roi {
+  background: var(--gold-100);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--gold-600);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.pricing-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pricing-includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.pricing-includes li::before {
+  content: '\2713';
+  color: var(--teal-600);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pricing-payment {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--neutral-100);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+}
+
+.pricing-payment strong {
+  color: var(--neutral-900);
+}
+
+/* ===== NEXT STEPS ===== */
+.steps-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.15);
+  color: var(--gold-400);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.step-text {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+.step-text strong {
+  display: block;
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== LINKS ===== */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--neutral-700);
+  transition: all 0.25s;
+}
+
+.link-card:hover {
+  border-color: var(--teal-600);
+  box-shadow: 0 8px 24px rgba(13,122,158,0.08);
+  transform: translateY(-2px);
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--teal-100);
+  color: var(--teal-700);
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.link-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--neutral-900);
+  margin-bottom: 0.15rem;
+}
+
+.link-text span {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+}
+
+/* ===== CLOSING ===== */
+.closing {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(160deg, #041e23 0%, var(--teal-900) 40%, var(--teal-700) 100%);
+  position: relative;
+}
+
+.closing-quote {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.3;
+}
+
+.closing-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .section { padding: 4rem 1.25rem; }
+  .scorecard { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillars { grid-template-columns: 1fr; }
+  .deliverables-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .steps-list { grid-template-columns: 1fr 1fr; }
+  .pitch-nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="pitch-nav">
+  <div class="pitch-nav-inner">
+    <a href="#cover" class="pitch-nav-brand">CARTESA &mdash; GTM 2026</a>
+    <ul class="pitch-nav-links">
+      <li><a href="#constat">Constat</a></li>
+      <li><a href="#avant-apres">Avant/Apres</a></li>
+      <li><a href="#strategie">Strategie</a></li>
+      <li><a href="#livrables">Livrables</a></li>
+      <li><a href="#calendrier">Calendrier</a></li>
+      <li><a href="#resultats">Resultats</a></li>
+      <li><a href="#investissement">Investissement</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 1. COVER -->
+<section id="cover" class="cover">
+  <div class="cover-content">
+    <div class="cover-badge">Proposition strategique</div>
+    <h1>Strategie Go-to-Market<br>Organique 2026
+      <span>Vendre plus, mieux et plus facilement vos formations RH</span>
+    </h1>
+    <p class="cover-text">Un plan d'action concret pour transformer votre presence digitale<br>en machine a generer des leads qualifies.</p>
+    <a href="#constat" class="cover-cta">Decouvrir la strategie &darr;</a>
+    <p class="cover-meta" style="margin-top:2rem;">Gaspard Coche&ensp;|&ensp;Avril 2026</p>
+  </div>
+</section>
+
+<!-- 2. LE CONSTAT -->
+<section id="constat" class="section section-dark">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Le constat</span>
+      <h2 class="section-title">Pourquoi agir maintenant</h2>
+      <p class="section-subtitle">Vos formations sont excellentes. Mais personne ne le sait en ligne. Votre business repose sur deux canaux que vous ne controlez pas&nbsp;: les prescriptions OPCO et le bouche-a-oreille.</p>
+    </div>
+
+    <div class="stat-grid reveal">
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-text">leads generes par votre site web actuel</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number orange-num">~1x</div>
+        <div class="stat-text">par mois sur LinkedIn vs 2-3x/semaine pour vos concurrents</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-text">CRM, email capture ou lead nurturing en place</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6</div>
+        <div class="stat-text">faux articles dates de 2016 encore en ligne</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="color:var(--white);font-size:1.15rem;margin-bottom:1rem;margin-top:1rem;">Diagnostic de votre presence digitale</h3>
+    </div>
+
+    <div class="scorecard reveal">
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">Site web &amp; SEO</div>
+          <div class="score-detail">6 faux articles, aucune meta description, noindex sur N106</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">Google Business Profile</div>
+          <div class="score-detail">Non optimise, aucune strategie de publication</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot orange"></div>
+        <div>
+          <div class="score-label">LinkedIn</div>
+          <div class="score-detail">Existe mais sous-exploite (~1 post/mois)</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">Blog</div>
+          <div class="score-detail">Vide — aucun contenu strategique</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">Lead magnets</div>
+          <div class="score-detail">Aucun contenu telecharge pour capturer des emails</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">Newsletter</div>
+          <div class="score-detail">Aucune — pas de lien regulier avec votre audience</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div class="score-dot red"></div>
+        <div>
+          <div class="score-label">CRM</div>
+          <div class="score-detail">Aucun outil de suivi des prospects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. AVANT / APRES -->
+<section id="avant-apres" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Avant / Apres</span>
+      <h2 class="section-title">Votre site web, transforme</h2>
+      <p class="section-subtitle">Le site actuel ne travaille pas pour vous. Le nouveau site genere de la confiance, du trafic et des leads &mdash; 24h/24.</p>
+    </div>
+
+    <div class="comparison reveal">
+      <!-- BEFORE -->
+      <div class="comp-side before">
+        <div class="comp-header">
+          <span style="font-size:1.1rem;">&#10005;</span> Avant &mdash; Site actuel
+        </div>
+        <div class="comp-body">
+          <div class="comp-frame">
+            <div class="comp-frame-url">
+              <span class="frame-dots"><span></span><span></span><span></span></span>
+              cartesa-lyon.com
+            </div>
+            <div class="comp-frame-content">
+              <div class="site-name">CARTESA</div>
+              <div>Site actuel — pas de blog, pas de capture</div>
+            </div>
+          </div>
+          <ul class="comp-annotations">
+            <li>Articles de 2016 toujours en ligne</li>
+            <li>Blog et ressourcerie vides</li>
+            <li>Aucun formulaire de capture d'email</li>
+            <li>Pas de meta descriptions SEO</li>
+            <li>Page N106 en noindex (invisible pour Google)</li>
+            <li>Aucun lead magnet disponible</li>
+          </ul>
+
+          <div class="google-mock">
+            <div class="google-mock-label">Recherche Google : "formation RH Lyon PME"</div>
+            <div class="google-result faded">
+              <div class="google-result-url">www.concurrent-a.fr</div>
+              <div class="google-result-title">Formations RH pour PME a Lyon | Concurrent A</div>
+              <div class="google-result-desc">Decouvrez nos formations RH adaptees aux PME...</div>
+            </div>
+            <div class="google-result faded">
+              <div class="google-result-url">www.concurrent-b.fr</div>
+              <div class="google-result-title">Accompagnement RH PME Lyon | Concurrent B</div>
+              <div class="google-result-desc">Experts en accompagnement RH...</div>
+            </div>
+            <div style="text-align:center;padding:0.75rem 0;font-size:0.8rem;color:var(--red);font-weight:600;">
+              Cartesa n'apparait pas
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="comp-side after">
+        <div class="comp-header">
+          <span style="font-size:1.1rem;">&#10003;</span> Apres &mdash; Nouveau site
+        </div>
+        <div class="comp-body">
+          <div class="comp-frame">
+            <div class="comp-frame-url">
+              <span class="frame-dots"><span></span><span></span><span></span></span>
+              cartesa-lyon.com (v2)
+            </div>
+            <div class="comp-frame-content">
+              <div class="site-name">CARTESA</div>
+              <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" rel="noopener" style="font-size:0.85rem;color:var(--teal-600);text-decoration:underline;">Voir la maquette en ligne &rarr;</a>
+            </div>
+          </div>
+          <ul class="comp-annotations">
+            <li>Blog avec 8 articles SEO optimises</li>
+            <li>Ressourcerie complete (e-book, checklists, guides)</li>
+            <li>Formulaires de capture sur chaque page</li>
+            <li>Newsletter integree (Brevo)</li>
+            <li>Schema markup et meta descriptions</li>
+            <li>Pages formations enrichies et convaincantes</li>
+          </ul>
+
+          <div class="google-mock">
+            <div class="google-mock-label">Recherche Google : "formation RH Lyon PME"</div>
+            <div class="google-result highlight">
+              <div class="google-result-url">www.cartesa-lyon.com/formations</div>
+              <div class="google-result-title">Formations RH sur mesure pour PME a Lyon | Cartesa</div>
+              <div class="google-result-desc">Cartesa accompagne les dirigeants et managers de PME avec des formations RH pratiques : management, PCRH, co-developpement...</div>
+            </div>
+            <div class="google-result" style="opacity:0.5;">
+              <div class="google-result-url">www.cartesa-lyon.com/blog/entretiens-professionnels</div>
+              <div class="google-result-title">Entretiens professionnels 2027 : le guide complet | Cartesa</div>
+              <div class="google-result-desc">Tout ce que les PME doivent savoir sur le bilan a 6 ans...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. LA STRATEGIE — 3 Piliers -->
+<section id="strategie" class="section section-light">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">La strategie</span>
+      <h2 class="section-title">3 piliers pour une croissance organique durable</h2>
+      <p class="section-subtitle">Un ecosysteme digital complet ou chaque pilier renforce les autres.</p>
+    </div>
+
+    <div class="pillars reveal">
+      <!-- Pillar 1 -->
+      <div class="pillar">
+        <div class="pillar-number">1</div>
+        <h3>Site web &amp; SEO</h3>
+        <div class="pillar-tagline">Votre meilleur commercial, 24h/24</div>
+        <ul class="pillar-actions">
+          <li>Refonte du site avec pages formations enrichies</li>
+          <li>Blog SEO : 2 articles/mois sur les problematiques RH des PME</li>
+          <li>Lead magnets : e-book, checklists, guides telechargeable</li>
+          <li>Newsletter mensuelle via Brevo (segmentee par interet)</li>
+        </ul>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar">
+        <div class="pillar-number">2</div>
+        <h3>LinkedIn</h3>
+        <div class="pillar-tagline">Votre vitrine quotidienne aupres des decideurs</div>
+        <ul class="pillar-actions">
+          <li>Catherine : 2 posts/semaine (expertise, temoignages, behind the scenes)</li>
+          <li>Philippe : 1-2 posts/semaine (veille sociale, decryptage reglementaire)</li>
+          <li>Strategie de commentaires cibles sur les decideurs AURA</li>
+          <li>Recyclage systematique : article blog &rarr; carrousel LinkedIn</li>
+        </ul>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar">
+        <div class="pillar-number">3</div>
+        <h3>Reseau local</h3>
+        <div class="pillar-tagline">Votre ancrage local, en personne</div>
+        <ul class="pillar-actions">
+          <li>4 matinales RH (1/trimestre) &mdash; format petit-dejeuner, max 15 decideurs</li>
+          <li>4 sessions decouverte co-developpement (gratuit, 2h)</li>
+          <li>Google Business Profile optimise avec avis et publications</li>
+          <li>Partenariats locaux (CCI, clubs dirigeants, experts-comptables)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LIVRABLES -->
+<section id="livrables" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Livrables concrets</span>
+      <h2 class="section-title">Ce que nous vous livrons</h2>
+      <p class="section-subtitle">Pas de slides vagues. Des livrables tangibles, prets a deployer.</p>
+    </div>
+
+    <div class="deliverables-grid reveal">
+      <!-- Audit -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9776;</span>
+          Audit &amp; Strategie
+        </h4>
+        <ul class="deliv-list">
+          <li>Audit complet (site, SEO, LinkedIn, concurrence)</li>
+          <li>Document strategique de 19 pages</li>
+          <li>Fichier prospects qualifies data.gouv (IDCC + AURA)</li>
+        </ul>
+      </div>
+
+      <!-- Corrections -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9881;</span>
+          Corrections techniques
+        </h4>
+        <ul class="deliv-list">
+          <li>Nettoyage SEO (faux articles, meta descriptions, noindex, schema markup)</li>
+          <li>Google Business Profile optimise</li>
+          <li>Maquette complete du nouveau site (ce que vous voyez ici)</li>
+        </ul>
+      </div>
+
+      <!-- Lead magnets -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9733;</span>
+          Contenu &amp; lead magnets
+        </h4>
+        <ul class="deliv-list">
+          <li>E-book "Le guide RH du dirigeant de PME" (25 pages)</li>
+          <li>Checklist "Auto-diagnostic RH pour PME"</li>
+          <li>Guide "5 dispositifs pour financer la formation"</li>
+          <li>Template "Modele d'entretien professionnel"</li>
+          <li>Infographie "Calendrier des obligations sociales 2026"</li>
+        </ul>
+      </div>
+
+      <!-- Production -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9998;</span>
+          Production de contenu (6 mois)
+        </h4>
+        <ul class="deliv-list">
+          <li>12 articles de blog (2/mois)</li>
+          <li>Accompagnement editorial LinkedIn (Catherine + Philippe)</li>
+          <li>6 newsletters mensuelles</li>
+          <li>2 lead magnets supplementaires</li>
+        </ul>
+      </div>
+
+      <!-- Events -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9992;</span>
+          Evenements
+        </h4>
+        <ul class="deliv-list">
+          <li>4 matinales RH (1/trimestre, format petit-dejeuner)</li>
+          <li>4 sessions decouverte co-developpement</li>
+        </ul>
+      </div>
+
+      <!-- Webinaires -->
+      <div class="deliv-group">
+        <h4 class="deliv-group-title">
+          <span class="deliv-group-icon">&#9654;</span>
+          Webinaires (en option)
+        </h4>
+        <ul class="deliv-list optional">
+          <li>"PCRH : votre accompagnement RH finance a 100%"</li>
+          <li>"Entretiens professionnels 2027 : bilan des 6 ans"</li>
+          <li>"Primo-managers : les 5 reflexes des 90 premiers jours"</li>
+          <li>"RSE et PME : par ou commencer"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CALENDRIER -->
+<section id="calendrier" class="section section-light">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Calendrier</span>
+      <h2 class="section-title">Un deploiement en 3 phases</h2>
+      <p class="section-subtitle">Des quick wins des la premiere semaine. Des resultats mesurables des le mois 2.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <!-- Phase 1 -->
+      <div class="timeline-phase">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Phase 1 &mdash; Mois 1-2</div>
+        <h3 class="timeline-title">Quick wins</h3>
+        <ul class="timeline-items">
+          <li>Corrections techniques SEO</li>
+          <li>Google Business Profile</li>
+          <li>Lancement LinkedIn</li>
+          <li>Debut redaction e-book</li>
+          <li>Setup Brevo</li>
+        </ul>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="timeline-phase">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Phase 2 &mdash; Mois 2-4</div>
+        <h3 class="timeline-title">Infrastructure</h3>
+        <ul class="timeline-items">
+          <li>Blog operationnel (2 articles)</li>
+          <li>Lead magnets en ligne</li>
+          <li>Newsletter #1</li>
+          <li>1ere matinale RH</li>
+          <li>Premiers formulaires actifs</li>
+        </ul>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="timeline-phase">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Phase 3 &mdash; Mois 4-12</div>
+        <h3 class="timeline-title">Croissance</h3>
+        <ul class="timeline-items">
+          <li>Production continue (blog + LinkedIn)</li>
+          <li>Newsletters mensuelles</li>
+          <li>Matinales trimestrielles</li>
+          <li>Mesure &amp; optimisation</li>
+          <li>Webinaires (option)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. RESULTATS ATTENDUS -->
+<section id="resultats" class="section section-teal">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Resultats attendus</span>
+      <h2 class="section-title">Projections a 12 mois</h2>
+      <p class="section-subtitle">Des objectifs realistes, bases sur les benchmarks du secteur formation B2B.</p>
+    </div>
+
+    <div class="kpi-grid reveal">
+      <div class="kpi-card">
+        <div class="kpi-value">x5-x10</div>
+        <div class="kpi-label">Trafic site web</div>
+        <div class="kpi-sublabel">vs trafic actuel</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">5-10</div>
+        <div class="kpi-label">Leads qualifies</div>
+        <div class="kpi-sublabel">par mois</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">200-500</div>
+        <div class="kpi-label">Contacts email</div>
+        <div class="kpi-sublabel">base newsletter</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">2-4</div>
+        <div class="kpi-label">Nouveaux clients</div>
+        <div class="kpi-sublabel">par trimestre</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">40-120K</div>
+        <div class="kpi-label">CA additionnel</div>
+        <div class="kpi-sublabel">EUR / an</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. INVESTISSEMENT -->
+<section id="investissement" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Investissement</span>
+      <h2 class="section-title">Deux formules, un meme objectif</h2>
+      <p class="section-subtitle">Choisissez le niveau d'accompagnement qui vous convient. Les deux generent un ROI positif des le premier client signe.</p>
+    </div>
+
+    <div class="pricing-grid reveal">
+      <!-- Option A -->
+      <div class="pricing-card featured">
+        <div class="pricing-option">Option A</div>
+        <h3 class="pricing-title">Accompagnement complet</h3>
+        <div class="pricing-price">4 300 &euro; <small>HT</small></div>
+        <div class="pricing-normal">Tarif normal : ~8 100 &euro; &mdash; tarif partenaire applique</div>
+        <p class="pricing-desc">Je prends tout en charge. Vous validez et publiez. Zero charge mentale supplementaire pour votre equipe.</p>
+        <div class="pricing-roi">1 client PCRH = 15 000 &euro; de CA &rarr; investissement rembourse x3</div>
+        <ul class="pricing-includes">
+          <li>Audit complet + document strategique</li>
+          <li>Corrections techniques SEO</li>
+          <li>5 lead magnets rediges</li>
+          <li>12 articles de blog (6 mois)</li>
+          <li>6 newsletters</li>
+          <li>Accompagnement LinkedIn</li>
+          <li>Organisation des evenements</li>
+          <li>Reporting mensuel</li>
+        </ul>
+      </div>
+
+      <!-- Option B -->
+      <div class="pricing-card">
+        <div class="pricing-option">Option B</div>
+        <h3 class="pricing-title">Setup + autonomie</h3>
+        <div class="pricing-price">2 100 &euro; <small>HT</small></div>
+        <div class="pricing-normal">&nbsp;</div>
+        <p class="pricing-desc">Je construis les fondations. Vous prenez le relais sur la production de contenu avec un kit editorial complet.</p>
+        <div class="pricing-roi">Inclut 2h de formation + kit editorial pour etre autonome</div>
+        <ul class="pricing-includes">
+          <li>Audit complet + document strategique</li>
+          <li>Corrections techniques SEO</li>
+          <li>3 lead magnets rediges</li>
+          <li>4 articles de blog (modeles)</li>
+          <li>Templates newsletter</li>
+          <li>Guide editorial LinkedIn</li>
+          <li>2h de formation equipe</li>
+          <li>Kit editorial complet</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-payment reveal">
+      <strong>Echeancier :</strong>&ensp;30% a la signature&ensp;|&ensp;30% fin Phase 1&ensp;|&ensp;40% fin Phase 2
+    </div>
+  </div>
+</section>
+
+<!-- 9. PROCHAINES ETAPES -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Prochaines etapes</span>
+      <h2 class="section-title">Comment on avance</h2>
+    </div>
+
+    <div class="steps-list reveal">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Echange de validation</strong>
+          On discute de cette proposition ensemble
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Choix de la formule</strong>
+          Option A ou B, selon vos ressources
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Demarrage sous 2 semaines</strong>
+          On lance les quick wins immediatement
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Premiers resultats</strong>
+          Visibles des le mois 2
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. LIENS UTILES -->
+<section class="section section-light">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Ressources</span>
+      <h2 class="section-title">Liens utiles</h2>
+    </div>
+
+    <div class="links-grid reveal">
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9635;</div>
+        <div class="link-text">
+          <strong>Demo du nouveau site</strong>
+          <span>gaspardcoche.github.io/cartesa-gtm-2026</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/blog.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9998;</div>
+        <div class="link-text">
+          <strong>Blog de demo</strong>
+          <span>8 articles SEO optimises</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/ressourcerie.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9733;</div>
+        <div class="link-text">
+          <strong>Ressourcerie</strong>
+          <span>Lead magnets et contenus telechargeable</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="container">
+    <div class="reveal">
+      <p class="closing-quote">Vos formations sont excellentes.<br>Il est temps que le monde le sache.</p>
+      <p class="closing-sub">Gaspard Coche &mdash; Avril 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLL ANIMATION JS -->
+<script>
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

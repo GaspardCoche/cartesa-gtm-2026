@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog RH — CARTESA</title>
+  <meta name="description" content="Articles, guides et conseils RH pour dirigeants et managers de PME. Droit social, management, formation, RSE, financement. Par les consultants CARTESA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="expertises.html">Nos expertises</a></li>
+        <li><a href="formations.html">Formations 2026</a></li>
+        <li><a href="equipe.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressourcerie.html">Ressourcerie</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Blog RH</span>
+      <h1>Conseils RH pratiques pour dirigeants et managers</h1>
+      <p>Obligations legales, bonnes pratiques manageriales, dispositifs de financement : des articles de fond rediges par nos consultants terrain.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTERS -->
+  <section class="section section--white" style="padding-bottom:0;">
+    <div class="container">
+      <div class="blog-filters">
+        <button class="filter-btn active" onclick="filterArticles('all', this)">Tous les articles</button>
+        <button class="filter-btn" onclick="filterArticles('droit-social', this)">Droit social</button>
+        <button class="filter-btn" onclick="filterArticles('management', this)">Management</button>
+        <button class="filter-btn" onclick="filterArticles('formation', this)">Formation</button>
+        <button class="filter-btn" onclick="filterArticles('rse', this)">RSE</button>
+        <button class="filter-btn" onclick="filterArticles('financement', this)">Financement</button>
+        <button class="filter-btn" onclick="filterArticles('organisation-rh', this)">Organisation RH</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="section section--white" style="padding-top:24px;">
+    <div class="container">
+      <div class="grid-2" style="gap:28px;">
+
+        <!-- ARTICLE 1 -->
+        <div class="card blog-card" data-category="droit-social">
+          <span class="blog-category">Droit social</span>
+          <h3>Les obligations RH a 11, 20 et 50 salaries : le guide complet 2026</h3>
+          <p class="blog-excerpt">A chaque franchissement de seuil d'effectif, de nouvelles obligations sociales s'imposent a l'employeur. A 11 salaries, vous devez organiser les elections du CSE et mettre en place la participation aux resultats. A 20 salaries, la contribution FNAL passe au taux plein et le reglement interieur devient obligatoire. A 50 salaries, les enjeux se multiplient : commission sante-securite du CSE, participation aux benefices obligatoire, plan de developpement des competences formalise. Cet article detaille chaque seuil, les delais de mise en conformite et les sanctions encourues en cas de manquement.</p>
+          <div class="blog-meta">
+            <span>Mars 2026</span>
+            <span>8 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 2 -->
+        <div class="card blog-card" data-category="financement">
+          <span class="blog-category">Financement</span>
+          <h3>PCRH : l'accompagnement RH gratuit dont personne ne parle</h3>
+          <p class="blog-excerpt">La Prestation de Conseil en Ressources Humaines (PCRH) est un dispositif finance par l'Etat via les DREETS et les OPCO, totalement gratuit pour les entreprises de moins de 250 salaries. Il permet de beneficier de 12 a 20 jours d'accompagnement par un consultant RH pour structurer ses pratiques : diagnostic RH, mise en place des entretiens professionnels, construction d'un plan de developpement des competences, formalisation des fiches de poste. Le budget, pouvant atteindre 15 000 EUR, est integralement pris en charge. Malgre cela, moins de 5% des entreprises eligibles en font la demande.</p>
+          <div class="blog-meta">
+            <span>Fevrier 2026</span>
+            <span>6 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 3 -->
+        <div class="card blog-card" data-category="management">
+          <span class="blog-category">Management</span>
+          <h3>Entretien professionnel vs entretien annuel : ne confondez plus jamais</h3>
+          <p class="blog-excerpt">L'entretien professionnel est une obligation legale depuis la loi du 5 mars 2014 : il doit avoir lieu tous les deux ans et porte exclusivement sur les perspectives d'evolution professionnelle et les besoins en formation du salarie. L'entretien annuel d'evaluation, lui, est facultatif et se concentre sur la performance, les objectifs atteints et les axes d'amelioration. Confondre les deux expose l'entreprise a des sanctions : lors du bilan a 6 ans, si l'employeur n'a pas respecte ses obligations, il risque un abondement correctif de 3 000 EUR par salarie concerne sur le CPF. Voici comment distinguer les deux et tirer le meilleur de chacun.</p>
+          <div class="blog-meta">
+            <span>Janvier 2026</span>
+            <span>7 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 4 -->
+        <div class="card blog-card" data-category="formation">
+          <span class="blog-category">Formation</span>
+          <h3>AFEST : former vos collaborateurs en situation de travail</h3>
+          <p class="blog-excerpt">Reconnue comme modalite pedagogique a part entiere depuis la loi Avenir Professionnel de septembre 2018, l'AFEST (Action de Formation En Situation de Travail) permet d'apprendre directement dans son environnement de travail. Son principe repose sur l'alternance entre des mises en situation productives et des phases de reflexivite ou l'apprenant analyse ce qu'il a fait, compris et retenu. Particulierement adaptee aux metiers manuels, techniques et industriels, elle necessite un referent AFEST forme et certifie. Chez CARTESA, nous formons vos referents internes et concevons le parcours pedagogique conforme aux exigences de la certification Qualiopi.</p>
+          <div class="blog-meta">
+            <span>Decembre 2025</span>
+            <span>9 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 5 -->
+        <div class="card blog-card" data-category="management">
+          <span class="blog-category">Management</span>
+          <h3>5 erreurs de management qui font fuir vos meilleurs talents</h3>
+          <p class="blog-excerpt">La premiere erreur : ne pas deleguer suffisamment, ce qui etouffe l'autonomie et la progression des collaborateurs les plus ambitieux. La deuxieme : supprimer ou reporter systematiquement les entretiens individuels, envoyant le signal que le manager n'a pas de temps pour ses equipes. Troisieme piege : confondre autorite et leadership, en imposant plutot qu'en embarquant. Quatrieme erreur : ignorer les signaux faibles de desengagement -- retards, silence en reunion, baisse d'initiative. Enfin, ne pas celebrer les reussites, meme petites, erode la motivation durablement. Chacune de ces erreurs alimente le turnover ; cumulees, elles transforment votre entreprise en tremplin pour vos concurrents.</p>
+          <div class="blog-meta">
+            <span>Novembre 2025</span>
+            <span>6 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 6 -->
+        <div class="card blog-card" data-category="rse">
+          <span class="blog-category">RSE</span>
+          <h3>RSE en PME : par ou commencer sans exploser votre budget</h3>
+          <p class="blog-excerpt">Contrairement aux idees recues, initier une demarche RSE ne necessite ni budget colossal ni equipe dediee. Commencez par une analyse de materialite simplifiee : identifiez les 3 a 5 enjeux sociaux et environnementaux les plus pertinents pour votre activite et vos parties prenantes. Priorisez la qualite de vie au travail, qui a un impact immediat sur l'engagement et la fidelisation. Mettez en place des eco-gestes concrets et mesurables. Impliquez vos salaries dans la demarche via un groupe de travail volontaire. Appuyez-vous sur les outils gratuits comme la checklist RSE de BPI France ou le referentiel LUCIE. En 6 mois, vous aurez une demarche structuree et communicable.</p>
+          <div class="blog-meta">
+            <span>Octobre 2025</span>
+            <span>7 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 7 -->
+        <div class="card blog-card" data-category="formation">
+          <span class="blog-category">Formation</span>
+          <h3>Le guide de l'entretien professionnel reussi</h3>
+          <p class="blog-excerpt">Un entretien professionnel reussi se prepare en amont, cote manager comme cote collaborateur. Sa structure suit une progression logique : bilan des actions de formation et des evolutions depuis le dernier entretien, recueil des aspirations professionnelles du salarie, identification des besoins en formation et en accompagnement, puis elaboration d'un plan d'action concret avec des echeances. L'obligation legale impose egalement un bilan recapitulatif tous les 6 ans, lors duquel l'employeur doit demontrer que le salarie a beneficie d'au moins une action de formation et d'une progression. A defaut, la sanction peut atteindre 3 000 EUR par salarie verse sur son CPF.</p>
+          <div class="blog-meta">
+            <span>Septembre 2025</span>
+            <span>8 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+        <!-- ARTICLE 8 -->
+        <div class="card blog-card" data-category="organisation-rh">
+          <span class="blog-category">Organisation RH</span>
+          <h3>Comment structurer sa fonction RH quand on n'a pas de DRH</h3>
+          <p class="blog-excerpt">Dans les PME de 10 a 50 salaries, la fonction RH est souvent assuree par le dirigeant lui-meme, un comptable ou un assistant polyvalent. Sans formation specifique, les risques de non-conformite juridique sont eleves. La priorite absolue : securiser les obligations legales (contrats, paie, medecine du travail, entretiens professionnels). Ensuite, structurer les processus cles : recrutement, integration, gestion des absences. Enfin seulement, investir dans le developpement (formation, marque employeur, GPEC). Le dispositif PCRH, finance a 100%, est specifiquement concu pour accompagner cette structuration progressive. Un consultant externe apporte la methode et le cadre legal que l'entreprise n'a pas en interne.</p>
+          <div class="blog-meta">
+            <span>Aout 2025</span>
+            <span>7 min de lecture</span>
+          </div>
+          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="newsletter-signup">
+        <h3>Recevez nos articles RH chaque mois</h3>
+        <p>Obligations legales, bonnes pratiques manageriales, dispositifs de financement... Des contenus concrets rediges par nos consultants, directement dans votre boite mail.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="votre.email@entreprise.com" aria-label="Votre adresse email">
+          <button class="btn btn--primary btn--sm" onclick="alert('Ce formulaire est une demonstration. En production, il serait connecte a votre systeme de newsletter.');">S'inscrire</button>
+        </div>
+        <p style="font-size:0.75rem; color:var(--neutral-500); margin-top:12px; margin-bottom:0;">Pas de spam. Desabonnement en un clic. Environ 1 email par mois.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal" style="padding:48px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:12px;">Un sujet vous concerne ? Parlons-en.</h2>
+      <p style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier echange gratuit et sans engagement sur vos problematiques RH.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <p>Cabinet de conseil et organisme de formation certifie Qualiopi. Nous accompagnons les entreprises et les territoires dans le developpement des competences depuis 2003.</p>
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <span>Certifie Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="expertises.html">Nos expertises</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="equipe.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressourcerie.html">Ressourcerie</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic RH/RSE</a></li>
+            <li><a href="expertises.html">Formation</a></li>
+            <li><a href="expertises.html">Coaching</a></li>
+            <li><a href="expertises.html">Transformation</a></li>
+            <li><a href="expertises.html">Co-developpement</a></li>
+            <li><a href="expertises.html">Entrepreneuriat</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits reserves.</span>
+        <span>Competences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    function filterArticles(category, btn) {
+      var cards = document.querySelectorAll('.blog-card');
+      var btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
