@@ -1680,14 +1680,14 @@ img { max-width: 100%; height: auto; display: block; }
 /* ===== QUALITE SECTION (formations) ===== */
 .qualite-content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.4fr 0.6fr;
   gap: 48px;
   align-items: flex-start;
 }
 
 .qualite-content .competences-chart {
   width: 100%;
-  max-width: 500px;
+  max-width: 280px;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
@@ -2428,4 +2428,123 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 480px) {
   .cal-meta { flex-direction: column; gap: 4px; }
+}
+
+/* ===== MINI CALENDAR GRID ===== */
+.cal-mini {
+  margin-bottom: 20px;
+}
+
+.cal-mini-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.cal-mini-header span {
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--neutral-500);
+  padding: 4px 0;
+}
+
+.cal-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-mini-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neutral-500);
+  border-radius: 8px;
+  position: relative;
+  max-width: 44px;
+}
+
+.cal-mini-day.empty {
+  visibility: hidden;
+}
+
+.cal-mini-day.has-session {
+  font-weight: 800;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.cal-mini-day.has-session.cat-management { background: #3b6fc2; }
+.cal-mini-day.has-session.cat-droit { background: #b87d20; }
+.cal-mini-day.has-session.cat-rh { background: #2e7d32; }
+.cal-mini-day.has-session.cat-rse { background: #7b1fa2; }
+.cal-mini-day.has-session.cat-recrutement { background: #e65100; }
+
+.cal-mini-day.today {
+  border: 2px solid var(--teal-600);
+  font-weight: 700;
+  color: var(--teal-600);
+}
+
+.cal-mini-day.has-session + .cal-mini-day.has-session.same-event {
+  border-radius: 0 8px 8px 0;
+}
+
+/* Multi-day event bars */
+.cal-mini-day.event-start {
+  border-radius: 8px 0 0 8px;
+}
+.cal-mini-day.event-mid {
+  border-radius: 0;
+}
+.cal-mini-day.event-end {
+  border-radius: 0 8px 8px 0;
+}
+.cal-mini-day.event-single {
+  border-radius: 8px;
+}
+
+/* Calendar legend */
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: var(--neutral-50);
+  border-radius: 12px;
+}
+
+.cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.cal-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.cal-legend-dot.management { background: #3b6fc2; }
+.cal-legend-dot.droit { background: #b87d20; }
+.cal-legend-dot.rh { background: #2e7d32; }
+.cal-legend-dot.rse { background: #7b1fa2; }
+.cal-legend-dot.recrutement { background: #e65100; }
+
+@media (max-width: 640px) {
+  .cal-mini-day { font-size: 0.65rem; }
 }
