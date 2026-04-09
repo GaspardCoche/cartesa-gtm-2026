@@ -75,11 +75,17 @@
   </header>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
     <div class="container">
       <span class="section-label" style="color:rgba(255,255,255,0.5);">Catalogue 2026</span>
       <h1>Formez vos managers, securisez vos pratiques RH</h1>
       <p>Des formations concues sur le terrain, financables a 100% par votre OPCO. 500+ entreprises formees, 4 certifications, des resultats mesurables des le retour en poste.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>7</strong><span>formations</span></div>
+        <div class="page-hero-stat"><strong>2</strong><span>formats</span></div>
+        <div class="page-hero-stat"><strong>100%</strong><span>OPCO</span></div>
+      </div>
     </div>
   </section>
 
@@ -102,10 +108,19 @@
         <button class="cal-filter" data-filter="recrutement">Recrutement</button>
       </div>
 
+      <!-- Navigation rapide par mois -->
+      <div class="cal-jump reveal" style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;">
+        <a href="#cal-mai" class="btn btn--primary btn--sm">Mai 2026</a>
+        <a href="#cal-juin" class="btn btn--ghost btn--sm">Juin 2026</a>
+        <a href="#cal-sept" class="btn btn--ghost btn--sm">Sept 2026</a>
+        <a href="#cal-oct" class="btn btn--ghost btn--sm">Oct 2026</a>
+        <a href="#cal-nov" class="btn btn--ghost btn--sm">Nov 2026</a>
+      </div>
+
       <!-- Timeline calendrier -->
       <div class="cal-timeline reveal" id="calTimeline">
 
-        <div class="cal-month reveal">
+        <div class="cal-month reveal" id="cal-mai">
           <div class="cal-month-label">Mai 2026</div>
           <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="management">
@@ -164,7 +179,7 @@
           </div>
         </div>
 
-        <div class="cal-month reveal">
+        <div class="cal-month reveal" id="cal-juin">
           <div class="cal-month-label">Juin 2026</div>
           <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="recrutement">
@@ -241,7 +256,7 @@
           </div>
         </div>
 
-        <div class="cal-month reveal">
+        <div class="cal-month reveal" id="cal-sept">
           <div class="cal-month-label">Septembre 2026</div>
           <div class="cal-sessions reveal-stagger">
             <div class="cal-session" data-cat="management">
@@ -300,11 +315,69 @@
           </div>
         </div>
 
+        <div class="cal-month reveal" id="cal-oct">
+          <div class="cal-month-label">Octobre 2026</div>
+          <div class="cal-sessions reveal-stagger">
+            <div class="cal-session" data-cat="droit">
+              <div class="cal-date">
+                <span class="cal-day">13</span>
+                <span class="cal-weekday">Mar</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--droit">Droit social</span>
+                <h4>Droit social -- Actualites legislatives 2026</h4>
+                <p>Les dernieres evolutions du code du travail, impacts pratiques pour le manager</p>
+                <div class="cal-meta">
+                  <span>1 jour</span>
+                  <span>Distanciel</span>
+                  <span>15 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-month reveal" id="cal-nov">
+          <div class="cal-month-label">Novembre 2026</div>
+          <div class="cal-sessions reveal-stagger">
+            <div class="cal-session" data-cat="management">
+              <div class="cal-date">
+                <span class="cal-day">16</span>
+                <span class="cal-weekday">Lun</span>
+              </div>
+              <div class="cal-info">
+                <span class="cal-cat-badge cal-cat--management">Management</span>
+                <h4>Management d'equipe -- Niveau 1</h4>
+                <p>Developper sa posture manageriale, animer son equipe, conduire les entretiens</p>
+                <div class="cal-meta">
+                  <span>3 jours (16-18 nov)</span>
+                  <span>Presentiel -- La Tour-du-Pin</span>
+                  <span>8 places restantes</span>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="cal-cta reveal" style="text-align:center; margin-top:48px;">
         <p style="font-size:0.95rem; color:var(--neutral-500); margin-bottom:16px;">Vous ne trouvez pas la date qui vous convient ? Nous organisons aussi des sessions intra-entreprise sur mesure.</p>
         <a href="contact.html" class="btn btn--primary btn--lg">Demander une session sur mesure</a>
+      </div>
+
+      <div class="reveal" style="background:#faf9f7;border-radius:16px;padding:40px;margin-top:48px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <h3 style="margin-bottom:8px;">Vous preferez une formation dans vos locaux ?</h3>
+          <p style="font-size:0.95rem;color:var(--neutral-500);margin-bottom:16px;">Toutes nos formations sont disponibles en intra-entreprise : contenu adapte a votre contexte, dates flexibles, tarif degressif a partir de 4 participants. Financement OPCO identique.</p>
+          <a href="contact.html" class="btn btn--primary">Demander un devis intra</a>
+        </div>
+        <div style="flex:0 0 auto;text-align:center;">
+          <div style="font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;color:var(--teal-600);">100%</div>
+          <div style="font-size:0.8rem;color:var(--neutral-500);font-weight:600;">financable OPCO</div>
+        </div>
       </div>
     </div>
   </section>
@@ -317,7 +390,7 @@
         <h2 class="section-title">Nos formations en detail</h2>
         <p class="section-subtitle">Chaque formation est concue sur mesure, ancree dans vos situations professionnelles reelles.</p>
       </div>
-      <div class="grid-3">
+      <div class="grid-3 reveal-stagger">
 
         <div class="card formation-card">
           <div class="card-icon">

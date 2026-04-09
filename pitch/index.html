@@ -3,1384 +3,696 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartesa — Strategie Go-to-Market Organique 2026</title>
+<title>Cartesa — Projet de strategie digitale 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & VARIABLES ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --teal-900: #092933;
-  --teal-700: #0a5f75;
-  --teal-600: #0d6f9e;
-  --teal-500: #21b6c8;
-  --teal-100: #e4f1f6;
-  --teal-50: #f0f8fb;
-  --gold-600: #b89520;
-  --gold-500: #ecd034;
-  --gold-400: #f0cc3a;
-  --gold-100: #fbf4e0;
+  --blue: #007cba;
+  --blue-dark: #006aa3;
+  --blue-900: #092933;
+  --blue-light: #e4f1f6;
+  --blue-50: #f0f8fb;
+  --gold: #f0cc3a;
+  --gold-dark: #d8b62e;
   --neutral-900: #092933;
-  --neutral-800: #262d36;
   --neutral-700: #374151;
   --neutral-500: #6b7280;
-  --neutral-400: #9ca3af;
   --neutral-300: #d1d5db;
   --neutral-200: #e5e7eb;
   --neutral-100: #f3f4f6;
-  --neutral-50: #f9fafb;
+  --neutral-50: #faf9f7;
   --white: #ffffff;
   --red: #dc2626;
-  --red-bg: #fef2f2;
   --orange: #ea580c;
-  --orange-bg: #fff7ed;
   --green: #16a34a;
-  --green-bg: #f0fdf4;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'DM Sans', -apple-system, sans-serif;
   color: var(--neutral-700);
   background: var(--white);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+h1, h2, h3, h4 {
+  font-family: 'Sora', sans-serif;
   color: var(--neutral-900);
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-h1, h2 {
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  font-weight: 800;
 }
 
-/* ===== NAV ===== */
-.pitch-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(13, 111, 158, 0.95);
+h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 700; }
+
+a { color: var(--blue); text-decoration: none; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(0,124,186,0.95);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 0 2rem;
-  transition: transform 0.3s ease;
 }
-
-.pitch-nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
   height: 56px;
 }
-
-.pitch-nav-brand {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-
-.pitch-nav-links {
-  display: flex;
-  gap: 0.25rem;
-  list-style: none;
-}
-
-.pitch-nav-links a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 0.4rem 0.7rem;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-
-.pitch-nav-links a:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.1);
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  padding: 6rem 2rem;
-}
-
-.section-dark {
-  background: var(--teal-700);
-  color: var(--neutral-300);
-}
-
-.section-dark h2, .section-dark h3, .section-dark h4 {
-  color: var(--white);
-}
-
-.section-teal {
-  background: var(--teal-600);
-  color: rgba(255,255,255,0.9);
-}
-
-.section-teal h2, .section-teal h3, .section-teal h4 {
-  color: var(--white);
-}
-
-.section-light {
-  background: var(--neutral-50);
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-label {
-  display: inline-block;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gold-500);
-  margin-bottom: 1rem;
-}
-
-.section-dark .section-label,
-.section-teal .section-label {
-  color: var(--gold-400);
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 1.5rem;
-}
-
-.section-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  max-width: 700px;
-  opacity: 0.85;
-}
-
-/* ===== COVER ===== */
-.cover {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--teal-600);
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 2rem;
-}
-
-
-.cover-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-.cover-badge {
-  display: inline-block;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--gold-500);
-  border: 1px solid rgba(212,166,46,0.3);
-  padding: 0.5rem 1.2rem;
-  border-radius: 100px;
-  margin-bottom: 2.5rem;
-}
-
-.cover h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.cover h1 span {
-  display: block;
-  color: var(--gold-500);
-  font-size: 0.6em;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  letter-spacing: 0;
-}
-
-.cover-text {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.7;
-  margin-bottom: 3rem;
-}
-
-.cover-meta {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  font-weight: 500;
-}
-
-.cover-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 2.5rem;
-  padding: 0.9rem 2rem;
-  background: var(--gold-500);
-  color: var(--neutral-900);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.25s;
-}
-
-.cover-cta:hover {
-  background: var(--gold-400);
-}
-
-/* ===== DIAGNOSTIC SCORECARD ===== */
-.scorecard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.score-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 1.5rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-.score-item:hover {
-}
-
-.score-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.score-dot.red {
-  background: var(--red);
-  box-shadow: 0 0 8px rgba(220,38,38,0.4);
-}
-
-.score-dot.orange {
-  background: var(--orange);
-  box-shadow: 0 0 8px rgba(234,88,12,0.4);
-}
-
-.score-dot.green {
-  background: var(--green);
-  box-shadow: 0 0 8px rgba(22,163,74,0.4);
-}
-
-.score-label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--white);
-}
-
-.score-detail {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
-  margin-top: 0.15rem;
-}
-
-/* ===== PROBLEM STATS ===== */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.stat-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-}
-
-.stat-number {
-  font-family: 'Sora', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--red);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-number.orange-num { color: var(--orange); }
-
-.stat-text {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.55);
-}
-
-/* ===== BEFORE/AFTER ===== */
-.comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 768px) {
-  .comparison {
-    grid-template-columns: 1fr;
-  }
-}
-
-.comp-side {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--neutral-200);
-}
-
-.comp-side.before {
-  border-color: rgba(220,38,38,0.2);
-}
-
-.comp-side.after {
-  border-color: rgba(22,163,74,0.2);
-}
-
-.comp-header {
-  padding: 1rem 1.5rem;
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.comp-side.before .comp-header {
-  background: var(--red-bg);
-  color: var(--red);
-}
-
-.comp-side.after .comp-header {
-  background: var(--green-bg);
-  color: var(--green);
-}
-
-.comp-body {
-  padding: 1.5rem;
-}
-
-.comp-frame {
-  background: var(--neutral-100);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
-  position: relative;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.comp-frame-url {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--white);
-  border-bottom: 1px solid var(--neutral-200);
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  color: var(--neutral-500);
-  border-radius: 8px 8px 0 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.frame-dots {
-  display: flex;
-  gap: 4px;
-}
-
-.frame-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--neutral-300);
-}
-
-.comp-frame-content {
-  padding-top: 2rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--neutral-500);
-}
-
-.comp-frame-content .site-name {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--neutral-900);
-  margin-bottom: 0.3rem;
-}
-
-.comp-annotations {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.comp-annotations li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.comp-annotations li::before {
-  flex-shrink: 0;
-  font-size: 0.85rem;
-  margin-top: 0.1rem;
-}
-
-.comp-side.before .comp-annotations li::before { content: '\2717'; color: var(--red); }
-.comp-side.after .comp-annotations li::before { content: '\2713'; color: var(--green); }
-
-/* Google search mock */
-.google-mock {
-  background: var(--white);
-  border: 1px solid var(--neutral-200);
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-.google-mock-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--neutral-400);
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.google-result {
-  margin-bottom: 0.75rem;
-}
-
-.google-result:last-child { margin-bottom: 0; }
-
-.google-result-url {
-  font-size: 0.75rem;
-  color: var(--neutral-400);
-}
-
-.google-result-title {
-  font-size: 0.95rem;
-  color: #1a0dab;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.google-result-desc {
-  font-size: 0.8rem;
-  color: var(--neutral-500);
-  line-height: 1.5;
-}
-
-.google-result.faded {
-  opacity: 0.4;
-}
-
-.google-result.highlight {
-  background: var(--green-bg);
-  padding: 0.75rem;
-  border-radius: 6px;
-  border-left: 3px solid var(--green);
-}
-
-/* ===== PILLARS ===== */
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 900px) {
-  .pillars {
-    grid-template-columns: 1fr;
-  }
-}
-
-.pillar {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
-  border: 1px solid var(--neutral-200);
-  transition: all 0.25s;
-}
-
-.pillar:hover {
-  border-color: var(--teal-600);
-}
-
-.pillar-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--teal-100);
-  color: var(--teal-700);
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  margin-bottom: 1.25rem;
-}
-
-.pillar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-}
-
-.pillar-tagline {
-  font-size: 0.85rem;
-  color: var(--teal-600);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-}
-
-.pillar-actions {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.pillar-actions li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.pillar-actions li::before {
-  content: '\2192';
-  color: var(--teal-600);
-  font-weight: 600;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-/* ===== DELIVERABLES ===== */
-.deliverables-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.deliv-group {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid var(--neutral-200);
-}
-
-.deliv-group-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.deliv-group-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--teal-100);
-  color: var(--teal-700);
-  font-size: 0.9rem;
-}
-
-.deliv-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.deliv-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.deliv-list li::before {
-  content: '\2713';
-  color: var(--teal-600);
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-.section-teal .deliv-list li::before {
-  color: var(--gold-400);
-}
-
-.deliv-list.optional li::before {
-  content: '\25CB';
-  color: var(--gold-500);
-}
-
-/* ===== TIMELINE ===== */
-.timeline {
-  position: relative;
-  margin-top: 3rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 24px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--neutral-200);
-}
-
-.timeline-phase {
-  position: relative;
-  padding-left: 64px;
-  padding-bottom: 3rem;
-}
-
-.timeline-phase:last-child { padding-bottom: 0; }
-
-.timeline-dot {
-  position: absolute;
-  left: 14px;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--teal-500);
-  border: 3px solid var(--white);
-  box-shadow: 0 0 0 2px var(--teal-600);
-}
-
-.timeline-phase:nth-child(2) .timeline-dot { background: var(--gold-500); box-shadow: 0 0 0 2px var(--gold-500); }
-.timeline-phase:nth-child(3) .timeline-dot { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
-
-.timeline-time {
-  font-family: 'Sora', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--teal-600);
-  margin-bottom: 0.3rem;
-}
-
-.timeline-phase:nth-child(2) .timeline-time { color: var(--gold-600); }
-.timeline-phase:nth-child(3) .timeline-time { color: var(--green); }
-
-.timeline-title {
-  font-size: 1.15rem;
-  margin-bottom: 0.75rem;
-}
-
-.timeline-items {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.timeline-items li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.85rem;
-  padding: 0.4rem 0.9rem;
-  background: var(--neutral-100);
-  border-radius: 6px;
-  color: var(--neutral-700);
-}
-
-/* ===== KPI ===== */
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.kpi-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-}
-
-.kpi-value {
-  font-family: 'Sora', sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--gold-400);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.kpi-label {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.55);
-}
-
-.kpi-sublabel {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
-  margin-top: 0.25rem;
-}
-
-/* ===== PRICING ===== */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 768px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.pricing-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 2.5rem 2rem;
-  border: 1px solid var(--neutral-200);
-  position: relative;
-  transition: all 0.25s;
-}
-
-.pricing-card:hover {
-}
-
-.pricing-card.featured {
-  border-color: var(--teal-600);
-  box-shadow: 0 8px 32px rgba(13,122,158,0.12);
-}
-
-.pricing-card.featured::before {
-  content: 'Recommande';
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--teal-500);
-  color: var(--white);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.35rem 1rem;
-  border-radius: 100px;
-}
-
-.pricing-option {
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--teal-600);
-  margin-bottom: 0.5rem;
-}
-
-.pricing-title {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.pricing-price {
-  font-family: 'Sora', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--neutral-900);
-  line-height: 1;
-}
-
-.pricing-price small {
-  font-size: 0.4em;
-  font-weight: 500;
-  color: var(--neutral-500);
-}
-
-.pricing-normal {
-  font-size: 0.85rem;
-  color: var(--neutral-400);
-  text-decoration: line-through;
-  margin-top: 0.3rem;
-  margin-bottom: 1.5rem;
-}
-
-.pricing-desc {
-  font-size: 0.95rem;
-  color: var(--neutral-500);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.pricing-roi {
-  background: var(--gold-100);
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  color: var(--gold-600);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-}
-
-.pricing-includes {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.pricing-includes li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-.pricing-includes li::before {
-  content: '\2713';
-  color: var(--teal-600);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.pricing-payment {
-  margin-top: 3rem;
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--neutral-100);
-  border-radius: 10px;
-  font-size: 0.9rem;
-  color: var(--neutral-500);
-}
-
-.pricing-payment strong {
-  color: var(--neutral-900);
-}
-
-/* ===== NEXT STEPS ===== */
-.steps-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.step-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  position: relative;
-}
-
-.step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  border: 2px solid rgba(255,255,255,0.15);
-  color: var(--gold-400);
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.step-text {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.5;
-}
-
-.step-text strong {
-  display: block;
-  color: var(--white);
-  font-size: 1.05rem;
-  margin-bottom: 0.3rem;
-}
-
-/* ===== LINKS ===== */
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.link-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: var(--white);
-  border: 1px solid var(--neutral-200);
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--neutral-700);
-  transition: all 0.25s;
-}
-
-.link-card:hover {
-  border-color: var(--teal-600);
-}
-
-.link-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: var(--teal-100);
-  color: var(--teal-700);
-  flex-shrink: 0;
-  font-size: 1.1rem;
-}
-
-.link-text strong {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--neutral-900);
-  margin-bottom: 0.15rem;
-}
-
-.link-text span {
-  font-size: 0.8rem;
-  color: var(--neutral-500);
-}
-
-/* ===== CLOSING ===== */
-.closing {
-  text-align: center;
-  padding: 8rem 2rem;
-  background: var(--teal-600);
-  position: relative;
-}
-
-.closing-quote {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 700;
-  color: var(--white);
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.3;
-}
-
-.closing-sub {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.4);
-}
-
-/* ===== SCROLL ANIMATION ===== */
+.nav-brand {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
+  color: white; text-decoration: none;
+}
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+  padding: 6px 12px; border-radius: 50px; transition: color 0.2s;
+}
+.nav-links a:hover { color: white; }
+@media(max-width:768px) { .nav-links { display: none; } }
+
+/* LAYOUT */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: clamp(5rem, 10vw, 8rem) 0; }
+.section-alt { background: var(--neutral-50); }
+.section-blue { background: var(--blue); color: white; }
+.section-blue h2, .section-blue h3, .section-blue h4 { color: white; }
+.section-dark { background: var(--blue-dark); color: rgba(255,255,255,0.85); }
+.section-dark h2, .section-dark h3, .section-dark h4 { color: white; }
+
+.label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--blue); margin-bottom: 12px;
+}
+.label::before { content: ''; width: 24px; height: 3px; background: var(--gold); border-radius: 2px; }
+.section-blue .label, .section-dark .label { color: var(--gold); }
+.section-blue .label::before, .section-dark .label::before { background: rgba(255,255,255,0.3); }
+
+.subtitle {
+  font-size: 1.05rem; color: var(--neutral-500); max-width: 620px; line-height: 1.75;
+}
+.section-blue .subtitle { color: rgba(255,255,255,0.7); }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem; font-weight: 600; border: none;
+  border-radius: 50px; cursor: pointer; transition: background 0.2s, color 0.2s;
+  text-decoration: none; line-height: 1;
+}
+.btn-primary { background: var(--blue); color: white; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); }
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+.btn-ghost { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+.btn-ghost:hover { background: var(--blue); color: white; }
+
+/* REVEAL */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media(prefers-reduced-motion:reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+/* ========== COVER ========== */
+.cover {
+  background: var(--blue); color: white;
+  padding: clamp(8rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
+  text-align: center;
+}
+.cover h1 { color: white; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.cover-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.7);
+  max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7;
+}
+.cover-meta { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 2rem; }
+.cover-arrow {
+  display: inline-flex; padding: 12px 32px; border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.3); color: white;
+  font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s;
+}
+.cover-arrow:hover { border-color: white; color: white; }
+
+/* ========== DIAGNOSTIC ========== */
+.diag-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 2.5rem 0;
+}
+.diag-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 24px 20px; text-align: center;
+}
+.diag-num {
+  font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800;
+  color: var(--gold); line-height: 1; margin-bottom: 6px;
+}
+.diag-text { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+.score-list { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+.score-row {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 18px;
+}
+.score-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.score-dot.red { background: var(--red); }
+.score-dot.orange { background: var(--orange); }
+.score-dot.green { background: var(--green); }
+.score-name { font-weight: 600; color: white; font-size: 0.85rem; min-width: 140px; }
+.score-detail { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+
+@media(max-width:768px) {
+  .diag-grid { grid-template-columns: 1fr 1fr; }
+  .score-row { flex-wrap: wrap; }
+  .score-name { min-width: auto; }
+}
+@media(max-width:480px) { .diag-grid { grid-template-columns: 1fr; } }
+
+/* ========== BEFORE / AFTER ========== */
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 2.5rem; }
+.ba-card { border-radius: 16px; overflow: hidden; border: 1px solid var(--neutral-200); }
+.ba-header {
+  padding: 14px 20px; font-weight: 700; font-size: 0.85rem;
+  font-family: 'Sora', sans-serif;
+}
+.ba-header.before { background: #fef2f2; color: var(--red); }
+.ba-header.after { background: #f0fdf4; color: var(--green); }
+.ba-body { padding: 24px; }
+.ba-body ul { list-style: none; }
+.ba-body li {
+  position: relative; padding-left: 18px; margin-bottom: 8px;
+  font-size: 0.875rem; line-height: 1.6; color: var(--neutral-700);
+}
+.ba-body li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 6px; height: 6px; border-radius: 50%;
+}
+.ba-card.card-before li::before { background: var(--red); }
+.ba-card.card-after li::before { background: var(--green); }
+
+.ba-example {
+  margin-top: 20px; padding: 16px; background: var(--neutral-50);
+  border-radius: 10px; border: 1px solid var(--neutral-200);
+}
+.ba-example-label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700; color: var(--neutral-500); margin-bottom: 8px;
+}
+.ba-example-url { font-size: 0.75rem; color: var(--blue); font-weight: 500; }
+.ba-example-title { font-size: 0.9rem; font-weight: 700; color: var(--neutral-900); margin: 2px 0; }
+.ba-example-desc { font-size: 0.78rem; color: var(--neutral-500); }
+
+.ba-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 0.85rem; font-weight: 600; color: var(--blue);
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+@media(max-width:768px) { .ba-grid { grid-template-columns: 1fr; } }
+
+/* ========== EXPLAINER CARDS ========== */
+.explain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2.5rem; }
+.explain-card {
+  background: white; border: 1px solid var(--neutral-200);
+  border-radius: 16px; padding: 32px 24px;
+}
+.explain-num {
+  font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800;
+  color: var(--blue-light); line-height: 1; margin-bottom: 12px;
+}
+.explain-card h3 { margin-bottom: 8px; }
+.explain-tagline {
+  font-size: 0.8rem; font-weight: 600; color: var(--blue);
+  margin-bottom: 12px; font-style: italic;
+}
+.explain-card p { font-size: 0.875rem; color: var(--neutral-500); line-height: 1.7; }
+.explain-example {
+  margin-top: 16px; padding: 14px; background: var(--neutral-50);
+  border-radius: 10px; border-left: 3px solid var(--blue);
+}
+.explain-example-label {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700; color: var(--blue); margin-bottom: 6px;
+}
+.explain-example p { font-size: 0.8rem; color: var(--neutral-700); margin: 0; line-height: 1.5; }
+
+@media(max-width:768px) { .explain-grid { grid-template-columns: 1fr; } }
+
+/* ========== WHAT WE EXPLAIN (C'est quoi) ========== */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
+.vocab-card {
+  padding: 24px; border-radius: 14px; border: 1px solid var(--neutral-200);
+  background: white;
+}
+.vocab-term {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem;
+  color: var(--neutral-900); margin-bottom: 6px;
+}
+.vocab-def { font-size: 0.85rem; color: var(--neutral-500); line-height: 1.65; }
+.vocab-example {
+  margin-top: 10px; padding: 10px 14px; background: var(--neutral-50);
+  border-radius: 8px; font-size: 0.8rem; color: var(--neutral-700);
+  border-left: 3px solid var(--gold);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-  .section { padding: 4rem 1.25rem; }
-  .scorecard { grid-template-columns: 1fr; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .pillars { grid-template-columns: 1fr; }
-  .deliverables-grid { grid-template-columns: 1fr; }
-  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .steps-list { grid-template-columns: 1fr 1fr; }
-  .pitch-nav-links { display: none; }
+@media(max-width:640px) { .vocab-grid { grid-template-columns: 1fr; } }
+
+/* ========== DEMO SHOWCASE ========== */
+.showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 2.5rem; }
+.showcase-card {
+  border-radius: 16px; overflow: hidden; border: 1px solid var(--neutral-200);
+  transition: border-color 0.2s;
 }
+.showcase-card:hover { border-color: var(--blue); }
+.showcase-preview {
+  height: 140px; background: var(--blue); display: flex;
+  align-items: center; justify-content: center; color: white;
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
+  text-align: center; padding: 16px;
+}
+.showcase-body { padding: 20px; }
+.showcase-body h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.showcase-body p { font-size: 0.8rem; color: var(--neutral-500); margin-bottom: 12px; line-height: 1.5; }
+.showcase-body a { font-size: 0.8rem; font-weight: 600; color: var(--blue); }
+
+@media(max-width:768px) { .showcase-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:480px) { .showcase-grid { grid-template-columns: 1fr; } }
+
+/* ========== CONTENT EXAMPLES ========== */
+.content-examples { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 2.5rem; }
+.content-block {
+  padding: 28px; border-radius: 16px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+}
+.content-block h4 { font-size: 1rem; margin-bottom: 12px; }
+.content-block ul { list-style: none; }
+.content-block li {
+  position: relative; padding-left: 16px; margin-bottom: 6px;
+  font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;
+}
+.content-block li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--gold);
+}
+
+@media(max-width:640px) { .content-examples { grid-template-columns: 1fr; } }
+
+/* ========== TIMELINE ========== */
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2.5rem; }
+.phase {
+  padding: 28px 24px; border-radius: 16px;
+  background: white; border: 1px solid var(--neutral-200);
+}
+.phase-badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 4px 12px; border-radius: 50px;
+  background: var(--blue-light); color: var(--blue);
+  margin-bottom: 14px;
+}
+.phase h3 { margin-bottom: 6px; }
+.phase-time { font-size: 0.8rem; color: var(--neutral-500); font-weight: 500; margin-bottom: 12px; }
+.phase ul { list-style: none; }
+.phase li {
+  position: relative; padding-left: 14px; margin-bottom: 5px;
+  font-size: 0.85rem; color: var(--neutral-700); line-height: 1.55;
+}
+.phase li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--blue);
+}
+
+@media(max-width:768px) { .phases { grid-template-columns: 1fr; } }
+
+/* ========== DONE SECTION ========== */
+.done-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 2.5rem; }
+.done-card {
+  padding: 24px; border-radius: 16px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+}
+.done-card h4 {
+  font-size: 0.95rem; margin-bottom: 10px; color: white;
+  display: flex; align-items: center; gap: 8px;
+}
+.done-check { color: var(--gold); font-size: 1.1rem; }
+.done-card ul { list-style: none; }
+.done-card li {
+  position: relative; padding-left: 14px; margin-bottom: 5px;
+  font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.55;
+}
+.done-card li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--gold);
+}
+
+@media(max-width:768px) { .done-grid { grid-template-columns: 1fr; } }
+
+/* ========== LINKS ========== */
+.links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem; }
+.link-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 20px; border-radius: 14px;
+  border: 1px solid var(--neutral-200); background: white;
+  text-decoration: none; transition: border-color 0.2s;
+}
+.link-card:hover { border-color: var(--blue); }
+.link-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: var(--blue-light); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.link-text strong { display: block; font-size: 0.85rem; color: var(--neutral-900); }
+.link-text span { font-size: 0.75rem; color: var(--neutral-500); }
+
+@media(max-width:768px) { .links-grid { grid-template-columns: 1fr; } }
+
+/* ========== CLOSING ========== */
+.closing {
+  background: var(--blue); color: white;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  text-align: center;
+}
+.closing-quote {
+  font-family: 'Sora', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800; line-height: 1.3; letter-spacing: -0.02em;
+  max-width: 600px; margin: 0 auto 1.5rem;
+}
+.closing-sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="pitch-nav">
-  <div class="pitch-nav-inner">
-    <a href="#cover" class="pitch-nav-brand">CARTESA &mdash; GTM 2026</a>
-    <ul class="pitch-nav-links">
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">CARTESA &mdash; Projet 2026</a>
+    <ul class="nav-links">
       <li><a href="#constat">Constat</a></li>
-      <li><a href="#avant-apres">Avant/Apres</a></li>
+      <li><a href="#transformation">Transformation</a></li>
       <li><a href="#strategie">Strategie</a></li>
-      <li><a href="#livrables">Livrables</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#contenu">Contenu</a></li>
       <li><a href="#calendrier">Calendrier</a></li>
-      <li><a href="#resultats">Resultats</a></li>
-      <li><a href="#investissement">Investissement</a></li>
+      <li><a href="#fait">Deja fait</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- 1. COVER -->
-<section id="cover" class="cover">
-  <div class="cover-content">
-    <div class="cover-badge">Proposition strategique</div>
-    <h1>Strategie Go-to-Market<br>Organique 2026
-      <span>Vendre plus, mieux et plus facilement vos formations RH</span>
-    </h1>
-    <p class="cover-text">Un plan d'action concret pour transformer votre presence digitale<br>en machine a generer des leads qualifies.</p>
-    <a href="#constat" class="cover-cta">Decouvrir la strategie &darr;</a>
-    <p class="cover-meta" style="margin-top:2rem;">Gaspard Coche&ensp;|&ensp;Avril 2026</p>
+<!-- COVER -->
+<section class="cover">
+  <div class="container">
+    <div class="reveal">
+      <h1>Rendre visible ce que vous faites deja tres bien</h1>
+      <p class="cover-sub">Ce document presente une strategie pour developper la presence en ligne de Cartesa. Il explique le diagnostic, les solutions proposees, et montre ce qui a deja ete construit.</p>
+      <a href="#constat" class="cover-arrow">Voir la presentation &darr;</a>
+      <p class="cover-meta">Gaspard Coche &ensp;|&ensp; Avril 2026</p>
+    </div>
   </div>
 </section>
 
-<!-- 2. LE CONSTAT -->
+<!-- CONSTAT -->
 <section id="constat" class="section section-dark">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Le constat</span>
-      <h2 class="section-title">Pourquoi agir maintenant</h2>
-      <p class="section-subtitle">Vos formations sont excellentes. Mais personne ne le sait en ligne. Votre business repose sur deux canaux que vous ne controlez pas&nbsp;: les prescriptions OPCO et le bouche-a-oreille.</p>
+      <span class="label">Le constat</span>
+      <h2>Ce que l'audit a revele</h2>
+      <p class="subtitle">Cartesa a 20 ans d'expertise et 500+ entreprises accompagnees. Mais en ligne, cette expertise est presque invisible. Voici ce que nous avons observe.</p>
     </div>
 
-    <div class="stat-grid reveal">
-      <div class="stat-card">
-        <div class="stat-number">0</div>
-        <div class="stat-text">leads generes par votre site web actuel</div>
+    <div class="diag-grid reveal">
+      <div class="diag-card">
+        <div class="diag-num">0</div>
+        <div class="diag-text">prospect arrive par le site web</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number orange-num">~1x</div>
-        <div class="stat-text">par mois sur LinkedIn vs 2-3x/semaine pour vos concurrents</div>
+      <div class="diag-card">
+        <div class="diag-num">6</div>
+        <div class="diag-text">faux articles de 2016 encore en ligne</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">0</div>
-        <div class="stat-text">CRM, email capture ou lead nurturing en place</div>
+      <div class="diag-card">
+        <div class="diag-num">~1x</div>
+        <div class="diag-text">publication LinkedIn par mois (vs 2-3x/sem. chez les concurrents)</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">6</div>
-        <div class="stat-text">faux articles dates de 2016 encore en ligne</div>
+      <div class="diag-card">
+        <div class="diag-num">0</div>
+        <div class="diag-text">outil de suivi des contacts ou d'envoi de newsletter</div>
       </div>
     </div>
 
     <div class="reveal">
-      <h3 style="color:var(--white);font-size:1.15rem;margin-bottom:1rem;margin-top:1rem;">Diagnostic de votre presence digitale</h3>
+      <h3 style="color:white;margin-bottom:1rem;">Diagnostic par canal</h3>
     </div>
-
-    <div class="scorecard reveal">
-      <div class="score-item">
+    <div class="score-list reveal">
+      <div class="score-row">
         <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">Site web &amp; SEO</div>
-          <div class="score-detail">6 faux articles, aucune meta description, noindex sur N106</div>
-        </div>
+        <div class="score-name">Site web / SEO</div>
+        <div class="score-detail">Pas de meta descriptions, page N106 en noindex, aucun schema markup</div>
       </div>
-      <div class="score-item">
+      <div class="score-row">
         <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">Google Business Profile</div>
-          <div class="score-detail">Non optimise, aucune strategie de publication</div>
-        </div>
+        <div class="score-name">Blog</div>
+        <div class="score-detail">Vide -- aucun contenu pour attirer du trafic depuis Google</div>
       </div>
-      <div class="score-item">
+      <div class="score-row">
+        <div class="score-dot red"></div>
+        <div class="score-name">Google Business</div>
+        <div class="score-detail">Fiche non optimisee, aucune publication reguliere</div>
+      </div>
+      <div class="score-row">
         <div class="score-dot orange"></div>
-        <div>
-          <div class="score-label">LinkedIn</div>
-          <div class="score-detail">Existe mais sous-exploite (~1 post/mois)</div>
-        </div>
+        <div class="score-name">LinkedIn</div>
+        <div class="score-detail">Existe mais sous-exploite -- environ 1 post par mois</div>
       </div>
-      <div class="score-item">
+      <div class="score-row">
         <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">Blog</div>
-          <div class="score-detail">Vide — aucun contenu strategique</div>
-        </div>
+        <div class="score-name">Ressources a telecharger</div>
+        <div class="score-detail">Aucun guide, checklist ou e-book pour attirer des contacts</div>
       </div>
-      <div class="score-item">
+      <div class="score-row">
         <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">Lead magnets</div>
-          <div class="score-detail">Aucun contenu telecharge pour capturer des emails</div>
-        </div>
-      </div>
-      <div class="score-item">
-        <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">Newsletter</div>
-          <div class="score-detail">Aucune — pas de lien regulier avec votre audience</div>
-        </div>
-      </div>
-      <div class="score-item">
-        <div class="score-dot red"></div>
-        <div>
-          <div class="score-label">CRM</div>
-          <div class="score-detail">Aucun outil de suivi des prospects</div>
-        </div>
+        <div class="score-name">Newsletter</div>
+        <div class="score-detail">Aucune -- pas de lien regulier avec l'audience</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. AVANT / APRES -->
-<section id="avant-apres" class="section">
+<!-- C'EST QUOI TOUT CA ? (Vulgarisation) -->
+<section class="section section-alt">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Avant / Apres</span>
-      <h2 class="section-title">Votre site web, transforme</h2>
-      <p class="section-subtitle">Le site actuel ne travaille pas pour vous. Le nouveau site genere de la confiance, du trafic et des leads &mdash; 24h/24.</p>
+      <span class="label">En clair</span>
+      <h2>Ces termes expliques simplement</h2>
+      <p class="subtitle">Avant de parler solutions, voici ce que signifient concretement ces elements dans le contexte de Cartesa.</p>
     </div>
 
-    <div class="comparison reveal">
-      <!-- BEFORE -->
-      <div class="comp-side before">
-        <div class="comp-header">
-          <span style="font-size:1.1rem;">&#10005;</span> Avant &mdash; Site actuel
-        </div>
-        <div class="comp-body">
-          <div class="comp-frame">
-            <div class="comp-frame-url">
-              <span class="frame-dots"><span></span><span></span><span></span></span>
-              cartesa-lyon.com
-            </div>
-            <div class="comp-frame-content">
-              <div class="site-name">CARTESA</div>
-              <div>Site actuel — pas de blog, pas de capture</div>
-            </div>
-          </div>
-          <ul class="comp-annotations">
+    <div class="vocab-grid reveal">
+      <div class="vocab-card">
+        <div class="vocab-term">SEO (referencement naturel)</div>
+        <div class="vocab-def">C'est ce qui fait que votre site apparait (ou non) quand quelqu'un cherche "formation management PME Lyon" sur Google. Aujourd'hui, Cartesa n'apparait pas.</div>
+        <div class="vocab-example">Exemple : un article bien redige sur "entretiens professionnels 2027" peut attirer 200 a 500 visiteurs par mois, gratuitement, pendant des annees.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-term">Lead magnet</div>
+        <div class="vocab-def">Un document utile (guide, checklist) que le visiteur telecharge en laissant son email. C'est le pont entre "je visite le site" et "je suis un contact identifie".</div>
+        <div class="vocab-example">Exemple : le guide "5 dispositifs pour financer la formation" -- un dirigeant le telecharge, vous avez son email, vous pouvez le recontacter.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-term">Schema markup</div>
+        <div class="vocab-def">Un code invisible ajoute a votre site pour que Google comprenne mieux qui vous etes : organisme de formation, localisation, certifications. Ca ameliore votre affichage dans les resultats.</div>
+        <div class="vocab-example">Concretement : au lieu d'un simple lien bleu, Google peut afficher vos horaires, votre note, votre adresse directement dans la recherche.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-term">Newsletter</div>
+        <div class="vocab-def">Un email envoye regulierement a vos contacts pour rester dans leur esprit : actualites formation, conseils RH, invitations aux evenements. Simple mais tres efficace.</div>
+        <div class="vocab-example">Exemple : 1 email par mois avec un conseil pratique + invitation a votre prochaine matinale = vos contacts pensent a vous au moment du besoin.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT / APRES -->
+<section id="transformation" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Avant / Apres</span>
+      <h2>Ce que nous proposons de transformer</h2>
+      <p class="subtitle">A gauche, la situation actuelle. A droite, ce que le nouveau site permet.</p>
+    </div>
+
+    <div class="ba-grid reveal">
+      <div class="ba-card card-before">
+        <div class="ba-header before">Aujourd'hui</div>
+        <div class="ba-body">
+          <ul>
             <li>Articles de 2016 toujours en ligne</li>
             <li>Blog et ressourcerie vides</li>
             <li>Aucun formulaire de capture d'email</li>
-            <li>Pas de meta descriptions SEO</li>
-            <li>Page N106 en noindex (invisible pour Google)</li>
-            <li>Aucun lead magnet disponible</li>
+            <li>Pas de meta descriptions (Google n'a rien a afficher)</li>
+            <li>Page N106 invisible pour Google (noindex)</li>
+            <li>Aucun contenu telecharge</li>
           </ul>
-
-          <div class="google-mock">
-            <div class="google-mock-label">Recherche Google : "formation RH Lyon PME"</div>
-            <div class="google-result faded">
-              <div class="google-result-url">www.concurrent-a.fr</div>
-              <div class="google-result-title">Formations RH pour PME a Lyon | Concurrent A</div>
-              <div class="google-result-desc">Decouvrez nos formations RH adaptees aux PME...</div>
-            </div>
-            <div class="google-result faded">
-              <div class="google-result-url">www.concurrent-b.fr</div>
-              <div class="google-result-title">Accompagnement RH PME Lyon | Concurrent B</div>
-              <div class="google-result-desc">Experts en accompagnement RH...</div>
-            </div>
-            <div style="text-align:center;padding:0.75rem 0;font-size:0.8rem;color:var(--red);font-weight:600;">
-              Cartesa n'apparait pas
-            </div>
+          <div class="ba-example">
+            <div class="ba-example-label">Recherche Google : "formation RH PME Lyon"</div>
+            <div style="text-align:center;padding:12px 0;font-size:0.85rem;color:var(--red);font-weight:600;">Cartesa n'apparait nulle part</div>
           </div>
         </div>
       </div>
 
-      <!-- AFTER -->
-      <div class="comp-side after">
-        <div class="comp-header">
-          <span style="font-size:1.1rem;">&#10003;</span> Apres &mdash; Nouveau site
-        </div>
-        <div class="comp-body">
-          <div class="comp-frame">
-            <div class="comp-frame-url">
-              <span class="frame-dots"><span></span><span></span><span></span></span>
-              cartesa-lyon.com (v2)
-            </div>
-            <div class="comp-frame-content">
-              <div class="site-name">CARTESA</div>
-              <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" rel="noopener" style="font-size:0.85rem;color:var(--teal-600);text-decoration:underline;">Voir la maquette en ligne &rarr;</a>
-            </div>
-          </div>
-          <ul class="comp-annotations">
-            <li>Blog avec 8 articles SEO optimises</li>
-            <li>Ressourcerie complete (e-book, checklists, guides)</li>
+      <div class="ba-card card-after">
+        <div class="ba-header after">Avec le nouveau site</div>
+        <div class="ba-body">
+          <ul>
+            <li>Blog avec 8 articles optimises pour Google</li>
+            <li>Ressourcerie avec guides et checklists telechargeable</li>
             <li>Formulaires de capture sur chaque page</li>
-            <li>Newsletter integree (Brevo)</li>
-            <li>Schema markup et meta descriptions</li>
-            <li>Pages formations enrichies et convaincantes</li>
+            <li>Meta descriptions, schema markup, sitemap</li>
+            <li>Toutes les pages indexees et optimisees</li>
+            <li>Calendrier interactif des formations</li>
           </ul>
-
-          <div class="google-mock">
-            <div class="google-mock-label">Recherche Google : "formation RH Lyon PME"</div>
-            <div class="google-result highlight">
-              <div class="google-result-url">www.cartesa-lyon.com/formations</div>
-              <div class="google-result-title">Formations RH sur mesure pour PME a Lyon | Cartesa</div>
-              <div class="google-result-desc">Cartesa accompagne les dirigeants et managers de PME avec des formations RH pratiques : management, PCRH, co-developpement...</div>
-            </div>
-            <div class="google-result" style="opacity:0.5;">
-              <div class="google-result-url">www.cartesa-lyon.com/blog/entretiens-professionnels</div>
-              <div class="google-result-title">Entretiens professionnels 2027 : le guide complet | Cartesa</div>
-              <div class="google-result-desc">Tout ce que les PME doivent savoir sur le bilan a 6 ans...</div>
-            </div>
+          <div class="ba-example">
+            <div class="ba-example-label">Recherche Google : "formation RH PME Lyon"</div>
+            <div class="ba-example-url">cartesa-lyon.com/formations</div>
+            <div class="ba-example-title">Formations RH pour PME | Cartesa -- La Tour-du-Pin</div>
+            <div class="ba-example-desc">Formations management, droit social, recrutement. Certifie Qualiopi, financement OPCO a 100%...</div>
           </div>
+          <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" rel="noopener" class="ba-link">Voir la maquette en ligne &rarr;</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4. LA STRATEGIE — 3 Piliers -->
-<section id="strategie" class="section section-light">
+<!-- STRATEGIE -->
+<section id="strategie" class="section section-alt">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">La strategie</span>
-      <h2 class="section-title">3 piliers pour une croissance organique durable</h2>
-      <p class="section-subtitle">Un ecosysteme digital complet ou chaque pilier renforce les autres.</p>
+      <span class="label">La strategie</span>
+      <h2>3 axes pour developper votre visibilite</h2>
+      <p class="subtitle">Chaque axe fonctionne independamment, mais ils se renforcent mutuellement. C'est un ecosysteme.</p>
     </div>
 
-    <div class="pillars reveal">
-      <!-- Pillar 1 -->
-      <div class="pillar">
-        <div class="pillar-number">1</div>
-        <h3>Site web &amp; SEO</h3>
-        <div class="pillar-tagline">Votre meilleur commercial, 24h/24</div>
-        <ul class="pillar-actions">
-          <li>Refonte du site avec pages formations enrichies</li>
-          <li>Blog SEO : 2 articles/mois sur les problematiques RH des PME</li>
-          <li>Lead magnets : e-book, checklists, guides telechargeable</li>
-          <li>Newsletter mensuelle via Brevo (segmentee par interet)</li>
-        </ul>
+    <div class="explain-grid reveal">
+      <div class="explain-card">
+        <div class="explain-num">1</div>
+        <h3>Site web et referencement</h3>
+        <p>Un site qui travaille pour vous 24h/24. Les personnes qui cherchent "formation management Lyon" ou "PCRH Isere" sur Google tombent sur Cartesa.</p>
+        <div class="explain-example">
+          <div class="explain-example-label">Exemple concret</div>
+          <p>Un article de blog "Comment preparer le bilan des entretiens professionnels 2027" attire des DRH de PME sur votre site. Ils decouvrent vos formations, telechargent votre checklist, deviennent un contact.</p>
+        </div>
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="pillar">
-        <div class="pillar-number">2</div>
+      <div class="explain-card">
+        <div class="explain-num">2</div>
         <h3>LinkedIn</h3>
-        <div class="pillar-tagline">Votre vitrine quotidienne aupres des decideurs</div>
-        <ul class="pillar-actions">
-          <li>Catherine : 2 posts/semaine (expertise, temoignages, behind the scenes)</li>
-          <li>Philippe : 1-2 posts/semaine (veille sociale, decryptage reglementaire)</li>
-          <li>Strategie de commentaires cibles sur les decideurs AURA</li>
-          <li>Recyclage systematique : article blog &rarr; carrousel LinkedIn</li>
-        </ul>
+        <p>Catherine et Philippe publient regulierement : retours terrain, conseils pratiques, temoignages. Les decideurs d'Auvergne-Rhone-Alpes voient Cartesa chaque semaine dans leur fil.</p>
+        <div class="explain-example">
+          <div class="explain-example-label">Exemple concret</div>
+          <p>Philippe partage un decryptage de la derniere reforme du droit social. Un DRH de PME commente. Philippe lui repond, puis l'invite a une matinale. 3 mois plus tard : formation signee.</p>
+        </div>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="pillar">
-        <div class="pillar-number">3</div>
-        <h3>Reseau local</h3>
-        <div class="pillar-tagline">Votre ancrage local, en personne</div>
-        <ul class="pillar-actions">
-          <li>4 matinales RH (1/trimestre) &mdash; format petit-dejeuner, max 15 decideurs</li>
-          <li>4 sessions decouverte co-developpement (gratuit, 2h)</li>
-          <li>Google Business Profile optimise avec avis et publications</li>
-          <li>Partenariats locaux (CCI, clubs dirigeants, experts-comptables)</li>
-        </ul>
+      <div class="explain-card">
+        <div class="explain-num">3</div>
+        <h3>Reseau et evenements locaux</h3>
+        <p>Des matinales RH trimestrielles (petit-dejeuner, 15 personnes max) et des sessions decouverte co-developpement. Le contact humain reste votre plus grande force.</p>
+        <div class="explain-example">
+          <div class="explain-example-label">Exemple concret</div>
+          <p>Une matinale "Primo-managers : les 5 reflexes des 90 premiers jours". 12 dirigeants presents, 3 demandent un devis formation dans les 2 semaines suivantes.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. LIVRABLES -->
-<section id="livrables" class="section">
+<!-- DEMO DU SITE -->
+<section id="demo" class="section">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Livrables concrets</span>
-      <h2 class="section-title">Ce que nous vous livrons</h2>
-      <p class="section-subtitle">Pas de slides vagues. Des livrables tangibles, prets a deployer.</p>
+      <span class="label">Le nouveau site</span>
+      <h2>7 pages construites, pretes a deployer</h2>
+      <p class="subtitle">Chaque page a ete concue pour un objectif precis. Voici ce que contient la maquette.</p>
     </div>
 
-    <div class="deliverables-grid reveal">
-      <!-- Audit -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9776;</span>
-          Audit &amp; Strategie
-        </h4>
-        <ul class="deliv-list">
-          <li>Audit complet (site, SEO, LinkedIn, concurrence)</li>
-          <li>Document strategique de 19 pages</li>
-          <li>Fichier prospects qualifies data.gouv (IDCC + AURA)</li>
-        </ul>
-      </div>
+    <div class="showcase-grid reveal">
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Accueil</div>
+        <div class="showcase-body">
+          <h4>Page d'accueil</h4>
+          <p>Hero, preuves sociales, methode en 4 etapes, enjeux, certifications, FAQ</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/formations.html" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Formations</div>
+        <div class="showcase-body">
+          <h4>Formations 2026</h4>
+          <p>Calendrier interactif des sessions, fiches detaillees, financement OPCO</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/expertises.html" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Expertises</div>
+        <div class="showcase-body">
+          <h4>7 expertises</h4>
+          <p>Diagnostic, formation, coaching, transformation, co-dev, entrepreneuriat, RSE</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/blog.html" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Blog</div>
+        <div class="showcase-body">
+          <h4>Blog (8 articles)</h4>
+          <p>Articles SEO sur les sujets RH recherches par vos cibles</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/ressourcerie.html" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Ressourcerie</div>
+        <div class="showcase-body">
+          <h4>Ressourcerie</h4>
+          <p>Guides, checklists et templates a telecharger (capture email)</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/contact.html" target="_blank" class="showcase-card">
+        <div class="showcase-preview">Contact</div>
+        <div class="showcase-body">
+          <h4>Contact</h4>
+          <p>Formulaire de prise de rendez-vous avec proposition de valeur</p>
+          <span>Voir la page &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <!-- Corrections -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9881;</span>
-          Corrections techniques
-        </h4>
-        <ul class="deliv-list">
-          <li>Nettoyage SEO (faux articles, meta descriptions, noindex, schema markup)</li>
-          <li>Google Business Profile optimise</li>
-          <li>Maquette complete du nouveau site (ce que vous voyez ici)</li>
-        </ul>
-      </div>
+<!-- CONTENU PRODUIT -->
+<section id="contenu" class="section section-blue">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Le contenu</span>
+      <h2>Les ressources qui attirent des contacts</h2>
+      <p class="subtitle">Des documents concrets, utiles pour vos cibles, qui positionnent Cartesa comme reference. Voici ce qui a ete cree.</p>
+    </div>
 
-      <!-- Lead magnets -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9733;</span>
-          Contenu &amp; lead magnets
-        </h4>
-        <ul class="deliv-list">
+    <div class="content-examples reveal">
+      <div class="content-block">
+        <h4>Guides et documents</h4>
+        <ul>
           <li>E-book "Le guide RH du dirigeant de PME" (25 pages)</li>
           <li>Checklist "Auto-diagnostic RH pour PME"</li>
           <li>Guide "5 dispositifs pour financer la formation"</li>
@@ -1388,98 +700,88 @@ h1, h2 {
           <li>Infographie "Calendrier des obligations sociales 2026"</li>
         </ul>
       </div>
-
-      <!-- Production -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9998;</span>
-          Production de contenu (6 mois)
-        </h4>
-        <ul class="deliv-list">
-          <li>12 articles de blog (2/mois)</li>
-          <li>Accompagnement editorial LinkedIn (Catherine + Philippe)</li>
-          <li>6 newsletters mensuelles</li>
-          <li>2 lead magnets supplementaires</li>
-        </ul>
-      </div>
-
-      <!-- Events -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9992;</span>
-          Evenements
-        </h4>
-        <ul class="deliv-list">
-          <li>4 matinales RH (1/trimestre, format petit-dejeuner)</li>
-          <li>4 sessions decouverte co-developpement</li>
-        </ul>
-      </div>
-
-      <!-- Webinaires -->
-      <div class="deliv-group">
-        <h4 class="deliv-group-title">
-          <span class="deliv-group-icon">&#9654;</span>
-          Webinaires (en option)
-        </h4>
-        <ul class="deliv-list optional">
-          <li>"PCRH : votre accompagnement RH finance a 100%"</li>
-          <li>"Entretiens professionnels 2027 : bilan des 6 ans"</li>
+      <div class="content-block">
+        <h4>Articles de blog SEO</h4>
+        <ul>
+          <li>"Entretiens professionnels 2027 : le guide complet"</li>
+          <li>"PCRH : tout savoir sur ce dispositif meconnu"</li>
           <li>"Primo-managers : les 5 reflexes des 90 premiers jours"</li>
-          <li>"RSE et PME : par ou commencer"</li>
+          <li>"Formation management : pourquoi les PME hesitent encore"</li>
+          <li>"RSE et PME : par ou commencer concretement"</li>
+          <li>+ 3 autres articles sur des sujets cles pour votre cible</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:2.5rem;">
+      <h3 style="margin-bottom:1rem;">Evenements proposes</h3>
+    </div>
+    <div class="content-examples reveal">
+      <div class="content-block">
+        <h4>Matinales RH (1 par trimestre)</h4>
+        <ul>
+          <li>Format petit-dejeuner, max 15 decideurs</li>
+          <li>Theme pratique : management, PCRH, recrutement</li>
+          <li>Objectif : creer le contact, montrer l'expertise</li>
+          <li>Exemple : "Primo-managers : les 5 reflexes des 90 premiers jours"</li>
+        </ul>
+      </div>
+      <div class="content-block">
+        <h4>Sessions decouverte co-dev</h4>
+        <ul>
+          <li>4 sessions par an, format 2h, gratuit</li>
+          <li>Faire decouvrir la methode co-developpement</li>
+          <li>Participants repartent avec une solution concrete</li>
+          <li>Conversion naturelle vers des groupes reguliers</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. CALENDRIER -->
-<section id="calendrier" class="section section-light">
+<!-- CALENDRIER -->
+<section id="calendrier" class="section section-alt">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Calendrier</span>
-      <h2 class="section-title">Un deploiement en 3 phases</h2>
-      <p class="section-subtitle">Des quick wins des la premiere semaine. Des resultats mesurables des le mois 2.</p>
+      <span class="label">Calendrier</span>
+      <h2>Deploiement en 3 phases</h2>
+      <p class="subtitle">Un demarrage rapide avec des premiers resultats visibles des le 2e mois.</p>
     </div>
 
-    <div class="timeline reveal">
-      <!-- Phase 1 -->
-      <div class="timeline-phase">
-        <div class="timeline-dot"></div>
-        <div class="timeline-time">Phase 1 &mdash; Mois 1-2</div>
-        <h3 class="timeline-title">Quick wins</h3>
-        <ul class="timeline-items">
+    <div class="phases reveal">
+      <div class="phase">
+        <div class="phase-badge">Phase 1</div>
+        <h3>Quick wins</h3>
+        <div class="phase-time">Mois 1-2</div>
+        <ul>
           <li>Corrections techniques SEO</li>
           <li>Google Business Profile</li>
           <li>Lancement LinkedIn</li>
-          <li>Debut redaction e-book</li>
-          <li>Setup Brevo</li>
-        </ul>
-      </div>
-
-      <!-- Phase 2 -->
-      <div class="timeline-phase">
-        <div class="timeline-dot"></div>
-        <div class="timeline-time">Phase 2 &mdash; Mois 2-4</div>
-        <h3 class="timeline-title">Infrastructure</h3>
-        <ul class="timeline-items">
-          <li>Blog operationnel (2 articles)</li>
-          <li>Lead magnets en ligne</li>
-          <li>Newsletter #1</li>
-          <li>1ere matinale RH</li>
+          <li>Redaction de l'e-book</li>
           <li>Premiers formulaires actifs</li>
         </ul>
       </div>
-
-      <!-- Phase 3 -->
-      <div class="timeline-phase">
-        <div class="timeline-dot"></div>
-        <div class="timeline-time">Phase 3 &mdash; Mois 4-12</div>
-        <h3 class="timeline-title">Croissance</h3>
-        <ul class="timeline-items">
+      <div class="phase">
+        <div class="phase-badge">Phase 2</div>
+        <h3>Infrastructure</h3>
+        <div class="phase-time">Mois 2-4</div>
+        <ul>
+          <li>Blog operationnel (2 articles)</li>
+          <li>Lead magnets en ligne</li>
+          <li>Premiere newsletter</li>
+          <li>Premiere matinale RH</li>
+          <li>Site complet deploye</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-badge">Phase 3</div>
+        <h3>Croissance</h3>
+        <div class="phase-time">Mois 4-12</div>
+        <ul>
           <li>Production continue (blog + LinkedIn)</li>
           <li>Newsletters mensuelles</li>
           <li>Matinales trimestrielles</li>
-          <li>Mesure &amp; optimisation</li>
+          <li>Mesure et optimisation</li>
           <li>Webinaires (option)</li>
         </ul>
       </div>
@@ -1487,242 +789,97 @@ h1, h2 {
   </div>
 </section>
 
-<!-- 7. RESULTATS ATTENDUS -->
-<section id="resultats" class="section section-teal">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">Resultats attendus</span>
-      <h2 class="section-title">Projections a 12 mois</h2>
-      <p class="section-subtitle">Des objectifs realistes, bases sur les benchmarks du secteur formation B2B.</p>
-    </div>
-
-    <div class="kpi-grid reveal">
-      <div class="kpi-card">
-        <div class="kpi-value">x5-x10</div>
-        <div class="kpi-label">Trafic site web</div>
-        <div class="kpi-sublabel">vs trafic actuel</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value">5-10</div>
-        <div class="kpi-label">Leads qualifies</div>
-        <div class="kpi-sublabel">par mois</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value">200-500</div>
-        <div class="kpi-label">Contacts email</div>
-        <div class="kpi-sublabel">base newsletter</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value">2-4</div>
-        <div class="kpi-label">Nouveaux clients</div>
-        <div class="kpi-sublabel">par trimestre</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value">40-120K</div>
-        <div class="kpi-label">CA additionnel</div>
-        <div class="kpi-sublabel">EUR / an</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. INVESTISSEMENT -->
-<section id="investissement" class="section">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">Investissement</span>
-      <h2 class="section-title">Deux formules, un meme objectif</h2>
-      <p class="section-subtitle">Choisissez le niveau d'accompagnement qui vous convient. Les deux generent un ROI positif des le premier client signe.</p>
-    </div>
-
-    <div class="pricing-grid reveal">
-      <!-- Option A -->
-      <div class="pricing-card featured">
-        <div class="pricing-option">Option A</div>
-        <h3 class="pricing-title">Accompagnement complet</h3>
-        <div class="pricing-price">4 300 &euro; <small>HT</small></div>
-        <div class="pricing-normal">Tarif normal : ~8 100 &euro; &mdash; tarif partenaire applique</div>
-        <p class="pricing-desc">Je prends tout en charge. Vous validez et publiez. Zero charge mentale supplementaire pour votre equipe.</p>
-        <div class="pricing-roi">1 client PCRH = 15 000 &euro; de CA &rarr; investissement rembourse x3</div>
-        <ul class="pricing-includes">
-          <li>Audit complet + document strategique</li>
-          <li>Corrections techniques SEO</li>
-          <li>5 lead magnets rediges</li>
-          <li>12 articles de blog (6 mois)</li>
-          <li>6 newsletters</li>
-          <li>Accompagnement LinkedIn</li>
-          <li>Organisation des evenements</li>
-          <li>Reporting mensuel</li>
-        </ul>
-      </div>
-
-      <!-- Option B -->
-      <div class="pricing-card">
-        <div class="pricing-option">Option B</div>
-        <h3 class="pricing-title">Setup + autonomie</h3>
-        <div class="pricing-price">2 100 &euro; <small>HT</small></div>
-        <div class="pricing-normal">&nbsp;</div>
-        <p class="pricing-desc">Je construis les fondations. Vous prenez le relais sur la production de contenu avec un kit editorial complet.</p>
-        <div class="pricing-roi">Inclut 2h de formation + kit editorial pour etre autonome</div>
-        <ul class="pricing-includes">
-          <li>Audit complet + document strategique</li>
-          <li>Corrections techniques SEO</li>
-          <li>3 lead magnets rediges</li>
-          <li>4 articles de blog (modeles)</li>
-          <li>Templates newsletter</li>
-          <li>Guide editorial LinkedIn</li>
-          <li>2h de formation equipe</li>
-          <li>Kit editorial complet</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="pricing-payment reveal">
-      <strong>Echeancier :</strong>&ensp;30% a la signature&ensp;|&ensp;30% fin Phase 1&ensp;|&ensp;40% fin Phase 2
-    </div>
-  </div>
-</section>
-
-<!-- 9. PROCHAINES ETAPES -->
-<section class="section section-dark">
-  <div class="container">
-    <div class="reveal" style="text-align:center;">
-      <span class="section-label">Prochaines etapes</span>
-      <h2 class="section-title">Comment on avance</h2>
-    </div>
-
-    <div class="steps-list reveal">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <strong>Echange de validation</strong>
-          On discute de cette proposition ensemble
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <strong>Choix de la formule</strong>
-          Option A ou B, selon vos ressources
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <strong>Demarrage sous 2 semaines</strong>
-          On lance les quick wins immediatement
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-text">
-          <strong>Premiers resultats</strong>
-          Visibles des le mois 2
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CE QUI EST DEJA FAIT -->
-<section class="section section-teal">
+<section id="fait" class="section section-blue">
   <div class="container">
     <div class="reveal" style="text-align:center;">
-      <span class="section-label">Etat d'avancement</span>
-      <h2 class="section-title">Ce qui est deja livre</h2>
-      <p class="section-subtitle" style="margin:0 auto;">Avant meme la signature, voici ce qui a ete produit pour demontrer la qualite du travail.</p>
+      <span class="label">Etat d'avancement</span>
+      <h2>Ce qui est deja construit</h2>
+      <p class="subtitle" style="margin:0 auto;">Avant meme de demarrer, voici ce qui a ete produit pour illustrer concretement ce que donne la strategie.</p>
     </div>
-    <div class="deliverables-grid reveal" style="margin-top:3rem;">
-      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
-        <h4 class="deliv-group-title" style="color:var(--white);">
-          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
-          Audit &amp; analyse
-        </h4>
-        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
-          <li style="color:rgba(255,255,255,0.7);">Audit SEO complet du site actuel</li>
-          <li style="color:rgba(255,255,255,0.7);">Analyse concurrentielle (Cegos, Gereso, acteurs locaux)</li>
-          <li style="color:rgba(255,255,255,0.7);">Diagnostic de presence digitale (7 canaux audites)</li>
-          <li style="color:rgba(255,255,255,0.7);">Document strategique GTM de 19 pages</li>
+
+    <div class="done-grid reveal">
+      <div class="done-card">
+        <h4><span class="done-check">&#10003;</span> Audit et analyse</h4>
+        <ul>
+          <li>Audit SEO complet du site actuel</li>
+          <li>Analyse concurrentielle (Cegos, Gereso, acteurs locaux)</li>
+          <li>Diagnostic de presence digitale (7 canaux)</li>
+          <li>Document strategique de 19 pages</li>
         </ul>
       </div>
-      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
-        <h4 class="deliv-group-title" style="color:var(--white);">
-          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
-          Site web demo
-        </h4>
-        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
-          <li style="color:rgba(255,255,255,0.7);">Maquette complete 7 pages (live en ligne)</li>
-          <li style="color:rgba(255,255,255,0.7);">Blog avec 8 articles SEO rediges</li>
-          <li style="color:rgba(255,255,255,0.7);">Ressourcerie avec 3 lead magnets</li>
-          <li style="color:rgba(255,255,255,0.7);">SEO technique : Schema.org, sitemap, meta tags, GEO</li>
-          <li style="color:rgba(255,255,255,0.7);">Design responsive + animations</li>
+      <div class="done-card">
+        <h4><span class="done-check">&#10003;</span> Site web demo</h4>
+        <ul>
+          <li>Maquette complete 7 pages (en ligne)</li>
+          <li>Blog avec 8 articles SEO rediges</li>
+          <li>Ressourcerie avec 3 lead magnets</li>
+          <li>SEO technique : schema, sitemap, meta tags</li>
+          <li>Design responsive et animations</li>
         </ul>
       </div>
-      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
-        <h4 class="deliv-group-title" style="color:var(--white);">
-          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
-          Contenu produit
-        </h4>
-        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
-          <li style="color:rgba(255,255,255,0.7);">E-book "Guide RH du dirigeant de PME"</li>
-          <li style="color:rgba(255,255,255,0.7);">Checklist "Auto-diagnostic RH"</li>
-          <li style="color:rgba(255,255,255,0.7);">Guide "5 dispositifs de financement"</li>
-          <li style="color:rgba(255,255,255,0.7);">2 templates (entretien pro + calendrier social)</li>
+      <div class="done-card">
+        <h4><span class="done-check">&#10003;</span> Contenu produit</h4>
+        <ul>
+          <li>E-book "Guide RH du dirigeant de PME"</li>
+          <li>Checklist "Auto-diagnostic RH"</li>
+          <li>Guide "5 dispositifs de financement"</li>
+          <li>2 templates (entretien pro + calendrier social)</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 10. LIENS UTILES -->
-<section class="section section-light">
+<!-- LIENS -->
+<section class="section">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Ressources</span>
-      <h2 class="section-title">Liens utiles</h2>
+      <span class="label">Voir par vous-meme</span>
+      <h2>Liens vers la maquette</h2>
     </div>
 
     <div class="links-grid reveal">
       <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/" target="_blank" rel="noopener" class="link-card">
         <div class="link-icon">&#9635;</div>
         <div class="link-text">
-          <strong>Demo du nouveau site</strong>
-          <span>gaspardcoche.github.io/cartesa-gtm-2026</span>
-        </div>
-      </a>
-      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/blog.html" target="_blank" rel="noopener" class="link-card">
-        <div class="link-icon">&#9998;</div>
-        <div class="link-text">
-          <strong>Blog de demo</strong>
-          <span>8 articles SEO optimises</span>
-        </div>
-      </a>
-      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/ressourcerie.html" target="_blank" rel="noopener" class="link-card">
-        <div class="link-icon">&#9733;</div>
-        <div class="link-text">
-          <strong>Ressourcerie</strong>
-          <span>Lead magnets et contenus telechargeable</span>
+          <strong>Accueil</strong>
+          <span>Page principale du site</span>
         </div>
       </a>
       <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/formations.html" target="_blank" rel="noopener" class="link-card">
         <div class="link-icon">&#9670;</div>
         <div class="link-text">
           <strong>Formations 2026</strong>
-          <span>Catalogue complet avec financement OPCO</span>
+          <span>Calendrier + catalogue</span>
         </div>
       </a>
       <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/expertises.html" target="_blank" rel="noopener" class="link-card">
         <div class="link-icon">&#9671;</div>
         <div class="link-text">
-          <strong>7 expertises detaillees</strong>
-          <span>Diagnostic, formation, coaching, transformation...</span>
+          <strong>Expertises</strong>
+          <span>7 domaines d'intervention</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/blog.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9998;</div>
+        <div class="link-text">
+          <strong>Blog</strong>
+          <span>8 articles SEO</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/ressourcerie.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9733;</div>
+        <div class="link-text">
+          <strong>Ressourcerie</strong>
+          <span>Guides et templates</span>
         </div>
       </a>
       <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/contact.html" target="_blank" rel="noopener" class="link-card">
         <div class="link-icon">&#9993;</div>
         <div class="link-text">
-          <strong>Page contact avec capture</strong>
-          <span>Formulaire de prise de rendez-vous</span>
+          <strong>Contact</strong>
+          <span>Formulaire de rendez-vous</span>
         </div>
       </a>
     </div>
@@ -1739,34 +896,20 @@ h1, h2 {
   </div>
 </section>
 
-<!-- SCROLL ANIMATION JS -->
 <script>
 (function() {
-  const reveals = document.querySelectorAll('.reveal');
-
-  const observer = new IntersectionObserver(function(entries) {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
 
-  reveals.forEach(function(el) {
-    observer.observe(el);
-  });
-
-  // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 })();
