@@ -7,7 +7,7 @@
   <meta name="description" content="Contactez CARTESA pour un premier echange sur vos besoins en conseil et formation RH. La Tour-du-Pin, Isere.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label" style="color:var(--gold);">Contact</span>
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Contact</span>
       <h1>Echangeons sur vos besoins</h1>
       <p>Un premier echange gratuit et sans engagement pour identifier vos enjeux et les solutions adaptees.</p>
     </div>
@@ -44,15 +44,15 @@
   <!-- CONTACT SECTION -->
   <section class="section section--white">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:flex-start;">
+      <div class="contact-grid">
 
         <!-- FORM -->
         <div>
-          <h2 style="font-size:1.5rem; margin-bottom:8px;">Envoyez-nous un message</h2>
-          <p style="color:var(--medium-grey); font-size:0.95rem; margin-bottom:32px;">Nous vous repondons sous 24 heures ouvrees.</p>
+          <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
+          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous repondons sous 24 heures ouvrees.</p>
 
           <form onsubmit="event.preventDefault(); alert('Ce formulaire est une demonstration. En production, il serait connecte a votre systeme de gestion des contacts.');">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
               <div class="form-group">
                 <label for="nom">Nom *</label>
                 <input type="text" id="nom" name="nom" required placeholder="Votre nom">
@@ -66,7 +66,7 @@
               <label for="email">Email *</label>
               <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
               <div class="form-group">
                 <label for="telephone">Telephone</label>
                 <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
@@ -99,41 +99,41 @@
 
         <!-- INFO + MAP -->
         <div>
-          <h2 style="font-size:1.5rem; margin-bottom:8px;">Nos coordonnees</h2>
-          <p style="color:var(--medium-grey); font-size:0.95rem; margin-bottom:32px;">N'hesitez pas a nous contacter directement.</p>
+          <h2 style="font-size:1.3rem; margin-bottom:6px;">Nos coordonnees</h2>
+          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">N'hesitez pas a nous contacter directement.</p>
 
-          <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:36px;">
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="icon-circle icon-circle--primary" style="width:44px; height:44px; flex-shrink:0;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.78)"/><circle cx="8.2" cy="7" r="2"/></svg>
+          <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div class="contact-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
               </div>
               <div>
-                <div style="font-weight:600; font-size:0.9rem; margin-bottom:2px;">Adresse</div>
-                <div style="color:var(--medium-grey); font-size:0.9rem;">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</div>
+                <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Adresse</div>
+                <div style="color:var(--neutral-500); font-size:0.85rem;">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</div>
               </div>
             </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="icon-circle icon-circle--primary" style="width:44px; height:44px; flex-shrink:0;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 4l7 5.5L16 4"/></svg>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div class="contact-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 4l7 5.5L16 4"/></svg>
               </div>
               <div>
-                <div style="font-weight:600; font-size:0.9rem; margin-bottom:2px;">Email</div>
-                <a href="mailto:contact@cabinet-cartesa.com" style="font-size:0.9rem;">contact@cabinet-cartesa.com</a>
+                <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Email</div>
+                <a href="mailto:contact@cabinet-cartesa.com" style="font-size:0.85rem;">contact@cabinet-cartesa.com</a>
               </div>
             </div>
           </div>
 
           <!-- MAP PLACEHOLDER -->
           <div class="map-placeholder">
-            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--medium-grey);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="translate(12,8)"/><circle cx="24" cy="18" r="3"/></svg>
+            <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--neutral-500);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="translate(11,7)"/><circle cx="22" cy="17" r="2.5"/></svg>
             <p>36 avenue Alsace Lorraine</p>
             <p class="address-text">38110 La Tour-du-Pin, Isere</p>
           </div>
 
           <!-- ACCESSIBILITE -->
-          <div style="margin-top:32px; background:var(--primary-10); border-radius:var(--radius-md); padding:24px;">
-            <h3 style="font-size:1rem; margin-bottom:8px; font-family:'Inter',sans-serif; font-weight:600;">Accessibilite</h3>
-            <p style="font-size:0.9rem; color:var(--medium-grey); line-height:1.7;">Des amenagements sont possibles pour les situations de handicap visible et invisible. N'hesitez pas a nous en faire part lors de votre prise de contact, nous etudierons ensemble les solutions adaptees.</p>
+          <div class="info-box" style="margin-top:28px;">
+            <h3 style="font-size:0.9rem; margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--teal-900);">Accessibilite</h3>
+            <p style="font-weight:400; color:var(--neutral-500);">Des amenagements sont possibles pour les situations de handicap visible et invisible. N'hesitez pas a nous en faire part lors de votre prise de contact, nous etudierons ensemble les solutions adaptees.</p>
           </div>
         </div>
 
@@ -142,13 +142,13 @@
   </section>
 
   <!-- CERTIFICATIONS BAND -->
-  <section class="section section--light" style="padding:48px 0;">
+  <section class="section section--alt" style="padding:40px 0;">
     <div class="container">
       <div class="partner-grid">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" style="height:40px;">
-        <img src="http://cartesa-lyon.com/wp-content/uploads/2024/02/LOGO-CLEA-MANAGEMENT-150x150.png" alt="CleA Management" style="height:40px;">
-        <img src="http://cartesa-lyon.com/wp-content/uploads/2024/11/AFEST-PICTO-1-150x150.png" alt="AFEST" style="height:40px;">
-        <img src="http://cartesa-lyon.com/wp-content/uploads/2022/01/actee-150x60.png" alt="ACTEE" style="height:40px;">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" style="height:36px;">
+        <img src="http://cartesa-lyon.com/wp-content/uploads/2024/02/LOGO-CLEA-MANAGEMENT-150x150.png" alt="CleA Management" style="height:36px;">
+        <img src="http://cartesa-lyon.com/wp-content/uploads/2024/11/AFEST-PICTO-1-150x150.png" alt="AFEST" style="height:36px;">
+        <img src="http://cartesa-lyon.com/wp-content/uploads/2022/01/actee-150x60.png" alt="ACTEE" style="height:36px;">
       </div>
     </div>
   </section>
@@ -211,15 +211,6 @@
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
   </script>
-
-  <style>
-    @media (max-width: 768px) {
-      .section--white > .container > div[style*="grid-template-columns:1fr 1fr"] {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-    }
-  </style>
 
 </body>
 </html>
