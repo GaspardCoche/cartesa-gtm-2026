@@ -620,10 +620,33 @@
   </div>
 
   <script>
-    // Header scroll shadow
-    window.addEventListener('scroll', function() {
-      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
-    });
+    // Header scroll shadow with smooth progress
+    (function() {
+      var header = document.getElementById('siteHeader');
+      var lastScroll = 0;
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        lastScroll = window.scrollY;
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            header.classList.toggle('scrolled', lastScroll > 10);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+
+    // Mobile nav toggle
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    })();
 
     // Sticky CTA after scrolling past marker
     var marker = document.getElementById('scrollMarker');
@@ -636,7 +659,7 @@
       }, { threshold: 0 }).observe(marker);
     }
 
-    // Scroll-reveal animations
+    // Scroll-reveal animations with staggered delays
     var reveals = document.querySelectorAll('.reveal');
     if (reveals.length) {
       var revealObs = new IntersectionObserver(function(entries) {
@@ -646,23 +669,25 @@
             revealObs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
       reveals.forEach(function(el) { revealObs.observe(el); });
     }
 
-    // Counter animation for stat numbers
+    // Counter animation with easeOutExpo for smoother feel
     function animateCounters(container) {
       var counters = container.querySelectorAll('[data-count]');
       counters.forEach(function(el) {
         var target = parseInt(el.getAttribute('data-count'), 10);
         var suffix = el.getAttribute('data-suffix') || '';
-        var duration = 1800;
-        var start = 0;
+        var duration = 2200;
         var startTime = null;
+        function easeOutExpo(t) {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
         function step(timestamp) {
           if (!startTime) startTime = timestamp;
           var progress = Math.min((timestamp - startTime) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
+          var eased = easeOutExpo(progress);
           var current = Math.round(eased * target);
           el.textContent = current + suffix;
           if (progress < 1) requestAnimationFrame(step);
@@ -671,20 +696,23 @@
       });
     }
 
-    var heroStats = document.getElementById('heroStats');
-    if (heroStats) {
-      var statsObs = new IntersectionObserver(function(entries) {
+    // Observe all containers with data-count elements
+    document.querySelectorAll('[data-count]').forEach(function(el) {
+      var container = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic');
+      if (!container || container._counterObserved) return;
+      container._counterObserved = true;
+      var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            animateCounters(heroStats);
-            statsObs.unobserve(heroStats);
+            animateCounters(container);
+            obs.unobserve(container);
           }
         });
       }, { threshold: 0.3 });
-      statsObs.observe(heroStats);
-    }
+      obs.observe(container);
+    });
 
-    // Animate enjeux cards on scroll
+    // Animate enjeux cards on scroll with stagger
     var enjeuxCards = document.querySelectorAll('.enjeux-card');
     if (enjeuxCards.length) {
       var enjeuxObs = new IntersectionObserver(function(entries) {
@@ -698,21 +726,55 @@
       enjeuxCards.forEach(function(card) { enjeuxObs.observe(card); });
     }
 
-    // Smooth open/close for FAQ details elements
+    // Smooth FAQ accordion with animated height
     document.querySelectorAll('.faq-item').forEach(function(item) {
-      item.querySelector('summary').addEventListener('click', function(e) {
+      var summary = item.querySelector('summary');
+      var content = item.querySelector('p');
+      summary.addEventListener('click', function(e) {
         e.preventDefault();
         if (item.open) {
-          item.open = false;
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.offsetHeight; // force reflow
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            content.style.paddingBottom = '0';
+            setTimeout(function() { item.open = false; content.style.maxHeight = ''; content.style.opacity = ''; content.style.paddingBottom = ''; }, 250);
+          } else {
+            item.open = false;
+          }
         } else {
-          // Close others
           document.querySelectorAll('.faq-item[open]').forEach(function(other) {
-            if (other !== item) other.open = false;
+            if (other !== item) {
+              var otherP = other.querySelector('p');
+              if (otherP) { otherP.style.maxHeight = '0'; otherP.style.opacity = '0'; }
+              setTimeout(function() { other.open = false; if (otherP) { otherP.style.maxHeight = ''; otherP.style.opacity = ''; } }, 200);
+            }
           });
           item.open = true;
+          if (content) {
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            content.offsetHeight;
+            content.style.transition = 'max-height 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease, padding 0.3s ease';
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+          }
         }
       });
     });
+
+    // Subtle parallax on hero background pattern
+    (function() {
+      var pattern = document.querySelector('.hero .hero-bg-pattern');
+      if (!pattern || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      window.addEventListener('scroll', function() {
+        var scroll = window.scrollY;
+        if (scroll < 800) {
+          pattern.style.transform = 'translateY(' + (scroll * 0.15) + 'px)';
+        }
+      }, { passive: true });
+    })();
   </script>
 
 </body>

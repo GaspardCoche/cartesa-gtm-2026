@@ -12,17 +12,17 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --teal-900: #064852;
-  --teal-700: #0a6e80;
-  --teal-600: #0d7a9e;
-  --teal-500: #1a90b0;
-  --teal-100: #e6f3f7;
-  --teal-50: #f2f9fb;
-  --gold-600: #b8891e;
-  --gold-500: #d4a62e;
-  --gold-400: #e0bb4a;
-  --gold-100: #faf3e0;
-  --neutral-900: #1a1f25;
+  --teal-900: #092933;
+  --teal-700: #0a5f75;
+  --teal-600: #0d6f9e;
+  --teal-500: #21b6c8;
+  --teal-100: #e4f1f6;
+  --teal-50: #f0f8fb;
+  --gold-600: #b89520;
+  --gold-500: #d8b62e;
+  --gold-400: #e2c44e;
+  --gold-100: #fbf4e0;
+  --neutral-900: #092933;
   --neutral-800: #262d36;
   --neutral-700: #374151;
   --neutral-500: #6b7280;
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(6, 72, 82, 0.95);
+  background: rgba(9, 41, 51, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -680,6 +680,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 0.1rem;
+}
+
+.section-teal .deliv-list li::before {
+  color: var(--gold-400);
 }
 
 .deliv-list.optional li::before {
@@ -1634,6 +1638,56 @@ h1, h2, h3, h4, h5 {
   </div>
 </section>
 
+<!-- CE QUI EST DEJA FAIT -->
+<section class="section section-teal">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Etat d'avancement</span>
+      <h2 class="section-title">Ce qui est deja livre</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Avant meme la signature, voici ce qui a ete produit pour demontrer la qualite du travail.</p>
+    </div>
+    <div class="deliverables-grid reveal" style="margin-top:3rem;">
+      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
+        <h4 class="deliv-group-title" style="color:var(--white);">
+          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
+          Audit &amp; analyse
+        </h4>
+        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
+          <li style="color:rgba(255,255,255,0.7);">Audit SEO complet du site actuel</li>
+          <li style="color:rgba(255,255,255,0.7);">Analyse concurrentielle (Cegos, Gereso, acteurs locaux)</li>
+          <li style="color:rgba(255,255,255,0.7);">Diagnostic de presence digitale (7 canaux audites)</li>
+          <li style="color:rgba(255,255,255,0.7);">Document strategique GTM de 19 pages</li>
+        </ul>
+      </div>
+      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
+        <h4 class="deliv-group-title" style="color:var(--white);">
+          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
+          Site web demo
+        </h4>
+        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
+          <li style="color:rgba(255,255,255,0.7);">Maquette complete 7 pages (live en ligne)</li>
+          <li style="color:rgba(255,255,255,0.7);">Blog avec 8 articles SEO rediges</li>
+          <li style="color:rgba(255,255,255,0.7);">Ressourcerie avec 3 lead magnets</li>
+          <li style="color:rgba(255,255,255,0.7);">SEO technique : Schema.org, sitemap, meta tags, GEO</li>
+          <li style="color:rgba(255,255,255,0.7);">Design responsive + animations</li>
+        </ul>
+      </div>
+      <div class="deliv-group" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);">
+        <h4 class="deliv-group-title" style="color:var(--white);">
+          <span class="deliv-group-icon" style="background:rgba(255,255,255,0.1);color:var(--gold-400);">&#10003;</span>
+          Contenu produit
+        </h4>
+        <ul class="deliv-list" style="color:rgba(255,255,255,0.7);">
+          <li style="color:rgba(255,255,255,0.7);">E-book "Guide RH du dirigeant de PME"</li>
+          <li style="color:rgba(255,255,255,0.7);">Checklist "Auto-diagnostic RH"</li>
+          <li style="color:rgba(255,255,255,0.7);">Guide "5 dispositifs de financement"</li>
+          <li style="color:rgba(255,255,255,0.7);">2 templates (entretien pro + calendrier social)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 10. LIENS UTILES -->
 <section class="section section-light">
   <div class="container">
@@ -1662,6 +1716,27 @@ h1, h2, h3, h4, h5 {
         <div class="link-text">
           <strong>Ressourcerie</strong>
           <span>Lead magnets et contenus telechargeable</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/formations.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9670;</div>
+        <div class="link-text">
+          <strong>Formations 2026</strong>
+          <span>Catalogue complet avec financement OPCO</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/expertises.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9671;</div>
+        <div class="link-text">
+          <strong>7 expertises detaillees</strong>
+          <span>Diagnostic, formation, coaching, transformation...</span>
+        </div>
+      </a>
+      <a href="https://gaspardcoche.github.io/cartesa-gtm-2026/contact.html" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">&#9993;</div>
+        <div class="link-text">
+          <strong>Page contact avec capture</strong>
+          <span>Formulaire de prise de rendez-vous</span>
         </div>
       </a>
     </div>
