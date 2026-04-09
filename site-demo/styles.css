@@ -946,7 +946,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero h1 {
   color: var(--white);
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 16px;
   line-height: 1.08;
   letter-spacing: -0.03em;
