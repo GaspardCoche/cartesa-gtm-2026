@@ -33,49 +33,139 @@
   }
   </script>
   <style>
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
-    .pricing-card { padding: 36px 28px; border-radius: var(--radius-lg); background: var(--white); border: 2px solid var(--neutral-200); position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .pricing-card--featured { border-color: var(--teal-600); }
-    .pricing-card--featured::before { content: 'Recommande'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal-600); color: var(--white); padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
-    .pricing-card--dark { background: var(--teal-900); border-color: var(--teal-900); color: rgba(255,255,255,0.75); }
-    .pricing-card--dark .pricing-name { color: var(--white); }
-    .pricing-card--dark .pricing-target { color: rgba(255,255,255,0.5); }
-    .pricing-card--dark .pricing-price { color: var(--white); }
-    .pricing-card--dark .pricing-price span { color: rgba(255,255,255,0.4); }
-    .pricing-card--dark .pricing-period { color: rgba(255,255,255,0.4); }
-    .pricing-card--dark .pricing-features li { border-bottom-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); }
-    .pricing-card--dark .pricing-features li svg.check-icon { stroke: var(--gold-500); }
-    .pricing-card--dark .pricing-tagline { color: rgba(255,255,255,0.5); }
-    .pricing-card--dark::before { content: 'Premium'; background: var(--gold-500); color: var(--teal-900); }
-    .pricing-name { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
-    .pricing-target { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 6px; }
-    .pricing-tagline { font-size: 0.82rem; color: var(--neutral-500); font-style: italic; margin-bottom: 20px; line-height: 1.5; }
-    .pricing-price { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--neutral-900); line-height: 1; }
-    .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--neutral-500); }
-    .pricing-period { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 20px; }
-    .pricing-format { font-size: 0.78rem; color: var(--neutral-500); padding: 10px 14px; background: var(--neutral-50); border-radius: 8px; margin-bottom: 20px; line-height: 1.5; }
-    .pricing-card--dark .pricing-format { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); }
-    .pricing-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
-    .pricing-features li { padding: 8px 0; border-bottom: 1px solid var(--neutral-100); display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; }
-    .pricing-features li:last-child { border-bottom: none; }
-    .pricing-features li svg { flex-shrink: 0; margin-top: 2px; }
-    .check-icon { stroke: var(--teal-600); }
-    .quatre-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
-    .quatre-card { padding: 28px 24px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid rgba(9,41,51,0.06); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .quatre-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .quatre-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-    .quatre-card h3 { font-size: 1rem; margin-bottom: 8px; }
-    .quatre-card p { font-size: 0.85rem; color: var(--neutral-500); line-height: 1.6; }
-    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 800px; margin: 0 auto; }
-    .option-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--neutral-50); border-radius: 10px; font-size: 0.88rem; color: var(--neutral-700); }
-    .option-item svg { flex-shrink: 0; stroke: var(--teal-600); }
-    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
-    .diff-card { padding: 28px; border-radius: var(--radius-lg); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+    /* === PRICING === */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+
+    .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
+    .plan::after { content: ''; position: absolute; width: 320px; height: 320px; border-radius: 50%; right: -120px; top: -120px; pointer-events: none; transition: opacity 0.5s ease; }
+    .plan:hover { transform: translateY(-3px); }
+
+    /* Respiration — light, airy */
+    .plan--respiration { background: var(--white); border: 1px solid rgba(9,41,51,0.06); border-radius: 20px 0 0 20px; box-shadow: 0 4px 24px rgba(9,41,51,0.04); }
+    .plan--respiration::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .plan--respiration:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+
+    /* Elan — bold, teal gradient, elevated */
+    .plan--elan { background: linear-gradient(160deg, #007cba 0%, #005a8c 60%, #004d7a 100%); color: var(--white); z-index: 2; box-shadow: 0 20px 56px rgba(0,93,148,0.35); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--elan::after { background: radial-gradient(circle, rgba(236,208,52,0.08) 0%, transparent 65%); }
+    .plan--elan:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+
+    /* Alliance — premium, dark, gold */
+    .plan--alliance { background: linear-gradient(160deg, #092933 0%, #071e28 100%); color: rgba(255,255,255,0.85); border-radius: 0 20px 20px 0; box-shadow: 0 4px 24px rgba(9,41,51,0.15); }
+    .plan--alliance::after { background: radial-gradient(circle, rgba(236,208,52,0.04) 0%, transparent 70%); }
+    .plan--alliance:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.25); }
+
+    .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
+    .plan--respiration .plan-level { color: var(--teal-500); }
+    .plan--elan .plan-level { color: var(--gold-400); }
+    .plan--alliance .plan-level { color: var(--gold-500); opacity: 0.7; }
+
+    .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .plan--respiration .plan-name { color: var(--teal-900); }
+    .plan--elan .plan-name { color: var(--white); }
+    .plan--alliance .plan-name { color: var(--white); }
+
+    .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
+    .plan--respiration .plan-subtitle { color: var(--neutral-500); }
+    .plan--elan .plan-subtitle { color: rgba(255,255,255,0.55); }
+    .plan--alliance .plan-subtitle { color: rgba(255,255,255,0.4); }
+
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; position: relative; z-index: 1; }
+    .plan-amount { font-family: 'Sora', sans-serif; font-size: 3.4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .plan--respiration .plan-amount { color: var(--teal-900); }
+    .plan--elan .plan-amount { color: var(--gold-400); }
+    .plan--alliance .plan-amount { color: var(--gold-500); }
+    .plan-currency { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; }
+    .plan-currency small { display: block; font-size: 0.65rem; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+    .plan--respiration .plan-currency { color: var(--neutral-500); }
+    .plan--elan .plan-currency { color: rgba(255,255,255,0.5); }
+    .plan--alliance .plan-currency { color: var(--gold-500); opacity: 0.6; }
+
+    .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
+    .plan--respiration .plan-tagline { color: var(--neutral-400); }
+    .plan--elan .plan-tagline { color: rgba(255,255,255,0.45); }
+    .plan--alliance .plan-tagline { color: rgba(255,255,255,0.35); }
+
+    .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
+    .plan--respiration .plan-format { background: var(--teal-50); color: var(--teal-700); }
+    .plan--elan .plan-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+    .plan--alliance .plan-format { background: rgba(236,208,52,0.06); color: var(--gold-400); opacity: 0.8; }
+
+    .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
+    .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
+    .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
+    .plan--respiration .plan-features li::before { background: var(--teal-500); }
+    .plan--respiration .plan-features li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .plan--elan .plan-features li::before { background: var(--gold-400); }
+    .plan--elan .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan--alliance .plan-features li::before { background: var(--gold-500); }
+    .plan--alliance .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .plan-features li:last-child { border-bottom: none; }
+
+    .plan-cta { display: block; text-align: center; padding: 14px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.3s cubic-bezier(0.22,1,0.36,1); letter-spacing: 0.01em; }
+    .plan--respiration .plan-cta { background: transparent; color: var(--teal-600); border: 2px solid var(--teal-500); }
+    .plan--respiration .plan-cta:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    .plan--elan .plan-cta { background: var(--gold-400); color: var(--teal-900); border: 2px solid var(--gold-400); }
+    .plan--elan .plan-cta:hover { background: var(--gold-600); border-color: var(--gold-600); }
+    .plan--alliance .plan-cta { background: transparent; color: var(--gold-400); border: 2px solid rgba(236,208,52,0.4); }
+    .plan--alliance .plan-cta:hover { background: var(--gold-400); color: var(--teal-900); border-color: var(--gold-400); }
+
+    .plan-ribbon { position: absolute; top: 24px; right: -28px; background: var(--gold-400); color: var(--teal-900); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 36px; transform: rotate(45deg); z-index: 3; }
+
+    /* === 4 EN 1 — horizontal strip layout === */
+    .quatre-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1000px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(9,41,51,0.06); }
+    .quatre-item { padding: 32px 24px; text-align: center; position: relative; transition: background 0.3s ease; }
+    .quatre-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--neutral-200); }
+    .quatre-item:hover { background: var(--teal-50); }
+    .quatre-num { font-family: 'Sora', sans-serif; font-size: 2.4rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+    .quatre-item:nth-child(1) .quatre-num { color: var(--teal-600); }
+    .quatre-item:nth-child(2) .quatre-num { color: var(--gold-600); }
+    .quatre-item:nth-child(3) .quatre-num { color: #2e7d32; }
+    .quatre-item:nth-child(4) .quatre-num { color: #7b1fa2; }
+    .quatre-item h3 { font-size: 0.95rem; margin-bottom: 6px; }
+    .quatre-item p { font-size: 0.8rem; color: var(--neutral-500); line-height: 1.55; }
+
+    /* === TARGET CARDS === */
+    .target-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1080px; margin: 48px auto 0; background: var(--teal-50); border-radius: 14px; overflow: hidden; }
+    .target-item { padding: 24px 28px; text-align: center; position: relative; }
+    .target-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: rgba(0,124,186,0.12); }
+    .target-name { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--teal-700); }
+    .target-item p { font-size: 0.78rem; color: var(--neutral-500); line-height: 1.5; }
+
+    /* === OPTIONS === */
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 800px; margin: 0 auto; }
+    .option-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 10px; font-size: 0.86rem; color: var(--neutral-700); transition: background 0.2s ease; }
+    .option-item:hover { background: var(--teal-50); }
+    .option-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500); flex-shrink: 0; }
+
+    /* === DIFF SECTION === */
+    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; max-width: 900px; margin: 0 auto; border-radius: 16px; overflow: hidden; }
+    .diff-card { padding: 32px; background: rgba(255,255,255,0.06); transition: background 0.3s ease; }
+    .diff-card:hover { background: rgba(255,255,255,0.1); }
     .diff-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-    .diff-card p { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
-    @media (max-width: 960px) { .pricing-grid { grid-template-columns: 1fr; max-width: 440px; } .quatre-grid { grid-template-columns: repeat(2, 1fr); } .diff-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { .quatre-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; } .options-grid { grid-template-columns: 1fr; } }
+    .diff-card p { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 960px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+      .plan { border-radius: 20px !important; margin: 0 !important; padding: 40px 28px 32px !important; }
+      .plan--elan { padding: 40px 28px 32px !important; }
+      .quatre-strip { grid-template-columns: repeat(2, 1fr); }
+      .quatre-item:nth-child(2)::after { display: none; }
+      .quatre-item:nth-child(1), .quatre-item:nth-child(2) { border-bottom: 1px solid var(--neutral-200); }
+      .target-strip { grid-template-columns: 1fr; }
+      .target-item:not(:last-child)::after { display: none; width: 60%; height: 1px; bottom: 0; top: auto; left: 20%; right: auto; }
+      .target-item:not(:last-child) { border-bottom: 1px solid rgba(0,124,186,0.08); }
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .quatre-strip { grid-template-columns: 1fr; }
+      .quatre-item::after { display: none !important; }
+      .quatre-item { border-bottom: 1px solid var(--neutral-200); }
+      .quatre-item:last-child { border-bottom: none; }
+      .options-grid { grid-template-columns: 1fr; }
+      .plan-amount { font-size: 2.8rem; }
+    }
   </style>
 </head>
 <body>
@@ -139,18 +229,21 @@
         <h2 class="section-title">Les enjeux humains meritent de la continuite</h2>
         <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte et vous accompagne dans la duree, c'est mieux.</p>
       </div>
-      <div class="grid-3 reveal-stagger" style="gap:20px;">
-        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Anticiper plutot que subir</h3>
-          <p style="font-size:0.88rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
+      <div class="quatre-strip reveal-stagger" style="max-width:1000px; margin:0 auto; grid-template-columns:repeat(3,1fr);">
+        <div class="quatre-item" style="border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">01</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Anticiper plutot que subir</h3>
+          <p style="font-size:0.84rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
         </div>
-        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Un interlocuteur qui connait votre contexte</h3>
-          <p style="font-size:0.88rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
+        <div class="quatre-item" style="flex:1; border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">02</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Un interlocuteur qui connait votre contexte</h3>
+          <p style="font-size:0.84rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
         </div>
-        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Faire progresser, pas juste eteindre les feux</h3>
-          <p style="font-size:0.88rem;">L'abonnement cree un rythme. Il permet de developper les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
+        <div class="quatre-item" style="flex:1; border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">03</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Faire progresser, pas juste eteindre les feux</h3>
+          <p style="font-size:0.84rem;">L'abonnement cree un rythme. Il permet de developper les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
         </div>
       </div>
     </div>
@@ -164,32 +257,24 @@
         <h2 class="section-title">4 dimensions, 1 interlocuteur</h2>
         <p class="section-subtitle">Nous ne separons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque abonnement.</p>
       </div>
-      <div class="quatre-grid reveal-stagger">
-        <div class="quatre-card">
-          <div class="quatre-icon" style="background: var(--teal-100);">
-            <svg width="28" height="28" fill="none" stroke="var(--teal-700)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
-          </div>
+      <div class="quatre-strip reveal-stagger">
+        <div class="quatre-item">
+          <div class="quatre-num">01</div>
           <h3>Conseil RH</h3>
           <p>Structurer, decider, securiser. Appui sur l'organisation, les competences, le droit social, les recrutements.</p>
         </div>
-        <div class="quatre-card">
-          <div class="quatre-icon" style="background: rgba(240,180,41,0.12);">
-            <svg width="28" height="28" fill="none" stroke="var(--gold-600)" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
+        <div class="quatre-item">
+          <div class="quatre-num">02</div>
           <h3>Coaching</h3>
           <p>Faire evoluer les postures. Accompagnement individuel de dirigeants et managers sur leurs enjeux concrets.</p>
         </div>
-        <div class="quatre-card">
-          <div class="quatre-icon" style="background: #e8f5e9;">
-            <svg width="28" height="28" fill="none" stroke="#2e7d32" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          </div>
+        <div class="quatre-item">
+          <div class="quatre-num">03</div>
           <h3>Formation</h3>
           <p>Developper les competences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifie Qualiopi.</p>
         </div>
-        <div class="quatre-card">
-          <div class="quatre-icon" style="background: #f3e5f5;">
-            <svg width="28" height="28" fill="none" stroke="#7b1fa2" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
+        <div class="quatre-item">
+          <div class="quatre-num">04</div>
           <h3>Codeveloppement</h3>
           <p>Renforcer l'intelligence collective. Seances de partage et de co-construction entre pairs, animees par un facilitateur.</p>
         </div>
@@ -208,77 +293,87 @@
       <div class="pricing-grid reveal">
 
         <!-- RESPIRATION -->
-        <div class="pricing-card">
-          <div class="pricing-name">Respiration</div>
-          <div class="pricing-target">Sessions flash</div>
-          <div class="pricing-tagline">Prendre du recul. Retrouver de la clarte. Securiser l'essentiel.</div>
-          <div class="pricing-price">790 &euro;<span> HT</span></div>
-          <div class="pricing-period">par mois</div>
-          <div class="pricing-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
-          <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Point mensuel d'appui RH et managerial</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Coaching flash sur problematique immediate</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Capsule formation sur besoin cible</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Seance codev / prise de recul ponctuelle</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Relecture documents, aide a la decision</span></li>
+        <div class="plan plan--respiration">
+          <div class="plan-level">Niveau 1</div>
+          <div class="plan-name">Respiration</div>
+          <div class="plan-subtitle">Sessions flash</div>
+          <div class="plan-price">
+            <span class="plan-amount">790</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Prendre du recul. Retrouver de la clarte. Securiser l'essentiel.</div>
+          <div class="plan-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
+          <ul class="plan-features">
+            <li>Point mensuel d'appui RH et managerial</li>
+            <li>Coaching flash sur problematique immediate</li>
+            <li>Capsule formation sur besoin cible</li>
+            <li>Seance codev / prise de recul ponctuelle</li>
+            <li>Relecture documents, aide a la decision</li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="width:100%; text-align:center;">Choisir Respiration</a>
+          <a href="contact.html" class="plan-cta">Choisir Respiration</a>
         </div>
 
         <!-- ÉLAN -->
-        <div class="pricing-card pricing-card--featured">
-          <div class="pricing-name" style="color:var(--teal-600);">Elan</div>
-          <div class="pricing-target">Sessions de progression</div>
-          <div class="pricing-tagline">Faire progresser les pratiques. Developper les personnes. Renforcer les equipes.</div>
-          <div class="pricing-price">1 490 &euro;<span> HT</span></div>
-          <div class="pricing-period">par mois</div>
-          <div class="pricing-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6-12 mois</div>
-          <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Pilotage mensuel RH</strong> : organisation, competences, recrutement</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Coaching individuel</strong> d'un manager ou dirigeant</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Ateliers formation sur-mesure</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Codeveloppement regulier entre pairs</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1 demi-journee collective</strong> par trimestre</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Montee en competence progressive des managers</span></li>
+        <div class="plan plan--elan">
+          <div class="plan-ribbon">Populaire</div>
+          <div class="plan-level">Niveau 2</div>
+          <div class="plan-name">Elan</div>
+          <div class="plan-subtitle">Sessions de progression</div>
+          <div class="plan-price">
+            <span class="plan-amount">1 490</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Faire progresser les pratiques. Developper les personnes. Renforcer les equipes.</div>
+          <div class="plan-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6-12 mois</div>
+          <ul class="plan-features">
+            <li><strong>Pilotage mensuel RH</strong> : organisation, competences, recrutement</li>
+            <li><strong>Coaching individuel</strong> d'un manager ou dirigeant</li>
+            <li>Ateliers formation sur-mesure</li>
+            <li>Codeveloppement regulier entre pairs</li>
+            <li><strong>1 demi-journee collective</strong> par trimestre</li>
+            <li>Montee en competence progressive des managers</li>
           </ul>
-          <a href="contact.html" class="btn btn--accent btn--sm" style="width:100%; text-align:center;">Choisir Elan</a>
+          <a href="contact.html" class="plan-cta">Choisir Elan</a>
         </div>
 
         <!-- ALLIANCE -->
-        <div class="pricing-card pricing-card--dark">
-          <div class="pricing-name">Alliance</div>
-          <div class="pricing-target">Sessions de pilotage</div>
-          <div class="pricing-tagline">Piloter dans la duree. Structurer les dynamiques. Accompagner la transformation.</div>
-          <div class="pricing-price">2 890 &euro;<span> HT</span></div>
-          <div class="pricing-period">par mois</div>
-          <div class="pricing-format">10-12h/mois &middot; pilotage mensuel + interventions &middot; engagement 12 mois</div>
-          <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Comite de pilotage mensuel</strong> et suivi priorites RH</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Coaching dirigeants et managers cles</strong></span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Journees formation sur-mesure</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Codeveloppement avec capitalisation</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Accompagnement sujets sensibles et aide a la decision</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1 journee collective</strong> par trimestre</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Lecture globale</strong> des enjeux humains et organisationnels</span></li>
+        <div class="plan plan--alliance">
+          <div class="plan-level">Niveau 3</div>
+          <div class="plan-name">Alliance</div>
+          <div class="plan-subtitle">Sessions de pilotage</div>
+          <div class="plan-price">
+            <span class="plan-amount">2 890</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Piloter dans la duree. Structurer les dynamiques. Accompagner la transformation.</div>
+          <div class="plan-format">10-12h/mois &middot; pilotage mensuel + interventions &middot; engagement 12 mois</div>
+          <ul class="plan-features">
+            <li><strong>Comite de pilotage mensuel</strong> et suivi priorites RH</li>
+            <li><strong>Coaching dirigeants et managers cles</strong></li>
+            <li>Journees formation sur-mesure</li>
+            <li>Codeveloppement avec capitalisation</li>
+            <li>Accompagnement sujets sensibles et aide a la decision</li>
+            <li><strong>1 journee collective</strong> par trimestre</li>
+            <li><strong>Lecture globale</strong> des enjeux humains et organisationnels</li>
           </ul>
-          <a href="contact.html" class="btn btn--accent btn--sm" style="width:100%; text-align:center;">Choisir Alliance</a>
+          <a href="contact.html" class="plan-cta">Choisir Alliance</a>
         </div>
 
       </div>
 
       <!-- A QUI S'ADRESSE CHAQUE FORMULE -->
-      <div class="grid-3 reveal" style="gap:20px; max-width:1080px; margin:48px auto 0;">
-        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--teal-400);">
-          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-600);">Respiration, c'est pour vous si...</h4>
-          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous etes dirigeant ou manager d'une TPE/PME et vous avez besoin d'un appui regulier, reactif et concret, sans engager un dispositif lourd.</p>
+      <div class="target-strip reveal">
+        <div class="target-item">
+          <div class="target-name">Respiration, c'est pour vous si...</div>
+          <p>Vous etes dirigeant ou manager d'une TPE/PME et vous avez besoin d'un appui regulier, reactif et concret, sans engager un dispositif lourd.</p>
         </div>
-        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--teal-600);">
-          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-600);">Elan, c'est pour vous si...</h4>
-          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous voulez aller au-dela du traitement ponctuel et mettre en place un accompagnement regulier pour faire progresser managers et equipes.</p>
+        <div class="target-item">
+          <div class="target-name">Elan, c'est pour vous si...</div>
+          <p>Vous voulez aller au-dela du traitement ponctuel et mettre en place un accompagnement regulier pour faire progresser managers et equipes.</p>
         </div>
-        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--gold-500);">
-          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-900);">Alliance, c'est pour vous si...</h4>
-          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous souhaitez un partenaire strategique capable d'accompagner vos enjeux RH, managerieux et collectifs dans la duree.</p>
+        <div class="target-item">
+          <div class="target-name">Alliance, c'est pour vous si...</div>
+          <p>Vous souhaitez un partenaire strategique capable d'accompagner vos enjeux RH, managerieux et collectifs dans la duree.</p>
         </div>
       </div>
 
@@ -328,38 +423,14 @@
         <p class="section-subtitle">Chaque abonnement peut etre enrichi selon vos besoins ponctuels.</p>
       </div>
       <div class="options-grid reveal-stagger">
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Journee de formation supplementaire
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Seance de coaching additionnelle
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Diagnostic RH flash
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Mediation ou regulation d'equipe
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Seminaire d'equipe ou de managers
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Accompagnement recrutement
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Co-construction d'outils RH ou managerieux
-        </div>
-        <div class="option-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Audit RSE ou accompagnement CSRD
-        </div>
+        <div class="option-item"><span class="option-dot"></span> Journee de formation supplementaire</div>
+        <div class="option-item"><span class="option-dot"></span> Seance de coaching additionnelle</div>
+        <div class="option-item"><span class="option-dot"></span> Diagnostic RH flash</div>
+        <div class="option-item"><span class="option-dot"></span> Mediation ou regulation d'equipe</div>
+        <div class="option-item"><span class="option-dot"></span> Seminaire d'equipe ou de managers</div>
+        <div class="option-item"><span class="option-dot"></span> Accompagnement recrutement</div>
+        <div class="option-item"><span class="option-dot"></span> Co-construction d'outils RH ou managerieux</div>
+        <div class="option-item"><span class="option-dot"></span> Audit RSE ou accompagnement CSRD</div>
       </div>
       <div class="card reveal" style="margin-top:32px; max-width:700px; margin-left:auto; margin-right:auto; padding:20px; background:var(--gold-100); border:1px solid var(--gold-400); text-align:center;">
         <p style="margin:0; font-size:0.9rem;"><strong>Bon a savoir :</strong> les volets formation et diagnostic inclus dans les abonnements peuvent etre pris en charge par votre OPCO via la certification Qualiopi de CARTESA.</p>

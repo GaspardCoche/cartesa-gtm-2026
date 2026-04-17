@@ -32,6 +32,169 @@
     "areaServed": { "@type": "AdministrativeArea", "name": "Auvergne-Rhone-Alpes" }
   }
   </script>
+  <style>
+    /* === SITUATION CARDS === */
+    .situation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .situation-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(9,41,51,0.04);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .situation-card::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      right: -80px;
+      bottom: -80px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .situation-card:hover::after { opacity: 1; }
+    .situation-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(9,41,51,0.1);
+    }
+    .situation-card:nth-child(-n+3)::after { background: radial-gradient(circle, rgba(33,182,200,0.08) 0%, transparent 70%); }
+    .situation-card:nth-child(n+4)::after { background: radial-gradient(circle, rgba(236,208,52,0.06) 0%, transparent 70%); }
+    .situation-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 40px;
+    }
+    .situation-card:nth-child(-n+3) .situation-num { color: var(--teal-500); }
+    .situation-card:nth-child(n+4) .situation-num { color: var(--gold-500); }
+    .situation-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .situation-card p { font-size: 0.88rem; color: var(--neutral-600); line-height: 1.6; margin: 0; }
+
+    /* === FORMAT CARDS (connected layout) === */
+    .format-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .format-card {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+    }
+    .format-card:hover { transform: translateY(-3px); }
+    .format-card::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      right: -100px;
+      top: -100px;
+      pointer-events: none;
+    }
+    .format-card--transition {
+      background: var(--white);
+      border: 1px solid rgba(9,41,51,0.06);
+      border-radius: 20px 0 0 20px;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.04);
+    }
+    .format-card--transition::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .format-card--transition:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+    .format-card--partage {
+      background: linear-gradient(160deg, #007cba 0%, #005a8c 60%, #004d7a 100%);
+      color: var(--white);
+      z-index: 2;
+      box-shadow: 0 20px 56px rgba(0,93,148,0.35);
+      border-radius: 20px;
+      margin: -12px -2px;
+      padding: 48px 32px;
+    }
+    .format-card--partage::after { background: radial-gradient(circle, rgba(236,208,52,0.08) 0%, transparent 65%); }
+    .format-card--partage:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+    .format-card--rse {
+      background: linear-gradient(160deg, #3a1f6e 0%, #2a1555 100%);
+      color: rgba(255,255,255,0.85);
+      border-radius: 0 20px 20px 0;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.15);
+    }
+    .format-card--rse::after { background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%); }
+    .format-card--rse:hover { box-shadow: 0 12px 40px rgba(58,31,110,0.25); }
+
+    .format-card h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+    .format-sub { font-size: 0.82rem; margin-bottom: 20px; }
+    .format-card--transition .format-sub { color: var(--neutral-500); }
+    .format-card--partage .format-sub { color: rgba(255,255,255,0.5); }
+    .format-card--rse .format-sub { color: rgba(255,255,255,0.4); }
+
+    .format-card ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+    .format-card ul li {
+      position: relative;
+      padding: 8px 0 8px 18px;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+    .format-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .format-card--transition ul li::before { background: var(--teal-500); }
+    .format-card--transition ul li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .format-card--partage ul li::before { background: var(--gold-400); }
+    .format-card--partage ul li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .format-card--rse ul li::before { background: #a78bfa; }
+    .format-card--rse ul li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .format-card ul li:last-child { border-bottom: none; }
+
+    .format-cta {
+      display: block;
+      text-align: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .format-card--transition .format-cta { background: transparent; color: var(--teal-600); border: 2px solid var(--teal-500); }
+    .format-card--transition .format-cta:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    .format-card--partage .format-cta { background: var(--gold-400); color: var(--teal-900); border: 2px solid var(--gold-400); }
+    .format-card--partage .format-cta:hover { background: var(--gold-600); border-color: var(--gold-600); }
+    .format-card--rse .format-cta { background: transparent; color: #a78bfa; border: 2px solid rgba(167,139,250,0.4); }
+    .format-card--rse .format-cta:hover { background: #a78bfa; color: #1a0a3e; border-color: #a78bfa; }
+
+    @media (max-width: 960px) {
+      .situation-grid { grid-template-columns: 1fr; }
+      .format-row { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+      .format-card { border-radius: 20px !important; margin: 0 !important; padding: 36px 28px !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -98,30 +261,48 @@
         <h2 class="section-title">Quand un DRH de transition change la donne</h2>
         <p class="section-subtitle">6 situations ou un expert RH operationnel fait la difference entre subir et piloter.</p>
       </div>
-      <div class="grid-3 reveal-stagger" style="gap:20px;">
-        <div class="card" style="padding:28px; border-left:4px solid var(--teal-600);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Depart du DRH</h3>
-          <p>Votre DRH ou RRH quitte l'entreprise. Il faut assurer la continuite operationnelle le temps du recrutement. Pas dans 3 mois -- maintenant.</p>
+      <div class="situation-grid reveal-stagger">
+        <div class="situation-card">
+          <div class="situation-num">01</div>
+          <div>
+            <h3>Depart du DRH</h3>
+            <p>Votre DRH ou RRH quitte l'entreprise. Il faut assurer la continuite operationnelle le temps du recrutement. Pas dans 3 mois -- maintenant.</p>
+          </div>
         </div>
-        <div class="card" style="padding:28px; border-left:4px solid var(--teal-600);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Croissance rapide</h3>
-          <p>Vous passez de 40 a 100 salaries. Il faut structurer la fonction RH, mettre en place les processus, sans le budget d'un CDI temps plein.</p>
+        <div class="situation-card">
+          <div class="situation-num">02</div>
+          <div>
+            <h3>Croissance rapide</h3>
+            <p>Vous passez de 40 a 100 salaries. Il faut structurer la fonction RH, mettre en place les processus, sans le budget d'un CDI temps plein.</p>
+          </div>
         </div>
-        <div class="card" style="padding:28px; border-left:4px solid var(--teal-600);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Restructuration</h3>
-          <p>PSE, reorganisation, fermeture de site. Vous avez besoin d'un expert qui connait le droit social et qui sait gerer la dimension humaine.</p>
+        <div class="situation-card">
+          <div class="situation-num">03</div>
+          <div>
+            <h3>Restructuration</h3>
+            <p>PSE, reorganisation, fermeture de site. Vous avez besoin d'un expert qui connait le droit social et qui sait gerer la dimension humaine.</p>
+          </div>
         </div>
-        <div class="card" style="padding:28px; border-left:4px solid var(--gold-500);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Mise en conformite</h3>
-          <p>CSE a mettre en place, accord collectif a negocier, DUERP a actualiser, egalite pro a structurer. Obligations legales qui ne peuvent pas attendre.</p>
+        <div class="situation-card">
+          <div class="situation-num">04</div>
+          <div>
+            <h3>Mise en conformite</h3>
+            <p>CSE a mettre en place, accord collectif a negocier, DUERP a actualiser, egalite pro a structurer. Obligations legales qui ne peuvent pas attendre.</p>
+          </div>
         </div>
-        <div class="card" style="padding:28px; border-left:4px solid var(--gold-500);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Fusion-acquisition</h3>
-          <p>Integration de deux cultures, harmonisation des statuts, gestion des doublons. Un DRH de transition pilote le volet humain du rapprochement.</p>
+        <div class="situation-card">
+          <div class="situation-num">05</div>
+          <div>
+            <h3>Fusion-acquisition</h3>
+            <p>Integration de deux cultures, harmonisation des statuts, gestion des doublons. Un DRH de transition pilote le volet humain du rapprochement.</p>
+          </div>
         </div>
-        <div class="card" style="padding:28px; border-left:4px solid var(--gold-500);">
-          <h3 style="font-size:1.05rem; margin-bottom:8px;">Pression RSE des donneurs d'ordres</h3>
-          <p>Vos clients exigent une demarche RSE structuree. Questionnaires EcoVadis, bilans carbone, CSRD a anticiper. Il faut un partenaire RSE operationnel, pas un consultant qui fait des slides.</p>
+        <div class="situation-card">
+          <div class="situation-num">06</div>
+          <div>
+            <h3>Pression RSE des donneurs d'ordres</h3>
+            <p>Vos clients exigent une demarche RSE structuree. Questionnaires EcoVadis, bilans carbone, CSRD a anticiper. Il faut un partenaire RSE operationnel, pas un consultant qui fait des slides.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -134,42 +315,42 @@
         <span class="section-label">Nos formats</span>
         <h2 class="section-title">Trois formats, un seul objectif : que ca tourne</h2>
       </div>
-      <div class="grid-3 reveal" style="gap:24px; max-width:1100px; margin:0 auto;">
-        <div class="card" style="padding:32px; border-top:4px solid var(--teal-600);">
-          <h3 style="margin-bottom:4px;">Mission de transition</h3>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:16px;">Intervention intensive, duree definie</p>
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Duree : <strong>3 a 18 mois</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Presence : <strong>3 a 5 jours/semaine</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Profil : <strong>DRH senior 15+ ans</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Cas : restructuration, PSE, fusion, remplacement urgent</li>
-            <li style="padding:8px 0;">Tarif indicatif : <strong>900 -- 1 200 &euro;/jour</strong></li>
+      <div class="format-row reveal">
+        <div class="format-card format-card--transition">
+          <h3>Mission de transition</h3>
+          <p class="format-sub">Intervention intensive, duree definie</p>
+          <ul>
+            <li>Duree : <strong>3 a 18 mois</strong></li>
+            <li>Presence : <strong>3 a 5 jours/semaine</strong></li>
+            <li>Profil : <strong>DRH senior 15+ ans</strong></li>
+            <li>Cas : restructuration, PSE, fusion, remplacement urgent</li>
+            <li>Tarif indicatif : <strong>900 -- 1 200 &euro;/jour</strong></li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="margin-top:20px;">Discuter d'une mission</a>
+          <a href="contact.html" class="format-cta">Discuter d'une mission</a>
         </div>
-        <div class="card" style="padding:32px; border-top:4px solid var(--gold-500);">
-          <h3 style="margin-bottom:4px;">DRH a temps partage</h3>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:16px;">Presence reguliere, engagement souple</p>
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Duree : <strong>reconductible (min. 6 mois)</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Presence : <strong>1 a 3 jours/semaine</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Profil : <strong>DRH / RRH experimente</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Cas : structuration RH, montee en competences, croissance</li>
-            <li style="padding:8px 0;">Tarif indicatif : <strong>1 600 -- 4 800 &euro;/mois</strong></li>
+        <div class="format-card format-card--partage">
+          <h3>DRH a temps partage</h3>
+          <p class="format-sub">Presence reguliere, engagement souple</p>
+          <ul>
+            <li>Duree : <strong>reconductible (min. 6 mois)</strong></li>
+            <li>Presence : <strong>1 a 3 jours/semaine</strong></li>
+            <li>Profil : <strong>DRH / RRH experimente</strong></li>
+            <li>Cas : structuration RH, montee en competences, croissance</li>
+            <li>Tarif indicatif : <strong>1 600 -- 4 800 &euro;/mois</strong></li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="margin-top:20px;">En savoir plus</a>
+          <a href="contact.html" class="format-cta">En savoir plus</a>
         </div>
-        <div class="card" style="padding:32px; border-top:4px solid #8b5cf6;">
-          <h3 style="margin-bottom:4px;">Partenaire RSE</h3>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:16px;">Votre referent RSE operationnel</p>
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Duree : <strong>6 a 18 mois</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Presence : <strong>1 a 2 jours/semaine</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Profil : <strong>Expert RSE + RH senior</strong></li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Cas : conformite CSRD, EcoVadis, donneurs d'ordres, demarche RSE</li>
-            <li style="padding:8px 0;">Tarif indicatif : <strong>1 200 -- 3 200 &euro;/mois</strong></li>
+        <div class="format-card format-card--rse">
+          <h3>Partenaire RSE</h3>
+          <p class="format-sub">Votre referent RSE operationnel</p>
+          <ul>
+            <li>Duree : <strong>6 a 18 mois</strong></li>
+            <li>Presence : <strong>1 a 2 jours/semaine</strong></li>
+            <li>Profil : <strong>Expert RSE + RH senior</strong></li>
+            <li>Cas : conformite CSRD, EcoVadis, donneurs d'ordres, demarche RSE</li>
+            <li>Tarif indicatif : <strong>1 200 -- 3 200 &euro;/mois</strong></li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="margin-top:20px;">Discuter RSE</a>
+          <a href="contact.html" class="format-cta">Discuter RSE</a>
         </div>
       </div>
       <div class="card reveal" style="max-width:1100px; margin:32px auto 0; padding:24px; text-align:center; background:var(--teal-50); border:1px solid var(--teal-100);">
