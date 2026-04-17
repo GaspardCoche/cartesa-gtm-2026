@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formules d'accompagnement RH & RSE | CARTESA Isere</title>
-  <meta name="description" content="3 formules d'accompagnement RH et RSE pour PME. Seances Q&R, coaching court, coaching avance avec audit. A partir de 490 euros/mois. Cabinet certifie Qualiopi en Isere.">
+  <title>Nos abonnements RH, Management & RSE | CARTESA Isere</title>
+  <meta name="description" content="3 abonnements d'accompagnement RH, management et RSE pour PME. Conseil, coaching, formation et codeveloppement. A partir de 790 EUR/mois. Cabinet certifie Qualiopi en Isere.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/pass-rh.html">
-  <meta property="og:title" content="Formules d'accompagnement RH & RSE | CARTESA">
-  <meta property="og:description" content="3 formules RH & RSE : seances Q&R, coaching, coaching avance avec audit. A partir de 490 euros/mois.">
+  <meta property="og:title" content="Nos abonnements RH, Management & RSE | CARTESA">
+  <meta property="og:description" content="Respiration, Elan, Alliance : 3 niveaux d'accompagnement combinant conseil RH, coaching, formation et codeveloppement. Des 790 EUR/mois.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
@@ -22,34 +22,60 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Formules d'accompagnement RH & RSE CARTESA",
+    "name": "Abonnements d'accompagnement CARTESA",
     "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" },
-    "description": "3 formules d'accompagnement RH et RSE pour PME. Seances Q&R, coaching, audit.",
+    "description": "3 niveaux d'accompagnement RH, management et RSE combinant conseil, coaching, formation et codeveloppement.",
     "offers": [
-      { "@type": "Offer", "name": "Eclaircie", "price": "490", "priceCurrency": "EUR", "unitText": "mois" },
-      { "@type": "Offer", "name": "Tremplin", "price": "990", "priceCurrency": "EUR", "unitText": "mois" },
-      { "@type": "Offer", "name": "Altitude", "price": "1990", "priceCurrency": "EUR", "unitText": "mois" }
+      { "@type": "Offer", "name": "Respiration", "price": "790", "priceCurrency": "EUR", "unitText": "mois" },
+      { "@type": "Offer", "name": "Elan", "price": "1490", "priceCurrency": "EUR", "unitText": "mois" },
+      { "@type": "Offer", "name": "Alliance", "price": "2890", "priceCurrency": "EUR", "unitText": "mois" }
     ]
   }
   </script>
   <style>
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
-    .pricing-card { padding: 36px 28px; border-radius: var(--radius-lg); background: var(--white); border: 2px solid var(--neutral-200); position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
+    .pricing-card { padding: 36px 28px; border-radius: var(--radius-lg); background: var(--white); border: 2px solid var(--neutral-200); position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
     .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .pricing-card--featured { border-color: var(--teal-600); }
-    .pricing-card--featured::before { content: 'Le plus choisi'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal-600); color: var(--white); padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .pricing-card--featured::before { content: 'Recommande'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal-600); color: var(--white); padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .pricing-card--dark { background: var(--teal-900); border-color: var(--teal-900); color: rgba(255,255,255,0.75); }
+    .pricing-card--dark .pricing-name { color: var(--white); }
+    .pricing-card--dark .pricing-target { color: rgba(255,255,255,0.5); }
+    .pricing-card--dark .pricing-price { color: var(--white); }
+    .pricing-card--dark .pricing-price span { color: rgba(255,255,255,0.4); }
+    .pricing-card--dark .pricing-period { color: rgba(255,255,255,0.4); }
+    .pricing-card--dark .pricing-features li { border-bottom-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); }
+    .pricing-card--dark .pricing-features li svg.check-icon { stroke: var(--gold-500); }
+    .pricing-card--dark .pricing-tagline { color: rgba(255,255,255,0.5); }
+    .pricing-card--dark::before { content: 'Premium'; background: var(--gold-500); color: var(--teal-900); }
     .pricing-name { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
-    .pricing-target { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 20px; }
+    .pricing-target { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 6px; }
+    .pricing-tagline { font-size: 0.82rem; color: var(--neutral-500); font-style: italic; margin-bottom: 20px; line-height: 1.5; }
     .pricing-price { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--neutral-900); line-height: 1; }
     .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--neutral-500); }
-    .pricing-period { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 24px; }
-    .pricing-features { list-style: none; padding: 0; margin: 0 0 28px; }
-    .pricing-features li { padding: 8px 0; border-bottom: 1px solid var(--neutral-100); display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; }
+    .pricing-period { font-size: 0.85rem; color: var(--neutral-500); margin-bottom: 20px; }
+    .pricing-format { font-size: 0.78rem; color: var(--neutral-500); padding: 10px 14px; background: var(--neutral-50); border-radius: 8px; margin-bottom: 20px; line-height: 1.5; }
+    .pricing-card--dark .pricing-format { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); }
+    .pricing-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
+    .pricing-features li { padding: 8px 0; border-bottom: 1px solid var(--neutral-100); display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; }
+    .pricing-features li:last-child { border-bottom: none; }
     .pricing-features li svg { flex-shrink: 0; margin-top: 2px; }
-    .pricing-features li.disabled { color: var(--neutral-300); }
-    .pricing-features li.disabled svg { stroke: var(--neutral-300); }
     .check-icon { stroke: var(--teal-600); }
-    @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; } }
+    .quatre-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+    .quatre-card { padding: 28px 24px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid rgba(9,41,51,0.06); box-shadow: var(--shadow-sm); text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .quatre-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .quatre-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .quatre-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .quatre-card p { font-size: 0.85rem; color: var(--neutral-500); line-height: 1.6; }
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 800px; margin: 0 auto; }
+    .option-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--neutral-50); border-radius: 10px; font-size: 0.88rem; color: var(--neutral-700); }
+    .option-item svg { flex-shrink: 0; stroke: var(--teal-600); }
+    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .diff-card { padding: 28px; border-radius: var(--radius-lg); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+    .diff-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .diff-card p { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+    @media (max-width: 960px) { .pricing-grid { grid-template-columns: 1fr; max-width: 440px; } .quatre-grid { grid-template-columns: repeat(2, 1fr); } .diff-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .quatre-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; } .options-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -68,7 +94,7 @@
           <ul class="nav-sub">
             <li><a href="expertises.html">Diagnostic operationnel</a></li>
             <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html" class="active">Formules d'accompagnement</a></li>
+            <li><a href="pass-rh.html" class="active">Nos abonnements</a></li>
             <li><a href="rse-decarbonation.html">RSE & Decarbonation</a></li>
           </ul>
         </li>
@@ -94,173 +120,249 @@
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.5);">Formules d'accompagnement</span>
-      <h1>RH et RSE, <span style="color: var(--gold-500);">on s'en occupe.</span></h1>
-      <p>Pas besoin de tout gerer seul. Choisissez la formule qui vous convient : des seances de questions-reponses, du coaching cible ou un accompagnement complet avec audit. Toujours avec un expert certifie, toujours sans prise de tete.</p>
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Nos abonnements</span>
+      <h1>Soutenir, faire progresser, <span style="color: var(--gold-500);">piloter.</span></h1>
+      <p>Parce que les enjeux humains ne se traitent ni dans l'urgence permanente, ni au coup par coup, nous proposons des abonnements qui combinent conseil RH, coaching, formation et codeveloppement. Une logique simple : accompagner dans la duree.</p>
       <div class="page-hero-stats">
-        <div class="page-hero-stat"><strong>490 &euro;</strong><span>a partir de /mois</span></div>
-        <div class="page-hero-stat"><strong>3</strong><span>formules au choix</span></div>
-        <div class="page-hero-stat"><strong>RH + RSE</strong><span>dans chaque formule</span></div>
+        <div class="page-hero-stat"><strong>790 &euro;</strong><span>a partir de /mois</span></div>
+        <div class="page-hero-stat"><strong>3</strong><span>niveaux</span></div>
+        <div class="page-hero-stat"><strong>4 en 1</strong><span>conseil + coaching + formation + codev</span></div>
       </div>
     </div>
   </section>
 
-  <!-- DOULEUR -->
+  <!-- POURQUOI UN ABONNEMENT -->
   <section class="section section--white">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Le probleme</span>
-        <h2 class="section-title">Diriger une PME sans RH, c'est jouer sans filet</h2>
+        <span class="section-label">Pourquoi un abonnement</span>
+        <h2 class="section-title">Les enjeux humains meritent de la continuite</h2>
+        <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte et vous accompagne dans la duree, c'est mieux.</p>
       </div>
       <div class="grid-3 reveal-stagger" style="gap:20px;">
-        <div class="card" style="padding:24px; border-left:3px solid #e74c3c;">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Risque juridique</h3>
-          <p style="font-size:0.9rem;">Contrats mal rediges, entretiens pro non realises, DUERP absent. Une inspection du travail peut couter 10 000 &euro;+.</p>
+        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Anticiper plutot que subir</h3>
+          <p style="font-size:0.88rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
         </div>
-        <div class="card" style="padding:24px; border-left:3px solid #e74c3c;">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Turnover subi</h3>
-          <p style="font-size:0.9rem;">Sans politique de fidelisation, vos meilleurs elements partent. Cout d'un depart : 6 a 9 mois de salaire en recrutement + formation.</p>
+        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Un interlocuteur qui connait votre contexte</h3>
+          <p style="font-size:0.88rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
         </div>
-        <div class="card" style="padding:24px; border-left:3px solid #e74c3c;">
-          <h3 style="font-size:1rem; margin-bottom:8px;">Dirigeant qui s'epuise</h3>
-          <p style="font-size:0.9rem;">Vous gerez le business, les clients, la production ET les RH. Vous n'avez pas le temps de bien faire les 4.</p>
+        <div class="card" style="padding:24px; border-top:3px solid var(--teal-600);">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Faire progresser, pas juste eteindre les feux</h3>
+          <p style="font-size:0.88rem;">L'abonnement cree un rythme. Il permet de developper les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCHE 4 EN 1 -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre approche</span>
+        <h2 class="section-title">4 dimensions, 1 interlocuteur</h2>
+        <p class="section-subtitle">Nous ne separons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque abonnement.</p>
+      </div>
+      <div class="quatre-grid reveal-stagger">
+        <div class="quatre-card">
+          <div class="quatre-icon" style="background: var(--teal-100);">
+            <svg width="28" height="28" fill="none" stroke="var(--teal-700)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+          </div>
+          <h3>Conseil RH</h3>
+          <p>Structurer, decider, securiser. Appui sur l'organisation, les competences, le droit social, les recrutements.</p>
+        </div>
+        <div class="quatre-card">
+          <div class="quatre-icon" style="background: rgba(240,180,41,0.12);">
+            <svg width="28" height="28" fill="none" stroke="var(--gold-600)" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Coaching</h3>
+          <p>Faire evoluer les postures. Accompagnement individuel de dirigeants et managers sur leurs enjeux concrets.</p>
+        </div>
+        <div class="quatre-card">
+          <div class="quatre-icon" style="background: #e8f5e9;">
+            <svg width="28" height="28" fill="none" stroke="#2e7d32" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Formation</h3>
+          <p>Developper les competences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifie Qualiopi.</p>
+        </div>
+        <div class="quatre-card">
+          <div class="quatre-icon" style="background: #f3e5f5;">
+            <svg width="28" height="28" fill="none" stroke="#7b1fa2" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Codeveloppement</h3>
+          <p>Renforcer l'intelligence collective. Seances de partage et de co-construction entre pairs, animees par un facilitateur.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section class="section section--alt" id="formules">
+  <section class="section section--white" id="formules">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Nos formules</span>
-        <h2 class="section-title">3 formules, 0 prise de tete</h2>
-        <p class="section-subtitle">Chaque formule inclut un expert certifie Qualiopi, du RH et du RSE. Engagement trimestriel, resiliable avec 1 mois de preavis.</p>
+        <h2 class="section-title">3 niveaux, une meme exigence</h2>
+        <p class="section-subtitle">Chaque formule s'adapte a la realite de votre structure, a sa taille, a ses enjeux et a son actualite.</p>
       </div>
       <div class="pricing-grid reveal">
 
-        <!-- ECLAIRCIE -->
+        <!-- RESPIRATION -->
         <div class="pricing-card">
-          <div class="pricing-name">Eclaircie</div>
-          <div class="pricing-target">Seances questions-reponses</div>
-          <div class="pricing-price">490 &euro;<span> HT</span></div>
+          <div class="pricing-name">Respiration</div>
+          <div class="pricing-target">Sessions flash</div>
+          <div class="pricing-tagline">Prendre du recul. Retrouver de la clarte. Securiser l'essentiel.</div>
+          <div class="pricing-price">790 &euro;<span> HT</span></div>
           <div class="pricing-period">par mois</div>
+          <div class="pricing-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
           <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>2 seances Q&amp;R</strong> par mois (1h chacune)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Hotline RH &amp; RSE (reponse 48h)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Templates RH (contrats, avenants, convocations)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Veille reglementaire trimestrielle</span></li>
-            <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span>Coaching individuel</span></li>
-            <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span>Audit RH ou RSE</span></li>
-            <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span>Expert referent dedie</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Point mensuel d'appui RH et managerial</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Coaching flash sur problematique immediate</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Capsule formation sur besoin cible</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Seance codev / prise de recul ponctuelle</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Relecture documents, aide a la decision</span></li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="width:100%; text-align:center;">Choisir Eclaircie</a>
+          <a href="contact.html" class="btn btn--ghost btn--sm" style="width:100%; text-align:center;">Choisir Respiration</a>
         </div>
 
-        <!-- TREMPLIN -->
+        <!-- ÉLAN -->
         <div class="pricing-card pricing-card--featured">
-          <div class="pricing-name" style="color:var(--teal-600);">Tremplin</div>
-          <div class="pricing-target">Coaching court &amp; operationnel</div>
-          <div class="pricing-price">990 &euro;<span> HT</span></div>
+          <div class="pricing-name" style="color:var(--teal-600);">Elan</div>
+          <div class="pricing-target">Sessions de progression</div>
+          <div class="pricing-tagline">Faire progresser les pratiques. Developper les personnes. Renforcer les equipes.</div>
+          <div class="pricing-price">1 490 &euro;<span> HT</span></div>
           <div class="pricing-period">par mois</div>
+          <div class="pricing-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6-12 mois</div>
           <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>4 seances coaching</strong> par mois (1h30)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Hotline RH &amp; RSE (reponse 24h)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Templates RH complets + plan d'action personnalise</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Veille reglementaire mensuelle (RH + RSE)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Accompagnement entretiens professionnels</strong></span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1 diagnostic RH annuel</strong></span></li>
-            <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span>Audit RSE complet</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Pilotage mensuel RH</strong> : organisation, competences, recrutement</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Coaching individuel</strong> d'un manager ou dirigeant</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Ateliers formation sur-mesure</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Codeveloppement regulier entre pairs</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1 demi-journee collective</strong> par trimestre</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Montee en competence progressive des managers</span></li>
           </ul>
-          <a href="contact.html" class="btn btn--accent btn--sm" style="width:100%; text-align:center;">Choisir Tremplin</a>
+          <a href="contact.html" class="btn btn--accent btn--sm" style="width:100%; text-align:center;">Choisir Elan</a>
         </div>
 
-        <!-- ALTITUDE -->
-        <div class="pricing-card">
-          <div class="pricing-name">Altitude</div>
-          <div class="pricing-target">Coaching avance + audit RH &amp; RSE</div>
-          <div class="pricing-price">1 990 &euro;<span> HT</span></div>
+        <!-- ALLIANCE -->
+        <div class="pricing-card pricing-card--dark">
+          <div class="pricing-name">Alliance</div>
+          <div class="pricing-target">Sessions de pilotage</div>
+          <div class="pricing-tagline">Piloter dans la duree. Structurer les dynamiques. Accompagner la transformation.</div>
+          <div class="pricing-price">2 890 &euro;<span> HT</span></div>
           <div class="pricing-period">par mois</div>
+          <div class="pricing-format">10-12h/mois &middot; pilotage mensuel + interventions &middot; engagement 12 mois</div>
           <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>8 seances coaching</strong> par mois + acces illimite</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Hotline RH &amp; RSE <strong>illimitee</strong></span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Templates RH + RSE sur mesure</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Veille reglementaire mensuelle (RH + RSE + CSRD)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Audit RH + RSE complet</strong> (annuel)</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Entretiens pro + bilan a 6 ans</strong> pris en charge</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Expert referent dedie</strong></span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Comite de pilotage mensuel</strong> et suivi priorites RH</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Coaching dirigeants et managers cles</strong></span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Journees formation sur-mesure</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Codeveloppement avec capitalisation</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>Accompagnement sujets sensibles et aide a la decision</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1 journee collective</strong> par trimestre</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="check-icon" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Lecture globale</strong> des enjeux humains et organisationnels</span></li>
           </ul>
-          <a href="contact.html" class="btn btn--ghost btn--sm" style="width:100%; text-align:center;">Choisir Altitude</a>
+          <a href="contact.html" class="btn btn--accent btn--sm" style="width:100%; text-align:center;">Choisir Alliance</a>
         </div>
 
+      </div>
+
+      <!-- A QUI S'ADRESSE CHAQUE FORMULE -->
+      <div class="grid-3 reveal" style="gap:20px; max-width:1080px; margin:48px auto 0;">
+        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--teal-400);">
+          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-600);">Respiration, c'est pour vous si...</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous etes dirigeant ou manager d'une TPE/PME et vous avez besoin d'un appui regulier, reactif et concret, sans engager un dispositif lourd.</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--teal-600);">
+          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-600);">Elan, c'est pour vous si...</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous voulez aller au-dela du traitement ponctuel et mettre en place un accompagnement regulier pour faire progresser managers et equipes.</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center; border-top:3px solid var(--gold-500);">
+          <h4 style="font-size:0.9rem; margin-bottom:6px; color:var(--teal-900);">Alliance, c'est pour vous si...</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500); line-height:1.55;">Vous souhaitez un partenaire strategique capable d'accompagner vos enjeux RH, managerieux et collectifs dans la duree.</p>
+        </div>
       </div>
 
       <!-- COMPARAISON CDI -->
       <div class="card reveal" style="max-width:700px; margin:40px auto 0; padding:28px; text-align:center; background:var(--white); border:2px solid var(--teal-100);">
         <h3 style="margin-bottom:12px;">Combien coute un RRH interne en comparaison ?</h3>
-        <p>Un RRH salarie en PME coute <strong>40 000 a 55 000 &euro; brut/an</strong>, soit <strong>4 500 a 6 500 &euro;/mois charges</strong> (salaire + patronales + mutuelle + prevoyance). Et il ne fait pas la RSE.</p>
-        <p style="margin-top:12px;">La formule Tremplin a <strong>990 &euro;/mois</strong> = <strong>5x moins cher</strong>, pour un profil plus senior, certifie Qualiopi, qui couvre RH et RSE, sans les couts fixes d'un CDI.</p>
+        <p>Un RRH salarie en PME coute <strong>40 000 a 55 000 &euro; brut/an</strong>, soit <strong>4 500 a 6 500 &euro;/mois charges</strong> (salaire + patronales + mutuelle + prevoyance). Et il ne fait ni coaching, ni formation, ni codeveloppement.</p>
+        <p style="margin-top:12px;">L'abonnement <strong>Elan a 1 490 &euro;/mois</strong> = un appui senior, certifie Qualiopi, qui combine 4 dimensions d'accompagnement, sans les couts fixes d'un CDI.</p>
       </div>
     </div>
   </section>
 
-  <!-- CE QUI EST INCLUS / EXCLU -->
+  <!-- CE QUI FAIT LA DIFFÉRENCE -->
+  <section class="section section--teal">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ce qui fait la difference</span>
+        <h2 class="section-title">Pas juste un prestataire. Un partenaire.</h2>
+      </div>
+      <div class="diff-grid reveal-stagger">
+        <div class="diff-card">
+          <h3>Une logique de continuite</h3>
+          <p>L'abonnement cree un rythme. Il permet d'anticiper, d'ajuster et d'ancrer les evolutions dans la duree. Pas de relation jetable.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Une reponse sur-mesure</h3>
+          <p>Chaque formule s'adapte a votre realite : votre taille, vos enjeux, votre actualite. Pas de catalogue figé, pas de process standardise.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Un accompagnement concret</h3>
+          <p>Notre approche est pragmatique, operationnelle, directement reliee aux situations reelles de vos dirigeants, managers et equipes.</p>
+        </div>
+        <div class="diff-card">
+          <h3>4 leviers, 1 interlocuteur</h3>
+          <p>Conseil, coaching, formation, codeveloppement : pas besoin de coordonner 4 prestataires. Nous articulons ces dimensions selon vos besoins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS COMPLÉMENTAIRES -->
   <section class="section section--white">
     <div class="container">
-      <div class="grid-2 reveal" style="gap:32px; max-width:900px; margin:0 auto;">
-        <div>
-          <h3 style="color:var(--teal-600); margin-bottom:16px;">Ce qui est inclus dans tous les Pass</h3>
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Reponses droit social et droit du travail
-            </li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Redaction de documents RH (contrats, avenants, lettres)
-            </li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Support obligations legales (entretiens pro, DUERP, affichage)
-            </li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Accompagnement plan de formation
-            </li>
-            <li style="padding:8px 0; display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Preparation et support reunions CSE
-            </li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Accompagnement demarche RSE (a partir de Tremplin)
-            </li>
-            <li style="padding:8px 0; display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-              Suivi entretiens professionnels obligatoires
-            </li>
-          </ul>
+      <div class="section-header reveal">
+        <span class="section-label">Aller plus loin</span>
+        <h2 class="section-title">Options complementaires</h2>
+        <p class="section-subtitle">Chaque abonnement peut etre enrichi selon vos besoins ponctuels.</p>
+      </div>
+      <div class="options-grid reveal-stagger">
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Journee de formation supplementaire
         </div>
-        <div>
-          <h3 style="color:var(--neutral-500); margin-bottom:16px;">Ce qui n'est pas inclus</h3>
-          <ul style="list-style:none; padding:0; color:var(--neutral-500);">
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-300)" stroke-width="2" style="flex-shrink:0; margin-top:3px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Gestion de la paie (nous recommandons des partenaires)
-            </li>
-            <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-300)" stroke-width="2" style="flex-shrink:0; margin-top:3px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Administration du personnel au quotidien (DSN, conges)
-            </li>
-            <li style="padding:8px 0; display:flex; gap:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-300)" stroke-width="2" style="flex-shrink:0; margin-top:3px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Contentieux prud'homal (nous orientons vers un avocat)
-            </li>
-          </ul>
-          <div class="card" style="margin-top:20px; padding:16px; background:var(--gold-100); border:1px solid var(--gold-400);">
-            <p style="margin:0; font-size:0.9rem;"><strong>Bon a savoir :</strong> les volets formation et diagnostic inclus dans les Pass Avance et Integral peuvent etre pris en charge par votre OPCO via la certification Qualiopi de CARTESA.</p>
-          </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Seance de coaching additionnelle
         </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Diagnostic RH flash
+        </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Mediation ou regulation d'equipe
+        </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Seminaire d'equipe ou de managers
+        </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Accompagnement recrutement
+        </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Co-construction d'outils RH ou managerieux
+        </div>
+        <div class="option-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Audit RSE ou accompagnement CSRD
+        </div>
+      </div>
+      <div class="card reveal" style="margin-top:32px; max-width:700px; margin-left:auto; margin-right:auto; padding:20px; background:var(--gold-100); border:1px solid var(--gold-400); text-align:center;">
+        <p style="margin:0; font-size:0.9rem;"><strong>Bon a savoir :</strong> les volets formation et diagnostic inclus dans les abonnements peuvent etre pris en charge par votre OPCO via la certification Qualiopi de CARTESA.</p>
       </div>
     </div>
   </section>
@@ -270,32 +372,36 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Questions frequentes</span>
-        <h2 class="section-title">Formules d'accompagnement : vos questions</h2>
+        <h2 class="section-title">Abonnements : vos questions</h2>
       </div>
       <div class="faq-list reveal">
         <details class="faq-item">
-          <summary>Je suis une TPE de 15 salaries. L'Eclaircie est-elle adaptee ?</summary>
-          <p>Tout a fait. Les seances Q&amp;R de l'Eclaircie sont parfaites pour poser vos questions au fil de l'eau : droit social, contrats, obligations. Pas besoin d'etre une grande entreprise pour avoir les bonnes reponses.</p>
+          <summary>Je suis une TPE de 15 salaries. Quel abonnement choisir ?</summary>
+          <p>Respiration est fait pour vous. Un appui souple et reactif pour les situations du quotidien : preparer un entretien delicat, gerer une tension, clarifier une repartition de roles. Environ 3h par mois, sans engager un dispositif lourd.</p>
         </details>
         <details class="faq-item">
           <summary>Puis-je changer de formule en cours de route ?</summary>
-          <p>Oui, vous pouvez monter en gamme a tout moment. Le passage a une formule inferieure est possible a chaque renouvellement trimestriel. On s'adapte a votre rythme.</p>
+          <p>Oui. Vous pouvez monter en gamme a tout moment. Le passage a une formule inferieure est possible a chaque renouvellement. On s'adapte a votre rythme et a vos besoins.</p>
         </details>
         <details class="faq-item">
-          <summary>En quoi les formules couvrent-elles aussi la RSE ?</summary>
-          <p>A partir de Tremplin, votre expert integre les sujets RSE : conformite CSRD, sensibilisation equipes, preparation aux audits donneurs d'ordres. Avec Altitude, vous beneficiez d'un audit RSE complet chaque annee. Pas besoin de deux prestataires, on fait les deux.</p>
+          <summary>Quelle est la difference entre coaching et codeveloppement ?</summary>
+          <p>Le coaching est un accompagnement individuel centre sur vos enjeux specifiques (posture, leadership, prise de decision). Le codeveloppement est un format collectif ou des pairs partagent leurs situations et co-construisent des solutions. Les deux se completent : l'un fait progresser la personne, l'autre renforce l'intelligence collective.</p>
         </details>
         <details class="faq-item">
           <summary>Qui sera mon interlocuteur ?</summary>
-          <p>Un consultant RH &amp; RSE certifie Qualiopi, avec 15+ ans d'experience. Avec Altitude, vous avez un referent dedie. Sur les autres formules, l'equipe assure la continuite de suivi.</p>
+          <p>Un consultant senior certifie Qualiopi, avec 15+ ans d'experience. Sur Elan et Alliance, vous beneficiez d'un referent dedie qui connait votre contexte et vos equipes. La continuite de l'interlocuteur est au coeur de notre modele.</p>
         </details>
         <details class="faq-item">
-          <summary>Quelle est la duree d'engagement ?</summary>
-          <p>Engagement trimestriel, resiliable avec 1 mois de preavis. Pas d'engagement annuel. On reste parce que c'est utile, pas parce qu'on est piege.</p>
+          <summary>Les abonnements couvrent-ils aussi la RSE ?</summary>
+          <p>Oui. Nos consultants integrent naturellement les sujets RSE dans l'accompagnement : conformite, sensibilisation equipes, preparation aux audits. Pour un accompagnement RSE approfondi (CSRD, bilan carbone), nous le proposons en option complementaire ou via notre offre RSE & Decarbonation dediee.</p>
         </details>
         <details class="faq-item">
           <summary>Mon OPCO peut-il financer une partie ?</summary>
-          <p>Oui. CARTESA est certifie Qualiopi et habilite PCRH. Les volets formation, diagnostic et accompagnement strategique peuvent etre finances a 100% par votre OPCO. Le PCRH est d'ailleurs une porte d'entree ideale pour tester l'accompagnement.</p>
+          <p>Oui. CARTESA est certifie Qualiopi et habilite PCRH. Les volets formation, diagnostic et codeveloppement peuvent etre finances par votre OPCO. Le PCRH est une porte d'entree ideale pour tester l'accompagnement a moindre cout.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Est-ce que ca fonctionne aussi pour une association ?</summary>
+          <p>Tout a fait. Nous accompagnons regulierement des associations et des structures de l'ESS. Les problematiques de management, de gouvernance et de mobilisation des equipes sont les memes, et les financements OPCO s'appliquent aussi.</p>
         </details>
       </div>
     </div>
@@ -304,8 +410,8 @@
   <!-- CTA -->
   <section class="section section--teal" style="padding:56px 0;">
     <div class="container" style="text-align:center;">
-      <h2 class="reveal" style="margin-bottom:12px;">Pret a structurer vos RH et votre RSE ?</h2>
-      <p class="reveal" style="color:rgba(255,255,255,0.65); max-width:520px; margin:0 auto 28px; font-size:1rem;">30 minutes d'echange, sans engagement. On ecoute, on recommande, et surtout on ne se prend pas la tete.</p>
+      <h2 class="reveal" style="margin-bottom:12px;">Pret a structurer vos enjeux humains dans la duree ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.65); max-width:560px; margin:0 auto 28px; font-size:1rem;">30 minutes d'echange, sans engagement. On ecoute votre situation, on vous oriente vers la formule adaptee.</p>
       <a href="contact.html" class="btn btn--accent btn--lg reveal">On en discute</a>
     </div>
   </section>
@@ -329,7 +435,7 @@
           <ul>
             <li><a href="expertises.html">Diagnostic operationnel</a></li>
             <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Formules d'accompagnement</a></li>
+            <li><a href="pass-rh.html">Nos abonnements</a></li>
             <li><a href="rse-decarbonation.html">RSE & Decarbonation</a></li>
             <li><a href="formations.html">Cartesa part en tournee</a></li>
           </ul>
