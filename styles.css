@@ -213,6 +213,12 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 600;
 }
 
+@media (max-width: 1140px) and (min-width: 961px) {
+  .nav-links { gap: 1px; }
+  .nav-links a { padding: 6px 8px; font-size: 0.8rem; }
+  .nav-cta { padding: 6px 14px !important; }
+}
+
 @media (max-width: 960px) {
   .nav-toggle { display: block; }
   .nav-links {
@@ -2611,4 +2617,19 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 640px) {
   .cal-mini-day { font-size: 0.65rem; }
+}
+
+/* ===== RESPONSIVE FIXES FOR NEW PAGES ===== */
+@media (max-width: 640px) {
+  .financement-full-width { grid-column: span 1 !important; }
+}
+
+@media (max-width: 960px) {
+  .page-hero-stats { flex-wrap: wrap; gap: 16px; }
+  .page-hero-stat { min-width: 100px; }
+}
+
+@media (max-width: 640px) {
+  .page-hero-stats { justify-content: center; }
+  .faq-item summary { font-size: 0.92rem; padding: 14px 0; }
 }
