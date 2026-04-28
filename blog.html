@@ -81,7 +81,7 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.5);">Blog RH</span>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Blog RH</span>
       <h1>Conseils RH pratiques pour dirigeants et managers</h1>
       <p>Obligations légales, bonnes pratiques managériales, dispositifs de financement : des articles de fond rédigés par nos consultants terrain.</p>
     </div>
@@ -226,7 +226,7 @@
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
       <h2 style="margin-bottom:12px;">Un sujet vous concerne ? Parlons-en.</h2>
-      <p style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier échange gratuit et sans engagement sur vos problématiques RH.</p>
+      <p style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier échange gratuit et sans engagement sur vos problématiques RH.</p>
       <a href="contact.html" class="btn btn--accent btn--lg">Prendre rendez-vous</a>
     </div>
   </section>
@@ -287,6 +287,16 @@
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    })();
 
     function filterArticles(category, btn) {
       var cards = document.querySelectorAll('.blog-card');

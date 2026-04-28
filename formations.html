@@ -93,7 +93,7 @@
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.5);">Cartesa part en tournée</span>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Cartesa part en tournée</span>
       <h1>On vient chez vous, on forme vos équipes, <span style="color: var(--gold-500);">on repart.</span></h1>
       <p>Des formations conçues sur le terrain, pas dans un bureau. Management, droit social, RSE, recrutement -- finançables à 100% par votre OPCO. 500+ entreprises formees depuis 2003, des résultats mesurables des le retour en poste.</p>
       <div class="page-hero-stats">
@@ -472,7 +472,7 @@
       </div>
       <div class="section-header" style="margin-bottom:28px;">
         <h3 style="font-size:1.2rem; margin-bottom:6px;">Nos OPCO partenaires</h3>
-        <p style="color:rgba(255,255,255,0.5); font-size:0.875rem;">Nous travaillons avec les principaux OPCO pour faciliter le financement de vos formations.</p>
+        <p style="color:rgba(255,255,255,0.9); font-size:0.875rem;">Nous travaillons avec les principaux OPCO pour faciliter le financement de vos formations.</p>
       </div>
       <div class="partner-grid" style="margin-bottom:36px;">
         <div style="background:white;border-radius:12px;padding:12px 18px;display:flex;align-items:center;justify-content:center;"><img src="https://cartesa-lyon.com/wp-content/uploads/2020/09/OPCO-EP-Entreprise-de-Proximité.png" alt="OPCO EP" style="height:36px;width:auto;filter:none;opacity:1;"></div>
@@ -546,6 +546,17 @@
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
 
+    // Mobile nav toggle
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    })();
+
     // ===== CARTE INTERACTIVE =====
     (function() {
       var MONTHS = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','Oct','Nov','Déc'];
@@ -564,13 +575,13 @@
             { date: '27/04', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
             { date: '19 & 20/05', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
             { date: '02/06', label: 'Actualités sociales', cat: 'social' },
-            { date: '08 & 09/06', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '08 & 09/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '10 & 11/06', label: 'Pratique de la paie', cat: 'paie' },
             { date: '25/06', label: 'Actualité de la paie', cat: 'paie' },
             { date: '15 & 16/09', label: 'Pratique de la paie', cat: 'paie' },
             { date: '14/10', label: 'Droit social pour managers', cat: 'droit' },
             { date: '05/10', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
-            { date: '12 & 13/11', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '12 & 13/11', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '16/11', label: 'Actualités paie', cat: 'paie' },
             { date: '25/11', label: 'Actualités sociales', cat: 'social' },
             { date: '23 & 24/11', label: 'RH pour les non RH – Les essentiels', cat: 'rh' }
@@ -581,7 +592,7 @@
           sessions: [
             { date: '18/05', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
             { date: '21 & 22/05', label: 'Pratique de la paie', cat: 'paie' },
-            { date: '28 & 29/05', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '28 & 29/05', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '03/06', label: 'Droit social pour managers', cat: 'droit' },
             { date: '21 & 22/10', label: 'RH pour les non RH – Les essentiels', cat: 'rh' }
           ]
@@ -593,7 +604,7 @@
             { date: '03/09', label: 'Actualités paie', cat: 'paie' },
             { date: '04/09', label: 'Actualités sociales', cat: 'social' },
             { date: '09/09', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
-            { date: '17 & 18/09', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '17 & 18/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '15 & 16/10', label: 'Pratique de la paie', cat: 'paie' },
             { date: '26 & 27/11', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
             { date: '03/12', label: 'Droit social pour managers', cat: 'droit' }
@@ -605,14 +616,14 @@
             { date: '28/04', label: 'Droit social pour managers', cat: 'droit' },
             { date: '04/06', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
             { date: '15 & 16/06', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
-            { date: '02 & 03/07', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '02 & 03/07', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '02/09', label: 'Actualités sociales', cat: 'social' },
             { date: '08/09', label: 'Droit social pour managers', cat: 'droit' },
             { date: '06/10', label: 'Actualité de la paie', cat: 'paie' },
             { date: '08/12', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
             { date: '11/12', label: 'Droit social pour managers', cat: 'droit' },
             { date: '14 & 15/12', label: 'Pratique de la paie', cat: 'paie' },
-            { date: '16 & 17/12', label: 'Entretiens dans l\’entreprise', cat: 'entretien' }
+            { date: '16 & 17/12', label: 'Entretiens dans l\'entreprise', cat: 'entretien' }
           ]
         },
         saintetienne: {
@@ -626,12 +637,12 @@
           sessions: [
             { date: '04/05', label: 'Droit social pour managers', cat: 'droit' },
             { date: '01/06', label: 'Actualité de la paie', cat: 'paie' },
-            { date: '29 & 30/06', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '29 & 30/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '01/07', label: 'Actualités sociales', cat: 'social' },
             { date: '21 & 22/09', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
             { date: '23/09', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
             { date: '08 & 09/10', label: 'Pratique de la paie', cat: 'paie' },
-            { date: '19 & 20/10', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '19 & 20/10', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '19/11', label: 'Droit social pour managers', cat: 'droit' },
             { date: '07/12', label: 'Actualités sociales', cat: 'social' },
             { date: '10/12', label: 'Actualité de la paie', cat: 'paie' }
@@ -640,9 +651,9 @@
         lepuy: {
           name: 'Le Puy-en-Velay / Monistrol',
           sessions: [
-            { date: '18 & 19/06', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '18 & 19/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '23/06', label: 'Droit social pour managers', cat: 'droit' },
-            { date: '24 & 25/09', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '24 & 25/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '01 & 02/10', label: 'Pratique de la paie', cat: 'paie' },
             { date: '07/10', label: 'Actualités sociales', cat: 'social' },
             { date: '15 & 16/10', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
@@ -658,9 +669,9 @@
         aurillac: {
           name: 'Aurillac / Saint-Flour',
           sessions: [
-            { date: '05 & 06/05', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
-            { date: '01 & 02/06', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
-            { date: '10 & 11/09', label: 'Entretiens dans l\’entreprise', cat: 'entretien' },
+            { date: '05 & 06/05', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '01 & 02/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '10 & 11/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
             { date: '22/09', label: 'Actualité de la paie', cat: 'paie' },
             { date: '12/10', label: 'Droit social pour managers', cat: 'droit' },
             { date: '13/10', label: 'Actualités sociales', cat: 'social' },
@@ -675,36 +686,36 @@
         lepuy: [325, 450], clermont: [191, 273], aurillac: [83, 477]
       };
       var CITY_DEPT = {
-        annecy: ‘74’, chambery: ‘73’, grenoble: ‘38’, lyon: ‘69’,
-        saintetienne: ‘42’, valence: ‘26’, lepuy: ‘43’, clermont: ‘63’, aurillac: ‘15’
+        annecy: '74', chambery: '73', grenoble: '38', lyon: '69',
+        saintetienne: '42', valence: '26', lepuy: '43', clermont: '63', aurillac: '15'
       };
 
       var activeCity = null;
-      var activeFilter = ‘all’;
+      var activeFilter = 'all';
       var isZoomed = false;
-      var svg = document.getElementById(‘mapSvg’);
-      var markers = document.querySelectorAll(‘.city-marker’);
-      var depts = document.querySelectorAll(‘.dept’);
-      var panel = document.getElementById(‘cityPanel’);
-      var panelEmpty = document.getElementById(‘cityPanelEmpty’);
-      var panelContent = document.getElementById(‘cityPanelContent’);
-      var filters = document.querySelectorAll(‘.map-filter’);
-      var zoomBackBtn = document.getElementById(‘mapZoomBack’);
+      var svg = document.getElementById('mapSvg');
+      var markers = document.querySelectorAll('.city-marker');
+      var depts = document.querySelectorAll('.dept');
+      var panel = document.getElementById('cityPanel');
+      var panelEmpty = document.getElementById('cityPanelEmpty');
+      var panelContent = document.getElementById('cityPanelContent');
+      var filters = document.querySelectorAll('.map-filter');
+      var zoomBackBtn = document.getElementById('mapZoomBack');
       var FULL_VB = { x: 0, y: 0, w: 900, h: 700 };
       var currentVB = Object.assign({}, FULL_VB);
 
       function parseDate(str) {
-        var parts = str.split(‘/’);
-        var day = parseInt(parts[0].split(‘&’)[0].trim(), 10);
+        var parts = str.split('/');
+        var day = parseInt(parts[0].split('&')[0].trim(), 10);
         var month = parseInt(parts[1], 10);
         return month * 100 + day;
       }
 
       function formatDateBlock(dateStr) {
-        var parts = dateStr.split(‘/’);
+        var parts = dateStr.split('/');
         var dayPart = parts[0].trim();
         var monthIdx = parseInt(parts[1], 10) - 1;
-        return ‘<span class="s-day">’ + dayPart + ‘</span><span class="s-month">’ + MONTHS[monthIdx] + ‘</span>’;
+        return '<span class="s-day">' + dayPart + '</span><span class="s-month">' + MONTHS[monthIdx] + '</span>';
       }
 
       // Smooth viewBox animation
@@ -720,7 +731,7 @@
             w: from.w + (target.w - from.w) * ease,
             h: from.h + (target.h - from.h) * ease
           };
-          svg.setAttribute(‘viewBox’, vb.x + ‘ ‘ + vb.y + ‘ ‘ + vb.w + ‘ ‘ + vb.h);
+          svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
           if (t < 1) {
             requestAnimationFrame(tick);
           } else {
@@ -738,14 +749,14 @@
         target.y = Math.max(0, Math.min(700 - zh, target.y));
         animateViewBox(target, 650);
         isZoomed = true;
-        zoomBackBtn.classList.add(‘visible’);
+        zoomBackBtn.classList.add('visible');
       }
 
       function zoomOut() {
         animateViewBox(FULL_VB, 500);
         isZoomed = false;
-        zoomBackBtn.classList.remove(‘visible’);
-        depts.forEach(function(d) { d.classList.remove(‘dimmed’, ‘highlight’); });
+        zoomBackBtn.classList.remove('visible');
+        depts.forEach(function(d) { d.classList.remove('dimmed', 'highlight'); });
       }
 
       function renderCity(cityKey) {
@@ -756,48 +767,48 @@
           return parseDate(a.date) - parseDate(b.date);
         });
 
-        var visibleCount = activeFilter === ‘all’ ? sorted.length :
+        var visibleCount = activeFilter === 'all' ? sorted.length :
           sorted.filter(function(s) { return s.cat === activeFilter; }).length;
 
-        var html = ‘<div class="city-panel-content">’;
-        html += ‘<div class="city-panel-header">’;
-        html += ‘<h3>’ + city.name + ‘</h3>’;
-        html += ‘<span class="city-count" id="sessionCount">’ + visibleCount + ‘ session’ + (visibleCount > 1 ? ‘s’ : ‘’) + ‘</span>’;
-        html += ‘</div>’;
+        var html = '<div class="city-panel-content">';
+        html += '<div class="city-panel-header">';
+        html += '<h3>' + city.name + '</h3>';
+        html += '<span class="city-count" id="sessionCount">' + visibleCount + ' session' + (visibleCount > 1 ? 's' : '') + '</span>';
+        html += '</div>';
 
         sorted.forEach(function(s, i) {
-          var hidden = (activeFilter !== ‘all’ && s.cat !== activeFilter) ? ‘ filtered-out’ : ‘’;
-          html += ‘<div class="city-session-item’ + hidden + ‘" data-cat="’ + s.cat + ‘" style="animation-delay:’ + (i * 0.04) + ‘s">’;
-          html += ‘<div class="session-date-block">’ + formatDateBlock(s.date) + ‘</div>’;
-          html += ‘<div class="session-info">’;
-          html += ‘<span class="session-cat-badge cat-badge--’ + s.cat + ‘">’ + CAT_LABELS[s.cat] + ‘</span>’;
-          html += ‘<h4>’ + s.label + ‘</h4>’;
-          html += ‘</div></div>’;
+          var hidden = (activeFilter !== 'all' && s.cat !== activeFilter) ? ' filtered-out' : '';
+          html += '<div class="city-session-item' + hidden + '" data-cat="' + s.cat + '" style="animation-delay:' + (i * 0.04) + 's">';
+          html += '<div class="session-date-block">' + formatDateBlock(s.date) + '</div>';
+          html += '<div class="session-info">';
+          html += '<span class="session-cat-badge cat-badge--' + s.cat + '">' + CAT_LABELS[s.cat] + '</span>';
+          html += '<h4>' + s.label + '</h4>';
+          html += '</div></div>';
         });
 
-        html += ‘<div class="panel-cta">’;
-        html += ‘<a href="contact.html" class="btn btn--primary btn--sm">S\’inscrire à ‘ + city.name.split(‘ –‘)[0].split(‘ /’)[0] + ‘</a>’;
-        html += ‘</div></div>’;
+        html += '<div class="panel-cta">';
+        html += '<a href="contact.html" class="btn btn--primary btn--sm">S\'inscrire à ' + city.name.split(' –')[0].split(' /')[0] + '</a>';
+        html += '</div></div>';
 
         panelContent.innerHTML = html;
-        panelContent.style.display = ‘block’;
-        panelEmpty.style.display = ‘none’;
-        panel.classList.add(‘has-city’);
+        panelContent.style.display = 'block';
+        panelEmpty.style.display = 'none';
+        panel.classList.add('has-city');
 
         // Highlight city marker
-        markers.forEach(function(m) { m.classList.remove(‘active’); });
-        var marker = document.querySelector(‘.city-marker[data-city="’ + cityKey + ‘"]’);
-        if (marker) marker.classList.add(‘active’);
+        markers.forEach(function(m) { m.classList.remove('active'); });
+        var marker = document.querySelector('.city-marker[data-city="' + cityKey + '"]');
+        if (marker) marker.classList.add('active');
 
         // Highlight department
         var deptCode = CITY_DEPT[cityKey];
         depts.forEach(function(d) {
-          if (d.getAttribute(‘data-dept’) === deptCode) {
-            d.classList.add(‘highlight’);
-            d.classList.remove(‘dimmed’);
+          if (d.getAttribute('data-dept') === deptCode) {
+            d.classList.add('highlight');
+            d.classList.remove('dimmed');
           } else {
-            d.classList.add(‘dimmed’);
-            d.classList.remove(‘highlight’);
+            d.classList.add('dimmed');
+            d.classList.remove('highlight');
           }
         });
 
@@ -808,22 +819,22 @@
         activeCity = cityKey;
 
         if (window.innerWidth <= 960) {
-          panel.scrollIntoView({ behavior: ‘smooth’, block: ‘nearest’ });
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       }
 
       // City marker click
       markers.forEach(function(m) {
-        m.addEventListener(‘click’, function(e) {
+        m.addEventListener('click', function(e) {
           e.stopPropagation();
-          renderCity(m.getAttribute(‘data-city’));
+          renderCity(m.getAttribute('data-city'));
         });
       });
 
       // Department click → find nearest city
       depts.forEach(function(d) {
-        d.addEventListener(‘click’, function() {
-          var code = d.getAttribute(‘data-dept’);
+        d.addEventListener('click', function() {
+          var code = d.getAttribute('data-dept');
           for (var key in CITY_DEPT) {
             if (CITY_DEPT[key] === code) {
               renderCity(key);
@@ -834,67 +845,67 @@
       });
 
       // Zoom back
-      zoomBackBtn.addEventListener(‘click’, function(e) {
+      zoomBackBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         zoomOut();
-        markers.forEach(function(m) { m.classList.remove(‘active’); });
+        markers.forEach(function(m) { m.classList.remove('active'); });
         activeCity = null;
-        panelContent.style.display = ‘none’;
-        panelEmpty.style.display = ‘’;
-        panel.classList.remove(‘has-city’);
+        panelContent.style.display = 'none';
+        panelEmpty.style.display = '';
+        panel.classList.remove('has-city');
       });
 
       // Filter click
       filters.forEach(function(btn) {
-        btn.addEventListener(‘click’, function() {
-          filters.forEach(function(f) { f.classList.remove(‘active’); });
-          btn.classList.add(‘active’);
-          activeFilter = btn.getAttribute(‘data-filter’);
+        btn.addEventListener('click', function() {
+          filters.forEach(function(f) { f.classList.remove('active'); });
+          btn.classList.add('active');
+          activeFilter = btn.getAttribute('data-filter');
 
           if (activeCity) {
-            var items = panelContent.querySelectorAll(‘.city-session-item’);
+            var items = panelContent.querySelectorAll('.city-session-item');
             var visible = 0;
             items.forEach(function(item) {
-              if (activeFilter === ‘all’ || item.getAttribute(‘data-cat’) === activeFilter) {
-                item.classList.remove(‘filtered-out’);
+              if (activeFilter === 'all' || item.getAttribute('data-cat') === activeFilter) {
+                item.classList.remove('filtered-out');
                 visible++;
               } else {
-                item.classList.add(‘filtered-out’);
+                item.classList.add('filtered-out');
               }
             });
-            var counter = document.getElementById(‘sessionCount’);
-            if (counter) counter.textContent = visible + ‘ session’ + (visible > 1 ? ‘s’ : ‘’);
+            var counter = document.getElementById('sessionCount');
+            if (counter) counter.textContent = visible + ' session' + (visible > 1 ? 's' : '');
           }
 
           // Update badge counts
           markers.forEach(function(m) {
-            var key = m.getAttribute(‘data-city’);
+            var key = m.getAttribute('data-city');
             var city = cities[key];
             if (!city) return;
-            var count = activeFilter === ‘all’ ? city.sessions.length :
+            var count = activeFilter === 'all' ? city.sessions.length :
               city.sessions.filter(function(s) { return s.cat === activeFilter; }).length;
-            var badge = m.querySelector(‘.marker-count’);
+            var badge = m.querySelector('.marker-count');
             if (badge) badge.textContent = count;
             if (count === 0) {
-              m.classList.add(‘dimmed’);
+              m.classList.add('dimmed');
             } else {
-              m.classList.remove(‘dimmed’);
+              m.classList.remove('dimmed');
             }
           });
         });
       });
 
       // Mobile city list
-      var mobileList = document.getElementById(‘cityListMobile’);
+      var mobileList = document.getElementById('cityListMobile');
       if (mobileList) {
         Object.keys(cities).forEach(function(key) {
-          var btn = document.createElement(‘button’);
-          btn.className = ‘city-list-btn’;
-          btn.textContent = cities[key].name.split(‘ –‘)[0].split(‘ /’)[0];
-          btn.setAttribute(‘data-city’, key);
-          btn.addEventListener(‘click’, function() {
-            mobileList.querySelectorAll(‘.city-list-btn’).forEach(function(b) { b.classList.remove(‘active’); });
-            btn.classList.add(‘active’);
+          var btn = document.createElement('button');
+          btn.className = 'city-list-btn';
+          btn.textContent = cities[key].name.split(' –')[0].split(' /')[0];
+          btn.setAttribute('data-city', key);
+          btn.addEventListener('click', function() {
+            mobileList.querySelectorAll('.city-list-btn').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
             renderCity(key);
           });
           mobileList.appendChild(btn);

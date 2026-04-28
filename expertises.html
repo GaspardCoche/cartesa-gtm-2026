@@ -90,7 +90,7 @@
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.5);">Diagnostic opérationnel</span>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Diagnostic opérationnel</span>
       <h1>On fait le point sur vos RH et votre RSE, <span style="color: var(--gold-500);">sans jargon</span></h1>
       <p>7 domaines d'expertise, une approche concrète et sur mesure. Du diagnostic à l'accompagnement, on vous aide à y voir clair. 500+ dirigeants nous font déjà confiance.</p>
       <div class="page-hero-stats">
@@ -238,7 +238,7 @@
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
       <h2 class="reveal" style="margin-bottom:12px;">Un besoin spécifique ? Parlons-en.</h2>
-      <p class="reveal" style="color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto 28px; font-size:1rem; --delay: 0.1s;">Chaque intervention est conçue sur mesure. Contactez-nous pour un premier échange sans engagement.</p>
+      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem; --delay: 0.1s;">Chaque intervention est conçue sur mesure. Contactez-nous pour un premier échange sans engagement.</p>
       <a href="contact.html" class="btn btn--accent btn--lg reveal" style="--delay: 0.2s;">Nous contacter</a>
     </div>
   </section>
@@ -299,6 +299,17 @@
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    })();
+
     // Scroll-reveal
     var reveals = document.querySelectorAll('.reveal');
     if (reveals.length) {

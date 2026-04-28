@@ -80,7 +80,7 @@
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.5);">Ressourcerie</span>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Ressourcerie</span>
       <h1>Ressources pratiques pour les dirigeants et managers</h1>
       <p>Guides, outils et articlés actionnables pour structurer votre politique RH. Rédigés par nos consultants, gratuits, sans contrepartie.</p>
     </div>
@@ -246,7 +246,7 @@
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
       <h2 style="margin-bottom:12px;">Besoin d'un accompagnement personnalisé ?</h2>
-      <p style="color:rgba(255,255,255,0.6); max-width:480px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier échange gratuit et sans engagement.</p>
+      <p style="color:rgba(255,255,255,0.92); max-width:480px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier échange gratuit et sans engagement.</p>
       <a href="contact.html" class="btn btn--accent btn--lg">Prendre rendez-vous</a>
     </div>
   </section>
@@ -307,6 +307,17 @@
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    })();
+
     var reveals = document.querySelectorAll('.reveal');
     if (reveals.length) {
       var revealObs = new IntersectionObserver(function(entries) {
