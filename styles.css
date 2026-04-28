@@ -2548,13 +2548,35 @@ img { max-width: 100%; height: auto; display: block; }
 
 .city-session-item {
   display: flex;
+  align-items: center;
   gap: 14px;
-  padding: 12px 0;
+  padding: 12px 10px;
   border-bottom: 1px solid var(--neutral-100);
   animation: slideInSession 0.3s ease both;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
-.city-session-item:last-child { border-bottom: none; }
+.city-session-item:hover {
+  background: var(--teal-50, #eaf6fb);
+  box-shadow: 0 1px 4px rgba(0,124,186,0.08);
+}
+.city-session-item:hover .session-action { opacity: 1; transform: translateX(0); }
+.city-session-item:last-of-type { border-bottom: none; }
 .city-session-item.filtered-out { display: none; }
+
+.session-action {
+  flex-shrink: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--teal-600);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
 
 @keyframes slideInSession {
   from { opacity: 0; transform: translateX(12px); }
@@ -2637,6 +2659,29 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--white);
 }
 
+/* Month filter row */
+.map-filters--months {
+  margin-bottom: 12px;
+}
+.month-filter {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1.5px solid var(--neutral-200);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--neutral-600);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.month-filter:hover { border-color: var(--gold-500); color: var(--gold-700, #b8a200); }
+.month-filter.active {
+  background: var(--gold-500, #ecd034);
+  border-color: var(--gold-500, #ecd034);
+  color: var(--neutral-900);
+}
+
 .map-legend {
   display: flex;
   flex-wrap: wrap;
@@ -2712,8 +2757,10 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 480px) {
   .map-filters { gap: 6px; }
   .map-filter { padding: 6px 12px; font-size: 0.75rem; }
+  .month-filter { padding: 5px 10px; font-size: 0.7rem; }
   .city-panel-content { padding: 16px; }
-  .city-session-item { gap: 10px; }
+  .city-session-item { gap: 10px; padding: 10px 6px; }
   .session-date-block { flex: 0 0 44px; }
+  .session-action { opacity: 1; transform: none; font-size: 0.68rem; }
   .dept-label { font-size: 9px; }
 }
