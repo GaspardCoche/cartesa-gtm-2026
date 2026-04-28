@@ -2375,9 +2375,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 .map-container {
   position: relative;
-  background: var(--teal-50);
+  background: #f5f9fb;
   border-radius: var(--radius-lg);
-  padding: 16px 16px 8px;
+  padding: 16px;
   border: 1px solid var(--neutral-200);
   overflow: hidden;
 }
@@ -2478,39 +2478,26 @@ img { max-width: 100%; height: auto; display: block; }
 /* Zoom controls */
 .map-zoom-back {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px;
+  left: 14px;
   z-index: 10;
   display: none;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 100px;
-  border: none;
-  background: var(--white);
-  box-shadow: var(--shadow-md);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--teal-600);
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.map-zoom-back:hover { transform: scale(1.05); }
-.map-zoom-back.visible { display: flex; }
-
-.map-partner-note {
-  display: flex;
-  align-items: center;
   gap: 8px;
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: var(--gold-100);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  color: var(--neutral-700);
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-200);
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--teal-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-.map-partner-note strong { color: var(--neutral-900); }
+.map-zoom-back:hover { background: var(--teal-50); border-color: var(--teal-300); }
+.map-zoom-back.visible { display: flex; }
 
 /* City panel */
 .city-panel {
