@@ -148,6 +148,7 @@
     </nav>
   </header>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
   <main>
 
   <!-- HERO -->
@@ -246,28 +247,28 @@
       </div>
       <div class="services-grid reveal-stagger">
 
-        <div class="service-block">
+        <div class="service-block reveal-left" style="--delay: 0s;">
           <span class="service-tag">Diagnostic</span>
           <h3>Diagnostic opérationnel RH & RSE</h3>
           <p>On vient chez vous, on audite vos pratiques RH et RSE, et on repart avec un <a href="expertises.html">plan d'action concret</a>. GPEC, droit social, recrutement, management : tout est passé au crible. Le dispositif <a href="financement.html">PCRH</a> finance l'intégralité de la prestation via votre OPCO.</p>
           <a href="expertises.html" class="service-link">Découvrir le diagnostic &rarr;</a>
         </div>
 
-        <div class="service-block">
+        <div class="service-block reveal-right" style="--delay: 0.1s;">
           <span class="service-tag service-tag--gold">RSE</span>
           <h3>RSE & Décarbonation</h3>
           <p>Diagnostic CO2I <a href="financement.html">financé à 100 % par OPCO2i</a> : bilan carbone, plan d'actions, volet compétences. On intervient en Isère, Drôme et Ardèche. Conformité CSRD, réponse EcoVadis, <a href="rse-decarbonation.html">sensibilisation équipes</a> — 0 € de reste à charge.</p>
           <a href="rse-decarbonation.html" class="service-link service-link--gold">En savoir plus &rarr;</a>
         </div>
 
-        <div class="service-block">
+        <div class="service-block reveal-left" style="--delay: 0.2s;">
           <span class="service-tag">Transition</span>
           <h3>DRH & Partenaire RSE</h3>
           <p>Un <a href="rh-transition.html">DRH opérationnel sous 48 h</a> et/ou un Partenaire RSE. Transition, temps partagé, conformité CSRD. Même interlocuteur pour les sujets RH et RSE — dès 1 600 €/mois, soit 3 à 4 fois moins qu'un CDI.</p>
           <a href="rh-transition.html" class="service-link">Voir les formats &rarr;</a>
         </div>
 
-        <div class="service-block">
+        <div class="service-block reveal-right" style="--delay: 0.3s;">
           <span class="service-tag service-tag--rose">Abonnements</span>
           <h3>Respiration, Élan, Alliance</h3>
           <p>3 niveaux d'accompagnement combinant <a href="pass-rh.html">conseil RH, coaching, formation et codéveloppement</a>. De 790 à 2 890 €/mois. Un interlocuteur unique qui connaît votre contexte et vos équipes dans la durée.</p>
@@ -497,7 +498,7 @@
   <!-- FORMATIONS TEASER -->
   <section class="section section--teal formations-teaser">
     <div class="container">
-      <div class="formations-teaser-split reveal">
+      <div class="formations-teaser-split reveal reveal-scale">
         <div class="formations-teaser-text">
           <span class="section-label">Cartesa part en tournée</span>
           <h2 class="section-title">On vient chez vous, on forme vos équipes, on repart</h2>
@@ -710,8 +711,39 @@
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
     document.querySelectorAll('.reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+
+    // Scroll progress bar
+    (function() {
+      var bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      function update() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    // Hero parallax
+    (function() {
+      var hero = document.querySelector('.hero');
+      var visual = document.querySelector('.hero-visual');
+      var badge = document.querySelector('.hero-badge');
+      if (!hero || !visual) return;
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+      window.addEventListener('scroll', function() {
+        var y = window.scrollY;
+        var heroH = hero.offsetHeight;
+        if (y > heroH) return;
+        var ratio = y / heroH;
+        visual.style.transform = 'translateY(' + (ratio * 30) + 'px)';
+        if (badge) badge.style.transform = 'translateY(' + (-ratio * 15) + 'px)';
+      }, { passive: true });
+    })();
 
     // Counter animation with easeOutExpo for smoother feel
     function animateCounters(container) {

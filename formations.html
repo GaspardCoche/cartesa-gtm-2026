@@ -270,8 +270,7 @@
 
         <div class="city-panel" id="cityPanel">
           <div class="city-panel-empty" id="cityPanelEmpty">
-            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>Sélectionnez une ville sur la carte<br>pour voir les sessions disponibles</p>
+            <div class="city-panel-content" id="previewPanel"></div>
           </div>
           <div id="cityPanelContent" style="display:none;"></div>
         </div>
@@ -948,6 +947,39 @@
           mobileList.appendChild(btn);
         });
       }
+
+      // Preview panel — show upcoming sessions across all cities
+      (function buildPreview() {
+        var previewEl = document.getElementById('previewPanel');
+        if (!previewEl) return;
+        var all = [];
+        Object.keys(cities).forEach(function(key) {
+          var city = cities[key];
+          city.sessions.forEach(function(s) {
+            all.push({ date: s.date, label: s.label, cat: s.cat, cityKey: key, cityName: city.name.split(' –')[0].split(' /')[0] });
+          });
+        });
+        all.sort(function(a, b) { return parseDate(a.date) - parseDate(b.date); });
+        var upcoming = all.slice(0, 8);
+        var html = '<div class="city-panel-header">';
+        html += '<h3>Prochaines sessions</h3>';
+        html += '<span class="city-count">' + all.length + ' au total</span>';
+        html += '</div>';
+        upcoming.forEach(function(s, i) {
+          var subject = encodeURIComponent(s.label + ' – ' + s.cityName + ' (' + s.date + ')');
+          html += '<a href="contact.html?formation=' + subject + '" class="city-session-item" data-cat="' + s.cat + '" data-month="' + getMonth(s.date) + '" style="animation-delay:' + (i * 0.05) + 's">';
+          html += '<div class="session-date-block">' + formatDateBlock(s.date) + '</div>';
+          html += '<div class="session-info">';
+          html += '<span class="session-cat-badge cat-badge--' + s.cat + '">' + CAT_LABELS[s.cat] + '</span>';
+          html += '<h4>' + s.label + '</h4>';
+          html += '<span class="session-city-name">' + s.cityName + '</span>';
+          html += '</div>';
+          html += '<span class="session-action">S\'inscrire &rarr;</span>';
+          html += '</a>';
+        });
+        html += '<p class="preview-hint">Cliquez sur une ville pour voir toutes ses sessions</p>';
+        previewEl.innerHTML = html;
+      })();
     })();
 
     // Scroll reveal

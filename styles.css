@@ -997,7 +997,39 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .hero-bg-pattern {
-  display: none;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(236,208,52,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  animation: heroFloat 8s ease-in-out infinite;
+}
+.hero-bg-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(236,208,52,0.06);
+  animation: heroFloat 10s ease-in-out 2s infinite reverse;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
 }
 
 .hero .container {
@@ -2338,14 +2370,140 @@ img { max-width: 100%; height: auto; display: block; }
   transform: scale(1.08);
 }
 
+/* Parallax hero layers */
+.hero-visual {
+  will-change: transform;
+}
+.hero-badge {
+  will-change: transform;
+  animation: badgeFloat 4s ease-in-out infinite;
+}
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Reveal variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Section header label line animation */
+.section-label::before {
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+.revealed .section-label::before,
+.reveal.revealed .section-label::before {
+  width: 32px;
+}
+
+/* Enhanced card hovers */
+.service-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.cert-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.enjeu-row {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.enjeu-row:hover {
+  transform: translateX(6px);
+  background: var(--neutral-50);
+}
+
+.news-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* Values mosaic hover lift */
+.values-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.values-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Scroll progress bar at top */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal-600), var(--gold-500));
+  z-index: 10001;
+  width: 0%;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* Teaser card stack hover */
+.teaser-card-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.teaser-card-stack:hover .teaser-card-item:first-child {
+  transform: rotate(-2deg) translateY(-4px);
+}
+.teaser-card-stack:hover .teaser-card-item:nth-child(2) {
+  transform: rotate(0deg) translateY(-2px);
+}
+.teaser-card-stack:hover .teaser-card-item:last-child {
+  transform: rotate(2deg);
+}
+
 /* Prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; transition: none; }
   .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
   .hero-text-reveal > * { animation: none; }
   .hero-visual, .hero-stats-bar { animation: none; }
+  .hero-badge { animation: none; }
+  .hero-bg-pattern::before, .hero-bg-pattern::after { animation: none; }
   .stat-number { transition: none; }
   .testimonial-card, .teaser-card-item { transition: none; }
+  .scroll-progress { display: none; }
 }
 
 /* (Calendar CSS removed — replaced by interactive map on formations.html) */
@@ -2737,6 +2895,21 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--teal-600);
   border-color: var(--teal-600);
   color: var(--white);
+}
+
+.session-city-name {
+  font-size: 0.72rem;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+.preview-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--neutral-400);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--neutral-100);
 }
 
 .panel-cta {
