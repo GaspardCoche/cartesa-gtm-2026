@@ -507,7 +507,7 @@
             <span>Durée : jusqu'à 15 jours</span>
             <span>Zones : 38, 26, 07</span>
           </div>
-          <a href="rse-decarbonation.html" class="service-link" style="color: var(--green-600, #2e7d32);">En savoir plus &rarr;</a>
+          <a href="rse-decarbonation.html" class="service-link" style="color: var(--green-600);">En savoir plus &rarr;</a>
         </article>
         <article class="dispositif-card reveal-right" style="--delay: 0.3s;">
           <div class="dispositif-icon dispositif-icon--rose">
@@ -520,7 +520,7 @@
             <span>14 OPCO partenaires</span>
             <span>Tous secteurs</span>
           </div>
-          <a href="formations.html" class="service-link" style="color: var(--rose-600, #e91e63);">Voir les formations &rarr;</a>
+          <a href="formations.html" class="service-link" style="color: var(--rose-600);">Voir les formations &rarr;</a>
         </article>
       </div>
     </div>
@@ -637,12 +637,13 @@
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         padding: 16px max(24px, calc((100vw - 1100px) / 2)) 32px;
+        scroll-padding-left: 16px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
       .testimonials-viewport::-webkit-scrollbar { display: none; }
       .t-card {
-        flex: 0 0 min(420px, 84vw);
+        flex: 0 0 min(420px, 92vw);
         scroll-snap-align: center;
         background: #fff;
         border: 1px solid var(--neutral-200);
