@@ -124,7 +124,13 @@
           <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
           <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous répondons sous 24 heures ouvrées.</p>
 
-          <form onsubmit="event.preventDefault(); alert('Ce formulaire est une démonstration. En production, il serait connecté à votre système de gestion des contacts.');">
+          <form id="contactForm">
+            <div id="formationBanner" style="display:none; background:var(--teal-50, #eaf6fb); border:1px solid var(--teal-200); border-radius:10px; padding:14px 18px; margin-bottom:20px;">
+              <p style="font-size:0.82rem; font-weight:600; color:var(--teal-700); margin:0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Inscription formation : <span id="formationName"></span>
+              </p>
+            </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
               <div class="form-group">
                 <label for="nom">Nom *</label>
@@ -136,7 +142,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email">Email professionnel *</label>
               <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
@@ -145,28 +151,52 @@
                 <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
               </div>
               <div class="form-group">
-                <label for="entreprise">Entreprise</label>
-                <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
+                <label for="entreprise">Entreprise *</label>
+                <input type="text" id="entreprise" name="entreprise" required placeholder="Nom de votre entreprise">
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <div class="form-group">
+                <label for="taille">Taille de l'entreprise</label>
+                <select id="taille" name="taille">
+                  <option value="">Sélectionnez</option>
+                  <option value="1-10">1 - 10 salariés</option>
+                  <option value="11-49">11 - 49 salariés</option>
+                  <option value="50-249">50 - 249 salariés</option>
+                  <option value="250+">250 salariés et plus</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sujet">Sujet *</label>
+                <select id="sujet" name="sujet" required>
+                  <option value="">Sélectionnez un sujet</option>
+                  <option value="formation">Inscription formation</option>
+                  <option value="diagnostic">Diagnostic RH / RSE</option>
+                  <option value="transition">DRH ou Partenaire RSE</option>
+                  <option value="abonnement">Abonnement (Respiration, Élan, Alliance)</option>
+                  <option value="financement">Financement OPCO / PCRH</option>
+                  <option value="decarbonation">RSE & Décarbonation (CO2I)</option>
+                  <option value="autre">Autre demande</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
-              <label for="sujet">Sujet *</label>
-              <select id="sujet" name="sujet" required>
-                <option value="">Sélectionnez un sujet</option>
-                <option value="formation">Demande de formation</option>
-                <option value="financement">Financement OPCO</option>
-                <option value="diagnostic">Diagnostic RH/RSE</option>
-                <option value="coaching">Coaching</option>
-                <option value="pcrh">Dispositif PCRH</option>
-                <option value="entrepreneuriat">Accompagnement entrepreneuriat</option>
-                <option value="autre">Autre demande</option>
-              </select>
-            </div>
-            <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Décrivez votre besoin ou posez-nous vos questions..."></textarea>
+              <textarea id="message" name="message" required rows="5" placeholder="Décrivez votre besoin, le contexte de votre entreprise et vos disponibilités pour un premier échange..."></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">Envoyer le message</button>
+            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:20px;">
+              <input type="checkbox" id="rgpd" name="rgpd" required style="margin-top:3px; flex-shrink:0;">
+              <label for="rgpd" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
+            </div>
+            <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">
+              <span id="submitText">Envoyer le message</span>
+              <span id="submitLoader" style="display:none;">Envoi en cours...</span>
+            </button>
+            <div id="formSuccess" style="display:none; text-align:center; padding:32px 20px;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3 style="margin-top:16px; font-size:1.15rem;">Message envoyé</h3>
+              <p style="color:var(--neutral-500); font-size:0.9rem;">Nous vous répondrons sous 24 heures ouvrées.</p>
+            </div>
           </form>
         </div>
 
@@ -301,6 +331,42 @@
           links.classList.toggle('open');
         });
       }
+    })();
+
+    // Pre-fill from URL params (formation inscription flow)
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var formation = params.get('formation');
+      if (formation) {
+        var banner = document.getElementById('formationBanner');
+        var nameEl = document.getElementById('formationName');
+        var sujet = document.getElementById('sujet');
+        var message = document.getElementById('message');
+        if (banner) banner.style.display = 'block';
+        if (nameEl) nameEl.textContent = decodeURIComponent(formation);
+        if (sujet) sujet.value = 'formation';
+        if (message) message.value = 'Je souhaite m\'inscrire à la formation : ' + decodeURIComponent(formation);
+      }
+    })();
+
+    // Form submission
+    (function() {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('submitBtn');
+        var txtEl = document.getElementById('submitText');
+        var loader = document.getElementById('submitLoader');
+        var success = document.getElementById('formSuccess');
+        btn.disabled = true;
+        txtEl.style.display = 'none';
+        loader.style.display = 'inline';
+        setTimeout(function() {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        }, 1200);
+      });
     })();
   </script>
 

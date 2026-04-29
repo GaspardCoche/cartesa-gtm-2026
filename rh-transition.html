@@ -261,7 +261,7 @@
         <h2 class="section-title">Quand un DRH de transition change la donne</h2>
         <p class="section-subtitle">6 situations ou un expert RH opérationnel fait la différence entre subir et piloter.</p>
       </div>
-      <div class="situation-grid reveal-stagger">
+      <div class="situation-grid reveal-scale">
         <div class="situation-card">
           <div class="situation-num">01</div>
           <div>
@@ -403,7 +403,7 @@
         <span class="section-label">Pourquoi CARTESA</span>
         <h2 class="section-title">Ce qui nous différencie des grands cabinets de transition</h2>
       </div>
-      <div class="grid-2 reveal" style="gap:32px; max-width:900px; margin:0 auto;">
+      <div class="grid-2 reveal-scale" style="gap:32px; max-width:900px; margin:0 auto;">
         <div>
           <h3 style="color:var(--teal-600); margin-bottom:16px;">Les grands cabinets</h3>
           <ul style="list-style:none; padding:0; color:var(--neutral-500);">
@@ -552,7 +552,7 @@
     var revealObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
     document.querySelectorAll('.faq-item summary').forEach(function(s) {
       s.addEventListener('click', function(e) { e.preventDefault(); var item = s.parentElement;
         if (item.open) { item.open = false; } else { document.querySelectorAll('.faq-item[open]').forEach(function(o) { o.open = false; }); item.open = true; }

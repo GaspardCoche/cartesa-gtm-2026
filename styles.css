@@ -913,6 +913,79 @@ img { max-width: 100%; height: auto; display: block; }
   .news-item--highlight { grid-row: span 1; }
 }
 
+/* ===== DISPOSITIFS GRID ===== */
+.dispositifs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.dispositif-card {
+  background: var(--white);
+  border: 1px solid rgba(9,41,51,0.06);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+  position: relative;
+}
+.dispositif-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+}
+.dispositif-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--teal-50, #eaf6fb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-600);
+}
+.dispositif-icon--gold { background: #fef9e0; color: var(--gold-600, #b8a200); }
+.dispositif-icon--green { background: #e8f5e9; color: #2e7d32; }
+.dispositif-icon--rose { background: #fce4ec; color: #e91e63; }
+.dispositif-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: var(--teal-50, #eaf6fb);
+  color: var(--teal-700);
+}
+.dispositif-tag--gold { background: #fef9e0; color: var(--gold-700, #8a7a00); }
+.dispositif-tag--green { background: #e8f5e9; color: #2e7d32; }
+.dispositif-tag--rose { background: #fce4ec; color: #c2185b; }
+.dispositif-card h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+.dispositif-card p {
+  font-size: 0.88rem;
+  color: var(--neutral-600);
+  line-height: 1.65;
+  flex: 1;
+}
+.dispositif-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-500);
+  padding-top: 8px;
+  border-top: 1px solid var(--neutral-100);
+}
+@media (max-width: 768px) {
+  .dispositifs-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== CONTACT FORM ===== */
 .form-group {
   margin-bottom: 18px;

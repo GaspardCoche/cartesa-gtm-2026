@@ -26,20 +26,36 @@
     .pole-label--rse { background:rgba(240,180,41,0.12); color:var(--gold-600,#d4940a); }
     .pole-label--transition { background:rgba(15,94,94,0.08); color:var(--teal-800,#0a4a4a); }
     .pole-label--admin { background:var(--neutral-100,#f3f4f6); color:var(--neutral-600,#4b5563); }
-    .team-card-v2 { background:#fff; border-radius:14px; padding:28px; box-shadow:0 2px 16px rgba(0,80,80,0.07); text-align:center; transition:transform 0.25s, box-shadow 0.25s; }
-    .team-card-v2:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(0,80,80,0.13); }
-    .team-card-v2 .team-photo { width:100px; height:100px; border-radius:50%; object-fit:cover; margin:0 auto 16px; display:block; }
-    .team-card-v2 .avatar-circle { width:100px; height:100px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; font-size:1.5rem; }
+    .team-card-v2 { background:#fff; border-radius:14px; padding:28px; box-shadow:0 2px 16px rgba(0,80,80,0.07); text-align:center; transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease; position:relative; overflow:hidden; }
+    .team-card-v2::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; border-radius:14px 14px 0 0; transition:opacity 0.3s ease; opacity:0; }
+    .team-card-v2:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(0,80,80,0.15); }
+    .team-card-v2:hover::before { opacity:1; }
+    .pole-section--rh .team-card-v2::before { background:linear-gradient(90deg, var(--teal-400,#2cb5b5), var(--teal-600,#0e7490)); }
+    .pole-section--rse .team-card-v2::before { background:linear-gradient(90deg, var(--gold-400,#f0b429), var(--gold-600,#d4940a)); }
+    .pole-section--transition .team-card-v2::before { background:linear-gradient(90deg, var(--teal-600,#0e7490), var(--teal-900,#0d3b3b)); }
+    .pole-section--admin .team-card-v2::before { background:linear-gradient(90deg, var(--neutral-300,#d1d5db), var(--neutral-500,#6b7280)); }
+    .team-card-v2 .team-photo { width:110px; height:110px; border-radius:50%; object-fit:cover; margin:0 auto 16px; display:block; border:3px solid var(--neutral-100,#f3f4f6); transition:border-color 0.3s ease; }
+    .team-card-v2:hover .team-photo { border-color:var(--teal-400,#2cb5b5); }
+    .team-card-v2 .avatar-circle { width:110px; height:110px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; font-size:1.5rem; border:3px solid transparent; transition:border-color 0.3s ease; }
+    .team-card-v2:hover .avatar-circle { border-color:var(--teal-400,#2cb5b5); }
     .team-card-v2 .avatar-circle--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
     .team-card-v2 .avatar-circle--gold { background:rgba(240,180,41,0.15); color:var(--gold-600,#d4940a); }
     .team-card-v2 .avatar-circle--neutral { background:var(--neutral-100,#f3f4f6); color:var(--neutral-500,#6b7280); }
     .team-card-v2 h3 { font-family:'Sora',sans-serif; font-size:1.05rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px; }
-    .team-card-v2 .role { font-size:0.82rem; font-weight:600; color:var(--teal-600,#0e7490); margin-bottom:4px; }
-    .team-card-v2 .specialites { font-size:0.78rem; color:var(--neutral-500,#6b7280); margin-bottom:12px; }
+    .team-card-v2 .role { font-size:0.82rem; font-weight:600; color:var(--teal-600,#0e7490); margin-bottom:8px; }
+    .team-card-v2 .specialites { font-size:0.78rem; color:var(--neutral-500,#6b7280); margin-bottom:8px; }
+    .team-card-v2 .expertise-tags { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px; }
+    .team-card-v2 .expertise-tag { display:inline-block; font-size:0.68rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+    .expertise-tag--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .expertise-tag--gold { background:rgba(240,180,41,0.12); color:var(--gold-600,#d4940a); }
+    .expertise-tag--green { background:#e8f5e9; color:#2e7d32; }
+    .expertise-tag--purple { background:#f3e5f5; color:#7b1fa2; }
+    .expertise-tag--blue { background:#eef4ff; color:#3b6fc2; }
     .team-card-v2 p { font-size:0.88rem; color:var(--neutral-600,#4b5563); line-height:1.55; }
-    .pole-section { margin-bottom:56px; }
+    .pole-section { margin-bottom:0; padding:56px 0; }
     .pole-section:last-child { margin-bottom:0; }
-    .pole-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .pole-section--alt { background:var(--neutral-50,#f9fafb); }
+    .pole-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
     .pole-header h2 { font-family:'Sora',sans-serif; font-size:1.3rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin:0; }
     .pole-header .pole-count { font-size:0.82rem; color:var(--neutral-500,#6b7280); }
   </style>
@@ -128,145 +144,191 @@
   </section>
 
   <!-- POLE DIAGNOSTIC & ACCOMPAGNEMENT -->
-  <section class="section section--white" style="padding-top:56px;">
+  <div class="pole-section pole-section--rh" style="padding-top:56px;">
     <div class="container">
-
-      <div class="pole-section">
-        <div class="pole-header reveal">
-          <span class="pole-label pole-label--rh">Pôle Diagnostic & Accompagnement</span>
-          <h2>Formation, management & droit social</h2>
-          <span class="pole-count">4 consultants</span>
+      <div class="pole-header reveal-left" style="--delay:0s;">
+        <span class="pole-label pole-label--rh">Pôle Diagnostic & Accompagnement</span>
+        <h2>Formation, management & droit social</h2>
+        <span class="pole-count">4 consultants</span>
+      </div>
+      <div class="grid-2 reveal-stagger" style="gap:24px;">
+        <div class="team-card-v2">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
+          <h3>Catherine Lenoir</h3>
+          <div class="role">Consultante Associée — Fondatrice</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">AFEST</span>
+            <span class="expertise-tag expertise-tag--green">Coaching</span>
+            <span class="expertise-tag expertise-tag--blue">Ingénierie</span>
+          </div>
+          <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Experte en ingénierie pédagogique et conception de parcours AFEST. Plus de 20 ans d'expérience.</p>
         </div>
-        <div class="grid-2 reveal-stagger" style="gap:24px;">
-          <div class="team-card-v2">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
-            <h3>Catherine Lenoir</h3>
-            <div class="role">Consultante Associée — Fondatrice</div>
-            <div class="specialites">Formation & Transformation | AFEST | Coaching d'équipe</div>
-            <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Experte en ingénierie pédagogique et conception de parcours AFEST. Plus de 20 ans d'expérience.</p>
+        <div class="team-card-v2">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
+          <h3>Philippe Lenoir</h3>
+          <div class="role">Consultant Associé</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">Leadership</span>
+            <span class="expertise-tag expertise-tag--purple">Coaching ICF</span>
+            <span class="expertise-tag expertise-tag--green">Changement</span>
           </div>
-          <div class="team-card-v2">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
-            <h3>Philippe Lenoir</h3>
-            <div class="role">Consultant Associé</div>
-            <div class="specialites">Management & Leadership | Coaching dirigeant | Dev. commercial</div>
-            <p>Coaching de dirigeant, management comportemental, développement commercial. Spécialiste de l'accompagnement entrepreneurial et de la conduite du changement. Certifié coach ICF.</p>
+          <p>Coaching de dirigeant, management comportemental, développement commercial. Spécialiste de l'accompagnement entrepreneurial et de la conduite du changement. Certifié coach ICF.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">EC</div>
+          <h3>Élodie Chapelle</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--blue">Droit social</span>
+            <span class="expertise-tag expertise-tag--teal">CSE</span>
+            <span class="expertise-tag expertise-tag--purple">Conformité</span>
           </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--teal">EC</div>
-            <h3>Élodie Chapelle</h3>
-            <div class="role">Consultante Associée</div>
-            <div class="specialites">Droit social & Relations sociales | CSE | Conformité</div>
-            <p>Spécialiste du droit social applique aux PME. Accompagnement des relations sociales, mise en conformité, négociation d'accords d'entreprise. Intervention en urgence sur les contentieux et restructurations.</p>
+          <p>Spécialiste du droit social appliqué aux PME. Accompagnement des relations sociales, mise en conformité, négociation d'accords d'entreprise. Intervention en urgence sur les contentieux et restructurations.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CI</div>
+          <h3>Claire Iffenecker</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--green">Recrutement</span>
+            <span class="expertise-tag expertise-tag--teal">GPEC</span>
+            <span class="expertise-tag expertise-tag--blue">Marque employeur</span>
           </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--teal">CI</div>
-            <h3>Claire Iffenecker</h3>
-            <div class="role">Consultante Associée</div>
-            <div class="specialites">Recrutement & GPEC | Marque employeur | Entretiens pro</div>
-            <p>Experte en recrutement, GPEC et gestion des parcours professionnels. Structuration des entretiens professionnels, référentiels de compétences, plans de développement. Approche terrain pour PME multi-sites.</p>
-          </div>
+          <p>Experte en recrutement, GPEC et gestion des parcours professionnels. Structuration des entretiens professionnels, référentiels de compétences, plans de développement. Approche terrain pour PME multi-sites.</p>
         </div>
       </div>
-
-      <!-- POLE RSE & DECARBONATION -->
-      <div class="pole-section">
-        <div class="pole-header reveal">
-          <span class="pole-label pole-label--rse">Pôle RSE & Décarbonation</span>
-          <h2>Bilan carbone, CO2I & transition écologique</h2>
-          <span class="pole-count">4 experts (2 RSE + 2 RH)</span>
-        </div>
-        <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Équipe dédiée au diagnostic CO2I (OPCO2i) et a l'accompagnement décarbonation. Intervient en Isère (38), Drôme (26) et Ardèche (07).</p>
-        <div class="grid-2 reveal-stagger" style="gap:24px;">
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--gold">RSE</div>
-            <h3>Expert RSE & Décarbonation</h3>
-            <div class="role">Consultant senior</div>
-            <div class="specialites">Bilan carbone | Stratégie bas-carbone | Reporting extra-financier</div>
-            <p>Réalisation de bilans carbone, définition de trajectoires de réduction, accompagnement à la mise en œuvre des plans d'actions. Experience industrie et PME. Référence OPCO2i pour le programme CO2I.</p>
-          </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--gold">RSE</div>
-            <h3>Expert RSE & Environnement</h3>
-            <div class="role">Consultant senior</div>
-            <div class="specialites">Diagnostic environnemental | Eco-conception | ACTEE</div>
-            <p>Diagnostic environnemental, éco-gestes industriels, formation des équipes aux pratiques durables. Certifié ACTEE. Accompagnement des PME industrielles dans leur transition écologique.</p>
-          </div>
-          <div class="team-card-v2">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
-            <h3>Catherine Lenoir</h3>
-            <div class="role">Volet Compétences RSE</div>
-            <div class="specialites">Formation RSE | Compétences vertes | AFEST décarbonation</div>
-            <p>Conception et déploiement du volet compétences du diagnostic CO2I. Formation des équipes aux enjeux de la transition écologique et aux éco-gestes. Ingénierie AFEST appliquée à la RSE.</p>
-          </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--teal">CJ</div>
-            <h3>Christine Jalbart</h3>
-            <div class="role">Volet RH & Organisation</div>
-            <div class="specialites">Organisation du travail | Conduite du changement | QVT</div>
-            <p>Accompagnement organisationnel lie à la transition écologique. Impact RH de la décarbonation : évolution des postes, nouvelles compétences, dialogue social sur les changements de pratiques.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- POLE DRH & PARTENAIRE RSE -->
-      <div class="pole-section">
-        <div class="pole-header reveal">
-          <span class="pole-label pole-label--transition">Pôle DRH & Partenaire RSE</span>
-          <h2>DRH opérationnels sous 48h</h2>
-          <span class="pole-count">4 experts</span>
-        </div>
-        <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Nos DRH de transition interviennent en mission (3-18 mois) ou en temps partage (reconductible). Chacun apporte une spécialité complémentaire.</p>
-        <div class="grid-2 reveal-stagger" style="gap:24px;">
-          <div class="team-card-v2">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
-            <h3>Catherine Lenoir</h3>
-            <div class="role">DRH de Transition</div>
-            <div class="specialites">Formation & Transformation | Restructuration | AFEST</div>
-            <p>Pilotage de transformations RH complexes : réorganisations, fusions, creation de fonction RH ex nihilo. Ingénierie de formation et montée en compétences des équipes.</p>
-          </div>
-          <div class="team-card-v2">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
-            <h3>Philippe Lenoir</h3>
-            <div class="role">DRH de Transition</div>
-            <div class="specialites">Management & Leadership | Conduite du changement | Coaching</div>
-            <p>Interim de direction RH oriente leadership et culture managériale. Accompagnement des équipes dirigeantes dans les phases de croissance rapide et de transformation.</p>
-          </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--teal">EC</div>
-            <h3>Élodie Chapelle</h3>
-            <div class="role">DRH de Transition</div>
-            <div class="specialites">Droit social | Relations sociales | Négociation</div>
-            <p>Prise en charge des situations de crise sociale : contentieux, PSE, négociation d'accords, mise en conformité urgente. Expertise pointue en droit du travail applique.</p>
-          </div>
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--teal">CI</div>
-            <h3>Claire Iffenecker</h3>
-            <div class="role">DRH de Transition</div>
-            <div class="specialites">Recrutement & GPEC | Structuration RH | Processus</div>
-            <p>Creation et structuration de la fonction RH pour PME en croissance. Mise en place des processus de recrutement, d'intégration et de gestion des compétences.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADMINISTRATION -->
-      <div class="pole-section">
-        <div class="pole-header reveal">
-          <span class="pole-label pole-label--admin">Administration</span>
-          <h2>Votre point de contact</h2>
-        </div>
-        <div style="max-width:480px;" class="reveal">
-          <div class="team-card-v2">
-            <div class="avatar-circle avatar-circle--neutral">MC</div>
-            <h3>Maryline Chifflet-Saby</h3>
-            <div class="role">Assistante Administrative et Commerciale</div>
-            <p>Suivi administratif et commercial, gestion de la communication, coordination des plannings. Votre premier point de contact pour toute demande d'information, de devis ou de dossier de financement OPCO.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </div>
+
+  <!-- POLE RSE & DECARBONATION -->
+  <div class="pole-section pole-section--rse pole-section--alt">
+    <div class="container">
+      <div class="pole-header reveal-right" style="--delay:0s;">
+        <span class="pole-label pole-label--rse">Pôle RSE & Décarbonation</span>
+        <h2>Bilan carbone, CO2I & transition écologique</h2>
+        <span class="pole-count">4 experts (2 RSE + 2 RH)</span>
+      </div>
+      <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Équipe dédiée au diagnostic CO2I (OPCO2i) et à l'accompagnement décarbonation. Intervient en Isère (38), Drôme (26) et Ardèche (07).</p>
+      <div class="grid-2 reveal-stagger" style="gap:24px;">
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--gold">RSE</div>
+          <h3>Expert RSE & Décarbonation</h3>
+          <div class="role">Consultant senior</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--gold">Bilan carbone</span>
+            <span class="expertise-tag expertise-tag--green">Stratégie bas-carbone</span>
+          </div>
+          <p>Réalisation de bilans carbone, définition de trajectoires de réduction, accompagnement à la mise en œuvre des plans d'actions. Expérience industrie et PME. Référencé OPCO2i pour le programme CO2I.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--gold">RSE</div>
+          <h3>Expert RSE & Environnement</h3>
+          <div class="role">Consultant senior</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--green">Éco-conception</span>
+            <span class="expertise-tag expertise-tag--gold">ACTEE</span>
+          </div>
+          <p>Diagnostic environnemental, éco-gestes industriels, formation des équipes aux pratiques durables. Certifié ACTEE. Accompagnement des PME industrielles dans leur transition écologique.</p>
+        </div>
+        <div class="team-card-v2">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
+          <h3>Catherine Lenoir</h3>
+          <div class="role">Volet Compétences RSE</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">AFEST RSE</span>
+            <span class="expertise-tag expertise-tag--green">Compétences vertes</span>
+          </div>
+          <p>Conception et déploiement du volet compétences du diagnostic CO2I. Formation des équipes aux enjeux de la transition écologique et aux éco-gestes. Ingénierie AFEST appliquée à la RSE.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CJ</div>
+          <h3>Christine Jalbart</h3>
+          <div class="role">Volet RH & Organisation</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--purple">QVT</span>
+            <span class="expertise-tag expertise-tag--teal">Changement</span>
+          </div>
+          <p>Accompagnement organisationnel lié à la transition écologique. Impact RH de la décarbonation : évolution des postes, nouvelles compétences, dialogue social sur les changements de pratiques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLE DRH & PARTENAIRE RSE -->
+  <div class="pole-section pole-section--transition">
+    <div class="container">
+      <div class="pole-header reveal-left" style="--delay:0s;">
+        <span class="pole-label pole-label--transition">Pôle DRH & Partenaire RSE</span>
+        <h2>DRH opérationnels sous 48h</h2>
+        <span class="pole-count">4 experts</span>
+      </div>
+      <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Nos DRH de transition interviennent en mission (3-18 mois) ou en temps partagé (reconductible). Chacun apporte une spécialité complémentaire.</p>
+      <div class="grid-2 reveal-stagger" style="gap:24px;">
+        <div class="team-card-v2">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
+          <h3>Catherine Lenoir</h3>
+          <div class="role">DRH de Transition</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">Transformation</span>
+            <span class="expertise-tag expertise-tag--blue">Restructuration</span>
+          </div>
+          <p>Pilotage de transformations RH complexes : réorganisations, fusions, création de fonction RH ex nihilo. Ingénierie de formation et montée en compétences des équipes.</p>
+        </div>
+        <div class="team-card-v2">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
+          <h3>Philippe Lenoir</h3>
+          <div class="role">DRH de Transition</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--purple">Leadership</span>
+            <span class="expertise-tag expertise-tag--green">Changement</span>
+          </div>
+          <p>Intérim de direction RH orienté leadership et culture managériale. Accompagnement des équipes dirigeantes dans les phases de croissance rapide et de transformation.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">EC</div>
+          <h3>Élodie Chapelle</h3>
+          <div class="role">DRH de Transition</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--blue">Droit social</span>
+            <span class="expertise-tag expertise-tag--teal">Négociation</span>
+          </div>
+          <p>Prise en charge des situations de crise sociale : contentieux, PSE, négociation d'accords, mise en conformité urgente. Expertise pointue en droit du travail appliqué.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CI</div>
+          <h3>Claire Iffenecker</h3>
+          <div class="role">DRH de Transition</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--green">Recrutement</span>
+            <span class="expertise-tag expertise-tag--teal">Structuration RH</span>
+          </div>
+          <p>Création et structuration de la fonction RH pour PME en croissance. Mise en place des processus de recrutement, d'intégration et de gestion des compétences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMINISTRATION -->
+  <div class="pole-section pole-section--admin pole-section--alt">
+    <div class="container">
+      <div class="pole-header reveal-right" style="--delay:0s;">
+        <span class="pole-label pole-label--admin">Administration</span>
+        <h2>Votre point de contact</h2>
+      </div>
+      <div style="max-width:480px;" class="reveal">
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--neutral">MC</div>
+          <h3>Maryline Chifflet-Saby</h3>
+          <div class="role">Assistante Administrative et Commerciale</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">Suivi OPCO</span>
+            <span class="expertise-tag expertise-tag--blue">Coordination</span>
+          </div>
+          <p>Suivi administratif et commercial, gestion de la communication, coordination des plannings. Votre premier point de contact pour toute demande d'information, de devis ou de dossier de financement OPCO.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- PARTENARIATS -->
   <section class="section section--alt">
@@ -436,7 +498,7 @@
     var revealObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
   </script>
 
 </body>

@@ -112,7 +112,7 @@
         <h2 class="section-title">La décarbonation n'est plus une option pour l'industrie</h2>
         <p class="section-subtitle">CSRD, taxonomie europeenne, exigences donneurs d'ordres : les PME industrielles doivent agir. Mais par ou commencer quand on n'a ni le temps, ni les ressources en interne ?</p>
       </div>
-      <div class="grid-3 reveal-stagger" style="gap:24px;">
+      <div class="grid-3 reveal-scale" style="gap:24px;">
         <div class="card" style="text-align:center; padding:32px;">
           <div style="font-size:2.5rem; font-weight:800; color:var(--teal-600);">78%</div>
           <p style="margin-top:8px;">des PME industrielles n'ont pas encore de stratégie carbone formalisee</p>
@@ -235,7 +235,7 @@
         <span class="section-label">Eligibilite</span>
         <h2 class="section-title">Qui peut bénéficier du diagnostic CO2I ?</h2>
       </div>
-      <div class="grid-2 reveal" style="gap:32px; align-items:start;">
+      <div class="grid-2 reveal-scale" style="gap:32px; align-items:start;">
         <div>
           <h3 style="margin-bottom:16px; color:var(--teal-600);">Vous êtes éligible si :</h3>
           <ul style="list-style:none; padding:0;">
@@ -456,7 +456,7 @@
         if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
     // FAQ
     document.querySelectorAll('.faq-item summary').forEach(function(s) {
       s.addEventListener('click', function(e) {
