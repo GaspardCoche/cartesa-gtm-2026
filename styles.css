@@ -52,6 +52,27 @@ body {
   color: var(--white);
 }
 
+/* a11y — focus visible global */
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Screen-reader-only utility (used for fieldset legends, etc.) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 h1, h2, h3, h4 {
   font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--neutral-900);
@@ -113,7 +134,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .nav-links a {
   display: block;
-  padding: 6px 14px;
+  padding: 12px 14px;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--neutral-700);
@@ -152,7 +173,9 @@ img { max-width: 100%; height: auto; display: block; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .nav-toggle span {
@@ -561,7 +584,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .footer-col a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.85rem;
   transition: color 0.2s ease;
 }
@@ -589,7 +612,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 960px) {
