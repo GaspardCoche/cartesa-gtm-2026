@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ressources RH gratuites : guides, outils, articles | CARTESA</title>
-  <meta name="description" content="Téléchargez nos guides pratiques RH gratuits. Entretiens professionnels, management, plan de formation. Ressources pour dirigeants et RH de PME.">
+  <title>Ressources RH gratuites : guides & outils | CARTESA</title>
+  <meta name="description" content="Téléchargez nos guides RH gratuits : entretien professionnel, management, plan de formation. Ressources pratiques pour dirigeants et RH de PME en Isère.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/ressourcerie.html">
-  <meta property="og:title" content="Ressources RH gratuites : guides, outils, articles | CARTESA">
-  <meta property="og:description" content="Téléchargez nos guides pratiques RH gratuits. Entretiens professionnels, management, plan de formation. Ressources pour dirigeants et RH de PME.">
+  <meta property="og:title" content="Ressources RH gratuites : guides & outils | CARTESA">
+  <meta property="og:description" content="Téléchargez nos guides RH gratuits : entretien professionnel, management, plan de formation. Ressources pratiques pour dirigeants et RH de PME.">
+  <meta property="og:url" content="https://cartesa-lyon.com/ressourcerie.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Ressources RH gratuites — guides et outils CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
@@ -25,16 +30,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Ressources RH gratuites",
-    "description": "Guides pratiques, outils et articles RH téléchargeables pour dirigeants et managers de PME",
-    "url": "https://cartesa-lyon.com/ressourcerie.html",
-    "provider": {
-      "@type": "Organization",
-      "name": "CARTESA",
-      "url": "https://cartesa-lyon.com",
-      "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png"
-    }
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Ressources RH gratuites",
+        "description": "Guides pratiques, outils et articles RH téléchargeables pour dirigeants et managers de PME",
+        "url": "https://cartesa-lyon.com/ressourcerie.html",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://cartesa-lyon.com/ressourcerie.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

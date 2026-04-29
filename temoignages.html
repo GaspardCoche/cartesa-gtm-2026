@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Témoignages clients | CARTESA Cabinet RH Isère</title>
-  <meta name="description" content="500+ entreprises accompagnées en RH, RSE et formation depuis 2003. Découvrez les retours de nos clients en Auvergne-Rhône-Alpes : PME industrielles, ETI, groupes multi-sites.">
+  <meta name="description" content="500+ entreprises accompagnées en RH, RSE et formation depuis 2003. Retours clients PME industrielles, ETI, groupes multi-sites en Auvergne-Rhône-Alpes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/temoignages.html">
-  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH">
-  <meta property="og:description" content="500+ entreprises accompagnées depuis 2003. Retours d'expérience en RH, RSE et formation.">
+  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH Isère">
+  <meta property="og:description" content="500+ entreprises accompagnées depuis 2003. Retours d'expérience PME, ETI, groupes multi-sites en RH, RSE et formation. Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/temoignages.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Témoignages clients CARTESA — 500+ entreprises depuis 2003">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -620,14 +625,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Témoignages clients CARTESA",
-    "description": "Retours d'expérience des entreprises accompagnées par CARTESA en RH, RSE et formation.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CARTESA",
-      "url": "https://cartesa-lyon.com"
-    }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Témoignages clients CARTESA",
+        "url": "https://cartesa-lyon.com/temoignages.html",
+        "description": "Retours d'expérience des entreprises accompagnées par CARTESA en RH, RSE et formation.",
+        "publisher": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Témoignages", "item": "https://cartesa-lyon.com/temoignages.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

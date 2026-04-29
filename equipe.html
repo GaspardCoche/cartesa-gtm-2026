@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre équipe | Experts RH, RSE & Transition | CARTESA Isère</title>
-  <meta name="description" content="Découvrez l'équipe CARTESA : experts en conseil RH, RSE & décarbonation, RH de transition. 6 consultants seniors, 22 ans d'expérience. La Tour-du-Pin, Isère.">
+  <title>Notre équipe | Experts RH, RSE & Transition | CARTESA</title>
+  <meta name="description" content="Découvrez l'équipe CARTESA : experts conseil RH, RSE & décarbonation, RH de transition. 6 consultants seniors, 22 ans d'expérience. La Tour-du-Pin, Isère.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/equipe.html">
   <meta property="og:title" content="Notre équipe | Experts RH, RSE & Transition | CARTESA">
-  <meta property="og:description" content="6 consultants seniors en conseil RH, RSE & décarbonation, RH de transition. 22 ans d'expérience.">
+  <meta property="og:description" content="6 consultants seniors en conseil RH, RSE & décarbonation, RH de transition. 22 ans d'expérience à La Tour-du-Pin, Isère, Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/equipe.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Équipe CARTESA — 6 consultants seniors RH, RSE & Transition">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <link rel="preload" as="image" href="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" fetchpriority="high">
@@ -63,23 +68,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Notre équipe — Experts RH, RSE & Transition",
-    "url": "https://cartesa-lyon.com/equipe.html",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "CARTESA",
-      "description": "Cabinet de conseil RH, RSE & décarbonation, RH de transition et formation certifié Qualiopi",
-      "foundingDate": "2003",
-      "email": "contact@cabinet-cartesa.com",
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 6 },
-      "member": [
-        { "@type": "Person", "name": "Catherine Lenoir", "jobTitle": "Consultante Associée - Formation & Transformation" },
-        { "@type": "Person", "name": "Philippe Lenoir", "jobTitle": "Consultant Associé - Management & Leadership" },
-        { "@type": "Person", "name": "Élodie Chapelle", "jobTitle": "Consultante Associée - Droit social & Relations sociales" },
-        { "@type": "Person", "name": "Claire Iffenecker", "jobTitle": "Consultante Associée - Recrutement & GPEC" }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "Notre équipe — Experts RH, RSE & Transition",
+        "url": "https://cartesa-lyon.com/equipe.html",
+        "mainEntity": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Équipe", "item": "https://cartesa-lyon.com/equipe.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

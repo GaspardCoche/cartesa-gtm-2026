@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRH & Partenaire RSE | Transition et temps partage | CARTESA Isère</title>
-  <meta name="description" content="DRH de transition, DRH à temps partagé et Partenaire RSE pour PME en Isère et Auvergne-Rhône-Alpes. 4 experts opérationnels. Missions de 1 à 18 mois. Cabinet certifié Qualiopi.">
+  <title>DRH transition & temps partagé pour PME | CARTESA</title>
+  <meta name="description" content="DRH de transition, DRH à temps partagé et Partenaire RSE pour PME en Isère. 4 experts opérationnels. Missions de 1 à 18 mois. Cabinet Qualiopi.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/rh-transition.html">
-  <meta property="og:title" content="DRH & Partenaire RSE | Transition et temps partage | CARTESA">
-  <meta property="og:description" content="DRH de transition, temps partage et Partenaire RSE pour PME. RH et RSE, même interlocuteur. Isère et Auvergne-Rhône-Alpes.">
+  <meta property="og:title" content="DRH transition & temps partagé pour PME | CARTESA">
+  <meta property="og:description" content="DRH de transition, temps partagé et Partenaire RSE pour PME. RH et RSE, même interlocuteur. Isère et Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/rh-transition.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="DRH de transition et temps partagé par CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -21,15 +26,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "DRH & Partenaire RSE - Transition et temps partage",
-    "provider": {
-      "@type": "Organization",
-      "name": "CARTESA",
-      "url": "https://cartesa-lyon.com"
-    },
-    "description": "DRH de transition et RH à temps partagé pour PME. Missions de restructuration, croissance, conformité.",
-    "areaServed": { "@type": "AdministrativeArea", "name": "Auvergne-Rhône-Alpes" }
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "DRH & Partenaire RSE - Transition et temps partagé",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "description": "DRH de transition et RH à temps partagé pour PME. Missions de restructuration, croissance, conformité.",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Auvergne-Rhône-Alpes" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "DRH transition", "item": "https://cartesa-lyon.com/rh-transition.html" }
+        ]
+      }
+    ]
   }
   </script>
   <style>

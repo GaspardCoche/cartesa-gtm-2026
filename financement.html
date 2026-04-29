@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Financer avec mon OPCO | Le financement dont personne ne parle | CARTESA</title>
-  <meta name="description" content="OPCO, CPF, PCRH, FNE-Formation : vous cotisez déjà, autant en profiter. Guide complet des financements formation et conseil RH pour PME. CARTESA, certifié Qualiopi en Isère.">
+  <title>Financer avec mon OPCO — Guide PME | CARTESA</title>
+  <meta name="description" content="OPCO, CPF, PCRH, FNE-Formation : vous cotisez déjà, autant en profiter. Guide des financements formation et conseil RH pour PME. CARTESA, Qualiopi Isère.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/financement.html">
-  <meta property="og:title" content="Financer avec mon OPCO | CARTESA">
-  <meta property="og:description" content="Vous cotisez déjà. Autant en profiter. Guide des financements OPCO, CPF, PCRH pour PME.">
+  <meta property="og:title" content="Financer avec mon OPCO — Guide PME | CARTESA">
+  <meta property="og:description" content="Vous cotisez déjà. Autant en profiter. Guide des financements OPCO, CPF, PCRH, FNE-Formation pour PME. CARTESA, Qualiopi en Isère.">
+  <meta property="og:url" content="https://cartesa-lyon.com/financement.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Guide des financements OPCO et CPF pour PME — CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +28,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Financer avec mon OPCO",
-    "description": "Guide des dispositifs de financement formation et conseil RH pour PME",
-    "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Financer avec mon OPCO",
+        "url": "https://cartesa-lyon.com/financement.html",
+        "description": "Guide des dispositifs de financement formation et conseil RH pour PME",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Financement", "item": "https://cartesa-lyon.com/financement.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

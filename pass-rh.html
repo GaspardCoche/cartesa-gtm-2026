@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nos abonnements RH, Management & RSE | CARTESA Isère</title>
-  <meta name="description" content="3 abonnements d'accompagnement RH, management et RSE pour PME. Conseil, coaching, formation et codéveloppement. À partir de 790 €/mois. Cabinet certifié Qualiopi en Isère.">
+  <title>Abonnements RH, Management & RSE | CARTESA Isère</title>
+  <meta name="description" content="3 abonnements d'accompagnement RH, management et RSE pour PME. Conseil, coaching, formation, codéveloppement. Dès 790 €/mois. Cabinet Qualiopi en Isère.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/pass-rh.html">
-  <meta property="og:title" content="Nos abonnements RH, Management & RSE | CARTESA">
-  <meta property="og:description" content="Respiration, Élan, Alliance : 3 niveaux d'accompagnement combinant conseil RH, coaching, formation et codéveloppement. Dès 790 €/mois.">
+  <meta property="og:title" content="Abonnements RH, Management & RSE | CARTESA Isère">
+  <meta property="og:description" content="Respiration, Élan, Alliance : 3 niveaux d'accompagnement RH, coaching, formation et codéveloppement pour PME. Dès 790 €/mois en Isère.">
+  <meta property="og:url" content="https://cartesa-lyon.com/pass-rh.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Abonnements CARTESA — Respiration, Élan, Alliance">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -21,14 +26,25 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Abonnements d'accompagnement CARTESA",
-    "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" },
-    "description": "3 niveaux d'accompagnement RH, management et RSE combinant conseil, coaching, formation et codéveloppement.",
-    "offers": [
-      { "@type": "Offer", "name": "Respiration", "price": "790", "priceCurrency": "EUR", "unitText": "mois" },
-      { "@type": "Offer", "name": "Elan", "price": "1490", "priceCurrency": "EUR", "unitText": "mois" },
-      { "@type": "Offer", "name": "Alliance", "price": "2890", "priceCurrency": "EUR", "unitText": "mois" }
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Abonnements d'accompagnement CARTESA",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "description": "3 niveaux d'accompagnement RH, management et RSE combinant conseil, coaching, formation et codéveloppement.",
+        "offers": [
+          { "@type": "Offer", "name": "Respiration", "price": "790", "priceCurrency": "EUR", "unitText": "mois" },
+          { "@type": "Offer", "name": "Elan", "price": "1490", "priceCurrency": "EUR", "unitText": "mois" },
+          { "@type": "Offer", "name": "Alliance", "price": "2890", "priceCurrency": "EUR", "unitText": "mois" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Abonnements", "item": "https://cartesa-lyon.com/pass-rh.html" }
+        ]
+      }
     ]
   }
   </script>

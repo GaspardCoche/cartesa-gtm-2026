@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartesa part en tournée | Formations RH & RSE certifiées Qualiopi 2026</title>
-  <meta name="description" content="Cartesa part en tournée : formations management, droit social, recrutement, RSE certifiées Qualiopi. On vient chez vous, on forme vos équipes, financement OPCO à 100%. Isère et Auvergne-Rhône-Alpes.">
+  <title>Formations RH Qualiopi — OPCO 100% | CARTESA Isère</title>
+  <meta name="description" content="Formations RH Qualiopi : management, droit social, recrutement, RSE. Financement OPCO 100%, inter et intra-entreprise. Isère et Auvergne-Rhône-Alpes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/formations.html">
-  <meta property="og:title" content="Formations RH certifiées Qualiopi 2026 | CARTESA La Tour-du-Pin">
-  <meta property="og:description" content="Formations management, droit social, recrutement, RSE certifiées Qualiopi. Financement OPCO à 100%. Inter et intra-entreprise en Isère et Auvergne-Rhône-Alpes. CARTESA La Tour-du-Pin.">
+  <meta property="og:title" content="Formations RH Qualiopi — OPCO 100% | CARTESA Isère">
+  <meta property="og:description" content="Formations RH Qualiopi : management, droit social, recrutement, RSE. Financement OPCO 100%, inter et intra-entreprise. Isère et Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/formations.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Formations RH Qualiopi par CARTESA — financement OPCO">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
@@ -25,29 +30,81 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "CARTESA",
-    "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi",
-    "url": "https://cartesa-lyon.com/formations.html",
-    "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
-    "foundingDate": "2003",
-    "email": "contact@cabinet-cartesa.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "36 avenue Alsace Lorraine",
-      "addressLocality": "La Tour-du-Pin",
-      "postalCode": "38110",
-      "addressRegion": "Auvergne-Rhône-Alpes",
-      "addressCountry": "FR"
-    },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Isère, Auvergne-Rhône-Alpes"
-    },
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Qualiopi"
-    }
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "CARTESA",
+        "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi",
+        "url": "https://cartesa-lyon.com/formations.html",
+        "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
+        "parentOrganization": { "@id": "https://cartesa-lyon.com/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Isère, Auvergne-Rhône-Alpes" },
+        "hasCredential": { "@type": "EducationalOccupationalCredential", "credentialCategory": "Qualiopi" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Formations", "item": "https://cartesa-lyon.com/formations.html" }
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "Management d'équipe",
+        "description": "Développer sa posture managériale, animer son équipe, conduire les entretiens. Méthodologie CléA Management intégrée.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Droit social pour managers",
+        "description": "Fondamentaux du droit du travail pour managers : contrat, temps de travail, pouvoir disciplinaire, dialogue social. Actualités 2026.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Entretien professionnel",
+        "description": "Mener des entretiens professionnels structurants et conformes à l'obligation légale. Grilles d'entretien fournies.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Recrutement & intégration",
+        "description": "Recruter efficacement dans un marché tendu : offres attractives, entretiens structurés, onboarding sécurisé.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Les fondamentaux RH pour non-RH",
+        "description": "L'essentiel du droit social, gestion administrative, entretiens obligatoires et développement des compétences pour dirigeants et managers.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "RSE & Qualité de vie au travail",
+        "description": "Initier et structurer une démarche RSE accessible aux PME : prévention RPS, diagnostic QVCT, plan d'action concret.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Management à distance",
+        "description": "Animer et fédérer une équipe en télétravail ou en mode hybride : outils, postures et rituels pour maintenir lien et performance.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      }
+    ]
   }
   </script>
 </head>

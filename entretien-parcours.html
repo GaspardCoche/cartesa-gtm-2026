@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entretien de parcours professionnel | Obligation légale & opportunité | CARTESA</title>
-  <meta name="description" content="L'entretien professionnel est obligatoire tous les 2 ans. Risque : 3000 euros d'abondement par salarié. CARTESA vous aide à transformer cette obligation en outil de fidélisation. Isère, Auvergne-Rhône-Alpes.">
+  <title>Entretien professionnel — Obligation légale | CARTESA</title>
+  <meta name="description" content="Entretien professionnel obligatoire tous les 2 ans : risque 3000 € d'abondement par salarié. CARTESA en fait un outil de fidélisation en Isère.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/entretien-parcours.html">
-  <meta property="og:title" content="Entretien de parcours professionnel | CARTESA">
-  <meta property="og:description" content="L'entretien professionnel est obligatoire. Risque de 3000 euros/salarié. On vous aide à en faire une force.">
+  <meta property="og:title" content="Entretien professionnel — Obligation légale | CARTESA">
+  <meta property="og:description" content="L'entretien professionnel est obligatoire tous les 2 ans. Risque 3000 €/salarié. CARTESA en fait un outil de fidélisation en Isère.">
+  <meta property="og:url" content="https://cartesa-lyon.com/entretien-parcours.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Entretien professionnel — accompagnement CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +28,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Entretien de parcours professionnel",
-    "description": "Guide sur l'entretien professionnel obligatoire et l'accompagnement CARTESA",
-    "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Entretien de parcours professionnel",
+        "url": "https://cartesa-lyon.com/entretien-parcours.html",
+        "description": "Guide sur l'entretien professionnel obligatoire et l'accompagnement CARTESA",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Entretien professionnel", "item": "https://cartesa-lyon.com/entretien-parcours.html" }
+        ]
+      }
+    ]
   }
   </script>
   <style>
