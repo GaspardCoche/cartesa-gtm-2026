@@ -61,15 +61,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cartesa-lyon.com/blog.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://cartesa-lyon.com/contact.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- blog.html intentionnellement retiré du sitemap : section "Articles à venir", contenu non publié — réintégrer post-migration WP -->
 </urlset>
