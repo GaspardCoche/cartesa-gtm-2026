@@ -63,8 +63,10 @@
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-                <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+        <li><a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="nav-cta nav-cta--calendly">Réserver 30 min</a></li><!-- TODO: URL Calendly à valider client -->
+        <li><a href="contact.html" class="nav-cta active">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -85,6 +87,14 @@
 
         <!-- FORM -->
         <div>
+          <!-- Raccourci Calendly au-dessus du form (alternative directe au formulaire 9 champs) -->
+          <div class="info-box" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:18px 20px; margin-bottom:24px; background:var(--teal-50,#eaf6fb); border:1px solid var(--teal-200,#bfe5e8);">
+            <div>
+              <strong style="display:block; color:var(--teal-900);">Envie d'un échange direct ?</strong>
+              <span style="font-size:0.88rem; color:var(--neutral-600);">Réservez 30 min de découverte gratuite, sans formulaire.</span>
+            </div>
+            <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn btn--accent btn--sm">Réserver 30 min &rarr;</a><!-- TODO: URL Calendly à valider client -->
+          </div>
           <div class="form-value-prop">
             <h3>Pourquoi nous contacter ?</h3>
             <ul>
@@ -95,7 +105,13 @@
             </ul>
           </div>
           <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous répondons sous 24 heures ouvrées.</p>
+          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:14px;">Nous vous répondons sous 24 heures ouvrées.</p>
+
+          <!-- Réassurance délai réponse -->
+          <div class="info-box" role="note" style="margin-bottom:20px; padding:12px 16px; display:flex; align-items:center; gap:10px;">
+            <span aria-hidden="true" style="font-size:1.1rem;">⏱️</span>
+            <span style="font-size:0.88rem; font-weight:600; color:var(--teal-900);">Réponse sous 24h ouvrées</span>
+          </div>
 
           <form id="contactForm" action="https://formspree.io/f/xpwagzrj" method="POST"><!-- TODO: Form ID Formspree à valider/créer côté client -->
             <!-- Honeypot anti-spam (champ caché — doit rester vide) -->
@@ -115,8 +131,8 @@
                 <input type="text" id="nom" name="nom" required placeholder="Votre nom">
               </div>
               <div class="form-group">
-                <label for="prenom">Prénom *</label>
-                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
               </div>
             </div>
             <div class="form-group">
@@ -129,8 +145,8 @@
                 <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
               </div>
               <div class="form-group">
-                <label for="entreprise">Entreprise *</label>
-                <input type="text" id="entreprise" name="entreprise" required placeholder="Nom de votre entreprise">
+                <label for="entreprise">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
               </div>
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
@@ -145,8 +161,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="sujet">Sujet *</label>
-                <select id="sujet" name="sujet" required>
+                <label for="sujet">Sujet</label>
+                <select id="sujet" name="sujet">
                   <option value="">Sélectionnez un sujet</option>
                   <option value="formation">Inscription formation</option>
                   <option value="diagnostic">Diagnostic RH / RSE</option>
@@ -173,6 +189,10 @@
               <span id="submitText">Envoyer le message</span>
               <span id="submitLoader" style="display:none;">Envoi en cours...</span>
             </button>
+            <p style="margin:14px 0 0; text-align:center; font-size:0.88rem; color:var(--neutral-500);">
+              Préférez-vous un échange direct ?
+              <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" style="font-weight:600;">Réservez 30 min &rarr;</a><!-- TODO: URL Calendly à valider client -->
+            </p>
             <div id="formError" role="alert" style="display:none; margin-top:14px; padding:12px 14px; background:#fdecec; border:1px solid #f5b7b1; border-radius:8px; color:#922b21; font-size:0.85rem;"></div>
             <div id="formSuccess" style="display:none; text-align:center; padding:32px 20px;">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -285,6 +305,7 @@
             <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
             <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
                         <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -304,6 +325,12 @@
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Suivez-nous</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
@@ -322,9 +349,29 @@
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          links.classList.toggle('open');
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
     })();
 
     // Pre-fill from URL params (formation inscription flow)

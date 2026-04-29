@@ -197,8 +197,10 @@
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li><a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="nav-cta nav-cta--calendly">Réserver 30 min</a></li><!-- TODO: URL Calendly à valider client -->
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -481,6 +483,37 @@
     </div>
   </section>
 
+  <!-- RESSOURCES LIÉES -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ressources</span>
+        <h2 class="section-title">Ressources liées</h2>
+        <p class="section-subtitle">Pour aller plus loin avant ou pendant votre abonnement.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal" style="--delay:0s;">
+          <span class="badge" style="margin-bottom:12px;">Guide</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Le guide RH du dirigeant de PME</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">L'essentiel des obligations légales et bonnes pratiques RH en PME.</p>
+          <a href="ressourcerie.html#guides" class="service-link">Télécharger le guide &rarr;</a>
+        </div>
+        <div class="card reveal" style="--delay:0.1s;">
+          <span class="badge" style="margin-bottom:12px;">Financement</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">5 dispositifs pour financer la formation</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">PCRH, plan de développement, CPF, Pro-A, FNE-Formation : ce qu'il faut savoir.</p>
+          <a href="ressourcerie.html#guides" class="service-link">Lire le guide &rarr;</a>
+        </div>
+        <div class="card reveal" style="--delay:0.2s;">
+          <span class="badge" style="margin-bottom:12px;">Outils</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Templates et modèles RH</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">Grilles d'entretien, fiches de poste, modèles d'accord — prêts à l'emploi.</p>
+          <a href="ressourcerie.html#outils" class="service-link">Voir les templates &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--teal" style="padding:56px 0;">
     <div class="container" style="text-align:center;">
@@ -520,6 +553,7 @@
             <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
             <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
                         <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -539,6 +573,12 @@
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Suivez-nous</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
@@ -549,7 +589,32 @@
 
   <script>
     window.addEventListener('scroll', function() { document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10); });
-    document.querySelector('.nav-toggle').addEventListener('click', function() { document.querySelector('.nav-links').classList.toggle('open'); });
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
     var revealObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });

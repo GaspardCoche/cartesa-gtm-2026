@@ -76,8 +76,10 @@
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li><a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="nav-cta nav-cta--calendly">Réserver 30 min</a></li><!-- TODO: URL Calendly à valider client -->
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -406,6 +408,7 @@
             <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
             <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
                         <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -425,6 +428,12 @@
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Suivez-nous</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
@@ -438,9 +447,32 @@
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
     // Mobile nav
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
     // Reveal
     var revealObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {

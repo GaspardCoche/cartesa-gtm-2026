@@ -143,8 +143,10 @@
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li><a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="nav-cta nav-cta--calendly">Réserver 30 min</a></li><!-- TODO: URL Calendly à valider client -->
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -810,8 +812,6 @@
     </div>
   </section>
 
-  <!-- SCROLL MARKER for sticky CTA (placed at ~60% of page content) -->
-  <div id="scrollMarker" style="height:1px;"></div>
 
   </main>
 
@@ -843,6 +843,7 @@
             <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
             <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
                         <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -862,6 +863,12 @@
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Suivez-nous</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
@@ -869,15 +876,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- STICKY CTA BAR -->
-  <div class="sticky-cta" id="stickyCta">
-    <div class="container">
-      <p>Besoin d'un conseil RH ?</p>
-      <input type="email" placeholder="votre.email@entreprise.com" aria-label="Votre email">
-      <a href="contact.html" class="btn btn--accent btn--sm">Recevoir nos conseils</a>
-    </div>
-  </div>
 
   <script>
     // Header scroll shadow with smooth progress
@@ -903,21 +901,30 @@
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          links.classList.toggle('open');
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
-    })();
 
-    // Sticky CTA after scrolling past marker
-    var marker = document.getElementById('scrollMarker');
-    var stickyCta = document.getElementById('stickyCta');
-    if (marker && stickyCta) {
-      new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          stickyCta.classList.toggle('visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
-      }, { threshold: 0 }).observe(marker);
-    }
+      });
+    })();
 
     // Scroll-reveal animations with staggered delays
     var revealObs = new IntersectionObserver(function(entries) {
