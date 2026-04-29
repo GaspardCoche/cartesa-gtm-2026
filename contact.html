@@ -97,7 +97,12 @@
           <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
           <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous répondons sous 24 heures ouvrées.</p>
 
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/xpwagzrj" method="POST"><!-- TODO: Form ID Formspree à valider/créer côté client -->
+            <!-- Honeypot anti-spam (champ caché — doit rester vide) -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
+            <!-- Champs Formspree (reply-to et sujet renseignés au submit via JS) -->
+            <input type="hidden" id="_replyto" name="_replyto" value="">
+            <input type="hidden" id="_subject" name="_subject" value="Nouveau contact Cartesa">
             <div id="formationBanner" style="display:none; background:var(--teal-50, #eaf6fb); border:1px solid var(--teal-200); border-radius:10px; padding:14px 18px; margin-bottom:20px;">
               <p style="font-size:0.82rem; font-weight:600; color:var(--teal-700); margin:0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -157,14 +162,18 @@
               <label for="message">Message *</label>
               <textarea id="message" name="message" required rows="5" placeholder="Décrivez votre besoin, le contexte de votre entreprise et vos disponibilités pour un premier échange..."></textarea>
             </div>
-            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:20px;">
-              <input type="checkbox" id="rgpd" name="rgpd" required style="margin-top:3px; flex-shrink:0;">
-              <label for="rgpd" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
+            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:14px;">
+              <input type="checkbox" id="_consent" name="_consent" required style="margin-top:3px; flex-shrink:0;">
+              <label for="_consent" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
             </div>
+            <p style="font-size:0.72rem; color:var(--neutral-500); margin:0 0 18px 0; line-height:1.45;">
+              <small>Vos données sont transmises et stockées par Formspree (sous-traitant) le temps du traitement de votre demande, puis archivées dans notre CRM. Elles ne sont transmises à aucun tiers commercial. Vous pouvez exercer vos droits d'accès, rectification et suppression en écrivant à <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>.</small>
+            </p>
             <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">
               <span id="submitText">Envoyer le message</span>
               <span id="submitLoader" style="display:none;">Envoi en cours...</span>
             </button>
+            <div id="formError" role="alert" style="display:none; margin-top:14px; padding:12px 14px; background:#fdecec; border:1px solid #f5b7b1; border-radius:8px; color:#922b21; font-size:0.85rem;"></div>
             <div id="formSuccess" style="display:none; text-align:center; padding:32px 20px;">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               <h3 style="margin-top:16px; font-size:1.15rem;">Message envoyé</h3>
@@ -334,23 +343,86 @@
       }
     })();
 
-    // Form submission
+    // Form submission — POST réel vers Formspree
     (function() {
       var form = document.getElementById('contactForm');
       if (!form) return;
+
+      var SUJET_LABELS = {
+        formation: 'Inscription formation',
+        diagnostic: 'Diagnostic RH / RSE',
+        transition: 'DRH ou Partenaire RSE',
+        abonnement: 'Abonnement (Respiration, Élan, Alliance)',
+        financement: 'Financement OPCO / PCRH',
+        decarbonation: 'RSE & Décarbonation (CO2I)',
+        autre: 'Autre demande'
+      };
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var btn = document.getElementById('submitBtn');
         var txtEl = document.getElementById('submitText');
         var loader = document.getElementById('submitLoader');
         var success = document.getElementById('formSuccess');
+        var errorBox = document.getElementById('formError');
+        var emailField = document.getElementById('email');
+        var sujetField = document.getElementById('sujet');
+        var replyToField = document.getElementById('_replyto');
+        var subjectField = document.getElementById('_subject');
+
+        // Honeypot : si rempli, on simule un succès silencieux (et on n'envoie rien)
+        var gotcha = form.querySelector('input[name="_gotcha"]');
+        if (gotcha && gotcha.value) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          return;
+        }
+
+        // Reply-to + sujet dynamique
+        if (replyToField && emailField) replyToField.value = emailField.value || '';
+        if (subjectField && sujetField) {
+          var label = SUJET_LABELS[sujetField.value] || 'Demande générique';
+          subjectField.value = 'Nouveau contact Cartesa — ' + label;
+        }
+
+        // Reset erreur précédente
+        if (errorBox) {
+          errorBox.style.display = 'none';
+          errorBox.textContent = '';
+        }
         btn.disabled = true;
         txtEl.style.display = 'none';
         loader.style.display = 'inline';
-        setTimeout(function() {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        }, 1200);
+
+        var data = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+            return;
+          }
+          return response.json().then(function(body) {
+            var msg = (body && body.errors && body.errors.length)
+              ? body.errors.map(function(err) { return err.message; }).join(', ')
+              : 'Une erreur est survenue. Vérifiez votre connexion ou réessayez dans quelques minutes.';
+            throw new Error(msg);
+          }).catch(function() {
+            throw new Error('Une erreur est survenue (HTTP ' + response.status + '). Réessayez ou contactez-nous directement à contact@cabinet-cartesa.com.');
+          });
+        }).catch(function(err) {
+          if (errorBox) {
+            errorBox.textContent = err.message || 'Envoi impossible. Contactez-nous directement à contact@cabinet-cartesa.com.';
+            errorBox.style.display = 'block';
+          }
+          btn.disabled = false;
+          txtEl.style.display = 'inline';
+          loader.style.display = 'none';
+        });
       });
     })();
   </script>
