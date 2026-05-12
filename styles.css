@@ -3962,11 +3962,11 @@ img { max-width: 100%; height: auto; display: block; }
   object-position: top center;
 }
 
-/* Proof-band : ZERO zone vide, intégrée directement au flow */
+/* Proof-band : fond teal continu pour eliminer le bandeau blanc */
 .proof-band {
-  background: transparent;
-  padding: 0;
-  margin-top: -28px;
+  background: linear-gradient(180deg, var(--teal-600) 0%, var(--teal-700) 100%);
+  padding: 0 0 56px;
+  margin-top: 0;
   margin-bottom: 0;
   position: relative;
   z-index: 3;
@@ -3974,24 +3974,28 @@ img { max-width: 100%; height: auto; display: block; }
 .proof-band::after,
 .proof-band::before { content: none; }
 .proof-band-inner {
-  margin-top: 0;
+  margin-top: -28px;
   background: var(--white);
   border: 1px solid var(--neutral-200);
   border-radius: 16px;
-  box-shadow: 0 16px 44px rgba(9,41,51,0.20), 0 2px 10px rgba(9,41,51,0.08);
-  padding: 18px 26px;
+  box-shadow: 0 18px 48px rgba(9,41,51,0.24), 0 2px 10px rgba(9,41,51,0.08);
+  padding: 20px 28px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Volets : démarrer rapidement, contenu plus condensé */
+/* Volets : flow direct, fond teal continu avec proof-band */
 .volets-wrap {
   height: 360vh;
   position: relative;
   z-index: 1;
-  margin-top: 28px;
+  margin-top: 0;
+  background: var(--teal-700);
 }
 .volets-sticky {
-  height: 88vh;
-  margin-top: 6vh;
+  height: 100vh;
+  margin-top: 0;
+  background: linear-gradient(180deg, var(--teal-700) 0%, var(--teal-600) 100%);
 }
 
 /* Section padding global plus condensé pour pages plus courtes */
