@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Équipe technique pour CARTESA" />
+  <title>CARTESA — Bilan 18 avril → 12 mai 2026</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="_pdf-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">CARTESA — Bilan d’avancement du site (18 avril → 12
+mai 2026)</h1>
+<p class="author">Équipe technique pour CARTESA</p>
+<p class="date">12 mai 2026</p>
+</header>
+<h1 id="bilan-davancement-du-site-cartesa">Bilan d’avancement du site
+CARTESA</h1>
+<p><strong>Période couverte :</strong> 18 avril → 12 mai 2026
+<strong>Destinataire :</strong> Catherine Lenoir et l’équipe CARTESA
+<strong>Statut :</strong> version pré-production, prête à présenter</p>
+<hr />
+<h2 id="résumé-en-5-lignes">1. Résumé en 5 lignes</h2>
+<ul>
+<li><strong>17 commits livrés</strong>, <strong>+6 400 lignes ajoutées /
+−3 500 supprimées</strong> sur le code source.</li>
+<li><strong>15 pages</strong> retravaillées (toutes les pages publiques
++ la feuille de styles globale).</li>
+<li>Le site garde son <strong>design “flat”</strong> mais gagne en
+lisibilité, en rythme et en clarté de positionnement (RH au premier
+plan, RSE en complément).</li>
+<li><strong>4 pages obsolètes archivées</strong> (rh-transition,
+pass-rh, financement, entretien-parcours) — elles redirigent
+automatiquement vers leurs équivalents actuels.</li>
+<li>Le site est aujourd’hui <strong>prêt à recevoir vos
+validations</strong> (numéro de téléphone, vrais témoignages, image de
+partage social, etc.) avant la mise en ligne publique.</li>
+</ul>
+<hr />
+<h2 id="le-site-en-un-coup-dœil">2. Le site en un coup d’œil</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│  PAGES PUBLIQUES (visibles depuis le menu)                  │
+├─────────────────────────────────────────────────────────────┤
+│  Accueil                  ← index.html                       │
+│  Nos services             ← menu déroulant                   │
+│    ├ Diagnostic &amp; Expertise RH/RSE   ← expertises.html       │
+│    ├ Accompagnements RH &amp; RSE        ← accompagnements.html  │
+│    ├ RSE &amp; Décarbonation             ← rse-decarbonation.html│
+│    └ Ingénierie pédagogique &amp; financière ← ingenierie.html   │
+│  Formations              ← formations.html                   │
+│    ├ Certifiantes (ancre)                                    │
+│    ├ Sur mesure (ancre)                                      │
+│    └ Catalogue 2026 (ancre)                                  │
+│  Témoignages             ← temoignages.html                  │
+│  Ressources              ← ressourcerie.html                 │
+│  L&#39;équipe                ← equipe.html                       │
+│  Contact                 ← contact.html                      │
+│  Blog (en attente WP)    ← blog.html (page d&#39;attente)        │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  COULISSES (organisation du dossier)                        │
+├─────────────────────────────────────────────────────────────┤
+│  docs/         ← Documents de pilotage, ce bilan, audits     │
+│  archive/      ← Anciennes pages avec redirections auto      │
+│  documents/   ← PDF / téléchargements clients (5 fichiers)   │
+│  styles.css   ← Feuille de styles unique                     │
+│  sitemap.xml  ← Plan du site pour Google                     │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<blockquote>
+<p><em>Bon à savoir :</em> chaque page utilise la même feuille de styles
+<code>styles.css</code>. Modifier une couleur ou une typo se fait en un
+seul endroit, sans risque de désynchronisation.</p>
+</blockquote>
+<hr />
+<h2 id="les-10-axes-damélioration-livrés">3. Les 10 axes d’amélioration
+livrés</h2>
+<h3 id="axe-1-positionnement-éditorial-rh-au-cœur-rse-en-complément">Axe
+1 — Positionnement éditorial : RH au cœur, RSE en complément</h3>
+<p><strong>Avant :</strong> la page d’accueil mettait RH, RSE,
+transition et formation au même niveau visuel (mêmes couleurs, même
+poids typographique).</p>
+<p><strong>Après :</strong> le titre principal annonce explicitement
+<em>« RH, transition et formation : on s’occupe de tout, vous respirez.
+RSE en complément. »</em>. La RSE reste un volet d’expertise présent
+dans la navigation (Nos services → RSE &amp; Décarbonation), mais ne
+brouille plus le message principal.</p>
+<p><strong>Pourquoi :</strong> les visiteurs qui arrivent sur votre
+accueil comprennent immédiatement votre cœur de métier. La RSE est
+valorisée comme une expertise spécialisée plutôt que diluée dans la
+promesse.</p>
+<h3 id="axe-2-cohérence-des-chiffres">Axe 2 — Cohérence des
+chiffres</h3>
+<p>Tous les chiffres affichés sur le site sont désormais <strong>alignés
+sur la réalité visible</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Chiffre annoncé</th>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Années d’expérience</td>
+<td>hétérogène</td>
+<td>20+</td>
+</tr>
+<tr>
+<td>Nombre d’experts</td>
+<td>hétérogène</td>
+<td>6</td>
+</tr>
+<tr>
+<td>OPCO partenaires</td>
+<td>14 puis 11</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Villes (carte formations)</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Pôle DRH &amp; Partenaire RSE</td>
+<td>6 experts</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>À confirmer côté CARTESA :</em> si vous comptez vraiment 11 OPCO
+partenaires officiels, communiquez-nous la liste exhaustive et nous
+remettrons à jour.</p>
+</blockquote>
+<h3 id="axe-3-refonte-visuelle-design-flat-préservé">Axe 3 — Refonte
+visuelle (design flat préservé)</h3>
+<ul>
+<li><strong>Suppression des cards à “bordure colorée à gauche”</strong>
+(jugées trop datées) sur Ingénierie et Accompagnements. Remplacées par
+un nouveau pattern de cards modernes : badge accent en haut, titre
+généreux, hover avec effet de “lift” subtil.</li>
+<li><strong>Suppression des bulles dégradées floutées en arrière-plan du
+hero</strong> (effet “années 2018”, peu lisible).</li>
+<li><strong>Refonte du bandeau de preuve</strong> (Qualiopi, OPCO, …) en
+“shelf flottante” qui chevauche le hero — plus de coupure brutale entre
+la zone bleue et la zone blanche.</li>
+<li><strong>Logos certifications encapsulés dans des tuiles
+blanches</strong> pour s’intégrer harmonieusement au fond bleu sur la
+section “Nos certifications”.</li>
+</ul>
+<h3 id="axe-4-hiérarchie-lisibilité">Axe 4 — Hiérarchie &amp;
+lisibilité</h3>
+<ul>
+<li><strong>Volets scroll horizontaux</strong> (4 services présentés au
+scroll vertical) : durée d’apparition allongée — on a le temps de voir
+le volet 2 et 3 avant d’arriver sur le 4.</li>
+<li><strong>Chaque volet</strong> reçoit une nuance de couleur
+différente (subtile mais perceptible : teal lumineux, teal+gold, gold,
+teal+violet) pour qu’on sente le passage d’un service à l’autre.</li>
+<li><strong>Hero index</strong> : ratio texte/image rééquilibré ; les
+deux boutons d’action sont désormais côte à côte ; le badge “Finançable
+via OPCO” remplace l’ancien “Jusqu’à 100% finançable via OPCO” (plus
+court, plus clair).</li>
+</ul>
+<h3 id="axe-5-navigation-repères-dans-le-site">Axe 5 — Navigation &amp;
+repères dans le site</h3>
+<ul>
+<li><strong>Fil d’Ariane visible</strong> ajouté sur toutes les pages
+internes (<code>Accueil / Nom de la page</code>). Cliquable, retour
+direct à l’accueil.</li>
+<li><strong>Menu de navigation harmonisé</strong> : le lien “Ressources”
+est désormais présent sur <strong>toutes</strong> les pages (était
+manquant sur Accompagnements).</li>
+<li><strong>Header dynamique</strong> : sur les pages longues, le header
+se rétracte quand vous descendez et réapparaît dès que vous remontez —
+gain de surface utile pour la lecture.</li>
+</ul>
+<h3 id="axe-6-accessibilité-norme-wcag-2">Axe 6 — Accessibilité (norme
+WCAG 2)</h3>
+<ul>
+<li>Balise <code>&lt;main&gt;</code> ajoutée sur toutes les pages
+(sémantique correcte pour les lecteurs d’écran).</li>
+<li>Indicateur de focus clavier visible sur tous les éléments
+interactifs.</li>
+<li>ARIA correct sur les menus déroulants mobile.</li>
+<li>Hiérarchie des titres (H1 → H2 → H3) corrigée et auditée.</li>
+<li>Contrastes vérifiés et rehaussés sur les sous-titres et liens.</li>
+</ul>
+<h3 id="axe-7-performance-rapidité">Axe 7 — Performance &amp;
+rapidité</h3>
+<ul>
+<li>Images chargées en <em>lazy-loading</em> (gain temps d’affichage
+initial).</li>
+<li>Polices restreintes aux poids réellement utilisés (gain bande
+passante).</li>
+<li>Image principale du hero préchargée (LCP optimisé — métrique
+Google).</li>
+</ul>
+<h3 id="axe-8-seo-référencement-local">Axe 8 — SEO &amp; référencement
+local</h3>
+<ul>
+<li>Titres de page recadrés à <strong>≤ 60 caractères</strong> (optimum
+Google).</li>
+<li>Données structurées <strong>schema.org</strong> enrichies :
+<code>BreadcrumbList</code> partout, <code>Course</code> sur la page
+Formations, <code>ContactPage</code> sur Contact, <code>Blog</code> sur
+Blog.</li>
+<li><strong>Sitemap.xml</strong> mis à jour (12 mai 2026), pages
+archivées retirées proprement.</li>
+<li><strong>Open Graph + Twitter Cards</strong> améliorés (partages
+réseaux sociaux plus propres).</li>
+<li><strong>Données géographiques</strong> renseignées
+(<code>geo.region</code>, <code>geo.placename</code>, coordonnées GPS) →
+ciblage Isère / La Tour-du-Pin.</li>
+</ul>
+<h3 id="axe-9-conversion-formulaire-rdv-témoignages">Axe 9 — Conversion
+: formulaire, RDV, témoignages</h3>
+<ul>
+<li><strong>Formulaire de contact branché sur Formspree</strong> : les
+messages arrivent désormais réellement dans votre boîte. Auparavant, le
+formulaire était inerte.</li>
+<li><strong>Option “Accompagnement entrepreneuriat”</strong> ajoutée
+dans le menu déroulant des sujets.</li>
+<li><strong>Mention RGPD</strong> ajoutée + champ honeypot
+anti-spam.</li>
+<li><strong>Page Contact réorganisée</strong> : Calendly direct en haut,
+formulaire visible sans scroller, “Pourquoi nous contacter” déplacé en
+colonne droite (toujours visible mais non bloquant).</li>
+<li><strong>Page Témoignages auditée</strong> : 3 témoignages identifiés
+comme “à remplacer par de vrais clients” et marqués dans le code source
+(commentaires HTML visibles + attribut
+<code>data-testimonial-status</code>). Aucun témoignage supprimé : vous
+décidez du sort.</li>
+</ul>
+<h3 id="axe-10-blog-préparation-à-la-migration-wordpress">Axe 10 — Blog
+: préparation à la migration WordPress</h3>
+<p>L’ancienne page Blog contenait 8 articles d’exemple (placeholders) —
+jugés non-présentables. Refonte complète en page d’attente
+professionnelle :</p>
+<ul>
+<li>Hero épuré : <em>« Notre blog éditorial arrive bientôt. »</em></li>
+<li>Présentation des 3 familles de contenus prévues (Décryptages RH,
+Études de cas, Boîte à outils).</li>
+<li>Ponts vers les ressources déjà disponibles (Ressourcerie,
+Témoignages, Contact).</li>
+<li>Page en <code>noindex</code> tant que le contenu n’est pas publié —
+sera réactivée après migration WordPress.</li>
+</ul>
+<hr />
+<h2 id="recommandations-pour-la-migration-wordpress">4. Recommandations
+pour la migration WordPress</h2>
+<p>Vous prévoyez de migrer le site vers WordPress pour faciliter la
+gestion éditoriale au quotidien. Voici l’architecture recommandée.</p>
+<h3 id="stack-technique-conseillé">4.1 Stack technique conseillé</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 18%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr>
+<th>Couche</th>
+<th>Outil recommandé</th>
+<th>Coût annuel indicatif</th>
+<th>Pourquoi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hébergement</td>
+<td><strong>o2switch</strong> ou <strong>OVH PRO</strong></td>
+<td>60–150 €</td>
+<td>Hébergeur français, support en français, sauvegardes auto</td>
+</tr>
+<tr>
+<td>CMS</td>
+<td><strong>WordPress</strong> 6.x</td>
+<td>gratuit</td>
+<td>Standard du marché, communauté énorme</td>
+</tr>
+<tr>
+<td>Thème</td>
+<td><strong>Astra</strong> ou <strong>GeneratePress</strong> (Pro)</td>
+<td>50–60 €</td>
+<td>Léger, performant, facile à personnaliser</td>
+</tr>
+<tr>
+<td>Builder</td>
+<td><strong>Elementor</strong> (Pro)</td>
+<td>50–60 €</td>
+<td>Drag-and-drop, identique à votre rendu actuel</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td><strong>Rank Math</strong> (Free)</td>
+<td>gratuit</td>
+<td>Plus moderne que Yoast, données structurées incluses</td>
+</tr>
+<tr>
+<td>Formulaires</td>
+<td><strong>WPForms</strong> (Pro)</td>
+<td>40 €</td>
+<td>Drag-and-drop, intégrations CRM natives</td>
+</tr>
+<tr>
+<td>Sécurité</td>
+<td><strong>Wordfence</strong> (Free)</td>
+<td>gratuit</td>
+<td>Firewall + scan malware</td>
+</tr>
+<tr>
+<td>Backups</td>
+<td><strong>UpdraftPlus</strong> (Free)</td>
+<td>gratuit</td>
+<td>Sauvegarde automatique vers Drive</td>
+</tr>
+<tr>
+<td>Cache / performance</td>
+<td><strong>WP Rocket</strong></td>
+<td>50 €</td>
+<td>Cache page + minification, gain Lighthouse net</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inscriptions-aux-formations-quel-crm">4.2 Inscriptions aux
+formations — quel CRM ?</h3>
+<p>Pour gérer les inscriptions aux formations (suivi des leads, parcours
+du candidat, conversion), nous recommandons l’option qui correspond à
+votre maturité :</p>
+<h4 id="option-a-démarrage-simple-recommandé-pour-2026">Option A —
+Démarrage simple (recommandé pour 2026)</h4>
+<p><strong>Brevo</strong> (ex-Sendinblue) — <strong>gratuit jusqu’à 300
+emails/jour, ~30 €/mois ensuite</strong></p>
+<ul>
+<li>CRM léger intégré, idéal pour gérer 100–1000 contacts/an.</li>
+<li>Formulaires d’inscription connectés directement à Brevo via
+WPForms.</li>
+<li>Automatisations : email de confirmation, relance J+3, email de
+bienvenue après inscription validée.</li>
+<li>Hébergé en France (RGPD-friendly).</li>
+<li>Permet de séparer les listes : “Inscrits formation X”,
+“Téléchargement guide”, “Demande devis”.</li>
+</ul>
+<p><strong>Workflow complet d’une inscription :</strong></p>
+<pre><code> 1. Visiteur découvre Formations
+              ↓
+ 2. Clique sur &quot;S&#39;inscrire&quot; d&#39;une session
+              ↓
+ 3. Remplit formulaire WPForms (5 champs)
+              ↓
+ 4. → Brevo : nouveau contact créé, étiqueté &quot;Inscription [nom-session]&quot;
+ 4bis. → Email automatique de confirmation envoyé au candidat
+ 4ter. → Notification email à Catherine
+              ↓
+ 5. Catherine valide / planifie la session dans Brevo
+              ↓
+ 6. Email automatique d&#39;inscription confirmée + lien Calendly RDV intro
+              ↓
+ 7. Tag contact &quot;Client formation [année]&quot; pour suivi long terme</code></pre>
+<h4 id="option-b-plus-structurant-si-croissance-attendue">Option B —
+Plus structurant (si croissance attendue)</h4>
+<p><strong>HubSpot CRM Free + Marketing Hub Starter</strong> —
+<strong>~50 €/mois</strong></p>
+<ul>
+<li>CRM enterprise-grade, gratuit jusqu’à 1 million de contacts.</li>
+<li>Pipeline visuel des leads.</li>
+<li>Suivi automatique des emails ouverts, clics, RDV pris.</li>
+<li>Reporting détaillé : taux de conversion par campagne, ROI par
+OPCO.</li>
+<li>Plus complexe à prendre en main mais évolutif sur 5–10 ans.</li>
+</ul>
+<h4
+id="option-c-lms-intégré-si-vous-voulez-vendre-des-formations-en-ligne">Option
+C — LMS intégré (si vous voulez vendre des formations en ligne)</h4>
+<p><strong>LearnDash</strong> (LMS WordPress) — <strong>199
+€/an</strong> — combiné avec <strong>WooCommerce</strong> (gratuit).</p>
+<ul>
+<li>Diffuse les formations en ligne (vidéos, QCM, certificats).</li>
+<li>Tunnel de vente : paiement → inscription → accès au contenu.</li>
+<li>Recommandé uniquement si vous voulez monétiser de l’e-learning. Pour
+formation en présentiel, l’option A suffit.</li>
+</ul>
+<h3 id="notre-recommandation-finale">4.3 Notre recommandation
+finale</h3>
+<table>
+<colgroup>
+<col style="width: 78%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Si vous voulez…</th>
+<th>Choisir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Le minimum vital, vite mis en route, peu coûteux</td>
+<td><strong>Option A — Brevo + WPForms</strong></td>
+</tr>
+<tr>
+<td>Une stratégie marketing structurée long terme</td>
+<td>Option B — HubSpot</td>
+</tr>
+<tr>
+<td>Vendre du e-learning en ligne</td>
+<td>Option C — LearnDash + WooCommerce</td>
+</tr>
+</tbody>
+</table>
+<h3 id="données-seo-à-migrer">4.4 Données / SEO à migrer</h3>
+<p>Voici la “checklist de migration” pour ne rien perdre :</p>
+<ul>
+<li>☑ <strong>URLs identiques</strong> :
+<code>cartesa-lyon.com/expertises.html</code> doit pointer vers
+<code>/expertises/</code> (page WP). Redirections 301 via plugin
+<strong>Redirection</strong> (gratuit).</li>
+<li>☑ <strong>Titres et meta-descriptions</strong> : tous présents dans
+le code actuel — Rank Math les importe automatiquement si on copie le
+contenu page par page.</li>
+<li>☑ <strong>Données structurées schema.org</strong> : à recréer dans
+Rank Math (Organisation, LocalBusiness, BreadcrumbList) — formulaires
+guidés.</li>
+<li>☑ <strong>Sitemap.xml</strong> : Rank Math le génère
+automatiquement.</li>
+<li>☑ <strong>robots.txt</strong> : Rank Math le génère ; conserver
+<code>Disallow: /wp-admin/</code>.</li>
+<li>☑ <strong>Open Graph + Twitter Cards</strong> : champs Rank Math, à
+remplir page par page.</li>
+<li>☑ <strong>Données géographiques</strong> (<code>geo.region</code>,
+coordonnées GPS) : à ajouter en custom HTML dans la home WP.</li>
+<li>☑ <strong>Formspree → WPForms</strong> : changer l’action du
+formulaire de contact, brancher Brevo en backend.</li>
+<li>☑ <strong>Calendly</strong> : conserver, juste copier les
+liens.</li>
+<li>☑ <strong>Documents PDF/téléchargements</strong> : uploader dans la
+médiathèque WordPress, garder noms de fichiers identiques.</li>
+<li>☑ <strong>Pages archivées</strong> (rh-transition, pass-rh, etc.) :
+recréer en redirections 301 directement dans le plugin Redirection.</li>
+</ul>
+<h3 id="calendrier-indicatif">4.5 Calendrier indicatif</h3>
+<ol type="1">
+<li><strong>Semaine 1–2</strong> : choix hébergement, installation
+WordPress, thème Astra, builder Elementor.</li>
+<li><strong>Semaine 3–4</strong> : recréation page par page (commencer
+par l’accueil, finir par les ressources).</li>
+<li><strong>Semaine 5</strong> : intégration Brevo + WPForms, tests
+inscription formation, vérification emails.</li>
+<li><strong>Semaine 6</strong> : SEO (Rank Math), schema.org,
+redirections, sitemap.</li>
+<li><strong>Semaine 7</strong> : recette client + corrections.</li>
+<li><strong>Semaine 8</strong> : mise en production (DNS), monitoring
+Lighthouse + Search Console.</li>
+</ol>
+<hr />
+<h2 id="glossaire-des-termes-techniques">5. Glossaire des termes
+techniques</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Signification simple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hero</strong></td>
+<td>La grande zone d’introduction en haut d’une page (titre +
+visuel).</td>
+</tr>
+<tr>
+<td><strong>CTA</strong></td>
+<td>“Call To Action” = bouton incitant à une action (Contacter,
+S’inscrire).</td>
+</tr>
+<tr>
+<td><strong>Breadcrumb</strong></td>
+<td>Fil d’Ariane = chemin de navigation type “Accueil / Page”.</td>
+</tr>
+<tr>
+<td><strong>Schema.org</strong></td>
+<td>Méta-données structurées que Google lit pour mieux comprendre vos
+pages.</td>
+</tr>
+<tr>
+<td><strong>Open Graph</strong></td>
+<td>Méta-données utilisées par LinkedIn / Facebook pour afficher
+l’aperçu d’un lien.</td>
+</tr>
+<tr>
+<td><strong>Lighthouse</strong></td>
+<td>Outil Google qui note un site de 0 à 100 (performance,
+accessibilité, SEO).</td>
+</tr>
+<tr>
+<td><strong>Lazy-loading</strong></td>
+<td>Charger les images uniquement quand l’utilisateur fait défiler la
+page.</td>
+</tr>
+<tr>
+<td><strong>LCP</strong></td>
+<td>Largest Contentful Paint = temps que met le plus gros élément à
+s’afficher. Métrique Google.</td>
+</tr>
+<tr>
+<td><strong>CMS</strong></td>
+<td>Content Management System (WordPress = exemple) — interface pour
+modifier le contenu sans coder.</td>
+</tr>
+<tr>
+<td><strong>LMS</strong></td>
+<td>Learning Management System — plateforme de cours en ligne
+(LearnDash).</td>
+</tr>
+<tr>
+<td><strong>CRM</strong></td>
+<td>Customer Relationship Management — outil pour suivre vos prospects
+et clients.</td>
+</tr>
+<tr>
+<td><strong>RGPD</strong></td>
+<td>Règlement européen sur la protection des données. Le formulaire
+actuel y est conforme.</td>
+</tr>
+<tr>
+<td><strong>OPCO</strong></td>
+<td>Opérateur de Compétences (votre interlocuteur de financement
+formation).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ce-qui-attend-votre-confirmation">6. Ce qui attend votre
+confirmation</h2>
+<p>Pour finaliser et mettre en production publique, nous avons besoin de
+votre validation sur :</p>
+<ol type="1">
+<li><strong>Numéro de téléphone</strong> à afficher (actuellement marqué
+<em>“Téléphone à venir”</em> avec un commentaire
+<code>TODO</code>).</li>
+<li><strong>3 vrais témoignages clients</strong> : nom, fonction,
+entreprise, citation, photo facultative — pour remplacer les 3
+témoignages d’illustration.</li>
+<li><strong>Confirmation des 5 autres témoignages anonymisés</strong> :
+retours réels validés par les clients ?</li>
+<li><strong>Liste exacte des OPCO partenaires</strong> (actuellement 9
+affichés).</li>
+<li><strong>Handle Twitter / X</strong> : actuellement
+<code>@CartesaRH</code> (placeholder).</li>
+<li><strong>URL LinkedIn officielle</strong> : à confirmer (le lien
+actuel pointe vers <code>linkedin.com/company/cartesa</code>).</li>
+<li><strong>URL Calendly</strong> : actuellement
+<code>calendly.com/cartesa-rh</code> — à confirmer.</li>
+<li><strong>Image de partage social (og:image)</strong> : recommandation
+= créer une image 1200×630 dédiée pour de meilleurs aperçus sur
+LinkedIn, Twitter, Slack.</li>
+<li><strong>Choix CRM</strong> : Option A (Brevo) / B (HubSpot) / C
+(LearnDash) ?</li>
+<li><strong>Hébergement final</strong> : reste sur o2switch, OVH, autre
+?</li>
+</ol>
+<hr />
+<h2 id="next-steps-roadmap-suggérée">7. Next steps &amp; roadmap
+suggérée</h2>
+<h3 id="court-terme-avant-mise-en-production-publique">Court terme
+(avant mise en production publique)</h3>
+<ol type="1">
+<li><strong>Vous nous communiquez les 10 points ci-dessus.</strong></li>
+<li>Nous intégrons vos contenus définitifs.</li>
+<li>Validation finale (visuel + contenu).</li>
+<li>Mise en ligne sur l’URL définitive.</li>
+</ol>
+<h3 id="moyen-terme-23-mois-post-lancement">Moyen terme (2–3 mois
+post-lancement)</h3>
+<ol type="1">
+<li><strong>Migration WordPress</strong> (suivre le calendrier 8
+semaines).</li>
+<li><strong>CRM Brevo branché</strong> sur les formulaires
+formation.</li>
+<li><strong>Premiers articles de blog</strong> publiés sur le portail WP
+(3 décryptages RH minimum).</li>
+<li><strong>Monitoring Lighthouse</strong> : viser un score ≥ 90 sur
+toutes les pages.</li>
+<li><strong>Google Search Console</strong> branchée : surveiller les
+requêtes qui mènent au site.</li>
+</ol>
+<h3 id="long-terme-612-mois">Long terme (6–12 mois)</h3>
+<ol type="1">
+<li><strong>Pages OPCO dédiées</strong> : une page par OPCO partenaire
+avec FAQ spécifique, dossier-type, contact référent.</li>
+<li><strong>Études de cas approfondies</strong> (sur la page Témoignages
+: 3–5 cas détaillés avec contexte / actions / résultats).</li>
+<li><strong>Espace client privé</strong> (si demande client) : suivi de
+mission, documents partagés.</li>
+<li><strong>Newsletter mensuelle Brevo</strong> : décryptages RH,
+échéances légales du mois, sessions à venir.</li>
+<li><strong>Audit RGPD complet</strong> (avec cookies consent type
+Axeptio si traffic &gt; 5 000 visites/mois).</li>
+</ol>
+<h3 id="suggestions-dévolutions-visuelles-libres">Suggestions
+d’évolutions visuelles (libres)</h3>
+<ul>
+<li>Réintroduire une vidéo de présentation de l’équipe en hero (1 min,
+sous-titrée).</li>
+<li>Carte interactive plus visuelle (Mapbox au lieu de SVG figé).</li>
+<li>Sections “avant / après” sur les études de cas (slider visuel).</li>
+<li>Mode sombre optionnel (effet “wow” pour un site B2B en 2026).</li>
+</ul>
+<hr />
+<h2 id="lien-vers-la-version-actuelle">8. Lien vers la version
+actuelle</h2>
+<p><strong>Site déployé publiquement :</strong> <a
+href="https://gaspardcoche.github.io/cartesa-gtm-2026/">https://gaspardcoche.github.io/cartesa-gtm-2026/</a></p>
+<blockquote>
+<p><em>Note :</em> le déploiement public reflète la branche
+<code>main</code>. Tous les changements ci-dessus sont intégrés et
+visibles.</p>
+</blockquote>
+<hr />
+<h2 id="comment-réadapter-le-site-ensuite">9. Comment réadapter le site
+ensuite</h2>
+<p>Le site est <strong>modulaire</strong> :</p>
+<ul>
+<li><strong>Modifier un texte</strong> : ouvrir le fichier
+<code>.html</code> de la page concernée → trouver le mot → remplacer.
+Aucune autre page n’est impactée.</li>
+<li><strong>Modifier une couleur</strong> : ouvrir
+<code>styles.css</code> → chercher <code>--teal-600</code> ou
+<code>--gold-500</code> → changer la valeur. La nouvelle couleur
+s’applique partout instantanément.</li>
+<li><strong>Ajouter une page</strong> : copier une page existante (ex:
+<code>expertises.html</code>), renommer, modifier le contenu, ajouter au
+menu (header) et au <code>sitemap.xml</code>.</li>
+<li><strong>Modifier le menu</strong> : éditer le bloc
+<code>&lt;ul class="nav-links"&gt;</code> sur chaque page (ou
+centraliser via un futur include WP).</li>
+<li><strong>Ajouter un témoignage réel</strong> : ouvrir
+<code>temoignages.html</code>, rechercher
+<code>data-testimonial-status="fictif-a-remplacer"</code>, remplacer le
+bloc, retirer le commentaire d’alerte.</li>
+</ul>
+<p>Toutes ces opérations seront facilitées une fois migrées sur
+WordPress : interface visuelle, prévisualisation en temps réel, pas
+besoin d’éditer du code.</p>
+<hr />
+<p><em>Document généré le 12 mai 2026 — Bilan technique et
+fonctionnel.</em></p>
+</body>
+</html>
