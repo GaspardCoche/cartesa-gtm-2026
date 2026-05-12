@@ -3307,32 +3307,33 @@ img { max-width: 100%; height: auto; display: block; }
   .site-header.hidden { transform: none; }
 }
 
-/* PROOF-BAND chevauchant — shelf compact, plus de zone teal vide en-dessous */
+/* PROOF-BAND chevauchant — shelf decolle, transition douce vers volets */
 .proof-band {
   position: relative;
   margin-top: 0;
+  margin-bottom: -40px;
   z-index: 2;
   background: var(--teal-600);
-  padding: 0 0 8px;
+  padding: 0 0 24px;
   border: none;
   box-shadow: none;
 }
 .proof-band::after { content: none; }
 .proof-band-inner {
-  margin-top: -28px;
+  margin-top: -34px;
   margin-bottom: 0;
   background: var(--white);
   border: 1px solid var(--neutral-200);
   border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(9,41,51,0.18), 0 2px 8px rgba(9,41,51,0.08);
-  padding: 18px 26px;
+  box-shadow: 0 16px 44px rgba(9,41,51,0.22), 0 2px 10px rgba(9,41,51,0.10);
+  padding: 20px 28px;
   position: relative;
   z-index: 1;
 }
 @media (max-width: 768px) {
-  .proof-band { padding-bottom: 6px; }
+  .proof-band { padding-bottom: 18px; margin-bottom: -24px; }
   .proof-band-inner {
-    margin-top: -16px;
+    margin-top: -18px;
     flex-wrap: wrap;
     gap: 16px;
     padding: 14px 16px;
@@ -3340,6 +3341,17 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .proof-divider { display: none; }
   .proof-item { flex: 1 1 calc(50% - 8px); min-width: 0; }
+}
+
+/* Volets : compacte la zone verticale pour reduire la perception de vide */
+.volets-wrap {
+  height: 400vh;
+  position: relative;
+  z-index: 1;
+}
+.volets-sticky {
+  height: 92vh;
+  margin-top: 4vh;
 }
 
 /* === CARD-FEATURE — design moderne pour dispositifs financement & sim. === */
@@ -3828,4 +3840,165 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* =================================================================
+   v6 — Refonte hero accueil : plus compact, plus impactant, plus moderne
+   ================================================================= */
+
+/* Hero modernisé : plus court, plus dense, plus de "waouw" */
+.hero {
+  background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-700) 100%);
+  color: var(--white);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 50%;
+  height: 140%;
+  background: radial-gradient(ellipse at center, rgba(236,208,52,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero .hero-split {
+  padding: 40px 0 28px;
+  gap: 40px;
+  min-height: auto;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold-400);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: heroFadeUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1.5px;
+  background: var(--gold-500);
+}
+.hero-title-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0 0 18px;
+  font-family: 'Sora', sans-serif;
+}
+.hero-title-modern .hero-line-1,
+.hero-title-modern .hero-line-2 {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.hero-title-modern .hero-line-1 { animation-delay: 0.25s; }
+.hero-title-modern .hero-line-2 { animation-delay: 0.4s; color: var(--gold-400); }
+.hero-title-modern strong {
+  color: var(--gold-400);
+  font-weight: 800;
+}
+.hero-title-modern em {
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.hero .hero-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
+  margin: 0 0 24px;
+  max-width: 540px;
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
+}
+.hero .hero-actions {
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.7s forwards;
+}
+.hero-visual {
+  opacity: 0;
+  animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.45s forwards;
+}
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow,
+  .hero-title-modern .hero-line-1,
+  .hero-title-modern .hero-line-2,
+  .hero .hero-sub,
+  .hero .hero-actions,
+  .hero-visual {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Hero visual encore plus dense */
+.hero-img {
+  width: 100%;
+  max-width: 340px;
+  max-height: 320px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Proof-band : ZERO zone vide, intégrée directement au flow */
+.proof-band {
+  background: transparent;
+  padding: 0;
+  margin-top: -28px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 3;
+}
+.proof-band::after,
+.proof-band::before { content: none; }
+.proof-band-inner {
+  margin-top: 0;
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 16px;
+  box-shadow: 0 16px 44px rgba(9,41,51,0.20), 0 2px 10px rgba(9,41,51,0.08);
+  padding: 18px 26px;
+}
+
+/* Volets : démarrer rapidement, contenu plus condensé */
+.volets-wrap {
+  height: 360vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 28px;
+}
+.volets-sticky {
+  height: 88vh;
+  margin-top: 6vh;
+}
+
+/* Section padding global plus condensé pour pages plus courtes */
+.section { padding-block: 48px; }
+.section--teal { padding-block: 48px; }
+@media (max-width: 768px) {
+  .section { padding-block: 36px; }
+  .hero .hero-split { padding: 28px 0 20px; gap: 24px; }
+  .hero-title-modern { font-size: clamp(1.7rem, 7vw, 2.2rem); }
 }
