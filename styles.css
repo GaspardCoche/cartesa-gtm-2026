@@ -2475,18 +2475,9 @@ img { max-width: 100%; height: auto; display: block; }
   transform: scale(1.08);
 }
 
-/* Parallax hero layers */
-.hero-visual {
-  will-change: transform;
-}
-.hero-badge {
-  will-change: transform;
-  animation: badgeFloat 4s ease-in-out infinite;
-}
-@keyframes badgeFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
+/* Hero badge — stable, sans animation flottante */
+.hero-visual { will-change: auto; }
+.hero-badge { animation: none; }
 
 /* Reveal variants */
 .reveal-left {
@@ -4042,14 +4033,14 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Hero image polish — fade-in + subtle float */
 .hero-img {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  box-shadow: none;
+  transition: none;
 }
 .hero-badge {
-  box-shadow: 0 14px 32px rgba(236,208,52,0.35), 0 2px 8px rgba(0,0,0,0.12);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: none;
+  transition: none;
+  animation: none;
 }
-.hero:hover .hero-img { transform: translateY(-3px); }
 
 /* Volets scroll : titre du volet plus marqué */
 .volet-text h2 {
