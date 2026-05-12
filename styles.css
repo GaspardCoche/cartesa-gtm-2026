@@ -3893,7 +3893,7 @@ img { max-width: 100%; height: auto; display: block; }
    v6 — Refonte hero accueil : plus compact, plus impactant, plus moderne
    ================================================================= */
 
-/* Hero plein écran — occupe ~90vh, contenu centré, image généreuse */
+/* Hero — equilibre entre presence et compacite */
 .hero {
   background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-700) 100%);
   color: var(--white);
@@ -3902,7 +3902,7 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 88vh;
+  min-height: 72vh;
 }
 .hero > .container { width: 100%; }
 .hero::before {
@@ -3916,19 +3916,19 @@ img { max-width: 100%; height: auto; display: block; }
   pointer-events: none;
 }
 .hero .hero-split {
-  padding: 56px 0 80px;
-  gap: 48px;
+  padding: 44px 0 52px;
+  gap: 44px;
   min-height: auto;
   align-items: center;
 }
 .hero-img {
-  max-width: 420px;
-  max-height: 420px;
+  max-width: 380px;
+  max-height: 380px;
 }
 @media (max-width: 960px) {
   .hero { min-height: auto; }
-  .hero .hero-split { padding: 40px 0 64px; gap: 28px; }
-  .hero-img { max-width: 320px; max-height: 320px; }
+  .hero .hero-split { padding: 32px 0 48px; gap: 24px; }
+  .hero-img { max-width: 300px; max-height: 300px; }
 }
 .hero-eyebrow {
   display: inline-flex;
