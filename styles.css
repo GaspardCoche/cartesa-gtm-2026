@@ -3081,9 +3081,9 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 0 24px;
+  padding: 8vh 24px 5vh;
   position: relative;
   opacity: 0.3;
   transition: opacity 0.7s ease;
@@ -3307,46 +3307,39 @@ img { max-width: 100%; height: auto; display: block; }
   .site-header.hidden { transform: none; }
 }
 
-/* PROOF-BAND chevauchant — shelf flottant SUR continuité teal du hero */
+/* PROOF-BAND chevauchant — shelf compact, plus de zone teal vide en-dessous */
 .proof-band {
   position: relative;
   margin-top: 0;
   z-index: 2;
   background: var(--teal-600);
-  padding: 0 0 32px;
+  padding: 0 0 8px;
   border: none;
   box-shadow: none;
 }
-.proof-band::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 28px;
-  background: linear-gradient(180deg, var(--teal-600) 0%, transparent 100%);
-  pointer-events: none;
-}
+.proof-band::after { content: none; }
 .proof-band-inner {
-  margin-top: -36px;
+  margin-top: -28px;
+  margin-bottom: 0;
   background: var(--white);
   border: 1px solid var(--neutral-200);
-  border-radius: 18px;
-  box-shadow: 0 18px 48px rgba(9,41,51,0.22), 0 2px 8px rgba(9,41,51,0.10);
-  padding: 22px 28px;
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(9,41,51,0.18), 0 2px 8px rgba(9,41,51,0.08);
+  padding: 18px 26px;
   position: relative;
   z-index: 1;
 }
 @media (max-width: 768px) {
-  .proof-band { padding-bottom: 24px; }
+  .proof-band { padding-bottom: 6px; }
   .proof-band-inner {
-    margin-top: -20px;
+    margin-top: -16px;
     flex-wrap: wrap;
-    gap: 18px;
-    padding: 18px 18px;
-    border-radius: 14px;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 12px;
   }
   .proof-divider { display: none; }
-  .proof-item { flex: 1 1 calc(50% - 9px); min-width: 0; }
+  .proof-item { flex: 1 1 calc(50% - 8px); min-width: 0; }
 }
 
 /* === CARD-FEATURE — design moderne pour dispositifs financement & sim. === */
@@ -3772,12 +3765,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Volets-wrap : avant les volets, transition douce depuis section précédente */
 .volets-wrap::before {
   content: "";
-  position: absolute;
-  top: -1px; left: 0; right: 0;
-  height: 30px;
-  background: linear-gradient(180deg, var(--teal-600) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
 
 /* === v5.3 — Page diagnostic / expertises : plus vivante === */
