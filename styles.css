@@ -4507,3 +4507,72 @@ section.section + section.section--alt {
   letter-spacing: 0.02em;
   opacity: 0.6;
 }
+
+/* GALERIE "Cartesa en action" — grille mosaic avec photos */
+.action-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 240px 240px;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.action-photo {
+  position: relative;
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: default;
+  background: var(--teal-700);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+}
+.action-photo:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(9,41,51,0.12); }
+.action-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
+}
+.action-photo:hover img { transform: scale(1.04); }
+.action-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(13,59,59,0.78) 100%);
+  pointer-events: none;
+}
+.action-photo figcaption {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.action-photo--tall { grid-row: span 2; }
+.action-photo--wide { grid-column: span 2; }
+
+@media (max-width: 900px) {
+  .action-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 180px 180px 180px;
+    gap: 10px;
+  }
+  .action-photo--tall { grid-row: span 1; }
+  .action-photo--wide { grid-column: span 2; }
+}
+@media (max-width: 520px) {
+  .action-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 180px);
+  }
+  .action-photo--tall { grid-row: span 1; }
+  .action-photo--wide { grid-column: span 1; }
+}
