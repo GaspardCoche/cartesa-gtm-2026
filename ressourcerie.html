@@ -361,7 +361,7 @@
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          var open = links.classList.toggle('open');
+          var open = links.classList.toggle('is-open');
           toggle.classList.toggle('is-open', open);
           toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });

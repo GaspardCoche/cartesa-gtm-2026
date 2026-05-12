@@ -335,11 +335,11 @@
         </div>
 
       </div>
-      <div class="volets-progress">
-        <button class="volet-dot active" aria-label="Diagnostic" title="Diagnostic & Expertise"></button>
-        <button class="volet-dot" aria-label="Accompagnements" title="Accompagnements RH & RSE"></button>
-        <button class="volet-dot" aria-label="Formations" title="Formations certifiées"></button>
-        <button class="volet-dot" aria-label="RSE" title="RSE & Décarbonation"></button>
+      <div class="volets-progress" aria-label="Navigation services">
+        <button class="volet-dot active" aria-label="Volet 1 : Diagnostic" title="Diagnostic & Expertise"><span>1</span></button>
+        <button class="volet-dot" aria-label="Volet 2 : Accompagnements" title="Accompagnements RH & RSE"><span>2</span></button>
+        <button class="volet-dot" aria-label="Volet 3 : Formations" title="Formations certifiées"><span>3</span></button>
+        <button class="volet-dot" aria-label="Volet 4 : RSE" title="RSE & Décarbonation"><span>4</span></button>
       </div>
     </div>
   </div>
@@ -616,6 +616,76 @@
     </style>
   </section>
 
+  <!-- WEBINARS & ÉVÉNEMENTS -->
+  <section class="section section--white" id="webinars">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Webinars & événements</span>
+        <h2 class="section-title">Apprenez avec nos experts, à votre rythme</h2>
+        <p class="section-subtitle">Sessions thématiques en visio, replays disponibles à la demande, et rencontres terrain. Gratuit, sur inscription.</p>
+      </div>
+      <div class="webinars-grid reveal-stagger">
+        <article class="webinar-card webinar-card--upcoming">
+          <div class="webinar-thumb" style="background: linear-gradient(135deg, var(--teal-600), var(--teal-700));">
+            <!-- TODO: remplacer par photo intervenant ou visuel webinar -->
+            <span class="webinar-badge webinar-badge--live">À venir</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Jeudi 5 juin 2026 · 11h00</span>
+              <span class="webinar-duration">45 min</span>
+            </div>
+            <h3>Entretiens pro 2026 : éviter la sanction OPCO de 3 000 €</h3>
+            <p>Catherine Lenoir décrypte la nouvelle réglementation et partage 5 erreurs à éviter avant l'audit. Q&amp;A live de 15 minutes.</p>
+            <a href="contact.html?webinar=entretiens-pro-2026" class="btn btn--accent btn--sm">S'inscrire gratuitement &rarr;</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb" style="background: linear-gradient(135deg, var(--gold-600), var(--gold-400));">
+            <!-- TODO: remplacer par photo replay -->
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Mars 2026</span>
+              <span class="webinar-duration">38 min</span>
+            </div>
+            <h3>Décarbonation industrielle : comment OPCO2i finance à 100%</h3>
+            <p>Les étapes concrètes du diagnostic CO2I, illustrées par 2 cas réels de PME industrielles en Isère. Avec partage du dossier-type.</p>
+            <a href="contact.html?webinar=co2i-decarbonation" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb" style="background: linear-gradient(135deg, var(--teal-500), var(--teal-700));">
+            <!-- TODO: remplacer par photo session -->
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Février 2026</span>
+              <span class="webinar-duration">52 min</span>
+            </div>
+            <h3>DRH de transition : 5 cas où il faut faire appel à un externe</h3>
+            <p>Quand basculer ? Combien ça coûte ? Comment cadrer la mission ? Retours d'expérience de 3 dirigeants accompagnés.</p>
+            <a href="contact.html?webinar=drh-transition" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="contact.html?webinar=newsletter" class="btn btn--ghost">Être prévenu des prochains webinars &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PARTNER LOGOS — OPCO & financeurs -->
   <section class="section section--alt">
     <div class="container">
@@ -804,9 +874,21 @@
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          var open = links.classList.toggle('open');
+          var open = links.classList.toggle('is-open');
           toggle.classList.toggle('is-open', open);
           toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        // Close on link click (mobile)
+        links.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 880px)').matches && !a.closest('.nav-dropdown a[href="#"]')) {
+              links.classList.remove('is-open');
+              toggle.classList.remove('is-open');
+              toggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+          });
         });
       }
 
