@@ -444,47 +444,6 @@
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Nos valeurs</span>
-        <h2 class="section-title">Ce qui nous définit</h2>
-        <p class="section-subtitle">Quatre valeurs qui guident chacune de nos interventions, depuis plus de 20 ans.</p>
-      </div>
-      <div class="values-mosaic">
-        <div class="values-item reveal" style="--delay: 0s;">
-          <span class="values-num">01</span>
-          <div class="values-content">
-            <h3>Authentique</h3>
-            <p>Des relations fondées sur la réciprocité et la confiance. Nous privilégions la transparence dans tous nos échanges —pas de jargon, pas de faux-semblants.</p>
-          </div>
-        </div>
-        <div class="values-item reveal" style="--delay: 0.1s;">
-          <span class="values-num">02</span>
-          <div class="values-content">
-            <h3>Engagé</h3>
-            <p>Accompagner nos clients dans les situations complexes. Nous allons au-delà de la prestation pour un engagement réel, en restant disponibles dans la durée.</p>
-          </div>
-        </div>
-        <div class="values-item reveal" style="--delay: 0.2s;">
-          <span class="values-num">03</span>
-          <div class="values-content">
-            <h3>Responsable</h3>
-            <p>Développer les talents et les initiatives nouvelles. Nous croyons en une approche durable du capital humain, respectueuse des personnes et des organisations.</p>
-          </div>
-        </div>
-        <div class="values-item reveal" style="--delay: 0.3s;">
-          <span class="values-num">04</span>
-          <div class="values-content">
-            <h3>Ingénieux</h3>
-            <p>Combiner créativité et pragmatisme. Chaque solution est conçue sur mesure, parce qu'aucune entreprise ne ressemble à une autre.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CERTIFICATIONS -->
   <section class="section section--teal">
     <div class="container">
@@ -654,62 +613,6 @@
       .t-btn:hover { border-color: var(--teal-600); background: var(--teal-600); color: #fff; transform: translateY(-2px); }
       .t-progress { flex: 1; height: 2px; background: var(--neutral-200); border-radius: 100px; overflow: hidden; position: relative; }
       .t-progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--teal-600); width: 16.66%; transition: left 0.4s cubic-bezier(0.22,1,0.36,1); }
-    </style>
-  </section>
-
-  <!-- INDUSTRIES MARQUEE -->
-  <section style="padding:48px 0; background:var(--neutral-50, #f9fafb); overflow:hidden; border-top:1px solid var(--neutral-200,#e5e7eb); border-bottom:1px solid var(--neutral-200,#e5e7eb);">
-    <div style="text-align:center; font-family:'Sora',sans-serif; font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.18em; color:var(--neutral-500,#6b7280); margin-bottom:24px;">Secteurs accompagnés</div>
-    <div class="idx-marquee">
-      <div class="idx-marquee-track">
-        <span>Industrie métallurgique</span>
-        <span>Agroalimentaire</span>
-        <span>BTP & second œuvre</span>
-        <span>Services aux entreprises</span>
-        <span>Tech & numérique</span>
-        <span>Logistique & transport</span>
-        <span>Industrie pharmaceutique</span>
-        <span>Santé & médico-social</span>
-        <span>Énergie & utilities</span>
-        <span>Distribution & retail</span>
-        <span>Industrie métallurgique</span>
-        <span>Agroalimentaire</span>
-        <span>BTP & second œuvre</span>
-        <span>Services aux entreprises</span>
-        <span>Tech & numérique</span>
-        <span>Logistique & transport</span>
-        <span>Industrie pharmaceutique</span>
-        <span>Santé & médico-social</span>
-        <span>Énergie & utilities</span>
-        <span>Distribution & retail</span>
-      </div>
-    </div>
-    <style>
-      .idx-marquee {
-        display: flex; overflow: hidden;
-        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-      }
-      .idx-marquee-track {
-        display: flex; gap: 56px;
-        animation: idxMarquee 50s linear infinite;
-        padding-right: 56px; white-space: nowrap;
-      }
-      .idx-marquee:hover .idx-marquee-track { animation-play-state: paused; }
-      .idx-marquee-track span {
-        font-family: 'Sora', sans-serif;
-        font-size: 1.1rem; font-weight: 600;
-        color: var(--neutral-700, #374151);
-        letter-spacing: -0.01em;
-        display: inline-flex; align-items: center; gap: 12px;
-        flex-shrink: 0;
-      }
-      .idx-marquee-track span::after {
-        content: ""; width: 6px; height: 6px;
-        border-radius: 50%; background: var(--teal-500, #21b6c8); opacity: 0.6;
-      }
-      @keyframes idxMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      @media (prefers-reduced-motion: reduce) { .idx-marquee-track { animation: none; } }
     </style>
   </section>
 

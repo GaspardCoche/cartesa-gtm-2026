@@ -4002,3 +4002,185 @@ img { max-width: 100%; height: auto; display: block; }
   .hero .hero-split { padding: 28px 0 20px; gap: 24px; }
   .hero-title-modern { font-size: clamp(1.7rem, 7vw, 2.2rem); }
 }
+
+/* =================================================================
+   v6.1 — Homepage polish : harmonie, lisibilite, moderne
+   ================================================================= */
+
+/* Section titles plus impactants */
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--neutral-900);
+  margin: 0 0 12px;
+  max-width: 720px;
+}
+.section--teal .section-title {
+  color: #fff;
+}
+.section-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--neutral-500);
+  max-width: 640px;
+  margin: 0;
+}
+.section--teal .section-subtitle {
+  color: rgba(255,255,255,0.78);
+}
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* Hero image polish — fade-in + subtle float */
+.hero-img {
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.hero-badge {
+  box-shadow: 0 14px 32px rgba(236,208,52,0.35), 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hero:hover .hero-img { transform: translateY(-3px); }
+
+/* Volets scroll : titre du volet plus marqué */
+.volet-text h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 12px 0 14px;
+}
+.volet-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+.volet-number {
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 800;
+  opacity: 0.08;
+}
+
+/* Sections plus aerees mais condensees */
+section.section + section.section { padding-top: 36px; }
+section.section--alt + section.section--teal,
+section.section--teal + section.section--alt,
+section.section--white + section.section--alt,
+section.section--alt + section.section--white {
+  padding-top: 48px;
+}
+
+/* Reveal animations harmonisees, plus douces */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Process cards (Notre methode) plus modernes */
+.process-step {
+  position: relative;
+  padding: 24px 22px 22px;
+  background: #fff;
+  border: 1px solid var(--neutral-200);
+  border-radius: 14px;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.process-step:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--teal-500) 28%, var(--neutral-200));
+  box-shadow: 0 14px 32px rgba(9,41,51,0.08);
+}
+.process-step .step-num {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--teal-600);
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  background: var(--teal-50);
+  border-radius: 999px;
+}
+.process-step h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--neutral-500);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* "Vos enjeux" — cards plus visuelles */
+.enjeu-row {
+  position: relative;
+  padding: 22px 24px;
+  background: #fff;
+  border: 1px solid var(--neutral-200);
+  border-radius: 14px;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.enjeu-row:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--gold-500) 30%, var(--neutral-200));
+  box-shadow: 0 12px 28px rgba(9,41,51,0.07);
+}
+.enjeu-row .enjeu-body { flex: 1; }
+.enjeu-row h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--neutral-900);
+}
+.enjeu-row p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--neutral-500);
+  margin: 0;
+}
+.enjeu-row .enjeu-cta {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teal-600);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.25s ease;
+}
+.enjeu-row:hover .enjeu-cta { transform: translateX(4px); }
+
+/* Pour la home : groupe enjeux en 2-3 colonnes plus aerees */
+.enjeux-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CTA bandeaux : plus de presence */
+.section--alt[style*="48px"] {
+  border-top: 1px solid var(--neutral-200);
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+/* Footer : reduce padding pour page courte */
+.site-footer { padding-top: 36px; }
