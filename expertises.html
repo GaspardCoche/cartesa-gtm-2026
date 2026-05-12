@@ -3,48 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnostic opérationnel RH & RSE | CARTESA La Tour-du-Pin, Isère</title>
-  <meta name="description" content="Diagnostic RH/RSE, coaching, conduite de transformation, co-développement, AFEST. Cabinet de conseil RH certifié Qualiopi en Isère. Accompagnement sur mesure pour PME.">
+  <title>Diagnostic RH & RSE pour PME | CARTESA Isère</title>
+  <meta name="description" content="Diagnostic RH/RSE, coaching, conduite de transformation, co-développement, AFEST. Cabinet de conseil Qualiopi en Isère. Accompagnement sur mesure PME.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/expertises.html">
-  <meta property="og:title" content="Diagnostic opérationnel RH & RSE | CARTESA La Tour-du-Pin, Isère">
-  <meta property="og:description" content="Diagnostic RH/RSE, coaching, conduite de transformation, co-développement, AFEST. Cabinet de conseil RH certifié Qualiopi en Isère. Accompagnement sur mesure pour PME.">
+  <meta property="og:title" content="Diagnostic RH & RSE pour PME | CARTESA Isère">
+  <meta property="og:description" content="Diagnostic RH/RSE, coaching, conduite de transformation, co-développement, AFEST. Cabinet de conseil Qualiopi en Isère. Accompagnement sur mesure PME.">
+  <meta property="og:url" content="https://cartesa-lyon.com/expertises.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Diagnostic opérationnel RH & RSE par CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle Twitter avec le client (placeholder @CartesaRH retiré) -->
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
   <meta name="ICBM" content="45.5628, 5.4437">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "CARTESA",
-    "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi",
-    "url": "https://cartesa-lyon.com/expertises.html",
-    "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
-    "foundingDate": "2003",
-    "email": "contact@cabinet-cartesa.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "36 avenue Alsace Lorraine",
-      "addressLocality": "La Tour-du-Pin",
-      "postalCode": "38110",
-      "addressRegion": "Auvergne-Rhône-Alpes",
-      "addressCountry": "FR"
-    },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Isère, Auvergne-Rhône-Alpes"
-    },
-    "knowsAbout": ["Diagnostic RH", "Diagnostic RSE", "Coaching", "Conduite de transformation", "Co-développement", "AFEST", "Ingénierie pédagogique"]
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Diagnostic opérationnel RH & RSE",
+        "url": "https://cartesa-lyon.com/expertises.html",
+        "about": { "@type": "LocalBusiness", "@id": "https://cartesa-lyon.com/#organization" },
+        "provider": { "@type": "LocalBusiness", "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Expertises", "item": "https://cartesa-lyon.com/expertises.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -54,45 +54,49 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" decoding="async">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="active">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html" class="active">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Cartesa part en tournée</a></li>
-        <li class="nav-dropdown">
-          <a href="#">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <main>
 
   <!-- PAGE HERO -->
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Diagnostic & Expertise RH/RSE</span>
+      </nav>
       <span class="section-label" style="color:rgba(255,255,255,0.9);">Diagnostic opérationnel</span>
       <h1>On fait le point sur vos RH et votre RSE, <span style="color: var(--gold-500);">sans jargon</span></h1>
-      <p>7 domaines d'expertise, une approche concrète et sur mesure. Du diagnostic à l'accompagnement, on vous aide à y voir clair. 500+ dirigeants nous font déjà confiance.</p>
+      <p>7 domaines d'expertise, une approche concrète et sur mesure. Du diagnostic à l'accompagnement, on vous aide à y voir clair. Des centaines de dirigeants nous font confiance depuis 2003.</p>
       <div class="page-hero-stats">
         <div class="page-hero-stat"><strong>7</strong><span>expertises</span></div>
         <div class="page-hero-stat"><strong>20+</strong><span>ans de terrain</span></div>
@@ -108,11 +112,11 @@
 
         <div class="card expertise-card reveal-left" style="--delay: 0s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/pourquoicartesa.png" alt="Diagnostic" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/pourquoicartesa.png" alt="Schéma diagnostic RH avec axes humain et stratégie" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">01</span>
           <h3>Diagnostic et accompagnement RH/RSE</h3>
-          <p>Co-production d'un diagnostic sur mesure pour identifier vos leviers de progrès et structurer votre politique RH. Notre approche repose sur l'écoute active et l'analyse fine de votre contexte organisationnel, social et économique. Nos interventions peuvent être <a href="financement.html">financées par votre OPCO</a>.</p>
+          <p>Co-production d'un diagnostic sur mesure pour identifier vos leviers de progrès et structurer votre politique RH. Notre approche repose sur l'écoute active et l'analyse fine de votre contexte organisationnel, social et économique. Nos interventions peuvent être <a href="ingenierie.html#financement">financées par votre OPCO</a>.</p>
           <ul>
             <li>Recrutement et marque employeur</li>
             <li>Organisation du télétravail et management hybride</li>
@@ -126,7 +130,7 @@
 
         <div class="card expertise-card reveal-right" style="--delay: 0.1s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Formation" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Formateur Cartesa en session intra-entreprise" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">02</span>
           <h3>Formation</h3>
@@ -144,7 +148,7 @@
 
         <div class="card expertise-card reveal-left" style="--delay: 0.2s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Janus.png" alt="Coaching" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Janus.png" alt="Coach RH et collaboratrice en entretien individuel" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">03</span>
           <h3>Coaching individuel et collectif</h3>
@@ -161,11 +165,11 @@
 
         <div class="card expertise-card reveal-right" style="--delay: 0.3s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Anticiper-4.jpeg" alt="Transformation" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Anticiper-4.jpeg" alt="Visualisation transformation organisationnelle" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">04</span>
           <h3>Conduite de projets de transformation</h3>
-          <p>Accompagner vos transformations organisationnelles avec méthode et engagement. De l'évaluation des pratiques existantes à la mise en œuvre des changements, nous co-construisons avec vos équipes les conditions de réussite de vos projets. Besoin d'un <a href="rh-transition.html">DRH de transition</a> pour piloter le changement ? On en parle.</p>
+          <p>Accompagner vos transformations organisationnelles avec méthode et engagement. De l'évaluation des pratiques existantes à la mise en œuvre des changements, nous co-construisons avec vos équipes les conditions de réussite de vos projets. Besoin d'un <a href="accompagnements.html">DRH de transition</a> pour piloter le changement ? On en parle.</p>
           <ul>
             <li>Évaluation des pratiques existantes et benchmark</li>
             <li>Identification des compétences clés et des résistances</li>
@@ -178,11 +182,11 @@
 
         <div class="card expertise-card reveal-left" style="--delay: 0.4s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/codev.png" alt="Co-développement" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/codev.png" alt="Cercle de co-développement professionnel" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">05</span>
           <h3>Cercles de co-développement</h3>
-          <p>Groupes d'apprentissage professionnel où les participants apprennent les uns des autrès dans un cadre structuré et bienveillant. Une méthode éprouvée pour résoudre des problématiques concrètes grâce à l'intelligence collective du groupe.</p>
+          <p>Groupes d'apprentissage professionnel où les participants apprennent les uns des autres dans un cadre structuré et bienveillant. Une méthode éprouvée pour résoudre des problématiques concrètes grâce à l'intelligence collective du groupe.</p>
           <ul>
             <li>Télétravail et management hybride</li>
             <li>Transition expert-manager : réussir sa prise de poste</li>
@@ -195,7 +199,7 @@
 
         <div class="card expertise-card reveal-right" style="--delay: 0.5s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Enrichir-6.jpeg" alt="Ingénierie pédagogique" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Enrichir-6.jpeg" alt="Ingénierie pédagogique : conception parcours formation" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">06</span>
           <h3>Ingénierie pédagogique</h3>
@@ -210,9 +214,9 @@
           <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
         </div>
 
-        <div class="card expertise-card reveal-scale" style="grid-column: 1 / -1; max-width: 560px; --delay: 0.6s;">
+        <div class="card expertise-card reveal-scale" style="grid-column: 1 / -1; max-width: 560px; margin: 0 auto; --delay: 0.6s;">
           <div class="expertise-illustration">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Cultiver-2.jpeg" alt="Entrepreneuriat" class="illustration-img">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Cultiver-2.jpeg" alt="Accompagnement entrepreneurial : transmission et création" class="illustration-img" width="600" height="400" loading="lazy" decoding="async">
           </div>
           <span class="expertise-number">07</span>
           <h3>Accompagnement à l'entrepreneuriat</h3>
@@ -234,6 +238,66 @@
     </div>
   </section>
 
+  <!-- RESSOURCES LIÉES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ressources</span>
+        <h2 class="section-title">Ressources liées</h2>
+        <p class="section-subtitle">Des contenus actionnables pour préparer votre diagnostic et structurer vos pratiques RH.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal" style="--delay:0s;">
+          <span class="badge" style="margin-bottom:12px;">Checklist</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Checklist auto-diagnostic RH</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">40 questions pour évaluer la maturité de votre politique RH en 15 minutes.</p>
+          <a href="ressourcerie.html#guides" class="service-link">Découvrir la checklist &rarr;</a>
+        </div>
+        <div class="card reveal" style="--delay:0.1s;">
+          <span class="badge" style="margin-bottom:12px;">Guide</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Le guide RH du dirigeant de PME</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">25 pages d'essentiel : obligations légales, bonnes pratiques, outils concrets.</p>
+          <a href="ressourcerie.html#guides" class="service-link">Télécharger le guide &rarr;</a>
+        </div>
+        <div class="card reveal" style="--delay:0.2s;">
+          <span class="badge" style="margin-bottom:12px;">Outils</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Templates et modèles RH</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">Grilles d'entretien, fiches de poste, modèles d'accord — prêts à l'emploi.</p>
+          <a href="ressourcerie.html#outils" class="service-link">Voir les templates &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="section section--white" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Accompagnements RH & RSE</h3>
+            <p>Après le diagnostic, prolonger avec un accompagnement dans la durée.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="formations.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Formations certifiées</h3>
+            <p>Former vos managers et équipes sur les enjeux identifiés lors du diagnostic.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="temoignages.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Témoignages</h3>
+            <p>Ce que disent les dirigeants que nous avons accompagnés.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA BAND -->
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
@@ -244,35 +308,41 @@
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Cartesa part en tournée</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -280,7 +350,12 @@
           <h4>Contact</h4>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
-            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin<br><small>(Nord-Isère, à 50 min de Lyon)</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <a href="contact.html">Nous contacter</a>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
@@ -290,6 +365,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -302,12 +383,53 @@
 
     (function() {
       var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          links.classList.toggle('open');
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
     })();
 
     // Scroll-reveal

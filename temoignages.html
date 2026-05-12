@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Témoignages clients | CARTESA Cabinet RH Isère</title>
-  <meta name="description" content="500+ entreprises accompagnées en RH, RSE et formation depuis 2003. Découvrez les retours de nos clients en Auvergne-Rhône-Alpes : PME industrielles, ETI, groupes multi-sites.">
+  <meta name="description" content="Des centaines de missions réalisées en RH, RSE et formation depuis 2003. Retours clients PME industrielles, ETI, groupes multi-sites en Auvergne-Rhône-Alpes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/temoignages.html">
-  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH">
-  <meta property="og:description" content="500+ entreprises accompagnées depuis 2003. Retours d'expérience en RH, RSE et formation.">
+  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH Isère">
+  <meta property="og:description" content="Des centaines de missions réalisées depuis 2003. Retours d'expérience PME, ETI, groupes multi-sites en RH, RSE et formation. Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/temoignages.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Témoignages clients CARTESA — Des centaines de missions depuis 2003">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ============================================================
@@ -26,46 +31,48 @@
     /* Hero with kinetic typography */
     .temoignages-hero {
       position: relative;
-      padding: 140px 0 60px;
+      padding: 56px 0 32px;
       overflow: hidden;
+      background: var(--teal-600);
+      color: #fff;
     }
     .temoignages-hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 20%, rgba(33,182,200,0.08), transparent 50%),
-        radial-gradient(circle at 85% 75%, rgba(240,204,58,0.06), transparent 55%);
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(240,204,58,0.12), transparent 55%);
       pointer-events: none;
     }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: var(--teal-600);
-      margin-bottom: 22px;
+      color: var(--gold-500);
+      margin-bottom: 12px;
     }
     .hero-eyebrow::before {
       content: "";
       width: 32px;
       height: 1.5px;
-      background: var(--teal-600);
+      background: var(--gold-500);
     }
     .hero-title {
       font-family: 'Sora', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-size: clamp(1.8rem, 3.4vw, 2.5rem);
       font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      margin-bottom: 28px;
-      color: var(--teal-900);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      color: #fff;
     }
     .hero-title .accent {
-      color: var(--teal-600);
+      color: var(--gold-500);
       font-style: italic;
       font-weight: 700;
     }
@@ -79,9 +86,9 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .hero-subtitle {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: var(--neutral-700);
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
       max-width: 620px;
       margin-bottom: 0;
     }
@@ -89,32 +96,32 @@
     /* Animated stats with counter */
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      margin-top: 64px;
-      padding: 32px 0;
-      border-top: 1px solid var(--neutral-200);
-      border-bottom: 1px solid var(--neutral-200);
+      margin-top: 28px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     .stats-row > div {
       text-align: center;
       padding: 0 16px;
-      border-right: 1px solid var(--neutral-200);
+      border-right: 1px solid rgba(255,255,255,0.2);
     }
     .stats-row > div:last-child { border-right: none; }
     .stats-row strong {
       display: block;
       font-family: 'Sora', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
       font-weight: 800;
-      color: var(--teal-900);
+      color: var(--gold-500);
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       letter-spacing: -0.02em;
     }
     .stats-row span {
-      font-size: 0.82rem;
-      color: var(--neutral-500);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.85);
       font-weight: 500;
     }
 
@@ -212,12 +219,13 @@
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       padding: 16px max(24px, calc((100vw - 1100px) / 2)) 56px;
+      scroll-padding-left: 16px;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
     .carousel-viewport::-webkit-scrollbar { display: none; }
     .carousel-card {
-      flex: 0 0 min(440px, 85vw);
+      flex: 0 0 min(420px, 92vw);
       scroll-snap-align: center;
       background: #fff;
       border-radius: 24px;
@@ -233,7 +241,7 @@
     .carousel-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 18px 48px rgba(9,41,51,0.12);
-      border-color: var(--teal-100);
+      border-color: var(--teal-400);
     }
     .carousel-card .quote-mark {
       font-family: 'Sora', serif;
@@ -541,7 +549,7 @@
     .approach-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 50px rgba(9,41,51,0.08);
-      border-color: var(--teal-100);
+      border-color: var(--teal-400);
     }
     .approach-card .num {
       font-family: 'Sora', sans-serif;
@@ -620,14 +628,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Témoignages clients CARTESA",
-    "description": "Retours d'expérience des entreprises accompagnées par CARTESA en RH, RSE et formation.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CARTESA",
-      "url": "https://cartesa-lyon.com"
-    }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Témoignages clients CARTESA",
+        "url": "https://cartesa-lyon.com/temoignages.html",
+        "description": "Retours d'expérience des entreprises accompagnées par CARTESA en RH, RSE et formation.",
+        "publisher": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Témoignages", "item": "https://cartesa-lyon.com/temoignages.html" }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -637,33 +653,31 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" decoding="async">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown">
-          <a href="#">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Cartesa part en tournée</a></li>
-        <li class="nav-dropdown">
-          <a href="#">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
-        <li><a href="temoignages.html" class="active">Témoignages</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -674,6 +688,11 @@
   <!-- HERO -->
   <section class="temoignages-hero">
     <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Témoignages</span>
+      </nav>
       <span class="hero-eyebrow">Ils nous font confiance</span>
       <h1 class="hero-title" id="heroTitle">
         <span class="word" style="animation-delay:0.05s">Des</span>
@@ -685,22 +704,21 @@
         <span class="word accent" style="animation-delay:0.49s">dirigeants.</span>
       </h1>
       <p class="hero-subtitle">
-        Depuis 2003, plus de 500 PME, ETI et groupes en Auvergne-Rhône-Alpes nous ont confié leurs enjeux RH, RSE et formation. Voici leurs retours, sans filtre.
+        Depuis 2003, des centaines de PME, ETI et groupes en Auvergne-Rhône-Alpes nous ont confié leurs enjeux RH, RSE et formation. Voici leurs retours, sans filtre.
       </p>
 
       <div class="stats-row">
+        <!-- ⚠️ STAT À VÉRIFIER : "Des centaines de missions réalisées" — confirmer un ordre de grandeur sourçable (ex : "+300 missions depuis 2003") avant publication -->
         <div>
-          <strong data-count="500" data-suffix="+">0</strong>
-          <span>Entreprises accompagnées</span>
+          <strong>Des centaines</strong>
+          <span>de missions réalisées</span>
         </div>
+        <!-- Stat vérifiable : CARTESA fondé en 2003 → 23 ans d'expérience en 2026 (le "20+ ans" reste vrai mais peut être actualisé). -->
         <div>
-          <strong data-count="22" data-suffix=" ans">0</strong>
+          <strong data-count="20" data-suffix="+ ans">0</strong>
           <span>D'expertise terrain</span>
         </div>
-        <div>
-          <strong data-count="97" data-suffix="%">0</strong>
-          <span>Taux de satisfaction</span>
-        </div>
+        <!-- ⚠️ STAT À VÉRIFIER : "6 experts mobilisables" — confirmer le nombre exact d'experts du cabinet aujourd'hui (cohérence avec la page équipe.html) -->
         <div>
           <strong data-count="6">0</strong>
           <span>Experts mobilisables</span>
@@ -748,12 +766,19 @@
 
     <div class="carousel-viewport" id="carouselViewport">
 
-      <article class="carousel-card">
+      <!-- ═════════════════════════════════════════════════════════════
+           ⚠️  TÉMOIGNAGE FICTIF — À REMPLACER PAR UN VRAI
+           Raison : nom complet + entreprise nommée ("Sophie Martin / Métallurgies du Dauphiné"),
+           citation générique sans dispositif ni métrique précis, et marqueur TODO d'origine déjà présent.
+           Action client : remplacer nom, entreprise, citation et photo
+           par un vrai retour client signé avant publication.
+           ═════════════════════════════════════════════════════════════ -->
+      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
         <span class="tag">Diagnostic RH</span>
         <div class="quote-mark">&ldquo;</div>
         <blockquote>CARTESA a su comprendre nos enjeux très rapidement. En 3 mois, nos entretiens professionnels étaient structurés et nos managers formés. Le financement OPCO a rendu l'opération transparente pour nous.</blockquote>
         <div class="meta">
-          <strong>S. Martin — DRH</strong>
+          <strong>Sophie Martin — DRH, Métallurgies du Dauphiné</strong>
           <span>PME industrielle (120 salariés) · Isère</span>
         </div>
       </article>
@@ -764,27 +789,35 @@
         <blockquote>Notre DRH est parti du jour au lendemain. CARTESA a mis un expert en poste en 48 heures. La continuité RH n'a jamais été rompue, et ça nous a donné le temps de recruter sereinement.</blockquote>
         <div class="meta">
           <strong>P. Durand — Directeur Général</strong>
-          <span>ETI services (250 salariés) · Grenoble</span>
+          <span>ETI services (250 salariés) · Grenoble<br><small>(témoignage anonymisé à la demande du client)</small></span>
         </div>
       </article>
 
-      <article class="carousel-card">
+      <!-- ═════════════════════════════════════════════════════════════
+           ⚠️  TÉMOIGNAGE FICTIF — À REMPLACER PAR UN VRAI
+           Raison : nom complet + entreprise nommée ("Laurent Bernard / Mécanique Drômoise"),
+           dénomination d'entreprise générique (sonne placeholder), aucune source vérifiable,
+           et marqueur TODO d'origine déjà présent dans le code.
+           Action client : remplacer nom, entreprise, citation et photo
+           par un vrai retour client signé avant publication.
+           ═════════════════════════════════════════════════════════════ -->
+      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
         <span class="tag">RSE & Décarbonation</span>
         <div class="quote-mark">&ldquo;</div>
         <blockquote>Le diagnostic CO2I a été une révélation. On pensait que la décarbonation était hors budget pour une boîte de notre taille. Avec CARTESA et OPCO2i, tout a été financé. On a maintenant une feuille de route claire sur 3 ans.</blockquote>
         <div class="meta">
-          <strong>L. Bernard — Dirigeant</strong>
+          <strong>Laurent Bernard — Dirigeant, Mécanique Drômoise</strong>
           <span>Industrie mécanique (85 salariés) · Drôme</span>
         </div>
       </article>
 
       <article class="carousel-card">
-        <span class="tag">Abonnement Élan</span>
+        <span class="tag">Impulsion</span>
         <div class="quote-mark">&ldquo;</div>
-        <blockquote>L'abonnement Élan nous fait économiser l'équivalent d'un demi-poste RH. On a un pilotage mensuel, du coaching, de la formation et un expert qui connaît notre entreprise. Pour une PME de 70 personnes, c'est exactement ce qu'il nous fallait.</blockquote>
+        <blockquote>L'approche Impulsion nous fait économiser l'équivalent d'un demi-poste RH. On a un pilotage mensuel, du coaching, de la formation et un expert qui connaît notre entreprise. Pour une PME de 70 personnes, c'est exactement ce qu'il nous fallait.</blockquote>
         <div class="meta">
           <strong>C. Rousseau — Gérant</strong>
-          <span>PME bâtiment (70 salariés) · Nord-Isère</span>
+          <span>PME bâtiment (70 salariés) · Nord-Isère<br><small>(témoignage anonymisé à la demande du client)</small></span>
         </div>
       </article>
 
@@ -794,16 +827,25 @@
         <blockquote>La formation management AFEST a été un déclencheur pour nos chefs d'équipe. Pas de blabla théorique : du terrain, de la pratique, des outils qu'ils utilisent encore 6 mois après.</blockquote>
         <div class="meta">
           <strong>A. Vidal — Responsable Production</strong>
-          <span>Agroalimentaire (200 salariés) · Ardèche</span>
+          <span>Agroalimentaire (200 salariés) · Ardèche<br><small>(témoignage anonymisé à la demande du client)</small></span>
         </div>
       </article>
 
-      <article class="carousel-card">
+      <!-- ═════════════════════════════════════════════════════════════
+           ⚠️  TÉMOIGNAGE FICTIF — À REMPLACER PAR UN VRAI
+           Raison : nom complet + entreprise nommée ("Marc Faure / Groupe Alpina Distribution"),
+           le nom d'entreprise "Alpina Distribution" sonne inventé (générique géographique),
+           et marqueur TODO d'origine déjà présent. Mention "Catherine" dans la citation
+           = référence interne CARTESA à valider.
+           Action client : remplacer nom, entreprise, citation et photo
+           par un vrai retour client signé avant publication.
+           ═════════════════════════════════════════════════════════════ -->
+      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
         <span class="tag">Fusion & dialogue social</span>
         <div class="quote-mark">&ldquo;</div>
         <blockquote>Catherine et son équipe ont géré notre fusion avec une précision chirurgicale. Harmonisation des statuts, dialogue social, communication interne — tout a été anticipé. Pas un seul départ subi.</blockquote>
         <div class="meta">
-          <strong>M. Faure — DAF</strong>
+          <strong>Marc Faure — DAF, Groupe Alpina Distribution</strong>
           <span>Groupe multi-sites (350 salariés) · AuRA</span>
         </div>
       </article>
@@ -814,7 +856,7 @@
         <blockquote>On avait un plan de formation Excel rangé dans un coin. CARTESA a tout repris : cartographie compétences, parcours métiers, financement OPCO. En 6 mois, on avait un vrai plan de développement piloté.</blockquote>
         <div class="meta">
           <strong>J. Michel — Directrice Industrielle</strong>
-          <span>Sous-traitance auto (140 salariés) · Vallée du Rhône</span>
+          <span>Sous-traitance auto (140 salariés) · Vallée du Rhône<br><small>(témoignage anonymisé à la demande du client)</small></span>
         </div>
       </article>
 
@@ -824,7 +866,7 @@
         <blockquote>Le coaching individuel de nos 8 managers nous a fait gagner deux ans. On a stoppé les départs critiques, posé un cadre clair, et l'engagement de l'équipe a remonté en 4 mois. Investissement rentabilisé.</blockquote>
         <div class="meta">
           <strong>T. Lefèvre — Président</strong>
-          <span>Tech B2B (95 salariés) · Lyon</span>
+          <span>Tech B2B (95 salariés) · Lyon<br><small>(témoignage anonymisé à la demande du client)</small></span>
         </div>
       </article>
 
@@ -942,6 +984,35 @@
     </div>
   </section>
 
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Accompagnements RH & RSE</h3>
+            <p>Les approches choisies par les dirigeants témoignant sur cette page.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="formations.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Formations certifiées</h3>
+            <p>Management, droit social, recrutement — le catalogue 2026.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Diagnostic & Expertise</h3>
+            <p>Commencer par un état des lieux de vos pratiques RH.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
@@ -961,31 +1032,35 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Accompagnement des entreprises depuis 2003.</p>
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi</span>
           </div>
         </div>
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Cartesa part en tournée</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -993,7 +1068,12 @@
           <h4>Contact</h4>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
-            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin<br><small>(Nord-Isère, à 50 min de Lyon)</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <span style="color:var(--neutral-300); font-style:italic;">Téléphone à venir</span>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
@@ -1003,6 +1083,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -1015,9 +1101,53 @@
     }, { passive: true });
 
     // Mobile nav
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
 
     // Reveal observer
     var revealObs = new IntersectionObserver(function(entries) {

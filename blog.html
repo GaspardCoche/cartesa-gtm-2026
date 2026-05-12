@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog RH : conseils management, droit social, formation | CARTESA</title>
-  <meta name="description" content="Articles et conseils RH pratiques pour dirigeants et managers de PME. Droit social, management, recrutement, RSE, financement OPCO. Par les consultants CARTESA.">
-  <meta name="robots" content="index, follow">
+  <title>Blog — Notre éditorial RH bientôt disponible | CARTESA</title>
+  <meta name="description" content="Le portail éditorial CARTESA arrive prochainement. En attendant, parlons RH ensemble.">
+  <!-- noindex tant que le contenu n'est pas publié — réactiver post-migration WP -->
+  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/blog.html">
-  <meta property="og:title" content="Blog RH : conseils management, droit social, formation | CARTESA">
-  <meta property="og:description" content="Articles et conseils RH pratiques pour dirigeants et managers de PME. Droit social, management, recrutement, RSE, financement OPCO. Par les consultants CARTESA.">
+  <meta property="og:title" content="Blog — Notre éditorial RH bientôt disponible | CARTESA">
+  <meta property="og:description" content="Le portail éditorial CARTESA arrive prochainement. En attendant, parlons RH ensemble.">
+  <meta property="og:url" content="https://cartesa-lyon.com/blog.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Blog RH CARTESA — articles à venir">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
   <meta name="ICBM" content="45.5628, 5.4437">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -46,178 +52,112 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" decoding="async">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown">
-          <a href="#">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Cartesa part en tournée</a></li>
-        <li class="nav-dropdown">
-          <a href="#">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <main>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.9);">Blog RH</span>
-      <h1>Conseils RH pratiques pour dirigeants et managers</h1>
-      <p>Obligations légales, bonnes pratiques managériales, dispositifs de financement : des articles de fond rédigés par nos consultants terrain.</p>
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Blog</span>
+      </nav>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Éditorial RH — bientôt en ligne</span>
+      <h1>Notre blog éditorial arrive bientôt.</h1>
+      <p>Un portail WordPress dédié, pour des décryptages RH, RSE et formation par nos experts.</p>
     </div>
   </section>
 
-  <!-- CATEGORY FILTERS -->
-  <section class="section section--white" style="padding-bottom:0;">
-    <div class="container">
-      <div class="blog-filters">
-        <button class="filter-btn active" onclick="filterArticles('all', this)">Tous les articles</button>
-        <button class="filter-btn" onclick="filterArticles('droit-social', this)">Droit social</button>
-        <button class="filter-btn" onclick="filterArticles('management', this)">Management</button>
-        <button class="filter-btn" onclick="filterArticles('formation', this)">Formation</button>
-        <button class="filter-btn" onclick="filterArticles('rse', this)">RSE</button>
-        <button class="filter-btn" onclick="filterArticles('financement', this)">Financement</button>
-        <button class="filter-btn" onclick="filterArticles('organisation-rh', this)">Organisation RH</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ARTICLES -->
-  <section class="section section--white" style="padding-top:24px;">
-    <div class="container">
-      <div class="grid-2" style="gap:28px;">
-
-        <!-- ARTICLE 1 -->
-        <div class="card blog-card" data-category="droit-social">
-          <span class="blog-category">Droit social</span>
-          <h3>Les obligations RH à 11, 20 et 50 salariés : le guide complet 2026</h3>
-          <p class="blog-excerpt">À chaque franchissement de seuil d'effectif, de nouvelles obligations sociales s'imposent à l'employeur. À 11 salariés, vous devez organiser les élections du CSE et mettre en place la participation aux résultats. À 20 salariés, la contribution FNAL passe au taux plein et le règlement intérieur devient obligatoire. À 50 salariés, les enjeux se multiplient : commission santé-sécurité du CSE, participation aux bénéfices obligatoire, plan de développement des compétences formalisé. Cet article détaille chaque seuil, les délais de mise en conformité et les sanctions encourues en cas de manquement.</p>
-          <div class="blog-meta">
-            <span>Mars 2026</span>
-            <span>8 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 2 -->
-        <div class="card blog-card" data-category="financement">
-          <span class="blog-category">Financement</span>
-          <h3>PCRH : l'accompagnement RH gratuit dont personne ne parle</h3>
-          <p class="blog-excerpt">La Prestation de Conseil en Ressources Humaines (PCRH) est un dispositif financé par l'État via les DREETS et les OPCO, totalement gratuit pour les entreprises de moins de 250 salariés. Il permet de bénéficier de 12 à 20 jours d'accompagnement par un consultant RH pour structurer ses pratiques : diagnostic RH, mise en place des entretiens professionnels, construction d'un plan de développement des compétences, formalisation des fiches de poste. Le budget, pouvant atteindre 15 000 €, est intégralement pris en charge. Malgré cela, moins de 5% des entreprises éligibles en font la demande.</p>
-          <div class="blog-meta">
-            <span>Février 2026</span>
-            <span>6 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 3 -->
-        <div class="card blog-card" data-category="management">
-          <span class="blog-category">Management</span>
-          <h3>Entretien professionnel vs entretien annuel : ne confondez plus jamais</h3>
-          <p class="blog-excerpt">L'entretien professionnel est une obligation légale depuis la loi du 5 mars 2014 : il doit avoir lieu tous les deux ans et porte exclusivement sur les perspectives d'évolution professionnelle et les besoins en formation du salarié. L'entretien annuel d'évaluation, lui, est facultatif et se concentre sur la performance, les objectifs atteints et les axes d'amélioration. Confondre les deux expose l'entreprise à des sanctions : lors du bilan à 6 ans, si l'employeur n'a pas respecté ses obligations, il risque un abondement correctif de 3 000 € par salarié concerné sur le CPF. Voici comment distinguer les deux et tirer le meilleur de chacun.</p>
-          <div class="blog-meta">
-            <span>Janvier 2026</span>
-            <span>7 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 4 -->
-        <div class="card blog-card" data-category="formation">
-          <span class="blog-category">Formation</span>
-          <h3>AFEST : former vos collaborateurs en situation de travail</h3>
-          <p class="blog-excerpt">Reconnue comme modalité pédagogique à part entière depuis la loi Avenir Professionnel de septembre 2018, l'AFEST (Action de Formation En Situation de Travail) permet d'apprendre directement dans son environnement de travail. Son principe repose sur l'alternance entre des mises en situation productives et des phases de réflexivité où l'apprenant analyse ce qu'il a fait, compris et retenu. Particulièrement adaptée aux métiers manuels, techniques et industriels, elle nécessite un référent AFEST formé et certifié. Chez CARTESA, nous formons vos référents internes et concevons le parcours pédagogique conforme aux exigences de la certification Qualiopi.</p>
-          <div class="blog-meta">
-            <span>Décembre 2025</span>
-            <span>9 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 5 -->
-        <div class="card blog-card" data-category="management">
-          <span class="blog-category">Management</span>
-          <h3>5 erreurs de management qui font fuir vos meilleurs talents</h3>
-          <p class="blog-excerpt">La première erreur : ne pas déléguer suffisamment, ce qui étouffe l'autonomie et la progression des collaborateurs les plus ambitieux. La deuxième : supprimer ou reporter systématiquement les entretiens individuels, envoyant le signal que le manager n'a pas de temps pour ses équipes. Troisième piège : confondre autorité et leadership, en imposant plutôt qu'en embarquant. Quatrième erreur : ignorer les signaux faibles de désengagement -- retards, silence en réunion, baisse d'initiative. Enfin, ne pas célébrer les réussites, même petites, érode la motivation durablement. Chacune de ces erreurs alimente le turnover ; cumulées, elles transforment votre entreprise en tremplin pour vos concurrents.</p>
-          <div class="blog-meta">
-            <span>Novembre 2025</span>
-            <span>6 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 6 -->
-        <div class="card blog-card" data-category="rse">
-          <span class="blog-category">RSE</span>
-          <h3>RSE en PME : par où commencer sans exploser votre budget</h3>
-          <p class="blog-excerpt">Contrairement aux idées reçues, initier une démarche RSE ne nécessite ni budget colossal ni équipe dédiée. Commencez par une analyse de matérialité simplifiée : identifiez les 3 à 5 enjeux sociaux et environnementaux les plus pertinents pour votre activité et vos parties prenantes. Priorisez la qualité de vie au travail, qui a un impact immédiat sur l'engagement et la fidélisation. Mettez en place des éco-gestes concrets et mesurables. Impliquez vos salariés dans la démarche via un groupe de travail volontaire. Appuyez-vous sur les outils gratuits comme la checklist RSE de BPI France ou le référentiel LUCIE. En 6 mois, vous aurez une démarche structurée et communicable.</p>
-          <div class="blog-meta">
-            <span>Octobre 2025</span>
-            <span>7 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 7 -->
-        <div class="card blog-card" data-category="formation">
-          <span class="blog-category">Formation</span>
-          <h3>Le guide de l'entretien professionnel réussi</h3>
-          <p class="blog-excerpt">Un entretien professionnel réussi se prépare en amont, côté manager comme côté collaborateur. Sa structure suit une progression logique : bilan des actions de formation et des évolutions depuis le dernier entretien, recueil des aspirations professionnelles du salarié, identification des besoins en formation et en accompagnement, puis élaboration d'un plan d'action concret avec des échéances. L'obligation légale impose également un bilan récapitulatif tous les 6 ans, lors duquel l'employeur doit démontrer que le salarié a bénéficié d'au moins une action de formation et d'une progression. À défaut, la sanction peut atteindre 3 000 € par salarié versé sur son CPF.</p>
-          <div class="blog-meta">
-            <span>Septembre 2025</span>
-            <span>8 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-        <!-- ARTICLE 8 -->
-        <div class="card blog-card" data-category="organisation-rh">
-          <span class="blog-category">Organisation RH</span>
-          <h3>Comment structurer sa fonction RH quand on n'a pas de DRH</h3>
-          <p class="blog-excerpt">Dans les PME de 10 à 50 salariés, la fonction RH est souvent assurée par le dirigeant lui-même, un comptable ou un assistant polyvalent. Sans formation spécifique, les risques de non-conformité juridique sont élevés. La priorité absolue : sécuriser les obligations légales (contrats, paie, médecine du travail, entretiens professionnels). Ensuite, structurer les processus clés : recrutement, intégration, gestion des absences. Enfin seulement, investir dans le développement (formation, marque employeur, GPEC). Le dispositif PCRH, financé à 100%, est spécifiquement conçu pour accompagner cette structuration progressive. Un consultant externe apporte la méthode et le cadre légal que l'entreprise n'a pas en interne.</p>
-          <div class="blog-meta">
-            <span>Août 2025</span>
-            <span>7 min de lecture</span>
-          </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
+  <!-- CE QUE VOUS Y TROUVEREZ -->
   <section class="section section--alt">
     <div class="container">
-      <div class="newsletter-signup">
-        <h3>Recevez nos articles RH chaque mois</h3>
-        <p>Obligations légales, bonnes pratiques managériales, dispositifs de financement... Des contenus concrets rédigés par nos consultants, directement dans votre boîte mail.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="votre.email@entreprise.com" aria-label="Votre adresse email">
-          <a href="contact.html" class="btn btn--primary btn--sm">S'inscrire</a>
+      <div class="section-header reveal">
+        <span class="section-label">Au sommaire</span>
+        <h2 class="section-title">Ce que vous y trouverez</h2>
+        <p class="section-subtitle">Trois familles de contenus, pensées pour les dirigeants, DRH et managers de PME qui veulent décider vite et juste.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:24px; max-width:1000px; margin-left:auto; margin-right:auto;">
+        <div class="enjeu-row reveal">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Décryptages RH</h3>
+            <p>Évolutions de la loi, mouvements de marché, métiers en tension — ce qu'il faut retenir et ce que cela change concrètement pour votre entreprise.</p>
+          </div>
         </div>
-        <p style="font-size:0.75rem; color:var(--neutral-500); margin-top:12px; margin-bottom:0;">Pas de spam. Désabonnement en un clic. Environ 1 email par mois.</p>
+        <div class="enjeu-row reveal">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Études de cas</h3>
+            <p>Transformations vécues côté clients, anonymisées. Le contexte, les arbitrages, les résultats — sans storytelling, avec les détails qui comptent.</p>
+          </div>
+        </div>
+        <div class="enjeu-row reveal">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Boîte à outils</h3>
+            <p>Templates, checklists et méthodologies utilisables tels quels par vos équipes RH, vos managers et vos référents formation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN ATTENDANT -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">En attendant la mise en ligne</span>
+        <h2 class="section-title">Des ressources déjà disponibles</h2>
+        <p class="section-subtitle">Le contenu éditorial arrive, mais le reste du site travaille déjà pour vous.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:24px; max-width:1000px; margin-left:auto; margin-right:auto;">
+        <a href="ressourcerie.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Téléchargez nos guides actuels</h3>
+            <p>Guides, fiches pratiques et outils gratuits déjà publiés dans nos ressources.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="temoignages.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Lisez les retours d'expérience</h3>
+            <p>Témoignages de dirigeants et DRH accompagnés par CARTESA — leurs contextes, leurs décisions, leurs résultats.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="contact.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Parlons RH ensemble</h3>
+            <p>Un sujet précis à creuser ? Premier échange de 30 minutes, gratuit et sans engagement, avec l'un de nos consultants.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -225,42 +165,48 @@
   <!-- CTA -->
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
-      <h2 style="margin-bottom:12px;">Un sujet vous concerne ? Parlons-en.</h2>
-      <p style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Nos consultants sont disponibles pour un premier échange gratuit et sans engagement sur vos problématiques RH.</p>
-      <a href="contact.html" class="btn btn--accent btn--lg">Prendre rendez-vous</a>
+      <h2 style="margin-bottom:12px;">Restons en contact d'ici la mise en ligne.</h2>
+      <p style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Dites-nous quels sujets vous intéressent — nous vous préviendrons dès que le portail éditorial sera ouvert.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg">Être prévenu de la mise en ligne du blog &rarr;</a>
     </div>
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Cartesa part en tournée</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -268,7 +214,12 @@
           <h4>Contact</h4>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
-            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin<br><small>(Nord-Isère, à 50 min de Lyon)</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <span style="color:var(--neutral-300); font-style:italic;">Téléphone à venir</span>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
@@ -278,6 +229,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -290,27 +247,55 @@
 
     (function() {
       var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          links.classList.toggle('open');
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
     })();
 
-    function filterArticles(category, btn) {
-      var cards = document.querySelectorAll('.blog-card');
-      var btns = document.querySelectorAll('.filter-btn');
-      btns.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      cards.forEach(function(card) {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
   </script>
 
 </body>

@@ -3,59 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactez CARTESA | Conseil & Formation RH à La Tour-du-Pin</title>
-  <meta name="description" content="Prenez rendez-vous avec CARTESA pour un diagnostic RH gratuit. Cabinet de conseil et formation RH certifié Qualiopi à La Tour-du-Pin, Isère. Financement OPCO possible.">
+  <title>Contact CARTESA | Diagnostic RH gratuit, Isère</title>
+  <meta name="description" content="Prenez rendez-vous avec CARTESA pour un diagnostic RH gratuit. Cabinet conseil et formation Qualiopi à La Tour-du-Pin (Isère). Financement OPCO possible.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/contact.html">
-  <meta property="og:title" content="Contactez CARTESA | Conseil & Formation RH à La Tour-du-Pin">
-  <meta property="og:description" content="Prenez rendez-vous avec CARTESA pour un diagnostic RH gratuit. Cabinet de conseil et formation RH certifié Qualiopi à La Tour-du-Pin, Isère. Financement OPCO possible.">
+  <meta property="og:title" content="Contact CARTESA | Diagnostic RH gratuit, Isère">
+  <meta property="og:description" content="Prenez rendez-vous avec CARTESA pour un diagnostic RH gratuit. Cabinet conseil et formation Qualiopi à La Tour-du-Pin (Isère). Financement OPCO possible.">
+  <meta property="og:url" content="https://cartesa-lyon.com/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="Contactez CARTESA — Cabinet RH à La Tour-du-Pin, Isère">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
   <meta name="ICBM" content="45.5628, 5.4437">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  [{
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contactez CARTESA",
-    "url": "https://cartesa-lyon.com/contact.html"
-  },
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "CARTESA",
-    "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi",
-    "url": "https://cartesa-lyon.com",
-    "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
-    "foundingDate": "2003",
-    "email": "contact@cabinet-cartesa.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "36 avenue Alsace Lorraine",
-      "addressLocality": "La Tour-du-Pin",
-      "postalCode": "38110",
-      "addressRegion": "Auvergne-Rhône-Alpes",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 45.5628,
-      "longitude": 5.4437
-    },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Isère, Auvergne-Rhône-Alpes"
-    }
-  }]
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Contactez CARTESA",
+        "url": "https://cartesa-lyon.com/contact.html",
+        "about": { "@type": "LocalBusiness", "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://cartesa-lyon.com/contact.html" }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -64,41 +54,45 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" decoding="async">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown">
-          <a href="#">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Cartesa part en tournée</a></li>
-        <li class="nav-dropdown">
-          <a href="#">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <main>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Contact</span>
+      </nav>
       <span class="section-label" style="color:rgba(255,255,255,0.9);">Contact</span>
       <h1>Échangeons sur vos besoins</h1>
       <p>Un premier échange gratuit et sans engagement pour identifier vos enjeux et les solutions adaptées.</p>
@@ -112,86 +106,105 @@
 
         <!-- FORM -->
         <div>
-          <div class="form-value-prop">
-            <h3>Pourquoi nous contacter ?</h3>
-            <ul>
-              <li>Réponse personnalisée sous 24 heures ouvrées</li>
-              <li>Premier échange gratuit et sans engagement</li>
-              <li>Accompagnement dans le montage du dossier de financement OPCO</li>
-              <li>Devis sur mesure adapté à votre contexte et votre budget</li>
-            </ul>
+          <!-- Raccourci Calendly compact en tête du formulaire -->
+          <div class="info-box" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:14px 18px; margin-bottom:18px; background:var(--teal-50,#eaf6fb); border:1px solid var(--teal-200,#bfe5e8); border-radius:12px;">
+            <div>
+              <strong style="display:block; color:var(--teal-900); font-size:0.95rem;">Envie d'un échange direct ?</strong>
+              <span style="font-size:0.82rem; color:var(--neutral-600);">30 min de découverte gratuite, sans formulaire — réponse sous 24h ouvrées.</span>
+            </div>
+            <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn btn--accent btn--sm">Réserver 30 min &rarr;</a><!-- TODO: URL Calendly à valider client -->
           </div>
-          <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous répondons sous 24 heures ouvrées.</p>
 
-          <form id="contactForm">
+          <h2 style="font-size:1.25rem; margin-bottom:14px;">Ou envoyez-nous un message</h2>
+
+          <form id="contactForm" action="https://formspree.io/f/xpwagzrj" method="POST"><!-- TODO: Form ID Formspree à valider/créer côté client -->
+            <!-- Honeypot anti-spam (champ caché — doit rester vide) -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
+            <!-- Champs Formspree (reply-to et sujet renseignés au submit via JS) -->
+            <input type="hidden" id="_replyto" name="_replyto" value="">
+            <input type="hidden" id="_subject" name="_subject" value="Nouveau contact Cartesa">
             <div id="formationBanner" style="display:none; background:var(--teal-50, #eaf6fb); border:1px solid var(--teal-200); border-radius:10px; padding:14px 18px; margin-bottom:20px;">
               <p style="font-size:0.82rem; font-weight:600; color:var(--teal-700); margin:0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 Inscription formation : <span id="formationName"></span>
               </p>
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-              <div class="form-group">
-                <label for="nom">Nom *</label>
-                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            <fieldset style="border:0; padding:0; margin:0;">
+              <legend class="sr-only">Vos coordonnées</legend>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                <div class="form-group">
+                  <label for="nom">Nom *</label>
+                  <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prénom</label>
+                  <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+                </div>
               </div>
               <div class="form-group">
-                <label for="prenom">Prénom *</label>
-                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                <label for="email">Email professionnel *</label>
+                <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email professionnel *</label>
-              <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                <div class="form-group">
+                  <label for="telephone">Téléphone</label>
+                  <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
+                </div>
+                <div class="form-group">
+                  <label for="entreprise">Entreprise</label>
+                  <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
+                </div>
+              </div>
+            </fieldset>
+            <fieldset style="border:0; padding:0; margin:0;">
+              <legend class="sr-only">Votre demande</legend>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                <div class="form-group">
+                  <label for="taille">Taille de l'entreprise</label>
+                  <select id="taille" name="taille">
+                    <option value="">Sélectionnez</option>
+                    <option value="1-10">1 - 10 salariés</option>
+                    <option value="11-49">11 - 49 salariés</option>
+                    <option value="50-249">50 - 249 salariés</option>
+                    <option value="250+">250 salariés et plus</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sujet">Sujet</label>
+                  <select id="sujet" name="sujet">
+                    <option value="">Sélectionnez un sujet</option>
+                    <option value="formation">Inscription formation</option>
+                    <option value="diagnostic">Diagnostic RH / RSE</option>
+                    <option value="transition">DRH ou Partenaire RSE</option>
+                    <option value="entrepreneuriat">Accompagnement entrepreneuriat</option>
+                    <option value="abonnement">Approche d'accompagnement (Respiration, Impulsion, DRH de Transition)</option>
+                    <option value="financement">Financement OPCO / PCRH</option>
+                    <option value="decarbonation">RSE & Décarbonation (CO2I)</option>
+                    <option value="autre">Autre demande</option>
+                  </select>
+                </div>
+              </div>
               <div class="form-group">
-                <label for="telephone">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required rows="5" placeholder="Décrivez votre besoin, le contexte de votre entreprise et vos disponibilités pour un premier échange..."></textarea>
               </div>
-              <div class="form-group">
-                <label for="entreprise">Entreprise *</label>
-                <input type="text" id="entreprise" name="entreprise" required placeholder="Nom de votre entreprise">
-              </div>
+            </fieldset>
+            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:14px;">
+              <input type="checkbox" id="_consent" name="_consent" required style="margin-top:3px; flex-shrink:0;">
+              <label for="_consent" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-              <div class="form-group">
-                <label for="taille">Taille de l'entreprise</label>
-                <select id="taille" name="taille">
-                  <option value="">Sélectionnez</option>
-                  <option value="1-10">1 - 10 salariés</option>
-                  <option value="11-49">11 - 49 salariés</option>
-                  <option value="50-249">50 - 249 salariés</option>
-                  <option value="250+">250 salariés et plus</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="sujet">Sujet *</label>
-                <select id="sujet" name="sujet" required>
-                  <option value="">Sélectionnez un sujet</option>
-                  <option value="formation">Inscription formation</option>
-                  <option value="diagnostic">Diagnostic RH / RSE</option>
-                  <option value="transition">DRH ou Partenaire RSE</option>
-                  <option value="abonnement">Abonnement (Respiration, Élan, Alliance)</option>
-                  <option value="financement">Financement OPCO / PCRH</option>
-                  <option value="decarbonation">RSE & Décarbonation (CO2I)</option>
-                  <option value="autre">Autre demande</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required rows="5" placeholder="Décrivez votre besoin, le contexte de votre entreprise et vos disponibilités pour un premier échange..."></textarea>
-            </div>
-            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:20px;">
-              <input type="checkbox" id="rgpd" name="rgpd" required style="margin-top:3px; flex-shrink:0;">
-              <label for="rgpd" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
-            </div>
+            <p style="font-size:0.72rem; color:var(--neutral-500); margin:0 0 18px 0; line-height:1.45;">
+              <small>Vos données sont transmises et stockées par Formspree (sous-traitant) le temps du traitement de votre demande, puis archivées dans notre CRM. Elles ne sont transmises à aucun tiers commercial. Vous pouvez exercer vos droits d'accès, rectification et suppression en écrivant à <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>.</small>
+            </p>
             <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">
               <span id="submitText">Envoyer le message</span>
               <span id="submitLoader" style="display:none;">Envoi en cours...</span>
             </button>
+            <p style="margin:14px 0 0; text-align:center; font-size:0.88rem; color:var(--neutral-500);">
+              Préférez-vous un échange direct ?
+              <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" style="font-weight:600;">Réservez 30 min &rarr;</a><!-- TODO: URL Calendly à valider client -->
+            </p>
+            <div id="formError" role="alert" style="display:none; margin-top:14px; padding:12px 14px; background:#fdecec; border:1px solid #f5b7b1; border-radius:8px; color:#922b21; font-size:0.85rem;"></div>
             <div id="formSuccess" style="display:none; text-align:center; padding:32px 20px;">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               <h3 style="margin-top:16px; font-size:1.15rem;">Message envoyé</h3>
@@ -202,8 +215,14 @@
 
         <!-- INFO + MAP -->
         <div>
-          <div style="text-align:center; margin-bottom:28px;">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Co-construire ensemble" class="illustration-img" style="max-width:180px; margin:0 auto;">
+          <div class="form-value-prop" style="margin-bottom:24px; padding:18px 20px; background:var(--teal-50,#eaf6fb); border-radius:14px;">
+            <h3 style="font-size:1rem; margin:0 0 10px; color:var(--teal-900);">Pourquoi nous contacter ?</h3>
+            <ul style="font-size:0.88rem; padding-left:18px; margin:0; color:var(--neutral-700); line-height:1.7;">
+              <li>Réponse personnalisée sous 24 heures ouvrées</li>
+              <li>Premier échange gratuit et sans engagement</li>
+              <li>Accompagnement dans le montage du dossier OPCO</li>
+              <li>Devis sur mesure adapté à votre contexte</li>
+            </ul>
           </div>
 
           <h2 style="font-size:1.3rem; margin-bottom:6px;">Nos coordonnées</h2>
@@ -216,7 +235,17 @@
               </div>
               <div>
                 <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Adresse</div>
-                <div style="color:var(--neutral-500); font-size:0.85rem;">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</div>
+                <div style="color:var(--neutral-500); font-size:0.85rem;">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin (Nord-Isère, à 50 min de Lyon)<!-- TODO: adresse exacte à valider client --></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div class="contact-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Téléphone</div>
+                <!-- TODO: numéro de téléphone à compléter par le client -->
+                <span style="font-size:0.85rem; color:var(--neutral-300); font-style:italic;">À communiquer prochainement</span>
               </div>
             </div>
             <div style="display:flex; gap:14px; align-items:flex-start;">
@@ -239,13 +268,13 @@
 
           <!-- DECOUVERTE GRATUITE -->
           <div class="info-box" style="margin-top:28px;">
-            <h3 style="font-size:0.9rem; margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--teal-900);">Découverte gratuite -- Entrepreneuriat</h3>
+            <h3 style="font-size:0.9rem; margin-bottom:6px; font-weight:700; color:var(--teal-900);">Découverte gratuite — Entrepreneuriat</h3>
             <p style="font-weight:400; color:var(--neutral-500);">Vous avez un projet de création ou de reprise d'entreprise ? Bénéficiez d'un rendez-vous découverte gratuit de 30 minutes pour échanger sur votre projet et identifier les accompagnements adaptés. Sélectionnez "Accompagnement entrepreneuriat" dans le formulaire ci-contre.</p>
           </div>
 
           <!-- ACCESSIBILITE -->
           <div class="info-box" style="margin-top:16px;">
-            <h3 style="font-size:0.9rem; margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--teal-900);">Accessibilité</h3>
+            <h3 style="font-size:0.9rem; margin-bottom:6px; font-weight:700; color:var(--teal-900);">Accessibilité</h3>
             <p style="font-weight:400; color:var(--neutral-500);">Nos formations sont accessibles aux personnes en situation de handicap visible et invisible. Nous évaluons individuellement les besoins d'aménagement pour garantir des conditions d'apprentissage adaptées. N'hésitez pas à nous en faire part lors de votre prise de contact.</p>
           </div>
         </div>
@@ -258,44 +287,50 @@
   <section class="section section--alt" style="padding:40px 0;">
     <div class="container">
       <div class="partner-grid">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" style="height:36px;">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2024/02/LOGO-CLEA-MANAGEMENT-150x150.png" alt="CléA Management" style="height:36px;">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2024/11/AFEST-PICTO-1-150x150.png" alt="AFEST" style="height:36px;">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2022/01/actee-150x60.png" alt="ACTEE" style="height:36px;">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" style="height:36px;" width="120" height="60" loading="lazy" decoding="async">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2024/02/LOGO-CLEA-MANAGEMENT-150x150.png" alt="CléA Management" style="height:36px;" width="150" height="60" loading="lazy" decoding="async">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2024/11/AFEST-PICTO-1-150x150.png" alt="AFEST" style="height:36px;" width="150" height="60" loading="lazy" decoding="async">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2022/01/actee-150x60.png" alt="ACTEE" style="height:36px;" width="150" height="60" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Cartesa part en tournée</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -303,7 +338,12 @@
           <h4>Contact</h4>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
-            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin<br><small>(Nord-Isère, à 50 min de Lyon)</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <span style="color:var(--neutral-300); font-style:italic;">Téléphone à venir</span>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
@@ -313,6 +353,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -325,12 +371,53 @@
 
     (function() {
       var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
-          links.classList.toggle('open');
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       }
+
+      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
     })();
 
     // Pre-fill from URL params (formation inscription flow)
@@ -349,23 +436,87 @@
       }
     })();
 
-    // Form submission
+    // Form submission — POST réel vers Formspree
     (function() {
       var form = document.getElementById('contactForm');
       if (!form) return;
+
+      var SUJET_LABELS = {
+        formation: 'Inscription formation',
+        diagnostic: 'Diagnostic RH / RSE',
+        transition: 'DRH ou Partenaire RSE',
+        entrepreneuriat: 'Accompagnement entrepreneuriat',
+        abonnement: 'Approche d\'accompagnement (Respiration, Impulsion, DRH de Transition)',
+        financement: 'Financement OPCO / PCRH',
+        decarbonation: 'RSE & Décarbonation (CO2I)',
+        autre: 'Autre demande'
+      };
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var btn = document.getElementById('submitBtn');
         var txtEl = document.getElementById('submitText');
         var loader = document.getElementById('submitLoader');
         var success = document.getElementById('formSuccess');
+        var errorBox = document.getElementById('formError');
+        var emailField = document.getElementById('email');
+        var sujetField = document.getElementById('sujet');
+        var replyToField = document.getElementById('_replyto');
+        var subjectField = document.getElementById('_subject');
+
+        // Honeypot : si rempli, on simule un succès silencieux (et on n'envoie rien)
+        var gotcha = form.querySelector('input[name="_gotcha"]');
+        if (gotcha && gotcha.value) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          return;
+        }
+
+        // Reply-to + sujet dynamique
+        if (replyToField && emailField) replyToField.value = emailField.value || '';
+        if (subjectField && sujetField) {
+          var label = SUJET_LABELS[sujetField.value] || 'Demande générique';
+          subjectField.value = 'Nouveau contact Cartesa — ' + label;
+        }
+
+        // Reset erreur précédente
+        if (errorBox) {
+          errorBox.style.display = 'none';
+          errorBox.textContent = '';
+        }
         btn.disabled = true;
         txtEl.style.display = 'none';
         loader.style.display = 'inline';
-        setTimeout(function() {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        }, 1200);
+
+        var data = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+            return;
+          }
+          return response.json().then(function(body) {
+            var msg = (body && body.errors && body.errors.length)
+              ? body.errors.map(function(err) { return err.message; }).join(', ')
+              : 'Une erreur est survenue. Vérifiez votre connexion ou réessayez dans quelques minutes.';
+            throw new Error(msg);
+          }).catch(function() {
+            throw new Error('Une erreur est survenue (HTTP ' + response.status + '). Réessayez ou contactez-nous directement à contact@cabinet-cartesa.com.');
+          });
+        }).catch(function(err) {
+          if (errorBox) {
+            errorBox.textContent = err.message || 'Envoi impossible. Contactez-nous directement à contact@cabinet-cartesa.com.';
+            errorBox.style.display = 'block';
+          }
+          btn.disabled = false;
+          txtEl.style.display = 'inline';
+          loader.style.display = 'none';
+        });
       });
     })();
   </script>

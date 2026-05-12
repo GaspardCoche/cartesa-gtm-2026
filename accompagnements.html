@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accompagnements RH & RSE | Accompagnements RH & DRH de transition | CARTESA</title>
+  <meta name="description" content="3 approches d'accompagnement RH et RSE pour PME : Respiration, Impulsion, DRH de Transition. Conseil, coaching, formation et codéveloppement. Cabinet Qualiopi en Isère.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/accompagnements.html">
+  <meta property="og:title" content="Accompagnements RH & RSE | CARTESA Isère">
+  <meta property="og:description" content="Respiration, Impulsion, DRH de Transition : 3 approches d'accompagnement RH, coaching, formation et codéveloppement pour PME. Dès 790 €/mois en Isère.">
+  <meta property="og:url" content="https://cartesa-lyon.com/accompagnements.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Accompagnements CARTESA — Respiration, Impulsion, DRH de Transition">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle Twitter avec le client (placeholder @CartesaRH retiré) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Accompagnements RH & RSE CARTESA",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "description": "3 approches d'accompagnement RH combinant conseil, coaching, formation et codéveloppement. De la session flash au DRH de transition.",
+        "offers": [
+          { "@type": "Offer", "name": "Respiration", "price": "790", "priceCurrency": "EUR", "unitText": "mois" },
+          { "@type": "Offer", "name": "Impulsion", "price": "1490", "priceCurrency": "EUR", "unitText": "mois" },
+          { "@type": "Offer", "name": "DRH de Transition", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "description": "Sur devis selon durée et périmètre de mission" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Accompagnements RH & RSE", "item": "https://cartesa-lyon.com/accompagnements.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+    .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
+    .plan:hover { transform: translateY(-3px); }
+    .plan--respiration { background: var(--white); border: 1px solid rgba(9,41,51,0.06); border-radius: 20px 0 0 20px; box-shadow: 0 4px 24px rgba(9,41,51,0.04); }
+    .plan--respiration:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+    .plan--impulsion { background: var(--teal-600); color: var(--white); z-index: 2; box-shadow: 0 20px 56px rgba(0,93,148,0.35); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--impulsion:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+    .plan--drh { background: var(--teal-900); color: #fff; border-radius: 0 20px 20px 0; box-shadow: 0 4px 24px rgba(9,41,51,0.15); }
+    .plan--drh:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.25); }
+    .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
+    .plan--respiration .plan-level { color: var(--teal-500); }
+    .plan--impulsion .plan-level { color: var(--gold-400); }
+    .plan--drh .plan-level { color: var(--gold-500); opacity: 0.7; }
+    .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .plan--respiration .plan-name { color: var(--teal-900); }
+    .plan--impulsion .plan-name, .plan--drh .plan-name { color: var(--white); }
+    .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
+    .plan--respiration .plan-subtitle { color: var(--neutral-500); }
+    .plan--impulsion .plan-subtitle, .plan--drh .plan-subtitle { color: rgba(255,255,255,0.9); }
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; position: relative; z-index: 1; }
+    .plan-amount { font-family: 'Sora', sans-serif; font-size: 3.4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .plan--respiration .plan-amount { color: var(--teal-900); }
+    .plan--impulsion .plan-amount { color: var(--gold-400); }
+    .plan--drh .plan-amount { color: var(--gold-500); }
+    .plan-currency { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; }
+    .plan-currency small { display: block; font-size: 0.65rem; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+    .plan--respiration .plan-currency { color: var(--neutral-500); }
+    .plan--impulsion .plan-currency, .plan--drh .plan-currency { color: rgba(255,255,255,0.7); }
+    .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
+    .plan--respiration .plan-tagline { color: var(--neutral-400); }
+    .plan--impulsion .plan-tagline, .plan--drh .plan-tagline { color: rgba(255,255,255,0.9); }
+    .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
+    .plan--respiration .plan-format { background: var(--teal-50); color: var(--teal-700); }
+    .plan--impulsion .plan-format { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
+    .plan--drh .plan-format { background: rgba(236,208,52,0.06); color: var(--gold-400); opacity: 0.8; }
+    .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
+    .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
+    .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
+    .plan--respiration .plan-features li::before { background: var(--teal-500); }
+    .plan--respiration .plan-features li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .plan--impulsion .plan-features li::before { background: var(--gold-400); }
+    .plan--impulsion .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan--drh .plan-features li::before { background: var(--gold-500); opacity: 0.7; }
+    .plan--drh .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan-cta { display: inline-block; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.88rem; text-align: center; width: 100%; transition: all 0.3s; text-decoration: none; }
+    .plan--respiration .plan-cta { background: var(--teal-600); color: var(--white); }
+    .plan--respiration .plan-cta:hover { background: var(--teal-700); }
+    .plan--impulsion .plan-cta { background: var(--gold-500); color: var(--teal-900); }
+    .plan--impulsion .plan-cta:hover { background: var(--gold-400); }
+    .plan--drh .plan-cta { background: rgba(236,208,52,0.15); color: var(--gold-400); border: 1px solid rgba(236,208,52,0.3); }
+    .plan--drh .plan-cta:hover { background: rgba(236,208,52,0.25); }
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+      .plan { border-radius: 20px !important; margin: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" decoding="async">
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="active" aria-haspopup="true" aria-expanded="false">Nos services</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html" class="active">Accompagnements RH & RSE</a></li>
+            <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Formations</a>
+          <ul class="nav-sub">
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
+          </ul>
+        </li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="ressourcerie.html">Ressources</a></li>
+        <li><a href="equipe.html">L'équipe</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Accompagnements RH & RSE</span>
+      </nav>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Accompagnements RH & RSE</span>
+      <h1>Un partenaire RH <span style="color: var(--gold-500);">dans la durée</span>, pas un prestataire au coup par coup.</h1>
+      <p>Du point d'appui mensuel au DRH de transition à temps plein : 3 approches qui combinent conseil, coaching, formation et codéveloppement. Un seul interlocuteur qui connaît votre contexte.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>790 &euro;</strong><span>à partir de /mois</span></div>
+        <div class="page-hero-stat"><strong>6</strong><span>consultants associés</span></div>
+        <div class="page-hero-stat"><strong>48h</strong><span>délai d'intervention</span></div>
+      </div>
+      <div style="margin-top:28px;">
+        <a href="#formules" class="btn btn--accent btn--lg">Voir nos approches</a>
+        <a href="contact.html" class="btn btn--outline btn--lg">Échanger avec un consultant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI UN ACCOMPAGNEMENT DANS LA DURÉE -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre approche</span>
+        <h2 class="section-title">Pourquoi un accompagnement plutôt qu'une prestation ponctuelle ?</h2>
+        <p class="section-subtitle">Un coaching ponctuel, c'est utile. Un partenaire qui connaît votre contexte, vos équipes et votre culture, c'est transformateur.</p>
+      </div>
+      <div class="grid-3 reveal-stagger" style="gap:20px; max-width:1000px; margin:0 auto;">
+        <div class="card" style="padding:28px;">
+          <div style="font-size:2rem; font-weight:800; color:var(--teal-600); margin-bottom:12px;">01</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Anticiper plutôt que subir</h3>
+          <p style="font-size:0.84rem;">Les sujets RH traités dans l'urgence coûtent cher. Un rythme régulier permet d'anticiper et d'éviter les crises.</p>
+        </div>
+        <div class="card" style="padding:28px;">
+          <div style="font-size:2rem; font-weight:800; color:var(--teal-600); margin-bottom:12px;">02</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Un interlocuteur qui connaît votre contexte</h3>
+          <p style="font-size:0.84rem;">Pas besoin de réexpliquer votre situation à chaque fois. Votre consultant connaît vos équipes, vos enjeux, votre culture.</p>
+        </div>
+        <div class="card" style="padding:28px;">
+          <div style="font-size:2rem; font-weight:800; color:var(--teal-600); margin-bottom:12px;">03</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Faire progresser durablement</h3>
+          <p style="font-size:0.84rem;">L'accompagnement crée un rythme. Il permet de structurer les RH et d'ancrer les évolutions dans le temps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 DIMENSIONS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">4 leviers, 1 interlocuteur</span>
+        <h2 class="section-title">Conseil, coaching, formation, codéveloppement</h2>
+        <p class="section-subtitle">Nous ne séparons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque approche.</p>
+      </div>
+      <div class="grid-2 reveal-stagger" style="gap:20px; max-width:900px; margin:0 auto;">
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:6px;">Conseil RH</h3>
+          <p style="font-size:0.88rem;">Structurer, décider, sécuriser. Appui sur l'organisation, les compétences, le droit social, les recrutements.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:6px;">Coaching</h3>
+          <p style="font-size:0.88rem;">Faire évoluer les postures. Accompagnement individuel de dirigeants et managers sur leurs enjeux concrets.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:6px;">Formation</h3>
+          <p style="font-size:0.88rem;">Développer les compétences. Ateliers et modules sur mesure, ancrés dans vos situations réelles. Certifié Qualiopi.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:6px;">Codéveloppement</h3>
+          <p style="font-size:0.88rem;">Renforcer l'intelligence collective. Séances de partage et de co-construction entre pairs, animées par un facilitateur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULES -->
+  <section class="section section--white" id="formules">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos approches</span>
+        <h2 class="section-title">3 approches, une même exigence</h2>
+        <p class="section-subtitle">Chaque approche s'adapte à la réalité de votre structure, à sa taille, à ses enjeux et à son actualité.</p>
+      </div>
+      <div class="pricing-grid reveal">
+
+        <!-- RESPIRATION -->
+        <div class="plan plan--respiration">
+          <div class="plan-name">Respiration</div>
+          <div class="plan-subtitle">Sessions flash</div>
+          <div class="plan-price">
+            <span class="plan-amount">790</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Prendre du recul. Retrouver de la clarté. Sécuriser l'essentiel.</div>
+          <div class="plan-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
+          <ul class="plan-features">
+            <li>Point mensuel d'appui RH et managérial</li>
+            <li>Coaching flash sur problématique immédiate</li>
+            <li>Capsule formation sur besoin ciblé</li>
+            <li>Ligne directe avec votre consultant</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Démarrer Respiration</a>
+        </div>
+
+        <!-- IMPULSION -->
+        <div class="plan plan--impulsion">
+          <div class="plan-name">Impulsion</div>
+          <div class="plan-subtitle">Accompagnement structurant</div>
+          <div class="plan-price">
+            <span class="plan-amount">1 490</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Structurer vos pratiques RH. Faire monter vos managers en compétences.</div>
+          <div class="plan-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6 mois</div>
+          <ul class="plan-features">
+            <li>Tout Respiration, plus :</li>
+            <li>Coaching individuel d'un dirigeant ou manager</li>
+            <li>Formation sur mesure (1 module/trimestre)</li>
+            <li>Séance de codéveloppement</li>
+            <li>Audit RH express et plan d'actions</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Démarrer Impulsion</a>
+        </div>
+
+        <!-- DRH DE TRANSITION -->
+        <div class="plan plan--drh">
+          <div class="plan-name">DRH de Transition</div>
+          <div class="plan-subtitle">Immersion opérationnelle</div>
+          <div class="plan-price">
+            <span class="plan-amount">Sur devis</span>
+          </div>
+          <div class="plan-tagline">Un DRH opérationnel dans vos murs. Le temps de structurer, puis de passer la main.</div>
+          <div class="plan-format">1 à 3 jours/semaine &middot; mission de 3 à 18 mois</div>
+          <ul class="plan-features">
+            <li>Présence régulière dans vos locaux</li>
+            <li>Pilotage opérationnel de la fonction RH</li>
+            <li>Gestion des recrutements et des départs</li>
+            <li>Structuration des processus RH</li>
+            <li>Volet RSE et relations sociales</li>
+            <li>Transfert de compétences vers vos équipes</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Échanger sur ma situation</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATIONS D'INTERVENTION -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Quand faire appel à nous</span>
+        <h2 class="section-title">Des situations concrètes, pas des cas d'école</h2>
+      </div>
+      <div class="situations-grid reveal-stagger">
+        <article class="card-situation" data-accent="teal">
+          <span class="card-situation__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11l-4 4-2-2"/></svg>
+          </span>
+          <h3 class="card-situation__title">Départ soudain du DRH</h3>
+          <p class="card-situation__body">Votre DRH part. L'équipe est déstabilisée. Nous intervenons sous 48h pour assurer la continuité opérationnelle.</p>
+          <span class="card-situation__cta">→ DRH de Transition</span>
+        </article>
+        <article class="card-situation" data-accent="teal">
+          <span class="card-situation__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
+          </span>
+          <h3 class="card-situation__title">Croissance rapide, RH en retard</h3>
+          <p class="card-situation__body">Vous passez de 30 à 80 salariés. Les processus artisanaux ne tiennent plus. Il faut structurer sans freiner.</p>
+          <span class="card-situation__cta">→ Impulsion ou DRH de Transition</span>
+        </article>
+        <article class="card-situation" data-accent="gold">
+          <span class="card-situation__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </span>
+          <h3 class="card-situation__title">Pression RSE des donneurs d'ordres</h3>
+          <p class="card-situation__body">Vos clients exigent un bilan carbone, un plan RSE. Vous ne savez pas par où commencer.</p>
+          <span class="card-situation__cta">→ Impulsion + volet RSE</span>
+        </article>
+        <article class="card-situation" data-accent="gold">
+          <span class="card-situation__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span>
+          <h3 class="card-situation__title">Managers débordés, turnover qui monte</h3>
+          <p class="card-situation__body">Vos managers font de leur mieux mais manquent d'outils et de recul. Le turnover grimpe.</p>
+          <span class="card-situation__cta">→ Respiration ou Impulsion</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Questions fréquentes</span>
+        <h2 class="section-title">Vos questions</h2>
+      </div>
+      <div class="faq-list reveal" style="max-width:800px; margin:0 auto;">
+        <details class="faq-item">
+          <summary>Quelle est la différence entre Respiration et Impulsion ?</summary>
+          <p>Respiration est un point d'appui mensuel (~3h) : coaching flash, conseil ponctuel, capsule formation. Impulsion est un accompagnement structurant (~6h/mois) avec coaching individuel, formation sur mesure et codéveloppement. Respiration pour prendre du recul, Impulsion pour transformer.</p>
+        </details>
+        <details class="faq-item">
+          <summary>En quoi DRH de Transition diffère d'un recrutement de DRH ?</summary>
+          <p>Un DRH de transition est opérationnel immédiatement, avec une expertise transversale. L'objectif est de structurer la fonction RH et de transférer les compétences à vos équipes. Pas de période d'intégration, pas de CDI — une mission ciblée avec un objectif d'autonomie.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Ces approches sont-elles finançables ?</summary>
+          <p>Le volet formation de chaque approche peut être pris en charge par votre OPCO (nous sommes certifiés Qualiopi). Le volet conseil et coaching est à la charge de l'entreprise. Nous vous aidons à <a href="ingenierie.html#financement">optimiser la répartition et le montage du dossier</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Peut-on changer d'approche en cours de route ?</summary>
+          <p>Oui. Beaucoup de nos clients commencent par Respiration et passent à Impulsion quand les enjeux se précisent. L'inverse arrive aussi : après une mission DRH de Transition, certains basculent sur Respiration pour garder un lien dans la durée.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Pour aller plus loin</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:24px;">
+        <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Diagnostic & Expertise</h3>
+            <p>Commencer par un état des lieux avant de s'engager dans un accompagnement.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="formations.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Formations certifiées</h3>
+            <p>Management, droit social, recrutement — formez vos équipes en complément.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="ingenierie.html#financement" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Financement OPCO</h3>
+            <p>Découvrir les dispositifs PCRH, FNE, plan de développement pour financer votre accompagnement.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal">
+    <div class="container" style="text-align:center; max-width:700px;">
+      <h2 class="section-title" style="color:#fff;">Parlons de votre situation</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Premier échange de 30 minutes, gratuit et sans engagement. On écoute, on oriente, on ne vend rien.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">Échanger avec un consultant</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Nos services</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
+            <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressourcerie.html">Ressources</a></li>
+            <li><a href="equipe.html">L'équipe</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin<br><small>(Nord-Isère, à 50 min de Lyon)</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <span>Compétences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+  </script>
+</body>
+</html>
