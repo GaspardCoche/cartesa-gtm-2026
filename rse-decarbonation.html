@@ -17,8 +17,7 @@
   <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
   <meta property="og:image:alt" content="Diagnostic CO2I et accompagnement décarbonation par CARTESA">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
-  <meta name="twitter:site" content="@CartesaRH">
+  <!-- TODO: vérifier handle Twitter avec le client (placeholder @CartesaRH retiré) -->
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,20 +69,19 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="active">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
-            <li><a href="rse-decarbonation.html" class="active">RSE & Décarbonation</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
+            <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Formations</a></li>
-        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
@@ -100,9 +98,14 @@
   <section class="page-hero page-hero--enhanced">
     <div class="hero-bg-pattern"></div>
     <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">RSE & Décarbonation</span>
+      </nav>
       <span class="section-label" style="color:rgba(255,255,255,0.9);">RSE & Décarbonation</span>
       <h1>Décarbonez votre industrie. <span style="color: var(--gold-500);">100% financé.</span></h1>
-      <p>CARTESA est référencé OPCO2i pour déployer le diagnostic et l'accompagnement CO2I sur l'Isère, la Drôme et l'Ardèche. Bilan carbone, plan d'actions, montée en compétences -- sans reste à charge.</p>
+      <p>CARTESA est référencé OPCO2i pour déployer le diagnostic et l'accompagnement CO2I sur l'Isère, la Drôme et l'Ardèche. Bilan carbone, plan d'actions, montée en compétences —sans reste à charge.</p>
       <div class="page-hero-stats">
         <div class="page-hero-stat"><strong>0 &euro;</strong><span>reste à charge</span></div>
         <div class="page-hero-stat"><strong>15j</strong><span>d'accompagnement/an</span></div>
@@ -192,7 +195,7 @@
         </div>
         <div class="card" style="padding:28px;">
           <h3 style="margin-bottom:12px;">Volet compétences et formation</h3>
-          <p>Identification des compétences à développer pour mener la transition. Plan de formation associé, <a href="financement.html">finançable via OPCO2i</a>. On ne vous dit pas juste "il faut changer" -- on forme vos équipes.</p>
+          <p>Identification des compétences à développer pour mener la transition. Plan de formation associé, <a href="ingenierie.html#financement">finançable via OPCO2i</a>. On ne vous dit pas juste "il faut changer" —on forme vos équipes.</p>
         </div>
         <div class="card" style="padding:28px;">
           <h3 style="margin-bottom:12px;">Feuille de route stratégique</h3>
@@ -214,13 +217,13 @@
       <div class="grid-2 reveal-stagger" style="gap:24px; max-width:800px; margin:0 auto;">
         <div class="card team-card" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);">
           <div class="avatar" style="background:var(--teal-400); color:var(--teal-900);">RH</div>
-          <h3 style="color:var(--white);">Expert -- Compétences & Formation</h3>
+          <h3 style="color:var(--white);">Expert —Compétences & Formation</h3>
           <div class="role" style="color:rgba(255,255,255,0.9);">Consultant RH</div>
           <p style="color:rgba(255,255,255,0.92);">Volet compétences de la transition : cartographie des métiers impactés, plans de formation, accompagnement au changement. 15+ ans d'expérience en industrie.</p>
         </div>
         <div class="card team-card" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);">
           <div class="avatar" style="background:var(--teal-400); color:var(--teal-900);">RH</div>
-          <h3 style="color:var(--white);">Expert -- Management & Transformation</h3>
+          <h3 style="color:var(--white);">Expert —Management & Transformation</h3>
           <div class="role" style="color:rgba(255,255,255,0.9);">Consultant RH</div>
           <p style="color:rgba(255,255,255,0.92);">Conduite du changement, formation des managers à la transition, ingénierie pédagogique AFEST. Certifié CleA Management.</p>
         </div>
@@ -361,7 +364,7 @@
         </details>
         <details class="faq-item">
           <summary>Combien de temps dure l'accompagnement ?</summary>
-          <p>Le diagnostic express se fait en 3 jours. L'accompagnement complet peut aller jusqu'à 15 jours par an. La durée est adaptée à vos enjeux -- pas de format rigide.</p>
+          <p>Le diagnostic express se fait en 3 jours. L'accompagnement complet peut aller jusqu'à 15 jours par an. La durée est adaptée à vos enjeux —pas de format rigide.</p>
         </details>
         <details class="faq-item">
           <summary>Mon entreprise a plus de 250 salariés. Puis-je en bénéficier ?</summary>
@@ -375,6 +378,35 @@
           <summary>Est-ce cumulable avec d'autres dispositifs ?</summary>
           <p>Oui. Le CO2I est cumulable avec le Diag Decarbon'Action (Bpifrance/ADEME) si votre entreprise est éligible aux deux. Il est aussi compatible avec les aides régionales Auvergne-Rhône-Alpes et les dispositifs ADEME.</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Accompagnements RH & RSE</h3>
+            <p>Intégrer la RSE dans un accompagnement RH global de votre structure.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="ingenierie.html#financement" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Financement OPCO</h3>
+            <p>Comprendre les dispositifs CO2I, PCRH et plan de développement des compétences.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="formations.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Formations RSE</h3>
+            <p>Sensibilisation RSE, serious games ACTEE, formation managers.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -396,7 +428,6 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Accompagnement des entreprises dans le développement des compétences et la transition écologique depuis 2003.</p>
           <div class="footer-qualiopi">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi au titre des actions de formation</span>
@@ -405,22 +436,27 @@
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
             <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -431,22 +467,23 @@
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+33474000000">+33 4 74 00 00 00</a><!-- TODO: numéro exact à valider client -->
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <a href="contact.html">Nous contacter</a>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Suivez-nous</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
-          </ul>
-        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -459,6 +496,27 @@
     // Mobile nav
     (function() {
       var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {

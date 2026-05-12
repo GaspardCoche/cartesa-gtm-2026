@@ -101,22 +101,22 @@
         <li><a href="index.html">Accueil</a></li>
         <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
         </li>
-        <li><a href="formations.html">Formations</a></li>
-        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">On vous aide</a>
+        <li class="nav-dropdown"><a href="formations.html">Formations</a>
           <ul class="nav-sub">
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </li>
         <li><a href="temoignages.html">Témoignages</a></li>
         <li><a href="ressourcerie.html">Ressources</a></li>
-        <li><a href="equipe.html" class="active">L'équipe</a></li>
+        <li><a href="equipe.html">L'équipe</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -124,29 +124,37 @@
 
   <main>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="padding-top:120px; padding-bottom:64px;">
-    <div class="container" style="text-align:center; max-width:780px;">
-      <span class="reveal" style="display:inline-block; font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-400,#f0cc3a); margin-bottom:14px;">L'équipe</span>
-      <h1 class="reveal" style="font-size:clamp(2rem,4.5vw,3rem); font-weight:800; line-height:1.15; margin-bottom:18px; color:#fff;">
-        6 experts. 3 pôles. Plus de 20 ans de terrain.
-      </h1>
-      <p class="reveal" style="font-size:1.05rem; color:rgba(255,255,255,0.92); max-width:600px; margin:0 auto;">
-        Diagnostic opérationnel, DRH & Partenaire RSE, formules d'accompagnement : chaque pôle mobilise des experts dédiés pour répondre à vos enjeux spécifiques.
-      </p>
-    </div>
-  </section>
-
-  <!-- TEAM GROUP PHOTO -->
-  <section class="section section--white" style="padding-top:0; padding-bottom:0;">
-    <div class="container" style="text-align:center;">
-      <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA" class="reveal" style="max-width:600px; border-radius:14px;" width="800" height="702" fetchpriority="high" decoding="async">
-      <p class="reveal" style="font-size:0.85rem; color:var(--neutral-500,#6b7280); margin-top:14px;">Compétences, Entreprises & Territoires — depuis 2003</p>
+  <!-- PAGE HERO — split image dans le hero pour rythmer la page -->
+  <section class="page-hero page-hero--split" style="padding-top:48px; padding-bottom:40px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">L'équipe</span>
+      </nav>
+      <div class="hero-split" style="gap:32px; align-items:center;">
+        <div class="hero-text hero-text-reveal">
+          <span class="section-label" style="color:var(--gold-400,#f0cc3a); margin-bottom:8px;">L'équipe</span>
+          <h1 style="font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:800; line-height:1.18; margin-bottom:12px; color:#fff;">
+            6 experts. 3 pôles. Plus de 20 ans de terrain.
+          </h1>
+          <p style="font-size:0.96rem; color:rgba(255,255,255,0.92); max-width:520px; margin-bottom:18px;">
+            Diagnostic opérationnel, DRH & Partenaire RSE, accompagnement RH : chaque pôle mobilise des experts dédiés à vos enjeux.
+          </p>
+          <div class="hero-actions">
+            <a href="#pole-diagnostic" class="btn btn--accent">Découvrir les pôles</a>
+            <a href="contact.html" class="btn btn--outline">Échanger avec l'équipe</a>
+          </div>
+        </div>
+        <div class="hero-visual" style="max-width:360px;">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async" style="border-radius:14px; max-height:240px; object-fit:cover; width:100%; display:block;">
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- POLE DIAGNOSTIC & ACCOMPAGNEMENT -->
-  <div class="pole-section pole-section--rh" style="padding-top:56px;">
+  <div class="pole-section pole-section--rh" id="pole-diagnostic" style="padding-top:56px;">
     <div class="container">
       <div class="pole-header reveal-left" style="--delay:0s;">
         <span class="pole-label pole-label--rh">Pôle Diagnostic & Accompagnement</span>
@@ -223,7 +231,7 @@
       <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Équipe dédiée au diagnostic CO2I (OPCO2i) et à l'accompagnement décarbonation. Intervient en Isère (38), Drôme (26) et Ardèche (07).</p>
       <!-- TODO: ajouter vrais profils Experts RSE & Environnement quand recrutement / partenariats finalisés -->
       <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:680px; margin-bottom:24px; font-size:0.92rem; font-style:italic;">Le volet RH & compétences du diagnostic CO2I est piloté par Catherine Lenoir (cf. pôle Diagnostic ci-dessus). Les volets bilan carbone, stratégie bas-carbone et éco-conception sont confiés à nos partenaires experts industriels.</p>
-      <div class="grid-2 reveal-stagger" style="gap:24px;">
+      <div class="reveal-stagger" style="max-width:480px;">
         <div class="team-card-v2">
           <div class="avatar-circle avatar-circle--teal">CJ</div>
           <h3>Christine Jalbart</h3>
@@ -244,7 +252,7 @@
       <div class="pole-header reveal-left" style="--delay:0s;">
         <span class="pole-label pole-label--transition">Pôle DRH & Partenaire RSE</span>
         <h2>DRH opérationnels sous 48h</h2>
-        <span class="pole-count">6 experts</span>
+        <span class="pole-count">4 experts</span>
       </div>
       <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:640px; margin-bottom:28px; font-size:0.92rem;">Nos DRH de transition interviennent en mission (3-18 mois) ou en temps partagé (reconductible). Chacun apporte une spécialité complémentaire.</p>
       <p class="reveal" style="color:var(--neutral-600,#4b5563); max-width:680px; margin-bottom:24px; font-size:0.92rem; font-style:italic;">Tous nos consultants associés interviennent en mission de DRH de transition. Retrouvez leurs profils complets dans le pôle Diagnostic & Accompagnement. Les missions sont orientées en fonction de la spécialité requise :</p>
@@ -363,7 +371,7 @@
       <div class="section-header reveal">
         <span class="section-label">Nos références</span>
         <h2 class="section-title">Les secteurs que nous accompagnons</h2>
-        <p class="section-subtitle">Plus de 500 entreprises accompagnées dans des secteurs varies, principalement des PME et ETI.</p>
+        <p class="section-subtitle">Des centaines de missions réalisées dans des secteurs variés depuis 2003, principalement des PME et ETI.</p>
       </div>
       <div class="grid-3 reveal-stagger" style="gap:16px;">
         <div class="card" style="padding:20px; text-align:center;">
@@ -394,6 +402,35 @@
     </div>
   </section>
 
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Accompagnements RH & RSE</h3>
+            <p>Les approches dans lesquelles notre équipe intervient au quotidien.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Nos expertises</h3>
+            <p>Les 7 domaines d'intervention de nos consultants.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="temoignages.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Témoignages</h3>
+            <p>Ce que disent les dirigeants que nous avons accompagnés.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--teal" style="padding:56px 0;">
     <div class="container" style="text-align:center;">
@@ -411,7 +448,6 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
-          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Accompagnement des entreprises depuis 2003.</p>
           <div class="footer-qualiopi">
             <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi</span>
@@ -420,22 +456,27 @@
         <div class="footer-col">
           <h4>Nos services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic opérationnel</a></li>
-            <li><a href="rh-transition.html">DRH & Partenaire RSE</a></li>
-            <li><a href="pass-rh.html">Nos abonnements</a></li>
+            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
+            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
-            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Formations</h4>
+          <ul>
+            <li><a href="formations.html#certifiantes">Certifiantes</a></li>
+            <li><a href="formations.html#sur-mesure">Sur mesure</a></li>
+            <li><a href="formations.html#catalogue">Catalogue 2026</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>CARTESA</h4>
           <ul>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
             <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -446,22 +487,23 @@
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+33474000000">+33 4 74 00 00 00</a><!-- TODO: numéro exact à valider client -->
+            <!-- TODO: numéro de téléphone à compléter par le client -->
+            <span style="color:var(--neutral-300); font-style:italic;">Téléphone à venir</span>
           </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
             <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Suivez-nous</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener">LinkedIn</a></li><!-- TODO: URL LinkedIn à valider client -->
-          </ul>
-        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
         <span>Compétences, Entreprises & Territoires</span>
       </div>
     </div>
@@ -471,6 +513,27 @@
     window.addEventListener('scroll', function() { document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10); });
     (function() {
       var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
       var links = document.querySelector('.nav-links');
       if (toggle && links) {
         toggle.addEventListener('click', function() {
