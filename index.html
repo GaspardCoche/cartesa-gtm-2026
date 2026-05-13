@@ -25,10 +25,9 @@
   <meta name="geo.placename" content="La Tour-du-Pin">
   <meta name="geo.position" content="45.5628;5.4437">
   <meta name="ICBM" content="45.5628, 5.4437">
-  <link rel="preload" as="image" href="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/cartesa-team.jpg" fetchpriority="high">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -43,7 +42,7 @@
         "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi. Management, droit social, recrutement, RSE.",
         "url": "https://cartesa-lyon.com",
         "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
-        "image": "https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png",
+        "image": "assets/img/cartesa-team.jpg",
         "email": "contact@cabinet-cartesa.com",
         "foundingDate": "2003",
         "address": {
@@ -172,7 +171,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async">
           <div class="hero-badge">
             <span class="hero-badge-number">Finançable</span>
             <span class="hero-badge-text">via OPCO</span>
@@ -187,7 +186,7 @@
     <div class="container">
       <div class="proof-band-inner">
         <div class="proof-item reveal" style="--delay: 0s;">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" class="proof-logo" width="120" height="60" loading="lazy" decoding="async">
+          <img src="assets/img/qualiopi.jpg" alt="Qualiopi" class="proof-logo" width="120" height="60" loading="lazy" decoding="async">
           <div>
             <strong>Certifié Qualiopi</strong>
             <span>Qualité reconnue par l'État</span>
@@ -454,7 +453,7 @@
       </div>
       <div class="cert-grid reveal-stagger">
         <div class="cert-card reveal" style="--delay: 0s;">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Certification Qualiopi organisme de formation" width="120" height="60" loading="lazy" decoding="async">
+          <img src="assets/img/qualiopi.jpg" alt="Certification Qualiopi organisme de formation" width="120" height="60" loading="lazy" decoding="async">
           <h4>Qualiopi</h4>
           <p>Certification nationale qualité délivrée par un organisme accréditeur. Obligatoire pour le financement public. Audit de renouvellement réussi.</p>
         </div>
@@ -645,6 +644,52 @@
     </style>
   </section>
 
+  <!-- Schema.org Event + VideoObject pour les webinars -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        "name": "Entretiens pro 2026 : éviter la sanction OPCO de 3 000 €",
+        "description": "Catherine Lenoir décrypte la nouvelle réglementation et partage 5 erreurs à éviter avant l'audit. Q&A live.",
+        "startDate": "2026-06-05T11:00:00+02:00",
+        "endDate": "2026-06-05T11:45:00+02:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": { "@type": "VirtualLocation", "url": "https://cartesa-lyon.com/contact.html?webinar=entretiens-pro-2026" },
+        "organizer": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com/" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://cartesa-lyon.com/contact.html?webinar=entretiens-pro-2026", "validFrom": "2026-05-13" },
+        "performer": { "@type": "Person", "name": "Catherine Lenoir" },
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Décarbonation industrielle : comment OPCO2i finance à 100%",
+        "description": "Étapes du diagnostic CO2I, illustrées par 2 cas réels de PME industrielles en Isère.",
+        "uploadDate": "2026-03-15",
+        "duration": "PT38M",
+        "thumbnailUrl": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800",
+        "contentUrl": "https://cartesa-lyon.com/contact.html?webinar=co2i-decarbonation",
+        "publisher": { "@type": "Organization", "name": "CARTESA", "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "DRH de transition : 5 cas où il faut faire appel à un externe",
+        "description": "Quand basculer ? Combien ça coûte ? Retours d'expérience de 3 dirigeants accompagnés.",
+        "uploadDate": "2026-02-12",
+        "duration": "PT52M",
+        "thumbnailUrl": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800",
+        "contentUrl": "https://cartesa-lyon.com/contact.html?webinar=drh-transition",
+        "publisher": { "@type": "Organization", "name": "CARTESA", "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+
   <!-- WEBINARS & ÉVÉNEMENTS -->
   <section class="section section--white" id="webinars">
     <div class="container">
@@ -801,7 +846,7 @@
         <div class="footer-brand">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <img src="assets/img/qualiopi.jpg" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
@@ -829,6 +874,9 @@
             <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1144,5 +1192,6 @@
 
   </script>
 
+  <script src="assets/cookie-banner.js" defer></script>
 </body>
 </html>

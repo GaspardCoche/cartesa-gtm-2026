@@ -21,10 +21,9 @@
   <meta name="twitter:site" content="@CartesaRH">
   <meta name="geo.region" content="FR-38">
   <meta name="geo.placename" content="La Tour-du-Pin">
-  <link rel="preload" as="image" href="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/cartesa-team.jpg" fetchpriority="high">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
   <style>
     .pole-label { display:inline-block; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; padding:4px 14px; border-radius:20px; margin-bottom:8px; }
@@ -147,7 +146,7 @@
           </div>
         </div>
         <div class="hero-visual" style="max-width:360px;">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async" style="border-radius:14px; max-height:240px; object-fit:cover; width:100%; display:block;">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async" style="border-radius:14px; max-height:240px; object-fit:cover; width:100%; display:block;">
         </div>
       </div>
     </div>
@@ -449,7 +448,7 @@
         <div class="footer-brand">
           <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async">
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <img src="assets/img/qualiopi.jpg" alt="Qualiopi" width="120" height="60" loading="lazy" decoding="async">
             <span>Certifié Qualiopi</span>
           </div>
         </div>
@@ -477,6 +476,9 @@
             <li><a href="ressourcerie.html">Ressources</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -564,5 +566,6 @@
     document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
   </script>
 
+  <script src="assets/cookie-banner.js" defer></script>
 </body>
 </html>
