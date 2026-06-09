@@ -375,9 +375,11 @@
     .h-scroll-header {
       padding: 56px 5vw 0;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
     }
     .h-scroll-header .eyebrow {
       font-size: 0.78rem;
@@ -517,7 +519,7 @@
         height: auto;
         padding: 56px 0 72px;
       }
-      .h-scroll-header { padding: 0 24px 32px; flex-direction: column; align-items: flex-start; }
+      .h-scroll-header { padding: 0 24px 32px; flex-direction: column; align-items: center; text-align: center; }
       .h-scroll-progress { display: none; }
       .h-scroll-track { padding: 0; flex-direction: column; }
       .h-scroll-inner { flex-direction: column; gap: 32px; padding: 0 24px; }
@@ -628,7 +630,7 @@
        TÉMOIGNAGE VIDÉO — Galerie 7 épisodes (Stéphane Fournier)
        ============================================================ */
     .vtestim { padding: 72px 0 64px; background: linear-gradient(180deg, #fff 0%, var(--teal-50) 100%); }
-    .vtestim__head { max-width: 760px; margin-bottom: 8px; }
+    .vtestim__head { max-width: 760px; margin: 0 auto 8px; text-align: center; }
     .vtestim__eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
       font-size: 0.74rem; font-weight: 600; text-transform: uppercase;
@@ -641,7 +643,7 @@
     /* Bandeau intervenant */
     .vt-speaker {
       display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-      margin: 26px 0 38px; padding: 16px 22px;
+      margin: 26px auto 38px; padding: 16px 22px;
       background: #fff; border: 1px solid var(--neutral-200);
       border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); width: fit-content;
     }
@@ -795,7 +797,7 @@
         <span class="breadcrumb__sep">/</span>
         <span class="breadcrumb__current">Témoignages</span>
       </nav>
-      <span class="hero-eyebrow">Ils nous font confiance</span>
+      <span class="hero-eyebrow">Paroles de dirigeants</span>
       <h1 class="hero-title" id="heroTitle">
         <span class="word" style="animation-delay:0.05s">Des</span>
         <span class="word" style="animation-delay:0.12s">histoires</span>
@@ -1046,16 +1048,6 @@
            Action client : remplacer nom, entreprise, citation et photo
            par un vrai retour client signé avant publication.
            ═════════════════════════════════════════════════════════════ -->
-      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
-        <span class="tag">Diagnostic RH</span>
-        <div class="quote-mark">&ldquo;</div>
-        <blockquote>CARTESA a su comprendre nos enjeux très rapidement. En 3 mois, nos entretiens professionnels étaient structurés et nos managers formés. Le financement OPCO a rendu l'opération transparente pour nous.</blockquote>
-        <div class="meta">
-          <strong>Sophie Martin — DRH, Métallurgies du Dauphiné</strong>
-          <span>PME industrielle (120 salariés) · Isère</span>
-        </div>
-      </article>
-
       <article class="carousel-card">
         <span class="tag">RH à temps partagé</span>
         <div class="quote-mark">&ldquo;</div>
@@ -1074,16 +1066,6 @@
            Action client : remplacer nom, entreprise, citation et photo
            par un vrai retour client signé avant publication.
            ═════════════════════════════════════════════════════════════ -->
-      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
-        <span class="tag">RSE & Décarbonation</span>
-        <div class="quote-mark">&ldquo;</div>
-        <blockquote>Le diagnostic CO2I a été une révélation. On pensait que la décarbonation était hors budget pour une boîte de notre taille. Avec CARTESA et OPCO2i, tout a été financé. On a maintenant une feuille de route claire sur 3 ans.</blockquote>
-        <div class="meta">
-          <strong>Laurent Bernard — Dirigeant, Mécanique Drômoise</strong>
-          <span>Industrie mécanique (85 salariés) · Drôme</span>
-        </div>
-      </article>
-
       <article class="carousel-card">
         <span class="tag">Impulsion</span>
         <div class="quote-mark">&ldquo;</div>
@@ -1113,16 +1095,6 @@
            Action client : remplacer nom, entreprise, citation et photo
            par un vrai retour client signé avant publication.
            ═════════════════════════════════════════════════════════════ -->
-      <article class="carousel-card" data-testimonial-status="fictif-a-remplacer">
-        <span class="tag">Fusion & dialogue social</span>
-        <div class="quote-mark">&ldquo;</div>
-        <blockquote>Catherine et son équipe ont géré notre fusion avec une précision chirurgicale. Harmonisation des statuts, dialogue social, communication interne — tout a été anticipé. Pas un seul départ subi.</blockquote>
-        <div class="meta">
-          <strong>Marc Faure — DAF, Groupe Alpina Distribution</strong>
-          <span>Groupe multi-sites (350 salariés) · AuRA</span>
-        </div>
-      </article>
-
       <article class="carousel-card">
         <span class="tag">Plan de développement</span>
         <div class="quote-mark">&ldquo;</div>
@@ -1184,7 +1156,7 @@
               <div class="reportage-content">
                 <span class="tag">RSE & Décarbonation</span>
                 <h3>Diagnostic CO2I dans une fonderie dromoise.</h3>
-                <p class="summary">Une fonderie souhaitait initier sa démarche bas-carbone sans savoir par où commencer. En 3 jours de diagnostic express financé à 100 %, nos experts ont cartographié les postes d'émission, identifié 3 leviers de réduction rapide, et co-construit un plan d'actions sur 18 mois avec le CODIR.</p>
+                <p class="summary">Une fonderie souhaitait initier sa démarche bas-carbone sans savoir par où commencer. En 3 jours de diagnostic express co-finançable, nos experts ont cartographié les postes d'émission, identifié 3 leviers de réduction rapide, et co-construit un plan d'actions sur 18 mois avec le CODIR.</p>
                 <div class="result">
                   <strong>Résultat</strong>
                   -12 % d'émissions estimées sur la première année, avec un volet compétences pour former les opérateurs aux éco-gestes industriels.
@@ -1216,7 +1188,7 @@
               <div class="reportage-content">
                 <span class="tag">Formation AFEST</span>
                 <h3>AFEST management de proximité sur 3 sites.</h3>
-                <p class="summary">Un groupe agroalimentaire ardéchois voulait professionnaliser ses 15 chefs d'équipe répartis sur 3 sites. CARTESA a déployé un parcours AFEST sur 4 mois, avec mises en situation terrain et accompagnement individuel. Formation financée à 100 % par OPCO.</p>
+                <p class="summary">Un groupe agroalimentaire ardéchois voulait professionnaliser ses 15 chefs d'équipe répartis sur 3 sites. CARTESA a déployé un parcours AFEST sur 4 mois, avec mises en situation terrain et accompagnement individuel. Formation co-finançable (OPCO ou Région).</p>
                 <div class="result">
                   <strong>Résultat</strong>
                   Turnover réduit de 22 % à 9 % sur les équipes concernées. NPS interne passé de 32 à 61.
@@ -1245,8 +1217,8 @@
         </div>
         <div class="approach-card reveal">
           <div class="num">02 — FINANCEMENT</div>
-          <h3>OPCO mobilisé jusqu'à 100 %</h3>
-          <p>Maîtrise complète des dispositifs OPCO, OPCO2i, FNE. Sur 80 % de nos missions, le client n'avance aucun frais. Le reste à charge est connu d'avance.</p>
+          <h3>Financement maîtrisé</h3>
+          <p>Maîtrise des dispositifs (OPCO, Région, FNE). Nous vous orientons vers le bon financement et vous accompagnons dans le montage du dossier. Le reste à charge éventuel est connu d'avance.</p>
         </div>
         <div class="approach-card reveal">
           <div class="num">03 — TERRAIN</div>
