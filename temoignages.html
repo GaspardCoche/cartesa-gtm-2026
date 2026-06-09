@@ -623,6 +623,109 @@
       .hero-title .word { animation: none; opacity: 1; transform: none; }
       .reveal { opacity: 1; transform: none; }
     }
+
+    /* ============================================================
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes (Stéphane Fournier)
+       ============================================================ */
+    .vtestim { padding: 72px 0 64px; background: linear-gradient(180deg, #fff 0%, var(--teal-50) 100%); }
+    .vtestim__head { max-width: 760px; margin-bottom: 8px; }
+    .vtestim__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.74rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--teal-600); margin-bottom: 14px;
+    }
+    .vtestim__eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--gold-500); }
+    .vtestim__head h2 { margin: 0 0 14px; }
+    .vtestim__head p { color: var(--neutral-700); font-size: 1.05rem; margin: 0; }
+
+    /* Bandeau intervenant */
+    .vt-speaker {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin: 26px 0 38px; padding: 16px 22px;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); width: fit-content;
+    }
+    .vt-speaker img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; flex: none; }
+    .vt-speaker__name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--neutral-900); font-size: 1.05rem; }
+    .vt-speaker__role { color: var(--neutral-500); font-size: 0.9rem; }
+    .vt-speaker__sector { color: var(--teal-700); font-size: 0.82rem; font-weight: 600; margin-top: 2px; }
+
+    /* Grille des épisodes */
+    .vtestim-grid {
+      display: grid; gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .vt-card {
+      display: flex; flex-direction: column; text-align: left;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-md); overflow: hidden; cursor: pointer;
+      padding: 0; font: inherit; color: inherit; width: 100%;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .vt-card:hover, .vt-card:focus-visible {
+      transform: translateY(-4px); box-shadow: var(--shadow-lg);
+      border-color: var(--teal-400); outline: none;
+    }
+    .vt-card__media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--teal-900); }
+    .vt-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .vt-card:hover .vt-card__media img { transform: scale(1.05); }
+    .vt-card__media::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(9,41,51,0) 40%, rgba(9,41,51,0.55) 100%);
+    }
+    .vt-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); display: grid; place-items: center;
+      z-index: 2; transition: transform 0.3s ease, background 0.3s ease; box-shadow: var(--shadow-md);
+    }
+    .vt-card:hover .vt-play { transform: translate(-50%,-50%) scale(1.08); background: var(--gold-500); }
+    .vt-play svg { width: 22px; height: 22px; margin-left: 3px; fill: var(--teal-900); }
+    .vt-badge {
+      position: absolute; bottom: 10px; right: 10px; z-index: 2;
+      background: rgba(9,41,51,0.78); color: #fff; font-size: 0.72rem; font-weight: 600;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.02em;
+    }
+    .vt-chapter {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+      width: 26px; height: 26px; border-radius: 50%; background: var(--gold-500);
+      color: var(--teal-900); font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.82rem;
+      display: grid; place-items: center;
+    }
+    .vt-card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+    .vt-card__q {
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--teal-600);
+    }
+    .vt-card__title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.08rem; color: var(--neutral-900); line-height: 1.25; }
+    .vt-card__excerpt { color: var(--neutral-700); font-size: 0.92rem; line-height: 1.6; }
+
+    /* Lightbox */
+    .vt-modal {
+      position: fixed; inset: 0; z-index: 1000; display: none;
+      align-items: center; justify-content: center; padding: 24px;
+      background: rgba(9,41,51,0.82); backdrop-filter: blur(4px);
+    }
+    .vt-modal.open { display: flex; }
+    .vt-modal__inner { width: min(900px, 100%); }
+    .vt-modal__frame { position: relative; background: #000; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-xl); }
+    .vt-modal__frame video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #000; }
+    .vt-modal__cap { color: #fff; margin-top: 14px; }
+    .vt-modal__cap strong { font-family: 'Sora', sans-serif; display: block; font-size: 1.05rem; }
+    .vt-modal__cap span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    .vt-modal__close {
+      position: absolute; top: -46px; right: 0; width: 38px; height: 38px;
+      border-radius: 50%; background: rgba(255,255,255,0.15); border: none; cursor: pointer;
+      color: #fff; font-size: 1.4rem; line-height: 1; display: grid; place-items: center;
+      transition: background 0.2s ease;
+    }
+    .vt-modal__close:hover { background: rgba(255,255,255,0.3); }
+    .vt-note { margin-top: 30px; font-size: 0.82rem; color: var(--neutral-500); }
+
+    @media (max-width: 560px) {
+      .vtestim-grid { grid-template-columns: 1fr; }
+      .vt-modal__close { top: 8px; right: 8px; background: rgba(9,41,51,0.5); }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -659,10 +762,10 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Nos services</a>
+        <li class="nav-dropdown"><a href="#" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
-            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
+            <li><a href="expertises.html">Diagnostic & expertise RH</a></li>
+            <li><a href="accompagnements.html">À vos côtés</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
             <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
@@ -726,32 +829,203 @@
     </div>
   </section>
 
+  <!-- ═════════════════════════════════════════════════════════════
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes
+       Série "CARTESA vu par ceux qui l'ont vécu" — Stéphane Fournier (Président, Groupe Syrah).
+       Vidéos : actuellement servies en local depuis assets/temoignages/video/ (interim).
+       ⚠️ À LA MIGRATION WORDPRESS : uploader les 7 .mp4 dans la médiathèque WP
+          et remplacer les chemins data-video="assets/temoignages/video/epN.mp4"
+          par les URL WP correspondantes (ou un embed). Posters et textes restent valables.
+       ═════════════════════════════════════════════════════════════ -->
+  <section class="vtestim" aria-labelledby="vtestimTitle">
+    <div class="container">
+      <div class="vtestim__head reveal">
+        <span class="vtestim__eyebrow">Témoignage vidéo</span>
+        <h2 id="vtestimTitle">Un dirigeant raconte, en 7 chapitres</h2>
+        <p>De la problématique initiale au message qu'il adresse aux autres dirigeants&nbsp;: le parcours d'accompagnement d'un groupe industriel, sans filtre, par celui qui l'a vécu.</p>
+      </div>
+
+      <div class="vt-speaker reveal">
+        <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="Portrait de Stéphane Fournier" width="60" height="60" loading="lazy">
+        <div>
+          <div class="vt-speaker__name">Stéphane Fournier</div>
+          <div class="vt-speaker__role">Président · Groupe Syrah</div>
+          <div class="vt-speaker__sector">Mécanique de haute précision · Plusieurs sociétés</div>
+        </div>
+      </div>
+
+      <div class="vtestim-grid reveal" id="vtestimGrid">
+        <!-- ép. 1 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep1.mp4"
+          data-title="Un besoin devenu évident"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier — Un besoin devenu évident" loading="lazy">
+            <span class="vt-chapter">1</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:27</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Quelle était la problématique&nbsp;?</span>
+            <span class="vt-card__title">Un besoin devenu évident</span>
+            <span class="vt-card__excerpt">« Garder des compétences très précises — on travaille la mécanique de précision — et faire en sorte qu'elles se transmettent : c'est l'enjeu majeur de nos entreprises. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 2 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep2.mp4"
+          data-title="Un management à réinventer"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep2.jpg" alt="Stéphane Fournier — Un management à réinventer" loading="lazy">
+            <span class="vt-chapter">2</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:23</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le constat de départ</span>
+            <span class="vt-card__title">Un management à réinventer</span>
+            <span class="vt-card__excerpt">« Le management se faisait de façon empirique, comme dans beaucoup d'industries : chacun au feeling — mais plutôt maladroitement. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 3 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep3.mp4"
+          data-title="La décision s'impose"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep3.jpg" alt="Stéphane Fournier — La décision s'impose" loading="lazy">
+            <span class="vt-chapter">3</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:43</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Pourquoi avoir choisi Cartesa&nbsp;?</span>
+            <span class="vt-card__title">La décision s'impose</span>
+            <span class="vt-card__excerpt">« On s'est choisi ensemble, avec Cartesa et Catherine. Une approche sur mesure : mieux encadrer, et transmettre le savoir. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 4 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep4.mp4"
+          data-title="Une relation de confiance"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep4.jpg" alt="Stéphane Fournier — Une relation de confiance" loading="lazy">
+            <span class="vt-chapter">4</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:55</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a fait la différence</span>
+            <span class="vt-card__title">Une relation de confiance</span>
+            <span class="vt-card__excerpt">« Il fallait que l'alchimie prenne. J'ai pu lâcher le sujet en totale confiance : ce que je voulais transmettre a été mis en œuvre. La différence, c'est le suivi. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 5 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep5.mp4"
+          data-title="Faire dialoguer les équipes"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep5.jpg" alt="Stéphane Fournier — Faire dialoguer les équipes" loading="lazy">
+            <span class="vt-chapter">5</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:52</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le déroulement</span>
+            <span class="vt-card__title">Faire dialoguer les équipes</span>
+            <span class="vt-card__excerpt">« Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble : Catherine a eu la méthode. Un vrai apport de mise en confiance. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 6 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep6.mp4"
+          data-title="Des résultats concrets"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep6.jpg" alt="Stéphane Fournier — Des résultats concrets" loading="lazy">
+            <span class="vt-chapter">6</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:58</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a changé</span>
+            <span class="vt-card__title">Des résultats concrets</span>
+            <span class="vt-card__excerpt">« Aujourd'hui c'est structuré : points d'équipe réguliers, entretiens annuels à date. Sceptiques au départ, les managers en ont compris l'intérêt. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 7 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep7.mp4"
+          data-title="Un message aux futurs participants"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep7.jpg" alt="Stéphane Fournier — Un message aux futurs participants" loading="lazy">
+            <span class="vt-chapter">7</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:01</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">À qui le recommander&nbsp;?</span>
+            <span class="vt-card__title">Un message aux futurs participants</span>
+            <span class="vt-card__excerpt">« À toutes les TPE-PME où le management est empirique. Derrière, la productivité s'améliore — et surtout, on ne perd pas notre savoir-faire. »</span>
+          </span>
+        </button>
+      </div>
+
+      <p class="vt-note">Témoignage filmé et partagé avec l'accord de Stéphane Fournier (Groupe Syrah).</p>
+    </div>
+
+    <!-- Lightbox vidéo -->
+    <div class="vt-modal" id="vtModal" role="dialog" aria-modal="true" aria-label="Lecture du témoignage vidéo">
+      <div class="vt-modal__inner">
+        <div class="vt-modal__frame">
+          <button class="vt-modal__close" id="vtClose" type="button" aria-label="Fermer la vidéo">&times;</button>
+          <video id="vtVideo" controls playsinline preload="none"></video>
+        </div>
+        <div class="vt-modal__cap">
+          <strong id="vtCapTitle"></strong>
+          <span id="vtCapSub"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- LOGO MARQUEE -->
   <section class="marquee-section">
-    <div class="marquee-label">Secteurs accompagnés</div>
+    <div class="marquee-label">Grands enjeux traités</div>
     <div class="marquee">
       <div class="marquee-track">
-        <span class="marquee-item">Industrie métallurgique</span>
-        <span class="marquee-item">Agroalimentaire</span>
-        <span class="marquee-item">BTP & second œuvre</span>
-        <span class="marquee-item">Services aux entreprises</span>
-        <span class="marquee-item">Tech & numérique</span>
-        <span class="marquee-item">Logistique & transport</span>
-        <span class="marquee-item">Industrie pharmaceutique</span>
-        <span class="marquee-item">Santé & médico-social</span>
-        <span class="marquee-item">Énergie & utilities</span>
-        <span class="marquee-item">Distribution & retail</span>
+        <span class="marquee-item">Management & leadership</span>
+        <span class="marquee-item">Droit social</span>
+        <span class="marquee-item">Recrutement & fidélisation</span>
+        <span class="marquee-item">RSE & décarbonation</span>
+        <span class="marquee-item">Transmission des compétences</span>
+        <span class="marquee-item">Conduite du changement</span>
+        <span class="marquee-item">Qualité de vie au travail</span>
+        <span class="marquee-item">Transparence salariale</span>
+        <span class="marquee-item">Formation & montée en compétences</span>
+        <span class="marquee-item">Marque employeur</span>
         <!-- duplicate for infinite loop -->
-        <span class="marquee-item">Industrie métallurgique</span>
-        <span class="marquee-item">Agroalimentaire</span>
-        <span class="marquee-item">BTP & second œuvre</span>
-        <span class="marquee-item">Services aux entreprises</span>
-        <span class="marquee-item">Tech & numérique</span>
-        <span class="marquee-item">Logistique & transport</span>
-        <span class="marquee-item">Industrie pharmaceutique</span>
-        <span class="marquee-item">Santé & médico-social</span>
-        <span class="marquee-item">Énergie & utilities</span>
-        <span class="marquee-item">Distribution & retail</span>
+        <span class="marquee-item">Management & leadership</span>
+        <span class="marquee-item">Droit social</span>
+        <span class="marquee-item">Recrutement & fidélisation</span>
+        <span class="marquee-item">RSE & décarbonation</span>
+        <span class="marquee-item">Transmission des compétences</span>
+        <span class="marquee-item">Conduite du changement</span>
+        <span class="marquee-item">Qualité de vie au travail</span>
+        <span class="marquee-item">Transparence salariale</span>
+        <span class="marquee-item">Formation & montée en compétences</span>
+        <span class="marquee-item">Marque employeur</span>
       </div>
     </div>
   </section>
@@ -783,7 +1057,7 @@
       </article>
 
       <article class="carousel-card">
-        <span class="tag">DRH de transition</span>
+        <span class="tag">RH à temps partagé</span>
         <div class="quote-mark">&ldquo;</div>
         <blockquote>Notre DRH est parti du jour au lendemain. CARTESA a mis un expert en poste en 48 heures. La continuité RH n'a jamais été rompue, et ça nous a donné le temps de recruter sereinement.</blockquote>
         <div class="meta">
@@ -924,9 +1198,9 @@
                 <span class="visual-label">Grenoble · ETI 250 salariés</span>
               </div>
               <div class="reportage-content">
-                <span class="tag">DRH de transition</span>
-                <h3>DRH de transition pour une ETI en restructuration.</h3>
-                <p class="summary">Après le départ non anticipé de sa DRH, cette ETI services a fait appel à CARTESA. Un DRH de transition était en poste sous 48 h. Pendant 6 mois, il a piloté la réorganisation des équipes, négocié un accord d'entreprise, et recruté la future DRH permanente.</p>
+                <span class="tag">RH à temps partagé</span>
+                <h3>RH à temps partagé pour une ETI en restructuration.</h3>
+                <p class="summary">Après le départ non anticipé de sa DRH, cette ETI services a fait appel à CARTESA. Un RH à temps partagé était en poste sous 48 h. Pendant 6 mois, il a piloté la réorganisation des équipes, négocié un accord d'entreprise, et recruté la future DRH permanente.</p>
                 <div class="result">
                   <strong>Résultat</strong>
                   Zéro rupture du dialogue social, transition fluide, nouvel accord signé à l'unanimité.
@@ -967,7 +1241,7 @@
         <div class="approach-card reveal">
           <div class="num">01 — RAPIDITÉ</div>
           <h3>Mise en route en moins de 15 jours</h3>
-          <p>Premier livrable opérationnel dès le premier mois. Diagnostic express en 3 jours, DRH de transition en 48 h, démarrage formation sous 30 jours.</p>
+          <p>Premier livrable opérationnel dès le premier mois. Diagnostic express en 3 jours, RH à temps partagé en 48 h, démarrage formation sous 30 jours.</p>
         </div>
         <div class="approach-card reveal">
           <div class="num">02 — FINANCEMENT</div>
@@ -989,7 +1263,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
         <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
           <div class="enjeu-body">
-            <h3 style="font-size:1.05rem;">Accompagnements RH & RSE</h3>
+            <h3 style="font-size:1.05rem;">À vos côtés</h3>
             <p>Les approches choisies par les dirigeants témoignant sur cette page.</p>
           </div>
           <span class="enjeu-cta">&rarr;</span>
@@ -1003,7 +1277,7 @@
         </a>
         <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
           <div class="enjeu-body">
-            <h3 style="font-size:1.05rem;">Diagnostic & Expertise</h3>
+            <h3 style="font-size:1.05rem;">Diagnostic & expertise RH</h3>
             <p>Commencer par un état des lieux de vos pratiques RH.</p>
           </div>
           <span class="enjeu-cta">&rarr;</span>
@@ -1038,10 +1312,10 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Nos services</h4>
+          <h4>Vos attentes</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic & Expertise RH/RSE</a></li>
-            <li><a href="accompagnements.html">Accompagnements RH & RSE</a></li>
+            <li><a href="expertises.html">Diagnostic & expertise RH</a></li>
+            <li><a href="accompagnements.html">À vos côtés</a></li>
             <li><a href="rse-decarbonation.html">RSE & Décarbonation</a></li>
             <li><a href="ingenierie.html">Ingénierie pédagogique & financière</a></li>
           </ul>
@@ -1135,7 +1409,7 @@
         });
       }
 
-      // Mobile-only dropdown toggle ("Nos services", "On vous aide")
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
       var dropdowns = document.querySelectorAll('.nav-dropdown');
       dropdowns.forEach(function(dd) {
         var trigger = dd.querySelector(':scope > a');
@@ -1282,6 +1556,50 @@
       }, { passive: true });
       window.addEventListener('resize', update);
       update();
+    })();
+
+    /* ----- Témoignage vidéo : lightbox ----- */
+    (function() {
+      var grid = document.getElementById('vtestimGrid');
+      var modal = document.getElementById('vtModal');
+      if (!grid || !modal) return;
+      var video = document.getElementById('vtVideo');
+      var capTitle = document.getElementById('vtCapTitle');
+      var capSub = document.getElementById('vtCapSub');
+      var closeBtn = document.getElementById('vtClose');
+      var lastFocus = null;
+
+      function openModal(card) {
+        var src = card.getAttribute('data-video');
+        if (!src) return;
+        lastFocus = card;
+        video.src = src;
+        capTitle.textContent = card.getAttribute('data-title') || '';
+        capSub.textContent = card.getAttribute('data-sub') || '';
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+        var p = video.play();
+        if (p && p.catch) p.catch(function() {});
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      grid.addEventListener('click', function(e) {
+        var card = e.target.closest('.vt-card');
+        if (card) openModal(card);
+      });
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
     })();
   </script>
 
