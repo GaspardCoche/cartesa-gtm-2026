@@ -4,46 +4,47 @@
 <meta charset="UTF-8">
 <title>Cartesa — Boîte à outils pour faire vivre votre site</title>
 <style>
-  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+  @page { size: A4; margin: 15mm 14mm 15mm 14mm; }
   * { box-sizing: border-box; }
   :root{
-    --teal:#025659; --teal-d:#0d3b3b; --green:#00B57C; --gold:#ecd034; --gold-d:#d8b62e;
+    --teal:#025659; --teal-d:#0d3b3b; --green:#00B57C; --gold:#ecd034; --gold-d:#c9a51f;
     --ink:#1a2a36; --muted:#5b6b75; --line:#e3e9ec; --bg:#f5f9f8;
   }
-  body{ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.5; font-size:10.3pt; margin:0; }
-  h1,h2,h3{ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
+  body{ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.5; font-size:10.2pt; margin:0; }
 
-  /* Cover */
-  .cover{ background:linear-gradient(135deg,var(--teal-d),var(--teal)); color:#fff; padding:30pt 26pt; border-radius:10pt; margin-bottom:18pt; }
+  .cover{ background:linear-gradient(135deg,var(--teal-d),var(--teal)); color:#fff; padding:28pt 24pt; border-radius:10pt; margin-bottom:14pt; }
   .cover .kicker{ text-transform:uppercase; letter-spacing:.16em; font-size:8.5pt; font-weight:700; color:var(--gold); }
-  .cover h1{ font-size:24pt; font-weight:800; margin:8pt 0 6pt; line-height:1.12; }
-  .cover p{ margin:0; font-size:10.5pt; color:rgba(255,255,255,.9); max-width:430pt; }
-  .cover .meta{ margin-top:14pt; font-size:8.5pt; color:rgba(255,255,255,.75); }
+  .cover h1{ font-size:23pt; font-weight:800; margin:8pt 0 6pt; line-height:1.12; }
+  .cover p{ margin:0; font-size:10.3pt; color:rgba(255,255,255,.9); max-width:440pt; }
+  .cover .meta{ margin-top:12pt; font-size:8.4pt; color:rgba(255,255,255,.72); }
 
-  h2{ font-size:14pt; color:var(--teal-d); font-weight:800; margin:18pt 0 4pt; padding-bottom:5pt; border-bottom:2.5px solid var(--gold); page-break-after:avoid; }
-  h2 .num{ color:var(--gold-d); }
-  .lead{ color:var(--muted); margin:0 0 10pt; font-size:9.8pt; }
+  h2{ font-size:13.5pt; color:var(--teal-d); font-weight:800; margin:16pt 0 4pt; padding-bottom:5pt; border-bottom:2.5px solid var(--gold); page-break-after:avoid; }
+  h2 .num{ color:var(--gold-d); } h2 .sub{ font-weight:600; font-size:9.8pt; color:var(--muted); }
+  .lead{ color:var(--muted); margin:0 0 9pt; font-size:9.6pt; }
 
-  .opt{ border:1px solid var(--line); border-radius:8pt; padding:11pt 13pt; margin-bottom:9pt; page-break-inside:avoid; }
+  .opt{ border:1px solid var(--line); border-radius:8pt; padding:10pt 12pt; margin-bottom:8pt; page-break-inside:avoid; }
   .opt.reco{ border:1.5px solid var(--green); background:#f3fbf8; }
   .opt-head{ display:flex; align-items:baseline; gap:8pt; }
-  .opt-name{ font-size:11.5pt; font-weight:800; color:var(--teal-d); }
-  .badge{ font-size:7.5pt; font-weight:700; text-transform:uppercase; letter-spacing:.08em; padding:2pt 7pt; border-radius:20pt; }
-  .badge.reco{ background:var(--green); color:#fff; }
-  .badge.alt{ background:#eef3f2; color:var(--muted); }
-  .opt p{ margin:5pt 0 7pt; font-size:9.7pt; }
-  .specs{ display:flex; flex-wrap:wrap; gap:5pt 14pt; font-size:8.6pt; color:var(--muted); border-top:1px dashed var(--line); padding-top:6pt; }
+  .opt-name{ font-size:11pt; font-weight:800; color:var(--teal-d); }
+  .badge{ font-size:7.4pt; font-weight:700; text-transform:uppercase; letter-spacing:.07em; padding:2pt 7pt; border-radius:20pt; }
+  .badge.reco{ background:var(--green); color:#fff; } .badge.alt{ background:#eef3f2; color:var(--muted); }
+  .opt p{ margin:5pt 0 6pt; font-size:9.5pt; }
+  .specs{ display:flex; flex-wrap:wrap; gap:4pt 14pt; font-size:8.5pt; color:var(--muted); border-top:1px dashed var(--line); padding-top:5pt; }
   .specs b{ color:var(--ink); font-weight:700; }
 
-  .stack{ background:var(--bg); border:1px solid var(--line); border-radius:8pt; padding:13pt 15pt; page-break-inside:avoid; }
-  .stack table{ width:100%; border-collapse:collapse; font-size:9.4pt; }
-  .stack td{ padding:6pt 4pt; border-bottom:1px solid var(--line); vertical-align:top; }
-  .stack td:first-child{ font-weight:700; color:var(--teal-d); white-space:nowrap; width:34%; }
+  .stack{ background:var(--bg); border:1px solid var(--line); border-radius:8pt; padding:12pt 14pt; page-break-inside:avoid; }
+  .stack table{ width:100%; border-collapse:collapse; font-size:9.3pt; }
+  .stack td{ padding:5.5pt 4pt; border-bottom:1px solid var(--line); vertical-align:top; }
+  .stack td:first-child{ font-weight:700; color:var(--teal-d); white-space:nowrap; width:33%; }
   .stack tr:last-child td{ border-bottom:0; }
 
-  .note{ background:#fffdf2; border-left:3px solid var(--gold); padding:8pt 11pt; font-size:9.2pt; border-radius:0 5pt 5pt 0; margin:8pt 0; }
-  .foot{ margin-top:16pt; padding-top:8pt; border-top:1px solid var(--line); font-size:8.4pt; color:var(--muted); }
+  .note{ background:#fffdf2; border-left:3px solid var(--gold); padding:8pt 11pt; font-size:9pt; border-radius:0 5pt 5pt 0; margin:7pt 0; }
+  .note.green{ background:#f3fbf8; border-color:var(--green); }
+  .road td{ font-size:9.2pt; }
+  .road .ph{ font-weight:800; color:var(--teal-d); }
+  .foot{ margin-top:14pt; padding-top:8pt; border-top:1px solid var(--line); font-size:8.3pt; color:var(--muted); }
   .pagebreak{ page-break-before:always; }
+  ul.tight{ margin:4pt 0 0; padding-left:14pt; } ul.tight li{ margin-bottom:2pt; font-size:9.4pt; }
 </style>
 </head>
 <body>
@@ -51,110 +52,117 @@
   <div class="cover">
     <div class="kicker">Cartesa · Recommandations outils</div>
     <h1>Faire vivre votre site : les briques à brancher</h1>
-    <p>Gérer simplement vos contacts, vos rendez-vous, vos paiements et vos questionnaires en ligne — sans complexité technique. Pour chaque besoin, les meilleures options et notre recommandation. À vous de choisir.</p>
-    <div class="meta">Document de travail · juin 2026 · prix indicatifs à confirmer au moment du choix</div>
+    <p>Gérer simplement vos clients entrants, vos formulaires, vos rendez-vous et vos paiements en ligne — sans complexité technique. Pour chaque besoin : les meilleures options, notre recommandation, et comment ça se branchera à votre futur site WordPress.</p>
+    <div class="meta">Document de travail · juin 2026 · prix indicatifs, à confirmer auprès des éditeurs au moment du choix</div>
   </div>
 
-  <p class="lead"><b>Le principe :</b> peu d'outils, faciles à prendre en main, qui se parlent entre eux et se branchent à votre futur site WordPress. On démarre léger (souvent gratuit), on fait grossir seulement si le besoin est là.</p>
+  <p class="lead"><b>Le principe :</b> peu d'outils, faciles à prendre en main, qui se parlent entre eux. On démarre léger (souvent gratuit), on ne passe en payant que sur les volumes réels. Tout est pensé pour être <b>géré par votre équipe</b>, sans développeur au quotidien.</p>
 
-  <h2><span class="num">1.</span> Gérer vos contacts &amp; vos relances <span style="font-weight:600;font-size:10pt;color:var(--muted)">— CRM léger + emailing</span></h2>
-  <p class="lead">Centraliser les contacts qui viennent du site (formulaires, ressources, contact), segmenter, et envoyer newsletters / relances.</p>
+  <h2><span class="num">1.</span> Capter &amp; gérer vos clients inbound <span class="sub">— CRM léger + emailing</span></h2>
+  <p class="lead">Centraliser tous les contacts qui arrivent du site (contact, ressources, formations, newsletter), les suivre, les relancer et les convertir.</p>
 
   <div class="opt reco">
     <div class="opt-head"><span class="opt-name">Brevo</span><span class="badge reco">Recommandé</span></div>
-    <p>Tout-en-un français : mini-CRM (fiches contacts, étapes, tâches), emailing, automatisations simples, formulaires d'inscription. Pensé pour les TPE/PME, interface en français, prise en main rapide. C'est déjà la brique prévue pour votre newsletter.</p>
-    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>Gratuit pour démarrer</b> (contacts illimités, ~300 emails/jour) · dès ~9-19&nbsp;€/mois pour plus d'envois</span><span>Intégration site : <b>native</b> (formulaires)</span></div>
+    <p>Le tout-en-un français, pensé pour les TPE/PME : mini-CRM (fiches contacts, étapes, tâches, relances), emailing &amp; newsletters, automatisations simples, et <b>formulaires de capture</b> intégrés. Interface en français, prise en main rapide. C'est la brique centrale : tout ce que le site capte atterrit ici.</p>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>Gratuit pour démarrer</b> (contacts illimités, ~300 emails/jour) · dès ~9-19&nbsp;€/mois pour plus d'envois</span><span>Intégration : <b>native</b></span></div>
   </div>
 
   <div class="opt">
     <div class="opt-head"><span class="opt-name">HubSpot CRM (gratuit)</span><span class="badge alt">Alternative</span></div>
-    <p>CRM gratuit très complet (pipeline, suivi des échanges). Plus puissant, mais plus riche à paramétrer — pertinent si vous voulez un vrai suivi commercial structuré plus tard.</p>
-    <div class="specs"><span>Facilité : <b>Moyenne</b></span><span>Prix : <b>CRM gratuit</b> · modules avancés payants</span><span>Intégration : connecteurs / formulaires</span></div>
+    <p>CRM gratuit très complet (pipeline, suivi des échanges, scoring). Plus puissant mais plus riche à paramétrer — pertinent si vous voulez un vrai suivi commercial structuré plus tard.</p>
+    <div class="specs"><span>Facilité : <b>Moyenne</b></span><span>Prix : <b>CRM gratuit</b> · modules avancés payants</span><span>Intégration : connecteurs</span></div>
   </div>
 
-  <h2><span class="num">2.</span> Prendre &amp; encaisser des rendez-vous <span style="font-weight:600;font-size:10pt;color:var(--muted)">— coachings flashs, RDV découverte</span></h2>
-  <p class="lead">Le visiteur choisit un créneau (ex. 13h-14h / 17h-19h), paie en ligne si besoin, reçoit la confirmation. Zéro échange manuel.</p>
+  <h2><span class="num">2.</span> Vos formulaires <span class="sub">— contact, ressources, inscription</span></h2>
+  <p class="lead">Chaque formulaire du site doit envoyer le contact directement dans votre CRM, sans copier-coller.</p>
+  <div class="opt reco">
+    <div class="opt-head"><span class="opt-name">Formulaires Brevo</span><span class="badge reco">Recommandé (simple)</span></div>
+    <p>Pour les formulaires courants (contact, inscription newsletter, téléchargement de ressource) : on les crée dans Brevo, ils alimentent le CRM et déclenchent une réponse automatique. Un seul outil à gérer.</p>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : inclus dans Brevo</span><span>Intégration : bouton / intégré</span></div>
+  </div>
+  <div class="opt">
+    <div class="opt-head"><span class="opt-name">Tally</span><span class="badge alt">Alternative (formulaires riches)</span></div>
+    <p>Pour des formulaires plus élaborés (multi-étapes, logique conditionnelle, calcul de score) — typiquement les auto-diagnostics. Gratuit et généreux, envoie les réponses vers Brevo.</p>
+    <div class="specs"><span>Facilité : <b>Simple</b></span><span>Prix : <b>gratuit</b> · options dès ~29&nbsp;$/mois</span><span>Intégration : intégrable</span></div>
+  </div>
 
+  <div class="pagebreak"></div>
+
+  <h2><span class="num">3.</span> Prendre &amp; encaisser des rendez-vous <span class="sub">— coachings flashs, RDV découverte</span></h2>
+  <p class="lead">Le visiteur choisit un créneau (ex. 13h-14h / 17h-19h), paie en ligne si besoin, reçoit la confirmation. Zéro échange manuel.</p>
   <div class="opt reco">
     <div class="opt-head"><span class="opt-name">Calendly + Stripe</span><span class="badge reco">Recommandé</span></div>
     <p>Le combo le plus simple : Calendly gère l'agenda et les créneaux (synchro avec votre calendrier), Stripe encaisse le paiement à la réservation. Le bouton « Réserver un créneau » du site ouvre directement la page. Idéal pour lancer les coachings flashs sans développement.</p>
-    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : Calendly <b>gratuit</b> (1 type de RDV) · ~12-15&nbsp;€/mois pour le paiement &amp; plusieurs offres · Stripe : <b>sans abonnement</b>, ~1,5&nbsp;% + 0,25&nbsp;€/transaction</span><span>Intégration : lien / bouton</span></div>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : Calendly <b>gratuit</b> (1 type de RDV) · ~12-15&nbsp;€/mois pour le paiement &amp; plusieurs offres · Stripe : ~1,5&nbsp;% + 0,25&nbsp;€/transaction</span></div>
   </div>
-
   <div class="opt">
     <div class="opt-head"><span class="opt-name">Amelia (plugin WordPress)</span><span class="badge alt">Alternative « tout dans le site »</span></div>
     <p>Module de réservation + paiement intégré directement dans WordPress : tout reste chez vous, look 100&nbsp;% cohérent. Un peu plus à paramétrer au départ, pas d'abonnement mensuel.</p>
     <div class="specs"><span>Facilité : <b>Moyenne</b></span><span>Prix : licence <b>à partir de ~70&nbsp;€/an</b></span><span>Intégration : <b>native WordPress</b></span></div>
   </div>
 
-  <div class="opt">
-    <div class="opt-head"><span class="opt-name">Brevo Meetings</span><span class="badge alt">Alternative « tout dans Brevo »</span></div>
-    <p>Si vous prenez Brevo pour le CRM, sa fonction Rendez-vous évite un outil de plus (réservation reliée aux contacts). Paiement à coupler avec Stripe.</p>
-    <div class="specs"><span>Facilité : <b>Simple</b></span><span>Prix : inclus selon le plan Brevo</span><span>Intégration : reliée au CRM</span></div>
-  </div>
-
-  <div class="pagebreak"></div>
-
-  <h2><span class="num">3.</span> Encaisser un paiement simple <span style="font-weight:600;font-size:10pt;color:var(--muted)">— prestations, acomptes, formations</span></h2>
+  <h2><span class="num">4.</span> Encaisser un paiement simple <span class="sub">— prestations, acomptes, formations</span></h2>
   <p class="lead">Envoyer un lien de paiement par carte, sans facture compliquée ni développement.</p>
-
   <div class="opt reco">
     <div class="opt-head"><span class="opt-name">Stripe — Liens de paiement</span><span class="badge reco">Recommandé</span></div>
-    <p>Vous créez un « lien de paiement » en 2 minutes (sans code), vous l'envoyez ou le mettez sur un bouton. Le client paie par carte, vous êtes notifié. Reçus automatiques. C'est aussi la même brique que pour les coachings flashs — un seul compte à gérer.</p>
-    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>sans abonnement</b> · ~1,5&nbsp;% + 0,25&nbsp;€ par paiement (cartes européennes)</span><span>Intégration : lien / bouton</span></div>
+    <p>Vous créez un « lien de paiement » en 2 minutes (sans code), vous l'envoyez ou le mettez sur un bouton. Le client paie par carte, vous êtes notifié, reçu automatique. C'est le même compte que pour les coachings flashs — une seule brique de paiement à gérer.</p>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>sans abonnement</b> · ~1,5&nbsp;% + 0,25&nbsp;€ par paiement (cartes européennes)</span></div>
   </div>
-
   <div class="opt">
     <div class="opt-head"><span class="opt-name">PayPal</span><span class="badge alt">Alternative</span></div>
     <p>Très connu des clients, mise en place immédiate. Commissions un peu plus élevées et expérience moins « sur mesure » que Stripe.</p>
-    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : ~2,9&nbsp;% + 0,35&nbsp;€ par paiement</span><span>Intégration : bouton</span></div>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : ~2,9&nbsp;% + 0,35&nbsp;€ par paiement</span></div>
   </div>
 
-  <h2><span class="num">4.</span> Questionnaires &amp; auto-diagnostics en ligne <span style="font-weight:600;font-size:10pt;color:var(--muted)">— ressources, profils</span></h2>
+  <h2><span class="num">5.</span> Questionnaires &amp; auto-diagnostics <span class="sub">— ressources, profils</span></h2>
   <p class="lead">Proposer des auto-diagnostics (maturité RH, digitalisation…) pour capter des leads, et faire passer des bilans de profil.</p>
-
   <div class="opt reco">
     <div class="opt-head"><span class="opt-name">Tally</span><span class="badge reco">Recommandé (auto-diagnostics)</span></div>
-    <p>Formulaires et quiz très simples à créer, gratuits et généreux, avec logique conditionnelle (questions qui s'adaptent), calcul de score et envoi des réponses vers Brevo. Parfait pour des auto-diagnostics « maison » qui orientent vers vos prestations.</p>
-    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>gratuit</b> (très complet) · ~29&nbsp;$/mois pour les options avancées</span><span>Intégration : intégrable dans une page</span></div>
+    <p>Formulaires et quiz simples à créer, avec logique conditionnelle, calcul de score et envoi des réponses vers Brevo. Parfait pour des auto-diagnostics « maison » qui orientent vers vos prestations (retargeting).</p>
+    <div class="specs"><span>Facilité : <b>Très simple</b></span><span>Prix : <b>gratuit</b> (très complet)</span><span>Intégration : intégrable dans une page</span></div>
   </div>
+  <div class="note"><b>⚠️ Cas particulier — Profils DISC / MBTI / Forces Motrices.</b> Ce sont des tests <b>sous licence</b> : on ne les recrée pas dans un formulaire maison. Il faut un <b>éditeur agréé</b> qui fournit la passation et la restitution en ligne — par ex. <b>Central Test</b>, <b>AssessFirst</b> ou <b>TTI Success Insights</b>. Le site se contente d'un bouton « Faire le bilan » qui mène à l'outil de l'éditeur. À cadrer selon les certifications de l'équipe.</div>
 
-  <div class="opt">
-    <div class="opt-head"><span class="opt-name">Typeform</span><span class="badge alt">Alternative (plus design)</span></div>
-    <p>Formulaires très soignés, une question à la fois. Plus joli, mais payant assez vite et logique avancée limitée en gratuit.</p>
-    <div class="specs"><span>Facilité : <b>Simple</b></span><span>Prix : gratuit limité · dès ~25&nbsp;€/mois</span><span>Intégration : intégrable</span></div>
-  </div>
+  <div class="pagebreak"></div>
 
-  <div class="note"><b>⚠️ Cas particulier — Profils DISC / MBTI / Forces Motrices.</b> Ce sont des tests <b>sous licence</b> : on ne les recrée pas dans un formulaire maison. Il faut passer par un <b>éditeur agréé</b> qui fournit la passation et la restitution en ligne — par ex. <b>Central Test</b>, <b>AssessFirst</b> ou <b>TTI Success Insights</b> (abonnement / au test). Le site se contente d'un bouton « Faire le bilan » qui mène à l'outil de l'éditeur. À cadrer selon les certifications de l'équipe.</div>
-
-  <h2><span class="num">5.</span> La stack recommandée <span style="font-weight:600;font-size:10pt;color:var(--muted)">— simple, peu coûteuse, évolutive</span></h2>
+  <h2><span class="num">6.</span> La stack recommandée <span class="sub">— simple, peu coûteuse, évolutive</span></h2>
   <div class="stack">
     <table>
-      <tr><td>Site</td><td><b>WordPress</b> — la base, vos pages et votre blog.</td></tr>
-      <tr><td>Contacts &amp; emailing</td><td><b>Brevo</b> — mini-CRM + newsletters + automatisations. Reçoit les contacts du site.</td></tr>
+      <tr><td>Site</td><td><b>WordPress</b> — vos pages, votre blog, votre SEO.</td></tr>
+      <tr><td>Clients inbound &amp; emailing</td><td><b>Brevo</b> — mini-CRM + newsletters + automatisations + formulaires. Le cœur du dispositif.</td></tr>
+      <tr><td>Formulaires riches / diagnostics</td><td><b>Tally</b> — auto-diagnostics, réponses envoyées dans Brevo.</td></tr>
       <tr><td>Rendez-vous &amp; paiement</td><td><b>Calendly + Stripe</b> — réservation et encaissement des coachings flashs / RDV.</td></tr>
       <tr><td>Paiements ponctuels</td><td><b>Stripe (liens de paiement)</b> — même compte, prestations &amp; acomptes.</td></tr>
-      <tr><td>Auto-diagnostics</td><td><b>Tally</b> — questionnaires en ligne, réponses envoyées dans Brevo.</td></tr>
       <tr><td>Profils (DISC/MBTI…)</td><td><b>Éditeur agréé</b> (Central Test / AssessFirst) — passation &amp; restitution.</td></tr>
     </table>
   </div>
-  <p class="lead" style="margin-top:9pt;"><b>Coût de démarrage :</b> proche de 0&nbsp;€ (Brevo, Calendly, Tally en gratuit ; Stripe à la commission). On ne passe en payant que sur les volumes réels. <b>Maintenance :</b> faible — ces outils sont conçus pour être gérés par une équipe non technique.</p>
+  <p class="lead" style="margin-top:8pt;"><b>Coût de démarrage :</b> proche de 0&nbsp;€ (Brevo, Tally, Calendly en gratuit ; Stripe à la commission). On ne passe en payant que sur les volumes réels. <b>Maintenance :</b> faible — ces outils sont conçus pour une équipe non technique.</p>
 
-  <h2><span class="num">6.</span> Comment ça se branche au site</h2>
-  <p class="lead" style="margin-bottom:6pt;">Concrètement, depuis le site refondu :</p>
+  <h2><span class="num">7.</span> Comment ça se branche à votre site WordPress</h2>
   <div class="opt" style="padding:10pt 13pt;">
-    <div class="specs" style="border-top:0; padding-top:0; gap:7pt 0; flex-direction:column;">
-      <span>• Les <b>formulaires</b> (contact, ressources, newsletter) → envoient les contacts dans <b>Brevo</b>.</span>
-      <span>• Le bouton <b>« Réserver un créneau »</b> (coachings flashs) → ouvre <b>Calendly</b>, paiement <b>Stripe</b>.</span>
-      <span>• Le bouton <b>« Faire le bilan »</b> (profils) → mène à l'outil de l'<b>éditeur de tests</b>.</span>
-      <span>• Une prestation à régler → un <b>lien de paiement Stripe</b>.</span>
-      <span>• Un <b>auto-diagnostic</b> dans les Ressources → page <b>Tally</b>, réponses dans Brevo.</span>
-    </div>
+    <ul class="tight">
+      <li>Les <b>formulaires</b> (contact, ressources, newsletter) → envoient les contacts dans <b>Brevo</b> (+ réponse automatique).</li>
+      <li>Le bouton <b>« Réserver un créneau »</b> (coachings flashs) → ouvre <b>Calendly</b>, paiement <b>Stripe</b>.</li>
+      <li>Le bouton <b>« Faire le bilan »</b> (profils) → mène à l'outil de l'<b>éditeur de tests</b>.</li>
+      <li>Une prestation à régler → un <b>lien de paiement Stripe</b> sur un bouton.</li>
+      <li>Un <b>auto-diagnostic</b> dans les Ressources → page <b>Tally</b>, réponses dans Brevo, relance automatique.</li>
+    </ul>
+  </div>
+  <p class="lead" style="margin-top:6pt;">Tous ces outils s'intègrent à WordPress soit par un simple <b>lien/bouton</b>, soit par un <b>petit code à coller</b> (embed), soit par une <b>extension officielle</b> — sans développement lourd.</p>
+
+  <h2><span class="num">8.</span> Feuille de route</h2>
+  <div class="stack">
+    <table class="road">
+      <tr><td class="ph">Étape 1 — Maintenant</td><td>Vous <b>choisissez</b> les outils (un par besoin suffit). On crée les comptes (Brevo en priorité) et on relie les formulaires actuels du site.</td></tr>
+      <tr><td class="ph">Étape 2 — Migration WordPress</td><td>On bascule le site sous WordPress et on branche proprement chaque bouton / formulaire aux outils choisis (réservation, paiement, diagnostics).</td></tr>
+      <tr><td class="ph">Étape 3 — Activation</td><td>On allume les modules « avancés » : paiement des coachings flashs, questionnaires de profil en ligne, automatisations de relance.</td></tr>
+      <tr><td class="ph">Étape 4 — Optimisation</td><td>On suit les conversions et on ajuste (séquences de nurturing, auto-diagnostics qui performent, etc.).</td></tr>
+    </table>
   </div>
 
-  <div class="note" style="background:#f3fbf8;border-color:var(--green);"><b>Prochaine étape :</b> vous choisissez les outils qui vous parlent (un par besoin suffit). Nous nous occupons de les créer et de les brancher au site lors de la migration WordPress — boutons, formulaires et liens prêts à l'emploi.</div>
+  <div class="note green"><b>Prochaine étape pour vous :</b> validez les outils qui vous parlent. Nous nous occupons de les créer et de les brancher au site — boutons, formulaires et liens prêts à l'emploi, sans que vous ayez à toucher au technique.</div>
 
-  <div class="foot">Cartesa — cabinet conseil &amp; formation RH · Document préparé dans le cadre de la refonte du site. Les prix sont indicatifs (juin 2026) et à confirmer auprès des éditeurs au moment du choix.</div>
+  <div class="foot">Cartesa — cabinet conseil &amp; formation RH · Document préparé dans le cadre de la refonte du site et de la future migration WordPress. Les prix sont indicatifs (juin 2026) et à confirmer auprès des éditeurs au moment du choix.</div>
 
 </body>
 </html>
