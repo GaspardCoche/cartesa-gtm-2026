@@ -4023,9 +4023,9 @@ img { max-width: 100%; height: auto; display: block; }
   object-position: top center;
 }
 
-/* Proof-band : fond teal continu pour eliminer le bandeau blanc */
+/* Proof-band : fond teal continu pour eliminer le bandeau blanc + le seam avec le hero */
 .proof-band {
-  background: linear-gradient(180deg, var(--teal-600) 0%, var(--teal-700) 100%);
+  background: var(--teal-700);
   padding: 0 0 56px;
   margin-top: 0;
   margin-bottom: 0;
@@ -4099,6 +4099,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-header {
   margin-bottom: 40px;
+}
+/* Titres et sous-titres de section vraiment centrés (corrige le décalage dû au max-width) */
+.section-header .section-title,
+.section-header > h2,
+.section-header .section-subtitle,
+.section-header > p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Hero image polish — fade-in + subtle float */
