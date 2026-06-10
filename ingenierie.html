@@ -135,6 +135,48 @@
 
     .financement-full-width { grid-column: span 2; }
 
+    /* Bandeaux des 2 volets (pédagogique / financière) */
+    .volet-band {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .volet-band__tag {
+      display: inline-block;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .volet-band--peda .volet-band__tag {
+      color: var(--teal-600);
+      background: var(--teal-50);
+    }
+    .volet-band--fin .volet-band__tag {
+      color: var(--gold-500);
+      background: rgba(240,180,41,0.10);
+    }
+    .volet-band__num {
+      font-weight: 800;
+      margin-right: 6px;
+    }
+    .volet-band h2 {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+    .volet-band__lead {
+      font-size: 1.02rem;
+      color: var(--neutral-600);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
     @media (max-width: 960px) {
       .risk-strip { grid-template-columns: 1fr; }
       .financement-full-width { grid-column: span 1; }
@@ -197,7 +239,7 @@
       <div class="page-hero-stats">
         <div class="page-hero-stat"><strong>Co-finançable</strong><span>OPCO ou Région Auvergne-Rhône-Alpes</span></div>
         <div class="page-hero-stat"><strong>3 000 &euro;</strong><span>risque/salarié si non-conformité</span></div>
-        <div class="page-hero-stat"><strong>9</strong><span>OPCO partenaires</span></div>
+        <div class="page-hero-stat"><strong>2 volets</strong><span>ingénierie pédagogique & financière</span></div>
       </div>
     </div>
   </section>
@@ -207,6 +249,51 @@
     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&auto=format&fit=crop" alt="Pilotage du financement formation" loading="lazy" decoding="async">
     <figcaption>Ingénierie financière et OPCO</figcaption>
   </figure>
+
+  <!-- VOLET 1 — INGENIERIE PEDAGOGIQUE -->
+  <section class="section section--white" id="ingenierie-pedagogique" style="padding-bottom:24px;">
+    <div class="container">
+      <div class="volet-band volet-band--peda reveal">
+        <span class="volet-band__tag">Volet 1</span>
+        <h2><span class="volet-band__num" style="color:var(--teal-600);">1.</span>Ingénierie pédagogique</h2>
+        <p class="volet-band__lead">On conçoit des parcours sur mesure pour faire monter vos équipes en compétences : dispositifs AFEST (formation en situation de travail), formations certifiantes, mise en conformité de vos entretiens professionnels. Du besoin terrain au programme déployé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS SUR MESURE -->
+  <section class="section section--white" id="parcours-sur-mesure" style="padding-top:24px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Concevoir vos parcours</span>
+        <h2 class="section-title">Des parcours conçus pour vos équipes</h2>
+        <p class="section-subtitle">On part de votre besoin réel, pas d'un catalogue figé. Objectifs, modalités, progression : chaque parcours est construit avec vous.</p>
+      </div>
+      <div class="features-grid features-grid--2col reveal-stagger">
+
+        <article class="card-feature" data-accent="teal">
+          <span class="card-feature__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 12h6M9 16h6"/></svg>
+            AFEST
+          </span>
+          <h3 class="card-feature__title">Formation en situation de travail</h3>
+          <p class="card-feature__body">L'AFEST forme vos salariés directement sur leur poste, avec un référent et des temps réflexifs structurés. Idéal pour les savoir-faire qui s'apprennent en faisant.</p>
+          <p class="card-feature__footer">Idéal pour montée en compétences terrain · transmission interne</p>
+        </article>
+
+        <article class="card-feature" data-accent="teal">
+          <span class="card-feature__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Certifiantes
+          </span>
+          <h3 class="card-feature__title">Formations certifiantes</h3>
+          <p class="card-feature__body">On construit des <a href="formations.html">parcours certifiants</a> qui sécurisent les compétences et ouvrent des financements (CPF, plan de développement). CARTESA est certifié Qualiopi.</p>
+          <p class="card-feature__footer">Idéal pour évolution professionnelle · sécurisation des parcours</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ENTRETIEN PRO — OBLIGATION LEGALE -->
   <section class="section section--white" id="entretien-pro">
@@ -259,6 +346,58 @@
           <h3>Désengagement silencieux</h3>
           <p>Un salarié qui ne voit pas de perspectives finit par partir. L'entretien pro bien mené est un outil de rétention puissant.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRETIEN PRO — NOTRE ACCOMPAGNEMENT (dispositif pédagogique/RH) -->
+  <section class="section section--white" id="conformite">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Dispositif pédagogique · mise en conformité</span>
+        <h2 class="section-title">Entretiens professionnels : on vous met à jour</h2>
+        <p class="section-subtitle">Diagnostic de vos pratiques, formation de vos managers, outils et templates, suivi du bilan à 6 ans.</p>
+      </div>
+      <div class="method-timeline reveal">
+        <div class="method-step">
+          <div class="method-step-number">1</div>
+          <div class="method-step-content">
+            <h3>Diagnostic de vos pratiques</h3>
+            <p>On fait le point : combien de salariés concernés, quels entretiens ont été faits, quels bilans arrivent à échéance.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">2</div>
+          <div class="method-step-content">
+            <h3>Formation de vos managers</h3>
+            <p>On <a href="formations.html">forme vos managers</a> à mener des entretiens qui ont du sens. Pas un formulaire à remplir, un vrai échange sur le parcours. Formation Qualiopi, co-finançable (OPCO ou Région).</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">3</div>
+          <div class="method-step-content">
+            <h3>Outils et templates</h3>
+            <p>Trames d'entretien, grilles de suivi, modèles de compte-rendu. Tout ce qu'il faut pour être en conformité sans y passer des nuits.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">4</div>
+          <div class="method-step-content">
+            <h3>Suivi et bilan à 6 ans</h3>
+            <p>On vous accompagne sur le bilan récapitulatif. On vérifie que les 3 critères sont remplis. Et si ça coince, on trouve des solutions avant la sanction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLET 2 — INGENIERIE FINANCIERE -->
+  <section class="section section--alt" id="ingenierie-financiere" style="padding-bottom:24px;">
+    <div class="container">
+      <div class="volet-band volet-band--fin reveal">
+        <span class="volet-band__tag">Volet 2</span>
+        <h2><span class="volet-band__num" style="color:var(--gold-500);">2.</span>Ingénierie financière</h2>
+        <p class="volet-band__lead">On monte les financements de votre accompagnement : PCRH, plan de développement des compétences, FNE-Formation, CPF, diagnostic CO2I. Ces dispositifs sont co-finançables (OPCO ou Région) ; on vous accompagne dans le montage du dossier et le reste à charge éventuel est connu d'avance.</p>
       </div>
     </div>
   </section>
@@ -377,7 +516,7 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Nos partenaires</span>
-        <h2 class="section-title">9 OPCO partenaires, tous secteurs couverts</h2>
+        <h2 class="section-title">Tous dispositifs, tous secteurs</h2>
         <p class="section-subtitle">CARTESA travaille avec les principaux OPCO depuis 2003. On connaît leurs critères, leurs formulaires et leurs délais.</p>
       </div>
       <div class="grid-3 reveal-stagger" style="gap:16px; max-width:900px; margin:0 auto;">
@@ -390,47 +529,6 @@
         <div class="card" style="padding:16px; text-align:center;"><strong>Ocapiat</strong><br><span style="font-size:0.82rem; color:var(--neutral-500);">Agriculture, pêche</span></div>
         <div class="card" style="padding:16px; text-align:center;"><strong>Atlas</strong><br><span style="font-size:0.82rem; color:var(--neutral-500);">Services financiers, conseil</span></div>
         <div class="card" style="padding:16px; text-align:center;"><strong>Afdas</strong><br><span style="font-size:0.82rem; color:var(--neutral-500);">Culture, médias, loisirs</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENTRETIEN PRO — NOTRE ACCOMPAGNEMENT -->
-  <section class="section section--alt" id="conformite">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Mise en conformité</span>
-        <h2 class="section-title">Entretiens professionnels : on vous met à jour</h2>
-        <p class="section-subtitle">Diagnostic de vos pratiques, formation de vos managers, outils et templates, suivi du bilan à 6 ans.</p>
-      </div>
-      <div class="method-timeline reveal">
-        <div class="method-step">
-          <div class="method-step-number">1</div>
-          <div class="method-step-content">
-            <h3>Diagnostic de vos pratiques</h3>
-            <p>On fait le point : combien de salariés concernés, quels entretiens ont été faits, quels bilans arrivent à échéance.</p>
-          </div>
-        </div>
-        <div class="method-step">
-          <div class="method-step-number">2</div>
-          <div class="method-step-content">
-            <h3>Formation de vos managers</h3>
-            <p>On <a href="formations.html">forme vos managers</a> à mener des entretiens qui ont du sens. Pas un formulaire à remplir, un vrai échange sur le parcours. Formation Qualiopi, co-finançable (OPCO ou Région).</p>
-          </div>
-        </div>
-        <div class="method-step">
-          <div class="method-step-number">3</div>
-          <div class="method-step-content">
-            <h3>Outils et templates</h3>
-            <p>Trames d'entretien, grilles de suivi, modèles de compte-rendu. Tout ce qu'il faut pour être en conformité sans y passer des nuits.</p>
-          </div>
-        </div>
-        <div class="method-step">
-          <div class="method-step-number">4</div>
-          <div class="method-step-content">
-            <h3>Suivi et bilan à 6 ans</h3>
-            <p>On vous accompagne sur le bilan récapitulatif. On vérifie que les 3 critères sont remplis. Et si ça coince, on trouve des solutions avant la sanction.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
