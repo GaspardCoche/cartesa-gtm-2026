@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cartesa — Retours client : avant / après</title>
+<style>
+  @page { size: A4; margin: 14mm 13mm 14mm 13mm; }
+  * { box-sizing: border-box; }
+  :root{
+    --teal:#025659; --teal-d:#0d3b3b; --green:#00B57C; --gold:#ecd034; --gold-d:#c9a51f;
+    --ink:#1a2a36; --muted:#5b6b75; --line:#e3e9ec; --bg:#f5f9f8; --red:#c0492f;
+  }
+  body{ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.45; font-size:9.8pt; margin:0; }
+
+  .cover{ background:linear-gradient(135deg,var(--teal-d),var(--teal)); color:#fff; padding:26pt 24pt; border-radius:10pt; margin-bottom:13pt; }
+  .cover .kicker{ text-transform:uppercase; letter-spacing:.16em; font-size:8.5pt; font-weight:700; color:var(--gold); }
+  .cover h1{ font-size:22pt; font-weight:800; margin:8pt 0 6pt; line-height:1.12; }
+  .cover p{ margin:0; font-size:10pt; color:rgba(255,255,255,.9); max-width:450pt; }
+  .cover .meta{ margin-top:11pt; font-size:8.4pt; color:rgba(255,255,255,.72); }
+
+  .legend{ display:flex; flex-wrap:wrap; gap:6pt 10pt; margin:0 0 12pt; font-size:8.6pt; }
+  .legend span{ padding:3pt 8pt; border-radius:20pt; font-weight:700; }
+  .lg-done{ background:#e7f7f0; color:#0a7a52; }
+  .lg-todo{ background:#fff4e0; color:#9a6a00; }
+  .lg-block{ background:#fdecea; color:#a8331c; }
+  .lg-feat{ background:#eef0fb; color:#4a4ea8; }
+
+  h2{ font-size:13pt; color:var(--teal-d); font-weight:800; margin:15pt 0 6pt; padding-bottom:5pt; border-bottom:2.5px solid var(--gold); page-break-after:avoid; }
+  .lead{ color:var(--muted); margin:0 0 8pt; font-size:9.2pt; }
+
+  table.cmp{ width:100%; border-collapse:collapse; margin-bottom:6pt; page-break-inside:auto; }
+  table.cmp th{ background:var(--teal-d); color:#fff; font-size:8.2pt; text-transform:uppercase; letter-spacing:.05em; text-align:left; padding:5pt 8pt; font-weight:700; }
+  table.cmp th.st{ width:34pt; text-align:center; }
+  table.cmp th.av{ width:38%; }
+  table.cmp td{ border-bottom:1px solid var(--line); padding:6pt 8pt; vertical-align:top; font-size:9pt; page-break-inside:avoid; }
+  td.st{ text-align:center; font-size:11pt; }
+  td.av{ color:var(--red); }
+  td.av .x{ color:var(--red); font-weight:700; }
+  td.ap{ color:var(--ink); }
+  td.ap b{ color:var(--teal-d); }
+  tr.row-done td{ background:#fbfefc; }
+  tr.row-todo td{ background:#fffdf6; }
+  tr.row-block td{ background:#fffafa; }
+
+  .pill{ display:inline-block; font-size:7.2pt; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:1.5pt 6pt; border-radius:18pt; vertical-align:middle; }
+  .p-done{ background:var(--green); color:#fff; }
+  .p-todo{ background:var(--gold); color:#5a4500; }
+  .p-block{ background:#e0b6ad; color:#7a2616; }
+  .p-feat{ background:#c7cbef; color:#363a86; }
+
+  .note{ background:#fffdf2; border-left:3px solid var(--gold); padding:8pt 11pt; font-size:8.8pt; border-radius:0 5pt 5pt 0; margin:8pt 0; }
+  .note.green{ background:#f3fbf8; border-color:var(--green); }
+  .note b{ color:var(--teal-d); }
+  .foot{ margin-top:14pt; padding-top:8pt; border-top:1px solid var(--line); font-size:8.2pt; color:var(--muted); }
+  .pagebreak{ page-break-before:always; }
+  ul.tight{ margin:4pt 0 0; padding-left:14pt; } ul.tight li{ margin-bottom:3pt; font-size:9pt; }
+  .kpi{ display:flex; gap:8pt; margin:2pt 0 12pt; }
+  .kpi .box{ flex:1; background:var(--bg); border:1px solid var(--line); border-radius:8pt; padding:9pt 10pt; text-align:center; }
+  .kpi .n{ font-size:18pt; font-weight:800; color:var(--teal); line-height:1; }
+  .kpi .l{ font-size:7.8pt; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:3pt; }
+</style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="kicker">Cartesa · Refonte du site — suivi des retours</div>
+    <h1>Vos retours, traités point par point</h1>
+    <p>Ce document reprend chacune de vos remarques de la réunion et montre, en regard, ce qui a été corrigé sur le site. En vert : fait et en ligne. En jaune : en attente d'une décision de votre part. En rouge : bloqué tant qu'un élément (photo, n° de téléphone, logo) ne nous est pas transmis.</p>
+    <div class="meta">Document de travail · juin 2026 · site de préproduction — version WordPress finale à venir</div>
+  </div>
+
+  <div class="kpi">
+    <div class="box"><div class="n">38</div><div class="l">retours corrigés &amp; en ligne</div></div>
+    <div class="box"><div class="n">6</div><div class="l">à valider avec vous</div></div>
+    <div class="box"><div class="n">4</div><div class="l">éléments à nous transmettre</div></div>
+    <div class="box"><div class="n">6</div><div class="l">fonctions phase WordPress</div></div>
+  </div>
+
+  <div class="legend">
+    <span class="lg-done">✓ Fait &amp; en ligne</span>
+    <span class="lg-todo">À valider avec vous</span>
+    <span class="lg-block">En attente d'un élément</span>
+    <span class="lg-feat">Phase WordPress</span>
+  </div>
+
+  <h2>Sur tout le site</h2>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Des tarifs apparaissaient (formations, dégressif…)</td><td class="ap"><b>Plus aucun prix</b> nulle part sur le site.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">On parlait d'« <span class="x">audit</span> »</td><td class="ap">Remplacé par « <b>diagnostic</b> » partout.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Adresse perso « La Tour-du-Pin » affichée</td><td class="ap">Retirée → positionnement « <b>près de Lyon, entre Lyon, Grenoble et Chambéry</b> ».</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Image trop régionale</td><td class="ap">Rayon d'action <b>France &amp; Europe</b> (Italie, Suisse, Belgique), déplacements assumés.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Bandeau « <span class="x">Ils nous font confiance</span> »</td><td class="ap">Retiré.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">DRH de transition</span> »</td><td class="ap">Devenu « <b>RH à temps partagé</b> » (externalisé &amp; internalisé).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">100 % financé</span> », « 0 démarche », OPCO nommés</td><td class="ap">« <b>Co-finançable</b> » (OPCO <b>ou</b> Région AURA), sans nommer les OPCO, sans « 0 démarche ».</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Qualiopi traité comme décoratif</td><td class="ap">Qualiopi <b>mis en avant</b> (reconnaissance → financements), démarche qualité remontée.</td></tr>
+    <tr class="row-block"><td class="st">🔒</td><td class="av">Logo avec texte en blanc (fonds foncés)</td><td class="ap"><span class="pill p-block">À nous transmettre</span> emplacement prêt à l'intégrer.</td></tr>
+    <tr class="row-block"><td class="st">🔒</td><td class="av">N° de téléphone de Catherine</td><td class="ap"><span class="pill p-block">À nous transmettre</span> à ajouter Accueil + Contact.</td></tr>
+  </table>
+
+  <h2>Accueil</h2>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">Clé A management</span> » peu visible</td><td class="ap">Mis en évidence comme <b>seule formation certifiante</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">Partenaire RH dans la durée</span> » noyé</td><td class="ap">Remonté et mis en évidence.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Bloc « <span class="x">Notre méthode</span> » de trop · « Vos enjeux » trop maigre</td><td class="ap">« Notre méthode » retiré · « <b>Vos enjeux</b> » étoffé (transparence salariale UE, alignement compétences / modèle éco).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Sous-titre « pas du PowerPoint » à ajuster</td><td class="ap">Conservé et reformulé (« Voici quelques moments… »).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">FAQ : « 100 % », lieu des interventions flou</td><td class="ap">Financement OPCO <b>ou</b> Région, « 100 % » retiré, précisé <b>toujours en déplacement</b> (jamais dans nos locaux).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« Réserver mon échange » avec <span class="x">2 flèches</span></td><td class="ap">Flèches retirées.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Titres de section non centrés</td><td class="ap">Titres <b>centrés</b> sur tout le site.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Diagnostic &amp; accompagnement présentés séparément (clics incohérents)</td><td class="ap">Désormais <b>présentés ensemble</b> (voir « Vos attentes » ci-dessous).</td></tr>
+    <tr class="row-todo"><td class="st">🟠</td><td class="av">Certification RSE AFNOR mal formulée (Philippe certifié, mais pas d'accompagnement à la certification)</td><td class="ap"><span class="pill p-todo">À valider</span> reformulation vers les <b>labellisations (EcoVadis)</b> — formulation à vous faire relire.</td></tr>
+    <tr class="row-todo"><td class="st">🟠</td><td class="av">Photos à rendre figuratives · ajouter vidéos</td><td class="ap"><span class="pill p-todo">À valider</span> <b>témoignage vidéo Stéphane Fournier</b> intégré ; photos figuratives à fournir.</td></tr>
+  </table>
+
+  <div class="pagebreak"></div>
+
+  <h2>« Vos attentes » <span style="font-size:9.5pt;font-weight:600;color:var(--muted)">(ex « Nos services »)</span></h2>
+  <p class="lead">Toute la rubrique a été repensée de votre point de vue client, comme demandé.</p>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">Nos services</span> » centré sur nous</td><td class="ap">Renommé « <b>Vos attentes</b> » (point de vue client).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« Diagnostic &amp; expertise RH » — vous l'aimiez</td><td class="ap">Conservé tel quel, devenu un <b>catalogue de 8 fiches</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Réunir les 2 premiers onglets (Diagnostic = Accompagnements)</td><td class="ap"><b>Fusionnés</b> : après le diagnostic, la section « À vos côtés » prend le relais sur la même page.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Formules d'accompagnement à clarifier</td><td class="ap">« Abonnements » écarté (trop commercial) → <b>« À vos côtés »</b> : Respiration / Impulsion / RH à temps partagé.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Respiration : « <span class="x">illimité</span> » + veille juridique</td><td class="ap">« Vous nous appelez, on y répond », <b>forfait d'heures/mois</b>, <b>sans</b> veille juridique.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Ajouter « Coachings flashs »</td><td class="ap">Fiche créée (séances courtes midi/soir, inscription facile, 15 min de qualif).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Co-développement à structurer</td><td class="ap"><b>2 fiches</b> : animation de cercles · supervision des animateurs internes.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Séparer ingénierie pédagogique et financière</td><td class="ap">Page « <b>Ingénierie pédagogique &amp; financière</b> » en <b>2 volets distincts</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Ajouter profils DISC / MBTI / Forces Motrices</td><td class="ap">Fiche « <b>Profils de comportement &amp; motivation</b> » créée (OGAN écarté pour l'instant).</td></tr>
+    <tr class="row-todo"><td class="st">🟠</td><td class="av">Impulsion à définir un peu plus</td><td class="ap"><span class="pill p-todo">À valider</span> proposition rédigée (coaching managers + co-dév + formation) — à affiner ensemble.</td></tr>
+    <tr class="row-todo"><td class="st">🟠</td><td class="av">Respiration : combien d'heures/mois ?</td><td class="ap"><span class="pill p-todo">À valider</span> nombre d'heures à fixer (placeholder en place).</td></tr>
+    <tr class="row-feat"><td class="st">🧩</td><td class="av">Coachings flashs : créneaux 13-14h / 17-19h + <b>règlement en ligne</b></td><td class="ap"><span class="pill p-feat">Phase WordPress</span> réservation + paiement (Brevo/Stripe/Calendly — voir PDF outils).</td></tr>
+    <tr class="row-feat"><td class="st">🧩</td><td class="av">Profils : évaluation + <b>restitution en ligne</b></td><td class="ap"><span class="pill p-feat">Phase WordPress</span> questionnaire + restitution.</td></tr>
+    <tr class="row-todo"><td class="st">🟠</td><td class="av">Nouveaux onglets (prestataires européens, e-commerce)</td><td class="ap"><span class="pill p-todo">À creuser</span> différé tant que le besoin n'est pas tranché.</td></tr>
+  </table>
+
+  <h2>Formations</h2>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Menu en <span class="x">3 onglets</span>, anchor cassée</td><td class="ap">Ramené à <b>2 onglets</b> (Nos formations / Sur mesure), lien cassé supprimé.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« Certifiante » appliqué un peu partout</td><td class="ap">« Certifiante » <b>réservé à Clé A Management</b> ; les autres = « certifiées Qualiopi ».</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Financement + tarif dégressif affichés</td><td class="ap">Retirés.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« <span class="x">On vient chez vous, on repart</span> » (trop sec)</td><td class="ap">« On vient chez vous, <b>on forme vos équipes, vous voyez la transformation</b> ».</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">« Pas que ces 9 villes » · cible floue</td><td class="ap">Zone élargie <b>France + Europe</b> ; cible précisée <b>30-50 ans</b>.</td></tr>
+    <tr class="row-feat"><td class="st">🧩</td><td class="av">Catalogue : détail en <b>pop-up</b> · formulaire en pop-up (ne pas rediriger)</td><td class="ap"><span class="pill p-feat">Phase WordPress</span> pop-up détail + formulaire de contact intégré.</td></tr>
+  </table>
+
+  <div class="pagebreak"></div>
+
+  <h2>Ressources</h2>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Mettre en avant la progression</td><td class="ap">Barre de stats : <b>20 ans · des centaines d'entreprises · des milliers de collaborateurs</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Bandeau défilant « <span class="x">Secteurs accompagnés</span> »</td><td class="ap">Remplacé par les <b>grands enjeux traités</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Mettre vidéo + témoignages clients</td><td class="ap">Teaser <b>témoignages</b> + renvoi vers la galerie vidéo (Stéphane Fournier).</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Titres non centrés</td><td class="ap">Titres <b>centrés</b>.</td></tr>
+    <tr class="row-feat"><td class="st">🧩</td><td class="av">Auto-diagnostics en ligne · 1-2 témoignages coaching · RSE / Clé A en avant</td><td class="ap"><span class="pill p-feat">Phase WordPress</span> questionnaires + restitution + retargeting (voir PDF outils).</td></tr>
+  </table>
+
+  <h2>L'équipe</h2>
+  <table class="cmp">
+    <tr><th class="st">État</th><th class="av">Votre retour / avant</th><th>Après — ce qui est en ligne</th></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Philippe affiché comme <span class="x">ICF</span></td><td class="ap">Corrigé — <b>Philippe n'est pas ICF</b>.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">2 personnes mises en avant / hiérarchie</td><td class="ap"><b>Tout le monde au même niveau</b> : grille uniforme des 6 membres.</td></tr>
+    <tr class="row-done"><td class="st">✅</td><td class="av">Navigation à faciliter</td><td class="ap">Raccourcis / structure clarifiés.</td></tr>
+    <tr class="row-block"><td class="st">🔒</td><td class="av">Photos de l'équipe</td><td class="ap"><span class="pill p-block">À nous transmettre</span> emplacements prêts.</td></tr>
+  </table>
+
+  <div class="note green">
+    <b>Ce qu'il nous faut de votre côté pour finaliser :</b>
+    <ul class="tight">
+      <li><b>N° de téléphone</b> de Catherine (Accueil + Contact).</li>
+      <li><b>Photos</b> de l'équipe + quelques visuels figuratifs d'illustration.</li>
+      <li><b>Logo</b> avec texte en blanc (pour les fonds foncés).</li>
+      <li>Validation des reformulations : RSE AFNOR → labellisations, définition d'<b>Impulsion</b>, nombre d'<b>heures/mois</b> de Respiration.</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <b>Fonctions prévues pour la version WordPress</b> (présentées sur le site, branchées plus tard) : réservation + paiement des coachings flashs · pop-ups détail &amp; formulaire formations · auto-diagnostics en ligne · restitution des profils (DISC/MBTI/Forces Motrices). Les outils recommandés pour tout cela sont détaillés dans le document <b>« Faire vivre votre site »</b>.
+  </div>
+
+  <div class="foot">
+    Cartesa — Conseil &amp; formation RH · Synthèse des retours de juin 2026 · Le site actuel est une préproduction ; la mise en ligne définitive se fera sur WordPress après vos validations et le choix des outils.
+  </div>
+
+</body>
+</html>
