@@ -4469,7 +4469,7 @@ section.section--alt + section.section--white {
 
 /* TOUCHES JOYEUSES — accents colorés pour rythmer la page d'accueil */
 .section--alt {
-  background: linear-gradient(180deg, var(--neutral-50, #f9fafb) 0%, #fff 100%);
+  background: #f9fafb;
 }
 section.section + section.section--alt {
   position: relative;

@@ -506,13 +506,13 @@
 
   <!-- FINANCEMENT CTA BAND -->
   <section class="section section--alt" style="padding: 48px 0;">
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-      <div style="max-width:600px;">
-        <span class="section-label" style="margin-bottom:8px;">Financement</span>
-        <h2 style="font-size:clamp(1.3rem, 2.5vw, 1.7rem); margin-bottom:8px;">Co-finançable — on vous accompagne sur le dossier</h2>
-        <p style="color:var(--neutral-600); font-size:0.95rem; margin:0;">PCRH, plan de développement, FNE, CO2I : nous vous orientons vers le bon dispositif (OPCO ou Région Auvergne-Rhône-Alpes) et vous accompagnons dans le montage du dossier.</p>
+    <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
+      <div style="max-width:640px;">
+        <span class="section-label reveal" style="margin-bottom:8px; justify-content:center;">Financement</span>
+        <h2 class="reveal" style="font-size:clamp(1.3rem, 2.5vw, 1.7rem); margin-bottom:8px;">Co-finançable — on vous accompagne sur le dossier</h2>
+        <p class="reveal" style="color:var(--neutral-600); font-size:0.95rem; margin:0;">PCRH, plan de développement, FNE, CO2I : nous vous orientons vers le bon dispositif (OPCO ou Région Auvergne-Rhône-Alpes) et vous accompagnons dans le montage du dossier.</p>
       </div>
-      <a href="ingenierie.html#financement" class="btn btn--primary btn--lg">Découvrir les dispositifs &rarr;</a>
+      <a href="ingenierie.html#financement" class="btn btn--primary btn--lg reveal">Découvrir les dispositifs &rarr;</a>
     </div>
   </section>
 
@@ -522,50 +522,30 @@
     <div class="container" style="text-align:center; max-width:720px; margin-bottom:40px;">
       <span class="section-label reveal">Retours d'expérience</span>
       <h2 class="section-title reveal">Ce que disent les dirigeants accompagnés</h2>
-      <p class="reveal" style="color:var(--neutral-600,#4b5563); font-size:1rem; margin-top:12px;">Faites défiler horizontalement pour parcourir les témoignages.</p>
+      <p class="reveal" style="color:var(--neutral-600,#4b5563); font-size:1rem; margin-top:12px;">Stéphane Fournier, Président du Groupe Syrah, raconte son accompagnement en vidéo.</p>
     </div>
 
-    <div class="testimonials-viewport" id="indexCarousel">
-      <article class="t-card"><!-- TODO: remplacer par vrai témoignage client validé -->
-        <span class="t-tag">Diagnostic RH</span>
-        <p class="t-quote">CARTESA a su comprendre nos enjeux très rapidement. En 3 mois, nos entretiens professionnels étaient structurés et nos managers formés. Le financement OPCO a rendu l'opération transparente.</p>
-        <div class="t-meta"><strong>Sophie Martin — DRH, Métallurgies du Dauphiné</strong><span>PME industrielle (120 salariés) · Isère</span></div>
-      </article>
-      <article class="t-card">
-        <span class="t-tag">RH à temps partagé</span>
-        <p class="t-quote">Notre DRH est parti du jour au lendemain. CARTESA a mis un expert en poste en 48 heures. La continuité RH n'a jamais été rompue.</p>
-        <div class="t-meta"><strong>P. Durand — DG</strong><span>ETI services (250 salariés) · Grenoble<br><small>(témoignage anonymisé à la demande du client)</small></span></div>
-      </article>
-      <article class="t-card"><!-- TODO: remplacer par vrai témoignage client validé -->
-        <span class="t-tag">RSE & Décarbonation</span>
-        <p class="t-quote">Le diagnostic CO2I a été une révélation. Avec CARTESA et OPCO2i, tout a été financé. On a maintenant une feuille de route claire sur 3 ans.</p>
-        <div class="t-meta"><strong>Laurent Bernard — Dirigeant, Mécanique Drômoise</strong><span>Industrie mécanique (85 salariés) · Drôme</span></div>
-      </article>
-      <article class="t-card">
-        <span class="t-tag">Impulsion</span>
-        <p class="t-quote">L'approche Impulsion nous fait économiser l'équivalent d'un demi-poste RH. Pour une PME de 70 personnes, c'est exactement ce qu'il nous fallait.</p>
-        <div class="t-meta"><strong>C. Rousseau — Gérant</strong><span>PME bâtiment (70 salariés) · Nord-Isère<br><small>(témoignage anonymisé à la demande du client)</small></span></div>
-      </article>
-      <article class="t-card">
-        <span class="t-tag">Formation AFEST</span>
-        <p class="t-quote">La formation management AFEST a été un déclencheur pour nos chefs d'équipe. Pas de blabla théorique : du terrain, de la pratique, des outils qu'ils utilisent encore 6 mois après.</p>
-        <div class="t-meta"><strong>A. Vidal — Resp. Production</strong><span>Agroalimentaire (200 salariés) · Ardèche<br><small>(témoignage anonymisé à la demande du client)</small></span></div>
-      </article>
-      <article class="t-card"><!-- TODO: remplacer par vrai témoignage client validé -->
-        <span class="t-tag">Fusion & dialogue social</span>
-        <p class="t-quote">Catherine et son équipe ont géré notre fusion avec une précision chirurgicale. Pas un seul départ subi.</p>
-        <div class="t-meta"><strong>Marc Faure — DAF, Groupe Alpina Distribution</strong><span>Groupe multi-sites (350 salariés) · AuRA</span></div>
-      </article>
-    </div>
-
-    <div class="t-controls">
-      <button class="t-btn" id="indexPrev" aria-label="Précédent">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <div class="t-progress"><div class="t-progress-fill" id="indexFill"></div></div>
-      <button class="t-btn" id="indexNext" aria-label="Suivant">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+    <div class="container" style="max-width:960px;">
+      <a href="temoignages.html" class="home-vt reveal" aria-label="Voir le témoignage vidéo de Stéphane Fournier, Président du Groupe Syrah">
+        <div class="home-vt__media">
+          <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier, Président du Groupe Syrah — témoignage vidéo CARTESA" loading="lazy">
+          <span class="home-vt__play" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="home-vt__badge">Témoignage client filmé · série en 7 épisodes</span>
+        </div>
+        <div class="home-vt__body">
+          <span class="t-tag">Retour d'expérience</span>
+          <p class="t-quote">« On s'est choisi ensemble avec CARTESA. Il fallait que l'alchimie prenne — et la confiance a été totale. »</p>
+          <div class="t-meta">
+            <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="" width="46" height="46" loading="lazy">
+            <div>
+              <strong>Stéphane Fournier</strong>
+              <span>Président · Groupe Syrah</span>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
 
     <div style="text-align:center; margin-top:36px;">
@@ -629,6 +609,41 @@
       .t-meta { padding-top: 18px; border-top: 1px solid var(--neutral-200); display: flex; flex-direction: column; gap: 3px; }
       .t-meta strong { font-family: 'Sora', sans-serif; font-size: 0.92rem; color: var(--teal-900); }
       .t-meta span { font-size: 0.82rem; color: var(--neutral-500); }
+
+      /* Témoignage vidéo réel mis en avant (accueil) */
+      .home-vt {
+        display: grid; grid-template-columns: 1.05fr 1fr; gap: 0;
+        max-width: 960px; margin: 0 auto;
+        background: #fff; border: 1px solid var(--neutral-200); border-radius: 24px;
+        overflow: hidden; text-decoration: none; color: inherit;
+        transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s, border-color 0.3s;
+      }
+      .home-vt:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(9,41,51,0.12); border-color: var(--teal-100); }
+      .home-vt__media { position: relative; min-height: 330px; background: var(--neutral-100); }
+      .home-vt__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .home-vt__play {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        width: 66px; height: 66px; border-radius: 50%;
+        background: rgba(255,255,255,0.92); color: var(--teal-700);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: transform 0.3s;
+      }
+      .home-vt:hover .home-vt__play { transform: translate(-50%,-50%) scale(1.08); }
+      .home-vt__badge {
+        position: absolute; left: 16px; bottom: 16px;
+        background: rgba(2,86,89,0.92); color: #fff;
+        font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+        padding: 6px 12px; border-radius: 100px;
+      }
+      .home-vt__body { padding: 38px 36px; display: flex; flex-direction: column; justify-content: center; }
+      .home-vt__body .t-quote { margin-bottom: 22px; }
+      .home-vt__body .t-meta { flex-direction: row; align-items: center; gap: 12px; }
+      .home-vt__body .t-meta img { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+      .home-vt__body .t-meta strong { display: block; }
+      @media (max-width: 760px) {
+        .home-vt { grid-template-columns: 1fr; }
+        .home-vt__media { min-height: 220px; }
+      }
       .t-controls { display: flex; align-items: center; gap: 18px; max-width: 520px; margin: 0 auto; padding: 0 24px; }
       .t-btn {
         width: 44px; height: 44px; border-radius: 50%;
